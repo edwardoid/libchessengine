@@ -41,12 +41,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="namespaces.html"><span>Namespace&nbsp;List</span></a></li>
+      <li><a href="namespacemembers.html"><span>Namespace&nbsp;Members</span></a></li>
     </ul>
   </div>
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <h1>ChEngn Namespace Reference</h1>  </div>
 </div>
@@ -56,24 +60,145 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html">Engine</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html">Piece</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChEngn_1_1table__size.html">table_size</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html">Table</a></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a35c185f259757a78e937575b8ed483"></a><!-- doxytag: member="ChEngn::piece_type" ref="a2a35c185f259757a78e937575b8ed483" args="" -->
+typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> type is just a unsigned char. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c81426c0134a97288a226c122daf62f"></a><!-- doxytag: member="ChEngn::piece_color" ref="a9c81426c0134a97288a226c122daf62f" args="" -->
+typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">piece_color</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> color is just a unsigned char. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a491b2eba2f766087f4f28948005ab16a"></a><!-- doxytag: member="ChEngn::piece_movement_flag" ref="a491b2eba2f766087f4f28948005ab16a" args="" -->
+typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">piece_movement_flag</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> movement flag is just a bit in unsigned char. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a26a6ae0dee7ff3917e673a622e749381">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;pce)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#ab50263763556397916f36ce2728ecf88">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Table.html">Table</a> &amp;tbl)</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a538ef441c024a7e5d4c1dedb5e03fc21"></a><!-- doxytag: member="ChEngn::unknown" ref="a538ef441c024a7e5d4c1dedb5e03fc21" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a538ef441c024a7e5d4c1dedb5e03fc21">unknown</a> = 63</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present unknown type piece 63 = [00011111]. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4781da8088272ec86e35be681dde106"></a><!-- doxytag: member="ChEngn::pawn" ref="af4781da8088272ec86e35be681dde106" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#af4781da8088272ec86e35be681dde106">pawn</a> = 1 &lt;&lt; 0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present pawns. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab167075161c66436eef6d7f02507c115"></a><!-- doxytag: member="ChEngn::knight" ref="ab167075161c66436eef6d7f02507c115" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#ab167075161c66436eef6d7f02507c115">knight</a> = 1 &lt;&lt; 1</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present knights. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9410a19494f941d06ea404edf4900b0"></a><!-- doxytag: member="ChEngn::bishop" ref="ad9410a19494f941d06ea404edf4900b0" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#ad9410a19494f941d06ea404edf4900b0">bishop</a> = 1 &lt;&lt; 2</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present bishops. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a485787ab76caf7a61a77118fcdfd113d"></a><!-- doxytag: member="ChEngn::rook" ref="a485787ab76caf7a61a77118fcdfd113d" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a485787ab76caf7a61a77118fcdfd113d">rook</a> = 1 &lt;&lt; 3</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present rooks. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97924767720e8ba4e595ad9f161d73e8"></a><!-- doxytag: member="ChEngn::queen" ref="a97924767720e8ba4e595ad9f161d73e8" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a97924767720e8ba4e595ad9f161d73e8">queen</a> = 1 &lt;&lt; 4</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present queens. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40c2dbaf0963b46704f08ffb28364cea"></a><!-- doxytag: member="ChEngn::king" ref="a40c2dbaf0963b46704f08ffb28364cea" args="" -->
+<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea">king</a> = 1 &lt;&lt; 5</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to present kings. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3212b290980eb5db7f91e88f8803a9c"></a><!-- doxytag: member="ChEngn::white" ref="aa3212b290980eb5db7f91e88f8803a9c" args="" -->
+<a class="el" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">piece_color</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#aa3212b290980eb5db7f91e88f8803a9c">white</a> = 1 &lt;&lt; 6</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to set flag if piece is white ( else flag is not set). <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2bfc6fe87969d3e28eecbb682e802c8"></a><!-- doxytag: member="ChEngn::black" ref="aa2bfc6fe87969d3e28eecbb682e802c8" args="" -->
+<a class="el" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">piece_color</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#aa2bfc6fe87969d3e28eecbb682e802c8">black</a> = 0 &lt;&lt; 6</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to unset flag if piece is black. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2997c391593541b72a894e9cf44c90bf"></a><!-- doxytag: member="ChEngn::moved" ref="a2997c391593541b72a894e9cf44c90bf" args="" -->
+<a class="el" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">piece_movement_flag</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a2997c391593541b72a894e9cf44c90bf">moved</a> = 1 &lt;&lt; 7</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uses to set flag is piece has been moved. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae87757a4f2d9ae9e25d48213cad79ddd"></a><!-- doxytag: member="ChEngn::default_table_height" ref="ae87757a4f2d9ae9e25d48213cad79ddd" args="" -->
+const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#ae87757a4f2d9ae9e25d48213cad79ddd">default_table_height</a> = 8</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Standart table height. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dc4a83c122aec6e170ad7a1d40efd8a"></a><!-- doxytag: member="ChEngn::default_table_width" ref="a9dc4a83c122aec6e170ad7a1d40efd8a" args="" -->
+const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a9dc4a83c122aec6e170ad7a1d40efd8a">default_table_width</a> = 8</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Standart table width. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <dl class="author"><dt><b>Author:</b></dt><dd>Edward Sarkisyan </dd></dl>
 <dl class="version"><dt><b>Version:</b></dt><dd>0.0.1a  GPL</dd></dl>
 <p>Provides access to current game. Can make moves, get table state ( Virtual <a class="el" href="classChEngn_1_1Table.html">Table</a>)</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This class <b>does not</b> manipulate pgn files. contains all classes, structs, constants to work whis library.</dd></dl>
-<dl class="author"><dt><b>Author:</b></dt><dd>Ed Sarkisyan </dd></dl>
-<dl class="version"><dt><b>Version:</b></dt><dd>0.0.1a</dd></dl>
-<dl class="author"><dt><b>Author:</b></dt><dd>Ed Sarkisyan </dd></dl>
-<dl class="version"><dt><b>Version:</b></dt><dd>0.0.1 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This class <b>does not</b> manipulate pgn files. contains all classes, structs, constants to work whis library. </dd></dl>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a26a6ae0dee7ff3917e673a622e749381"></a><!-- doxytag: member="ChEngn::operator&lt;&lt;" ref="a26a6ae0dee7ff3917e673a622e749381" args="(std::ostream &amp;out, const Piece &amp;pce)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; ChEngn::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Piece &amp;&nbsp;</td>
+          <td class="paramname"> <em>pce</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>"Prints" piece in std::ostream </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>- Stream for printing </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pce</em>&nbsp;</td><td>- <a class="el" href="classChEngn_1_1Piece.html">Piece</a> to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab50263763556397916f36ce2728ecf88"></a><!-- doxytag: member="ChEngn::operator&lt;&lt;" ref="ab50263763556397916f36ce2728ecf88" args="(std::ostream &amp;out, const Table &amp;tbl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; ChEngn::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Table &amp;&nbsp;</td>
+          <td class="paramname"> <em>tbl</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>"Prints" table into std::ostream </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>- Stream for printing </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tbl</em>&nbsp;</td><td>- table to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +207,7 @@ Classes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Feb 24 2011 01:54:55 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 00:35:53 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

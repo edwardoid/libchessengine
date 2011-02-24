@@ -54,7 +54,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>ChEngn::Piece Class Reference</h1>  </div>
 </div>
@@ -66,18 +67,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe7c3a8a7e5ed3beb583a6f6b4df2531"></a><!-- doxytag: member="ChEngn::Piece::Piece" ref="abe7c3a8a7e5ed3beb583a6f6b4df2531" args="()" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531">Piece</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531">Piece</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor.  <a href="#abe7c3a8a7e5ed3beb583a6f6b4df2531"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a5abff07a09fc78b6fc805cde2a298b41">Piece</a> (const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;other)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#a5abff07a09fc78b6fc805cde2a298b41"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75360762004389b1df624136bcaff309"></a><!-- doxytag: member="ChEngn::Piece::~Piece" ref="a75360762004389b1df624136bcaff309" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a75360762004389b1df624136bcaff309">~Piece</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a65ab22bbe5b61fa699dfc83213d6744b">type</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the piece's type.  <a href="#a65ab22bbe5b61fa699dfc83213d6744b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">piece_color</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a6c12383548443c206a6a874a90d5eb13">color</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the piece's color ( white | black ).  <a href="#a6c12383548443c206a6a874a90d5eb13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a98920893afeab5395dba002ab3f88703">isWhite</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check piece's color state.  <a href="#a98920893afeab5395dba002ab3f88703"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a481b3d61628762f87d674fad3f858c3b">isBlack</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check piece's color state.  <a href="#a481b3d61628762f87d674fad3f858c3b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a4105456968fa768a8d3673ce3c14eca3">isUnknown</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check piece's type.  <a href="#a4105456968fa768a8d3673ce3c14eca3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">piece_movement_flag</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a55d17737f8a56072f25ba00c6784ce85">moveFlag</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get piece movement flag.  <a href="#a55d17737f8a56072f25ba00c6784ce85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a4b66b79da54172c50072df90fae47b3e">setType</a> (<a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set Piece's type.  <a href="#a4b66b79da54172c50072df90fae47b3e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93b4da88b5b3bd52c025895ea9296b42"></a><!-- doxytag: member="ChEngn::Piece::setWhite" ref="a93b4da88b5b3bd52c025895ea9296b42" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a93b4da88b5b3bd52c025895ea9296b42">setWhite</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes piece's color to white. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28f4d2b27bebe4cf45a9a44aeaaf1f93"></a><!-- doxytag: member="ChEngn::Piece::setBlack" ref="a28f4d2b27bebe4cf45a9a44aeaaf1f93" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a28f4d2b27bebe4cf45a9a44aeaaf1f93">setBlack</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Changes piece's colot to black. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a49e68ef199415d60ea2a394501a52f5a">setMoved</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets <a class="el" href="classChEngn_1_1Piece.html">Piece</a> as moved.  <a href="#a49e68ef199415d60ea2a394501a52f5a"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a5e9692fde1be0ae7eda4e5cd3fc42f6d">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;pce)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded operator &lt;&lt; ().  <a href="#a5e9692fde1be0ae7eda4e5cd3fc42f6d"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Provides basic interface for init some chess piece, eg "knight" </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="abe7c3a8a7e5ed3beb583a6f6b4df2531"></a><!-- doxytag: member="ChEngn::Piece::Piece" ref="abe7c3a8a7e5ed3beb583a6f6b4df2531" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChEngn::Piece::Piece </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<p>After this piece is: 1. White piece 2. Of unknown type 3. Not moved yet </p>
+
+</div>
+</div>
 <a class="anchor" id="a5abff07a09fc78b6fc805cde2a298b41"></a><!-- doxytag: member="ChEngn::Piece::Piece" ref="a5abff07a09fc78b6fc805cde2a298b41" args="(const Piece &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
@@ -104,6 +150,217 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a6c12383548443c206a6a874a90d5eb13"></a><!-- doxytag: member="ChEngn::Piece::color" ref="a6c12383548443c206a6a874a90d5eb13" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">ChEngn::piece_color</a> ChEngn::Piece::color </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the piece's color ( white | black ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Color </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a481b3d61628762f87d674fad3f858c3b"></a><!-- doxytag: member="ChEngn::Piece::isBlack" ref="a481b3d61628762f87d674fad3f858c3b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Piece::isBlack </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check piece's color state. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if piece is black </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Same as if ( piece.color() == <a class="el" href="namespaceChEngn.html#aa2bfc6fe87969d3e28eecbb682e802c8" title="Uses to unset flag if piece is black.">ChEngn::black</a> ) { // routine } </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4105456968fa768a8d3673ce3c14eca3"></a><!-- doxytag: member="ChEngn::Piece::isUnknown" ref="a4105456968fa768a8d3673ce3c14eca3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Piece::isUnknown </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check piece's type. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if piece type is unknown </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Same as if ( piece.type() == <a class="el" href="namespaceChEngn.html#a538ef441c024a7e5d4c1dedb5e03fc21" title="Uses to present unknown type piece 63 = [00011111].">ChEngn::unknown</a> ) { // routine }</dd>
+<dd>
+<a class="el" href="classChEngn_1_1Piece.html">Piece</a> initialized by <a class="el" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531" title="Default constructor.">ChEngn::Piece::Piece()</a> will be unknown type </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a98920893afeab5395dba002ab3f88703"></a><!-- doxytag: member="ChEngn::Piece::isWhite" ref="a98920893afeab5395dba002ab3f88703" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Piece::isWhite </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check piece's color state. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if piece is white </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Same as if ( piece.color() == <a class="el" href="namespaceChEngn.html#aa3212b290980eb5db7f91e88f8803a9c" title="Uses to set flag if piece is white ( else flag is not set).">ChEngn::white</a> ) { // routine } </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a55d17737f8a56072f25ba00c6784ce85"></a><!-- doxytag: member="ChEngn::Piece::moveFlag" ref="a55d17737f8a56072f25ba00c6784ce85" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">ChEngn::piece_movement_flag</a> ChEngn::Piece::moveFlag </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get piece movement flag. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>flag's value </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49e68ef199415d60ea2a394501a52f5a"></a><!-- doxytag: member="ChEngn::Piece::setMoved" ref="a49e68ef199415d60ea2a394501a52f5a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChEngn::Piece::setMoved </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets <a class="el" href="classChEngn_1_1Piece.html">Piece</a> as moved. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>It's not requered to always set this flag. For example this flag doesn't make sense if piece's type is <a class="el" href="namespaceChEngn.html#ad9410a19494f941d06ea404edf4900b0" title="Uses to present bishops.">ChEngn::bishop</a> </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>You can only <b>set</b> this flag. You can't change this flag later </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b66b79da54172c50072df90fae47b3e"></a><!-- doxytag: member="ChEngn::Piece::setType" ref="a4b66b79da54172c50072df90fae47b3e" args="(piece_type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChEngn::Piece::setType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">ChEngn::piece_type</a>&nbsp;</td>
+          <td class="paramname"> <em>tpe</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set Piece's type. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tpe</em>&nbsp;</td><td>- New piece's type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a65ab22bbe5b61fa699dfc83213d6744b"></a><!-- doxytag: member="ChEngn::Piece::type" ref="a65ab22bbe5b61fa699dfc83213d6744b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">ChEngn::piece_type</a> ChEngn::Piece::type </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the piece's type. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Type </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a5e9692fde1be0ae7eda4e5cd3fc42f6d"></a><!-- doxytag: member="ChEngn::Piece::operator&lt;&lt;" ref="a5e9692fde1be0ae7eda4e5cd3fc42f6d" args="(std::ostream &amp;out, const Piece &amp;pce)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>pce</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded operator &lt;&lt; (). </p>
+<p>"Prints" piece in std::ostream </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>- Stream for printing </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pce</em>&nbsp;</td><td>- <a class="el" href="classChEngn_1_1Piece.html">Piece</a> to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="CEPiece_8h_source.html">CEPiece.h</a></li>
 <li>src/CEPiece.cpp</li>
@@ -114,7 +371,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,7 +380,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Feb 24 2011 01:54:55 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 00:35:53 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

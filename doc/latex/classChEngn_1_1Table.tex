@@ -20,7 +20,27 @@
 virtual \hyperlink{classChEngn_1_1Table_a11ecbf5aaa43cf800da3ccf1a8a20515}{$\sim$Table} ()}
 \label{classChEngn_1_1Table_a11ecbf5aaa43cf800da3ccf1a8a20515}
 
-\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1Table_a450e753570d02411899db0e0eb597a85}{
+const \hyperlink{structChEngn_1_1table__size}{table\_\-size} \hyperlink{classChEngn_1_1Table_a450e753570d02411899db0e0eb597a85}{size} () const }
+\label{classChEngn_1_1Table_a450e753570d02411899db0e0eb597a85}
+
+\begin{DoxyCompactList}\small\item\em Get table's size. \item\end{DoxyCompactList}\item 
+const unsigned int \hyperlink{classChEngn_1_1Table_a9502a1090bcb852c162934a792c2360a}{height} () const 
+\begin{DoxyCompactList}\small\item\em Get table's height. \item\end{DoxyCompactList}\item 
+const unsigned int \hyperlink{classChEngn_1_1Table_a6aaaaae9343e67a947b0cdeb6104361b}{width} () const 
+\begin{DoxyCompactList}\small\item\em Get table's width. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$$\ast$ \hyperlink{classChEngn_1_1Table_a7fdd83660c669f80a3203f7e705ffdd9}{table} ()
+\begin{DoxyCompactList}\small\item\em Get current table state. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Piece}{Piece} \hyperlink{classChEngn_1_1Table_a9354d8fd4f32bfbee64a4ff63edea055}{pieceAt} (unsigned int row, unsigned int column) const 
+\begin{DoxyCompactList}\small\item\em Return piece at given position. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Table_a8ece9e9f9f28f209d72f16db0fb2aeed}{resetComplect} ()
+\begin{DoxyCompactList}\small\item\em Set table for beginig gaming. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& \hyperlink{classChEngn_1_1Table_a9a39b79ad3a5635dfe8075f14598886e}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Table}{Table} \&tbl)
+\begin{DoxyCompactList}\small\item\em Overloaded operator $<$$<$ (). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -43,6 +63,116 @@ Copy constructor.
 
 \begin{DoxyParams}{Parameters}
 \item[{\em other}]-\/ Source. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Table_a9502a1090bcb852c162934a792c2360a}{
+\index{ChEngn::Table@{ChEngn::Table}!height@{height}}
+\index{height@{height}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int ChEngn::Table::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Table_a9502a1090bcb852c162934a792c2360a}
+
+
+Get table's height. 
+
+\begin{DoxyReturn}{Returns}
+height 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Table_a9354d8fd4f32bfbee64a4ff63edea055}{
+\index{ChEngn::Table@{ChEngn::Table}!pieceAt@{pieceAt}}
+\index{pieceAt@{pieceAt}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{pieceAt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::Piece} ChEngn::Table::pieceAt (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ row, }
+\item[{unsigned int}]{ column}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Table_a9354d8fd4f32bfbee64a4ff63edea055}
+
+
+Return piece at given position. 
+
+Get piece from table. 
+\begin{DoxyParams}{Parameters}
+\item[{\em row}]-\/ Piece's position row. \item[{\em column}]-\/ Piece's position column. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ Referentce to piece, if row and/or column are invalid Piece() will be returned. 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Table_a8ece9e9f9f28f209d72f16db0fb2aeed}{
+\index{ChEngn::Table@{ChEngn::Table}!resetComplect@{resetComplect}}
+\index{resetComplect@{resetComplect}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{resetComplect}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Table::resetComplect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Table_a8ece9e9f9f28f209d72f16db0fb2aeed}
+
+
+Set table for beginig gaming. 
+
+\begin{DoxyWarning}{Warning}
+Function will do changes if table size is 8x8. In another case nothing will be done 
+\end{DoxyWarning}
+\hypertarget{classChEngn_1_1Table_a7fdd83660c669f80a3203f7e705ffdd9}{
+\index{ChEngn::Table@{ChEngn::Table}!table@{table}}
+\index{table@{table}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::Piece} $\ast$$\ast$ ChEngn::Table::table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Table_a7fdd83660c669f80a3203f7e705ffdd9}
+
+
+Get current table state. 
+
+\begin{DoxyReturn}{Returns}
+Current table state 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If you don't gonna change the table use const-\/version 
+\end{DoxyWarning}
+\hypertarget{classChEngn_1_1Table_a6aaaaae9343e67a947b0cdeb6104361b}{
+\index{ChEngn::Table@{ChEngn::Table}!width@{width}}
+\index{width@{width}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int ChEngn::Table::width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Table_a6aaaaae9343e67a947b0cdeb6104361b}
+
+
+Get table's width. 
+
+\begin{DoxyReturn}{Returns}
+width 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classChEngn_1_1Table_a9a39b79ad3a5635dfe8075f14598886e}{
+\index{ChEngn::Table@{ChEngn::Table}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{ out, }
+\item[{const {\bf Table} \&}]{ tbl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classChEngn_1_1Table_a9a39b79ad3a5635dfe8075f14598886e}
+
+
+Overloaded operator $<$$<$ (). 
+
+\char`\"{}Prints\char`\"{} table into std::ostream 
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]-\/ Stream for printing \item[{\em tbl}]-\/ table to print \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

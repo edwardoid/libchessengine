@@ -9,10 +9,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}{
-\hyperlink{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}{Piece} ()}
-\label{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}
-
+\hyperlink{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}{Piece} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Piece_a5abff07a09fc78b6fc805cde2a298b41}{Piece} (const \hyperlink{classChEngn_1_1Piece}{Piece} \&other)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
@@ -20,14 +17,58 @@
 \hyperlink{classChEngn_1_1Piece_a75360762004389b1df624136bcaff309}{$\sim$Piece} ()}
 \label{classChEngn_1_1Piece_a75360762004389b1df624136bcaff309}
 
-\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{classChEngn_1_1Piece_a65ab22bbe5b61fa699dfc83213d6744b}{type} () const 
+\begin{DoxyCompactList}\small\item\em Get the piece's type. \item\end{DoxyCompactList}\item 
+\hyperlink{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}{piece\_\-color} \hyperlink{classChEngn_1_1Piece_a6c12383548443c206a6a874a90d5eb13}{color} () const 
+\begin{DoxyCompactList}\small\item\em Get the piece's color ( white $|$ black ). \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Piece_a98920893afeab5395dba002ab3f88703}{isWhite} () const 
+\begin{DoxyCompactList}\small\item\em Check piece's color state. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Piece_a481b3d61628762f87d674fad3f858c3b}{isBlack} () const 
+\begin{DoxyCompactList}\small\item\em Check piece's color state. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Piece_a4105456968fa768a8d3673ce3c14eca3}{isUnknown} () const 
+\begin{DoxyCompactList}\small\item\em Check piece's type. \item\end{DoxyCompactList}\item 
+\hyperlink{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}{piece\_\-movement\_\-flag} \hyperlink{classChEngn_1_1Piece_a55d17737f8a56072f25ba00c6784ce85}{moveFlag} () const 
+\begin{DoxyCompactList}\small\item\em Get piece movement flag. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Piece_a4b66b79da54172c50072df90fae47b3e}{setType} (\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type})
+\begin{DoxyCompactList}\small\item\em Set Piece's type. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1Piece_a93b4da88b5b3bd52c025895ea9296b42}{
+void \hyperlink{classChEngn_1_1Piece_a93b4da88b5b3bd52c025895ea9296b42}{setWhite} ()}
+\label{classChEngn_1_1Piece_a93b4da88b5b3bd52c025895ea9296b42}
+
+\begin{DoxyCompactList}\small\item\em Changes piece's color to white. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1Piece_a28f4d2b27bebe4cf45a9a44aeaaf1f93}{
+void \hyperlink{classChEngn_1_1Piece_a28f4d2b27bebe4cf45a9a44aeaaf1f93}{setBlack} ()}
+\label{classChEngn_1_1Piece_a28f4d2b27bebe4cf45a9a44aeaaf1f93}
+
+\begin{DoxyCompactList}\small\item\em Changes piece's colot to black. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Piece_a49e68ef199415d60ea2a394501a52f5a}{setMoved} ()
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{classChEngn_1_1Piece}{Piece} as moved. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& \hyperlink{classChEngn_1_1Piece_a5e9692fde1be0ae7eda4e5cd3fc42f6d}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Piece}{Piece} \&pce)
+\begin{DoxyCompactList}\small\item\em Overloaded operator $<$$<$ (). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Provides basic interface for init some chess piece, eg \char`\"{}knight\char`\"{} 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classChEngn_1_1Piece_a5abff07a09fc78b6fc805cde2a298b41}{
+\hypertarget{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}{
+\index{ChEngn::Piece@{ChEngn::Piece}!Piece@{Piece}}
+\index{Piece@{Piece}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{Piece}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Piece::Piece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}
+
+
+Default constructor. 
+
+After this piece is: 1. White piece 2. Of unknown type 3. Not moved yet \hypertarget{classChEngn_1_1Piece_a5abff07a09fc78b6fc805cde2a298b41}{
 \index{ChEngn::Piece@{ChEngn::Piece}!Piece@{Piece}}
 \index{Piece@{Piece}!ChEngn::Piece@{ChEngn::Piece}}
 \subsubsection[{Piece}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Piece::Piece (
@@ -45,7 +86,172 @@ Copy constructor.
 \item[{\em other}]-\/ source \end{DoxyParams}
 
 
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Piece_a6c12383548443c206a6a874a90d5eb13}{
+\index{ChEngn::Piece@{ChEngn::Piece}!color@{color}}
+\index{color@{color}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::piece\_\-color} ChEngn::Piece::color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a6c12383548443c206a6a874a90d5eb13}
+
+
+Get the piece's color ( white $|$ black ). 
+
+\begin{DoxyReturn}{Returns}
+Color 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Piece_a481b3d61628762f87d674fad3f858c3b}{
+\index{ChEngn::Piece@{ChEngn::Piece}!isBlack@{isBlack}}
+\index{isBlack@{isBlack}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{isBlack}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Piece::isBlack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a481b3d61628762f87d674fad3f858c3b}
+
+
+Check piece's color state. 
+
+\begin{DoxyReturn}{Returns}
+true if piece is black 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Same as if ( piece.color() == \hyperlink{namespaceChEngn_aa2bfc6fe87969d3e28eecbb682e802c8}{ChEngn::black} ) \{ // routine \} 
+\end{DoxyNote}
+\hypertarget{classChEngn_1_1Piece_a4105456968fa768a8d3673ce3c14eca3}{
+\index{ChEngn::Piece@{ChEngn::Piece}!isUnknown@{isUnknown}}
+\index{isUnknown@{isUnknown}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{isUnknown}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Piece::isUnknown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a4105456968fa768a8d3673ce3c14eca3}
+
+
+Check piece's type. 
+
+\begin{DoxyReturn}{Returns}
+true if piece type is unknown 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Same as if ( piece.type() == \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown} ) \{ // routine \}
+
+\hyperlink{classChEngn_1_1Piece}{Piece} initialized by \hyperlink{classChEngn_1_1Piece_abe7c3a8a7e5ed3beb583a6f6b4df2531}{ChEngn::Piece::Piece()} will be unknown type 
+\end{DoxyNote}
+\hypertarget{classChEngn_1_1Piece_a98920893afeab5395dba002ab3f88703}{
+\index{ChEngn::Piece@{ChEngn::Piece}!isWhite@{isWhite}}
+\index{isWhite@{isWhite}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{isWhite}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Piece::isWhite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a98920893afeab5395dba002ab3f88703}
+
+
+Check piece's color state. 
+
+\begin{DoxyReturn}{Returns}
+true if piece is white 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Same as if ( piece.color() == \hyperlink{namespaceChEngn_aa3212b290980eb5db7f91e88f8803a9c}{ChEngn::white} ) \{ // routine \} 
+\end{DoxyNote}
+\hypertarget{classChEngn_1_1Piece_a55d17737f8a56072f25ba00c6784ce85}{
+\index{ChEngn::Piece@{ChEngn::Piece}!moveFlag@{moveFlag}}
+\index{moveFlag@{moveFlag}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{moveFlag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::piece\_\-movement\_\-flag} ChEngn::Piece::moveFlag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a55d17737f8a56072f25ba00c6784ce85}
+
+
+Get piece movement flag. 
+
+\begin{DoxyReturn}{Returns}
+flag's value 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Piece_a49e68ef199415d60ea2a394501a52f5a}{
+\index{ChEngn::Piece@{ChEngn::Piece}!setMoved@{setMoved}}
+\index{setMoved@{setMoved}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{setMoved}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Piece::setMoved (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Piece_a49e68ef199415d60ea2a394501a52f5a}
+
+
+Sets \hyperlink{classChEngn_1_1Piece}{Piece} as moved. 
+
+\begin{DoxyNote}{Note}
+It's not requered to always set this flag. For example this flag doesn't make sense if piece's type is \hyperlink{namespaceChEngn_ad9410a19494f941d06ea404edf4900b0}{ChEngn::bishop} 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+You can only {\bfseries set} this flag. You can't change this flag later 
+\end{DoxyWarning}
+\hypertarget{classChEngn_1_1Piece_a4b66b79da54172c50072df90fae47b3e}{
+\index{ChEngn::Piece@{ChEngn::Piece}!setType@{setType}}
+\index{setType@{setType}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Piece::setType (
+\begin{DoxyParamCaption}
+\item[{{\bf ChEngn::piece\_\-type}}]{ tpe}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Piece_a4b66b79da54172c50072df90fae47b3e}
+
+
+Set Piece's type. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tpe}]-\/ New piece's type \end{DoxyParams}
+\hypertarget{classChEngn_1_1Piece_a65ab22bbe5b61fa699dfc83213d6744b}{
+\index{ChEngn::Piece@{ChEngn::Piece}!type@{type}}
+\index{type@{type}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::piece\_\-type} ChEngn::Piece::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a65ab22bbe5b61fa699dfc83213d6744b}
+
+
+Get the piece's type. 
+
+\begin{DoxyReturn}{Returns}
+Type 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classChEngn_1_1Piece_a5e9692fde1be0ae7eda4e5cd3fc42f6d}{
+\index{ChEngn::Piece@{ChEngn::Piece}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{ out, }
+\item[{const {\bf Piece} \&}]{ pce}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classChEngn_1_1Piece_a5e9692fde1be0ae7eda4e5cd3fc42f6d}
+
+
+Overloaded operator $<$$<$ (). 
+
+\char`\"{}Prints\char`\"{} piece in std::ostream 
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]-\/ Stream for printing \item[{\em pce}]-\/ \hyperlink{classChEngn_1_1Piece}{Piece} to print \end{DoxyParams}
+
+
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
-src/CEPiece.h\item 
+src/\hyperlink{CEPiece_8h}{CEPiece.h}\item 
 src/CEPiece.cpp\end{DoxyCompactItemize}

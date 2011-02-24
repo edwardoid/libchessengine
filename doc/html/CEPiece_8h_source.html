@@ -48,26 +48,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>src/CEPiece.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CHESS_ENGINE_PIECE</span>
+<a href="CEPiece_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CHESS_ENGINE_PIECE</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CHESS_ENGINE_PIECE</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">namespace </span>ChEngn
-<a name="l00012"></a>00012 {
-<a name="l00017"></a><a class="code" href="classChEngn_1_1Piece.html">00017</a>     <span class="keyword">class </span><a class="code" href="classChEngn_1_1Piece.html">Piece</a>
-<a name="l00018"></a>00018     {
-<a name="l00019"></a>00019         <span class="keyword">public</span>:
-<a name="l00023"></a>00023             <a class="code" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531" title="Default constructor.">Piece</a>();
-<a name="l00024"></a>00024 
-<a name="l00029"></a>00029             <a class="code" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531" title="Default constructor.">Piece</a>(<span class="keyword">const</span> <a class="code" href="classChEngn_1_1Piece.html">Piece</a> &amp;other);
-<a name="l00030"></a>00030 
-<a name="l00034"></a>00034             <a class="code" href="classChEngn_1_1Piece.html#a75360762004389b1df624136bcaff309" title="Destructor.">~Piece</a>();
-<a name="l00035"></a>00035         <span class="keyword">private</span>:
-<a name="l00036"></a>00036     };
-<a name="l00037"></a>00037 };
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="preprocessor">#endif</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;license.h&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">namespace </span>ChEngn
+<a name="l00015"></a>00015 {
+<a name="l00016"></a>00016 
+<a name="l00018"></a><a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">00018</a>     <span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> piece_type;
+<a name="l00019"></a>00019 
+<a name="l00021"></a><a class="code" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">00021</a>     <span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> piece_color;
+<a name="l00022"></a>00022 
+<a name="l00024"></a><a class="code" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">00024</a>     <span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> piece_movement_flag;
+<a name="l00025"></a>00025     
+<a name="l00027"></a><a class="code" href="namespaceChEngn.html#a538ef441c024a7e5d4c1dedb5e03fc21">00027</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#a538ef441c024a7e5d4c1dedb5e03fc21" title="Uses to present unknown type piece 63 = [00011111].">unknown</a> = 63;
+<a name="l00028"></a>00028 
+<a name="l00030"></a><a class="code" href="namespaceChEngn.html#af4781da8088272ec86e35be681dde106">00030</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#af4781da8088272ec86e35be681dde106" title="Uses to present pawns.">pawn</a>   = 1 &lt;&lt; 0;
+<a name="l00031"></a>00031 
+<a name="l00033"></a><a class="code" href="namespaceChEngn.html#ab167075161c66436eef6d7f02507c115">00033</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#ab167075161c66436eef6d7f02507c115" title="Uses to present knights.">knight</a> = 1 &lt;&lt; 1;
+<a name="l00034"></a>00034 
+<a name="l00036"></a><a class="code" href="namespaceChEngn.html#ad9410a19494f941d06ea404edf4900b0">00036</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#ad9410a19494f941d06ea404edf4900b0" title="Uses to present bishops.">bishop</a> = 1 &lt;&lt; 2;
+<a name="l00037"></a>00037 
+<a name="l00039"></a><a class="code" href="namespaceChEngn.html#a485787ab76caf7a61a77118fcdfd113d">00039</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#a485787ab76caf7a61a77118fcdfd113d" title="Uses to present rooks.">rook</a>   = 1 &lt;&lt; 3;
+<a name="l00040"></a>00040 
+<a name="l00042"></a><a class="code" href="namespaceChEngn.html#a97924767720e8ba4e595ad9f161d73e8">00042</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#a97924767720e8ba4e595ad9f161d73e8" title="Uses to present queens.">queen</a>  = 1 &lt;&lt; 4;
+<a name="l00043"></a>00043 
+<a name="l00045"></a><a class="code" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea">00045</a>     <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea" title="Uses to present kings.">king</a>   = 1 &lt;&lt; 5;
+<a name="l00046"></a>00046 
+<a name="l00048"></a><a class="code" href="namespaceChEngn.html#aa3212b290980eb5db7f91e88f8803a9c">00048</a>     <a class="code" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f" title="Piece color is just a unsigned char.">piece_color</a>  <a class="code" href="namespaceChEngn.html#aa3212b290980eb5db7f91e88f8803a9c" title="Uses to set flag if piece is white ( else flag is not set).">white</a>  = 1 &lt;&lt; 6;
+<a name="l00049"></a>00049 
+<a name="l00051"></a><a class="code" href="namespaceChEngn.html#aa2bfc6fe87969d3e28eecbb682e802c8">00051</a>     <a class="code" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f" title="Piece color is just a unsigned char.">piece_color</a>  <a class="code" href="namespaceChEngn.html#aa2bfc6fe87969d3e28eecbb682e802c8" title="Uses to unset flag if piece is black.">black</a>  = 0 &lt;&lt; 6;
+<a name="l00052"></a>00052 
+<a name="l00054"></a><a class="code" href="namespaceChEngn.html#a2997c391593541b72a894e9cf44c90bf">00054</a>     <a class="code" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a" title="Piece movement flag is just a bit in unsigned char.">piece_movement_flag</a> <a class="code" href="namespaceChEngn.html#a2997c391593541b72a894e9cf44c90bf" title="Uses to set flag is piece has been moved.">moved</a>  = 1 &lt;&lt; 7;
+<a name="l00055"></a>00055 
+<a name="l00060"></a><a class="code" href="classChEngn_1_1Piece.html">00060</a>     <span class="keyword">class </span><a class="code" href="classChEngn_1_1Piece.html">Piece</a>
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         <span class="keyword">public</span>:
+<a name="l00070"></a>00070             <a class="code" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531" title="Default constructor.">Piece</a>();
+<a name="l00071"></a>00071 
+<a name="l00076"></a>00076             <a class="code" href="classChEngn_1_1Piece.html#abe7c3a8a7e5ed3beb583a6f6b4df2531" title="Default constructor.">Piece</a>(<span class="keyword">const</span> <a class="code" href="classChEngn_1_1Piece.html">Piece</a> &amp;other);
+<a name="l00077"></a>00077 
+<a name="l00081"></a>00081             <a class="code" href="classChEngn_1_1Piece.html#a75360762004389b1df624136bcaff309" title="Destructor.">~Piece</a>();
+<a name="l00082"></a>00082 
+<a name="l00087"></a>00087             <a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a> <a class="code" href="classChEngn_1_1Piece.html#a65ab22bbe5b61fa699dfc83213d6744b" title="Get the piece&amp;#39;s type.">type</a>() <span class="keyword">const</span>;
+<a name="l00088"></a>00088 
+<a name="l00093"></a>00093             <a class="code" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f" title="Piece color is just a unsigned char.">piece_color</a> <a class="code" href="classChEngn_1_1Piece.html#a6c12383548443c206a6a874a90d5eb13" title="Get the piece&amp;#39;s color ( white | black ).">color</a>() <span class="keyword">const</span>;
+<a name="l00094"></a>00094 
+<a name="l00103"></a>00103             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Piece.html#a98920893afeab5395dba002ab3f88703" title="Check piece&amp;#39;s color state.">isWhite</a>() <span class="keyword">const</span>;
+<a name="l00104"></a>00104 
+<a name="l00113"></a>00113             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Piece.html#a481b3d61628762f87d674fad3f858c3b" title="Check piece&amp;#39;s color state.">isBlack</a>() <span class="keyword">const</span>;
+<a name="l00114"></a>00114 
+<a name="l00126"></a>00126             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Piece.html#a4105456968fa768a8d3673ce3c14eca3" title="Check piece&amp;#39;s type.">isUnknown</a>() <span class="keyword">const</span>;
+<a name="l00127"></a>00127             
+<a name="l00131"></a>00131             <a class="code" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a" title="Piece movement flag is just a bit in unsigned char.">piece_movement_flag</a> <a class="code" href="classChEngn_1_1Piece.html#a55d17737f8a56072f25ba00c6784ce85" title="Get piece movement flag.">moveFlag</a>() <span class="keyword">const</span>;
+<a name="l00132"></a>00132 
+<a name="l00137"></a>00137             <span class="keywordtype">void</span> <a class="code" href="classChEngn_1_1Piece.html#a4b66b79da54172c50072df90fae47b3e" title="Set Piece&amp;#39;s type.">setType</a>(<a class="code" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483" title="Piece type is just a unsigned char.">piece_type</a>);
+<a name="l00138"></a>00138             
+<a name="l00143"></a>00143             <span class="keywordtype">void</span> <a class="code" href="classChEngn_1_1Piece.html#a93b4da88b5b3bd52c025895ea9296b42" title="Changes piece&amp;#39;s color to white.">setWhite</a>();
+<a name="l00144"></a>00144 
+<a name="l00148"></a>00148             <span class="keywordtype">void</span> <a class="code" href="classChEngn_1_1Piece.html#a28f4d2b27bebe4cf45a9a44aeaaf1f93" title="Changes piece&amp;#39;s colot to black.">setBlack</a>();
+<a name="l00149"></a>00149     
+<a name="l00157"></a>00157             <span class="keywordtype">void</span> <a class="code" href="classChEngn_1_1Piece.html#a49e68ef199415d60ea2a394501a52f5a" title="Sets Piece as moved.">setMoved</a>();
+<a name="l00158"></a>00158 
+<a name="l00165"></a>00165             <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classChEngn_1_1Piece.html#a5e9692fde1be0ae7eda4e5cd3fc42f6d" title="Overloaded operator &amp;lt;&amp;lt; ().">operator &lt;&lt; </a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="classChEngn_1_1Piece.html">Piece</a>&amp; pce);
+<a name="l00166"></a>00166         <span class="keyword">private</span>:
+<a name="l00167"></a>00167             <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_piece;
+<a name="l00168"></a>00168     };
+<a name="l00169"></a>00169 };
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -75,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Feb 24 2011 01:54:55 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 00:35:53 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

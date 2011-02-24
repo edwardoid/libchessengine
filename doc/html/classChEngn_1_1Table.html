@@ -54,7 +54,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>ChEngn::Table Class Reference</h1>  </div>
 </div>
@@ -74,6 +75,23 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11ecbf5aaa43cf800da3ccf1a8a20515"></a><!-- doxytag: member="ChEngn::Table::~Table" ref="a11ecbf5aaa43cf800da3ccf1a8a20515" args="()" -->
 virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a11ecbf5aaa43cf800da3ccf1a8a20515">~Table</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a450e753570d02411899db0e0eb597a85"></a><!-- doxytag: member="ChEngn::Table::size" ref="a450e753570d02411899db0e0eb597a85" args="() const " -->
+const <a class="el" href="structChEngn_1_1table__size.html">table_size</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a450e753570d02411899db0e0eb597a85">size</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get table's size. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a9502a1090bcb852c162934a792c2360a">height</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get table's height.  <a href="#a9502a1090bcb852c162934a792c2360a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a6aaaaae9343e67a947b0cdeb6104361b">width</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get table's width.  <a href="#a6aaaaae9343e67a947b0cdeb6104361b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a7fdd83660c669f80a3203f7e705ffdd9">table</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get current table state.  <a href="#a7fdd83660c669f80a3203f7e705ffdd9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Piece.html">Piece</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a9354d8fd4f32bfbee64a4ff63edea055">pieceAt</a> (unsigned int row, unsigned int column) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return piece at given position.  <a href="#a9354d8fd4f32bfbee64a4ff63edea055"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a8ece9e9f9f28f209d72f16db0fb2aeed">resetComplect</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set table for beginig gaming.  <a href="#a8ece9e9f9f28f209d72f16db0fb2aeed"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a9a39b79ad3a5635dfe8075f14598886e">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Table.html">Table</a> &amp;tbl)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Overloaded operator &lt;&lt; ().  <a href="#a9a39b79ad3a5635dfe8075f14598886e"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Provides basic manipulations whis chess table (no matter "virtual" ot "real". Find <a class="el" href="classChEngn_1_1Piece.html">ChEngn::Piece</a>, move them. </p>
@@ -104,6 +122,164 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9502a1090bcb852c162934a792c2360a"></a><!-- doxytag: member="ChEngn::Table::height" ref="a9502a1090bcb852c162934a792c2360a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int ChEngn::Table::height </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get table's height. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>height </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9354d8fd4f32bfbee64a4ff63edea055"></a><!-- doxytag: member="ChEngn::Table::pieceAt" ref="a9354d8fd4f32bfbee64a4ff63edea055" args="(unsigned int row, unsigned int column) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classChEngn_1_1Piece.html">ChEngn::Piece</a> ChEngn::Table::pieceAt </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>column</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return piece at given position. </p>
+<p>Get piece from table. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>- Piece's position row. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>column</em>&nbsp;</td><td>- Piece's position column. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>- Referentce to piece, if row and/or column are invalid Piece() will be returned. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ece9e9f9f28f209d72f16db0fb2aeed"></a><!-- doxytag: member="ChEngn::Table::resetComplect" ref="a8ece9e9f9f28f209d72f16db0fb2aeed" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChEngn::Table::resetComplect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set table for beginig gaming. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Function will do changes if table size is 8x8. In another case nothing will be done </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7fdd83660c669f80a3203f7e705ffdd9"></a><!-- doxytag: member="ChEngn::Table::table" ref="a7fdd83660c669f80a3203f7e705ffdd9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classChEngn_1_1Piece.html">ChEngn::Piece</a> ** ChEngn::Table::table </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get current table state. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Current table state </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>If you don't gonna change the table use const-version </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6aaaaae9343e67a947b0cdeb6104361b"></a><!-- doxytag: member="ChEngn::Table::width" ref="a6aaaaae9343e67a947b0cdeb6104361b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int ChEngn::Table::width </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get table's width. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>width </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a9a39b79ad3a5635dfe8075f14598886e"></a><!-- doxytag: member="ChEngn::Table::operator&lt;&lt;" ref="a9a39b79ad3a5635dfe8075f14598886e" args="(std::ostream &amp;out, const Table &amp;tbl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classChEngn_1_1Table.html">Table</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>tbl</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Overloaded operator &lt;&lt; (). </p>
+<p>"Prints" table into std::ostream </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>- Stream for printing </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tbl</em>&nbsp;</td><td>- table to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="CETable_8h_source.html">CETable.h</a></li>
 <li>src/CETable.cpp</li>
@@ -114,7 +290,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,7 +299,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Feb 24 2011 01:54:55 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 00:35:53 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

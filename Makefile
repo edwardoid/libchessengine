@@ -44,6 +44,10 @@ prepare:
 	mkdir -p $(BIN_DIR)
 	mkdir -p $(LIB_DIR)
 
+.PHONY: doc
+doc:
+	doxygen
+
 .PHONY: clean
 clean:
 	rm -rf $(BIN_DIR)*

@@ -9,8 +9,98 @@ class \hyperlink{classChEngn_1_1Engine}{Engine}
 \item 
 class \hyperlink{classChEngn_1_1Piece}{Piece}
 \item 
+struct \hyperlink{structChEngn_1_1table__size}{table\_\-size}
+\item 
 class \hyperlink{classChEngn_1_1Table}{Table}
 \end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{
+typedef const unsigned char \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type}}
+\label{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Piece}{Piece} type is just a unsigned char. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}{
+typedef const unsigned char \hyperlink{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}{piece\_\-color}}
+\label{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Piece}{Piece} color is just a unsigned char. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}{
+typedef const unsigned char \hyperlink{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}{piece\_\-movement\_\-flag}}
+\label{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Piece}{Piece} movement flag is just a bit in unsigned char. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& \hyperlink{namespaceChEngn_a26a6ae0dee7ff3917e673a622e749381}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Piece}{Piece} \&pce)
+\item 
+std::ostream \& \hyperlink{namespaceChEngn_ab50263763556397916f36ce2728ecf88}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Table}{Table} \&tbl)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{unknown} = 63}
+\label{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}
+
+\begin{DoxyCompactList}\small\item\em Uses to present unknown type piece 63 = \mbox{[}00011111\mbox{]}. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_af4781da8088272ec86e35be681dde106}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_af4781da8088272ec86e35be681dde106}{pawn} = 1 $<$$<$ 0}
+\label{namespaceChEngn_af4781da8088272ec86e35be681dde106}
+
+\begin{DoxyCompactList}\small\item\em Uses to present pawns. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_ab167075161c66436eef6d7f02507c115}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_ab167075161c66436eef6d7f02507c115}{knight} = 1 $<$$<$ 1}
+\label{namespaceChEngn_ab167075161c66436eef6d7f02507c115}
+
+\begin{DoxyCompactList}\small\item\em Uses to present knights. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_ad9410a19494f941d06ea404edf4900b0}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_ad9410a19494f941d06ea404edf4900b0}{bishop} = 1 $<$$<$ 2}
+\label{namespaceChEngn_ad9410a19494f941d06ea404edf4900b0}
+
+\begin{DoxyCompactList}\small\item\em Uses to present bishops. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a485787ab76caf7a61a77118fcdfd113d}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_a485787ab76caf7a61a77118fcdfd113d}{rook} = 1 $<$$<$ 3}
+\label{namespaceChEngn_a485787ab76caf7a61a77118fcdfd113d}
+
+\begin{DoxyCompactList}\small\item\em Uses to present rooks. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}{queen} = 1 $<$$<$ 4}
+\label{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}
+
+\begin{DoxyCompactList}\small\item\em Uses to present queens. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{
+\hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{king} = 1 $<$$<$ 5}
+\label{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}
+
+\begin{DoxyCompactList}\small\item\em Uses to present kings. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_aa3212b290980eb5db7f91e88f8803a9c}{
+\hyperlink{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}{piece\_\-color} \hyperlink{namespaceChEngn_aa3212b290980eb5db7f91e88f8803a9c}{white} = 1 $<$$<$ 6}
+\label{namespaceChEngn_aa3212b290980eb5db7f91e88f8803a9c}
+
+\begin{DoxyCompactList}\small\item\em Uses to set flag if piece is white ( else flag is not set). \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_aa2bfc6fe87969d3e28eecbb682e802c8}{
+\hyperlink{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}{piece\_\-color} \hyperlink{namespaceChEngn_aa2bfc6fe87969d3e28eecbb682e802c8}{black} = 0 $<$$<$ 6}
+\label{namespaceChEngn_aa2bfc6fe87969d3e28eecbb682e802c8}
+
+\begin{DoxyCompactList}\small\item\em Uses to unset flag if piece is black. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a2997c391593541b72a894e9cf44c90bf}{
+\hyperlink{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}{piece\_\-movement\_\-flag} \hyperlink{namespaceChEngn_a2997c391593541b72a894e9cf44c90bf}{moved} = 1 $<$$<$ 7}
+\label{namespaceChEngn_a2997c391593541b72a894e9cf44c90bf}
+
+\begin{DoxyCompactList}\small\item\em Uses to set flag is piece has been moved. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_ae87757a4f2d9ae9e25d48213cad79ddd}{
+const unsigned int \hyperlink{namespaceChEngn_ae87757a4f2d9ae9e25d48213cad79ddd}{default\_\-table\_\-height} = 8}
+\label{namespaceChEngn_ae87757a4f2d9ae9e25d48213cad79ddd}
+
+\begin{DoxyCompactList}\small\item\em Standart table height. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a9dc4a83c122aec6e170ad7a1d40efd8a}{
+const unsigned int \hyperlink{namespaceChEngn_a9dc4a83c122aec6e170ad7a1d40efd8a}{default\_\-table\_\-width} = 8}
+\label{namespaceChEngn_a9dc4a83c122aec6e170ad7a1d40efd8a}
+
+\begin{DoxyCompactList}\small\item\em Standart table width. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -23,17 +113,34 @@ Edward Sarkisyan
 Provides access to current game. Can make moves, get table state ( Virtual \hyperlink{classChEngn_1_1Table}{Table})
 
 \begin{DoxyNote}{Note}
-This class {\bfseries does not} manipulate pgn files. contains all classes, structs, constants to work whis library.
+This class {\bfseries does not} manipulate pgn files. contains all classes, structs, constants to work whis library. 
 \end{DoxyNote}
-\begin{DoxyAuthor}{Author}
-Ed Sarkisyan 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-0.0.1a
-\end{DoxyVersion}
-\begin{DoxyAuthor}{Author}
-Ed Sarkisyan 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-0.0.1 
-\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceChEngn_a26a6ae0dee7ff3917e673a622e749381}{
+\index{ChEngn@{ChEngn}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ChEngn@{ChEngn}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& ChEngn::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{ out, }
+\item[{const Piece \&}]{ pce}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceChEngn_a26a6ae0dee7ff3917e673a622e749381}
+\char`\"{}Prints\char`\"{} piece in std::ostream 
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]-\/ Stream for printing \item[{\em pce}]-\/ \hyperlink{classChEngn_1_1Piece}{Piece} to print \end{DoxyParams}
+\hypertarget{namespaceChEngn_ab50263763556397916f36ce2728ecf88}{
+\index{ChEngn@{ChEngn}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ChEngn@{ChEngn}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& ChEngn::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{ out, }
+\item[{const Table \&}]{ tbl}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceChEngn_ab50263763556397916f36ce2728ecf88}
+\char`\"{}Prints\char`\"{} table into std::ostream 
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]-\/ Stream for printing \item[{\em tbl}]-\/ table to print \end{DoxyParams}
