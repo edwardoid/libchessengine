@@ -5,6 +5,7 @@ DEP_DIR := dep/
 LIB_DIR := lib/
 INC_DIR := ./src 
 CC:= g++
+DEB_FLAGS:= -g3 -gdwarf-2
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
@@ -24,14 +25,14 @@ run: binary
 
 .PHONY: build_debug
 build_debug: $(OBJ_FILES)
-	$(CC) -g $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
+	$(CC) -g $(DEB_FLAGS) $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
 
 .PHONY: debug
 debug: build_debug
 	gdb ./$(BIN_DIR)$(BINARY_TARGET)
 	
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	$(CC) -c $< -I$(INC_DIR) -o $@
+	$(CC) -g $(DEB_FLAGS) -c $< -I$(INC_DIR) -o $@
 $(DEP_DIR)%.dep: $(SRC_DIR)%.cpp
 	$(CC) -MM $< -MT "$@ $(patsubst $(DEP_DIR)%.dep,$(OBJ_DIR)%o,$@)" -I$(INC_DIR) -o $@
 

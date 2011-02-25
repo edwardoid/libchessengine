@@ -102,7 +102,9 @@ namespace ChEngn
 			friend std::ostream& operator << (std::ostream &out, const Table& tbl);
 		private: //methods
 
-			void setComplectNull();
+			void getMemoryForTable();
+			void fillDefault();
+			void cleanMemory();
 			void setDefaultComplect();
 		private: // variables
 
