@@ -1,0 +1,31 @@
+\hypertarget{_examples_-example}{
+\section{\_\-examples\_\-}
+}
+First example libchessengine
+
+
+\begin{DoxyCode}
+ main.cpp
+
+#include<iostream>
+#include<CEEngine.h>
+int main()
+{
+    ChEngine::Engine engine;
+    engine.open("games.pgn");
+    std::cout<<engine<<std::endl;
+    return 0;
+}
+\end{DoxyCode}
+
+
+g++ main.cpp -\/lchessengine -\/o myapp
+
+or
+
+g++ main.cpp -\/lchessengine -\/static -\/o myapp
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 

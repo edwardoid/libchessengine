@@ -17,9 +17,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -49,34 +51,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <h1>ChEngn Namespace Reference</h1>  </div>
 </div>
 <div class="contents">
+
+<p>Contains all typedefs, constants, classes defined in.  
+<a href="#_details">More...</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html">Engine</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html">Piece</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Chess piece.  <a href="classChEngn_1_1Piece.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChEngn_1_1table__size.html">table_size</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Table.html" title="Chess board.">Table</a> dimensions.  <a href="structChEngn_1_1table__size.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html">Table</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Chess board.  <a href="classChEngn_1_1Table.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classChEngn_1_1Table.html">ChEngn::Table</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a5ba229504d25ed1b2086f1df62f6db41">VirtualTable</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a35c185f259757a78e937575b8ed483"></a><!-- doxytag: member="ChEngn::piece_type" ref="a2a35c185f259757a78e937575b8ed483" args="" -->
 typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> type is just a unsigned char. <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html" title="Chess piece.">Piece</a> type is just a unsigned char. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c81426c0134a97288a226c122daf62f"></a><!-- doxytag: member="ChEngn::piece_color" ref="a9c81426c0134a97288a226c122daf62f" args="" -->
 typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a9c81426c0134a97288a226c122daf62f">piece_color</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> color is just a unsigned char. <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html" title="Chess piece.">Piece</a> color is just a unsigned char. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a491b2eba2f766087f4f28948005ab16a"></a><!-- doxytag: member="ChEngn::piece_movement_flag" ref="a491b2eba2f766087f4f28948005ab16a" args="" -->
 typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">piece_movement_flag</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> movement flag is just a bit in unsigned char. <br/></td></tr>
-<tr><td colspan="2"><h2><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a26a6ae0dee7ff3917e673a622e749381">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;pce)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#ab50263763556397916f36ce2728ecf88">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Table.html">Table</a> &amp;tbl)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html" title="Chess piece.">Piece</a> movement flag is just a bit in unsigned char. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a538ef441c024a7e5d4c1dedb5e03fc21"></a><!-- doxytag: member="ChEngn::unknown" ref="a538ef441c024a7e5d4c1dedb5e03fc21" args="" -->
@@ -117,78 +121,21 @@ const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Standart table width. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<dl class="author"><dt><b>Author:</b></dt><dd>Edward Sarkisyan </dd></dl>
-<dl class="version"><dt><b>Version:</b></dt><dd>0.0.1a  GPL</dd></dl>
-<p>Provides access to current game. Can make moves, get table state ( Virtual <a class="el" href="classChEngn_1_1Table.html">Table</a>)</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This class <b>does not</b> manipulate pgn files. contains all classes, structs, constants to work whis library. </dd></dl>
-<hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a26a6ae0dee7ff3917e673a622e749381"></a><!-- doxytag: member="ChEngn::operator&lt;&lt;" ref="a26a6ae0dee7ff3917e673a622e749381" args="(std::ostream &amp;out, const Piece &amp;pce)" -->
+<p>Contains all typedefs, constants, classes defined in. </p>
+<p>contains all classes, structs, constants to work whis library.</p>
+<p>Contains all typedefs, constans, classes defined in libchessengine </p>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="a5ba229504d25ed1b2086f1df62f6db41"></a><!-- doxytag: member="ChEngn::VirtualTable" ref="a5ba229504d25ed1b2086f1df62f6db41" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; ChEngn::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&nbsp;</td>
-          <td class="paramname"> <em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Piece &amp;&nbsp;</td>
-          <td class="paramname"> <em>pce</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
+          <td class="memname">typedef <a class="el" href="classChEngn_1_1Table.html">ChEngn::Table</a> <a class="el" href="classChEngn_1_1Table.html">ChEngn::VirtualTable</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>"Prints" piece in std::ostream </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>- Stream for printing </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>pce</em>&nbsp;</td><td>- <a class="el" href="classChEngn_1_1Piece.html">Piece</a> to print </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab50263763556397916f36ce2728ecf88"></a><!-- doxytag: member="ChEngn::operator&lt;&lt;" ref="ab50263763556397916f36ce2728ecf88" args="(std::ostream &amp;out, const Table &amp;tbl)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ostream&amp; ChEngn::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&nbsp;</td>
-          <td class="paramname"> <em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Table &amp;&nbsp;</td>
-          <td class="paramname"> <em>tbl</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>"Prints" table into std::ostream </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>- Stream for printing </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>tbl</em>&nbsp;</td><td>- table to print </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Every library user will use "Virtual tables". E.g. you get current table state, and then you can make changes, but all your changes will not change real table. </p>
 
 </div>
 </div>
@@ -207,7 +154,7 @@ const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 00:35:53 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 19:13:41 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

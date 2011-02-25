@@ -2,9 +2,9 @@
 
 
 
-ChEngn::Piece::Piece()
+ChEngn::Piece::Piece(piece_type tpe, piece_color col)
 {
-	m_piece = white | unknown;
+	m_piece = tpe | col;
 }
 
 ChEngn::Piece::Piece(const Piece &other)
@@ -85,7 +85,10 @@ namespace ChEngn
 			case bishop:
 				symbol = 'b';
 				break;
-			
+		
+			case rook:
+				symbol = 'r';
+				break;
 			case queen:
 				symbol = 'q';
 				break;

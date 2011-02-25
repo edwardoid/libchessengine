@@ -17,9 +17,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -54,7 +56,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>ChEngn::Engine Class Reference</h1>  </div>
 </div>
@@ -66,15 +69,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bd4b075e86d94d94f3ea97c680b302e"></a><!-- doxytag: member="ChEngn::Engine::Engine" ref="a2bd4b075e86d94d94f3ea97c680b302e" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e">Engine</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">default constructor <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ab92c015fc819dc2b7c51cccbc7878002">Engine</a> (const <a class="el" href="classChEngn_1_1Engine.html">Engine</a> &amp;other)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">copy constructor  <a href="#ab92c015fc819dc2b7c51cccbc7878002"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c4cadb1d68d9f3f9ad5ca03d3353a34"></a><!-- doxytag: member="ChEngn::Engine::~Engine" ref="a8c4cadb1d68d9f3f9ad5ca03d3353a34" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a8c4cadb1d68d9f3f9ad5ca03d3353a34">~Engine</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">destructor <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy constructor.  <a href="#ab92c015fc819dc2b7c51cccbc7878002"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a1184e133eae1f7e23bf405302fa9f53c">Engine</a> (const pgn::Game &amp;gm)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#a1184e133eae1f7e23bf405302fa9f53c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83fcd852ca53c24a7af0e3dd689fe0f7"></a><!-- doxytag: member="ChEngn::Engine::~Engine" ref="a83fcd852ca53c24a7af0e3dd689fe0f7" args="()" -->
+virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a83fcd852ca53c24a7af0e3dd689fe0f7">~Engine</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a26f8db48e99d547fbc41eaa9dca8e6cf">getVirtualTable</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get an <b>copy</b> of current game table.  <a href="#a26f8db48e99d547fbc41eaa9dca8e6cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad1f51b4eed22bb6eab999ffb7fa2516"></a><!-- doxytag: member="ChEngn::Engine::moves" ref="aad1f51b4eed22bb6eab999ffb7fa2516" args="()" -->
+pgn::MoveList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516">moves</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">return loaded moves <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">pgn::MoveList::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ad35252a7c6a7e84a34d12a688360a75f">nextMove</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Iterarator to next move.  <a href="#ad35252a7c6a7e84a34d12a688360a75f"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a886da6512b271d26a1fee49a317d2308"></a><!-- doxytag: member="ChEngn::Engine::operator&lt;&lt;" ref="a886da6512b271d26a1fee49a317d2308" args="(std::ostream &amp;out, const Engine &amp;engn)" -->
+std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a886da6512b271d26a1fee49a317d2308">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Engine.html">Engine</a> &amp;engn)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">"Print" current table <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>functionality Provides access to current game. Can make moves, get table current state (Virtual <a class="el" href="classChEngn_1_1Table.html">Table</a>) </p>
+<p>functionality Provides access to current game. Can make moves, get table current state (Virtual <a class="el" href="classChEngn_1_1Table.html" title="Chess board.">Table</a>) </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This class <b>does not</b> manipulate pgn files. </dd></dl>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab92c015fc819dc2b7c51cccbc7878002"></a><!-- doxytag: member="ChEngn::Engine::Engine" ref="ab92c015fc819dc2b7c51cccbc7878002" args="(const Engine &amp;other)" -->
@@ -93,7 +110,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div>
 <div class="memdoc">
 
-<p>copy constructor </p>
+<p>Copy constructor. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>other</em>&nbsp;</td><td>source </td></tr>
@@ -103,9 +120,84 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a class="anchor" id="a1184e133eae1f7e23bf405302fa9f53c"></a><!-- doxytag: member="ChEngn::Engine::Engine" ref="a1184e133eae1f7e23bf405302fa9f53c" args="(const pgn::Game &amp;gm)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChEngn::Engine::Engine </td>
+          <td>(</td>
+          <td class="paramtype">const pgn::Game &amp;&nbsp;</td>
+          <td class="paramname"> <em>gm</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<p>Creates <a class="el" href="classChEngn_1_1Engine.html">Engine</a> from pgn::Game </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>gm</em>&nbsp;</td><td>Game from an opened *.pgn file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a26f8db48e99d547fbc41eaa9dca8e6cf"></a><!-- doxytag: member="ChEngn::Engine::getVirtualTable" ref="a26f8db48e99d547fbc41eaa9dca8e6cf" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> ChEngn::Engine::getVirtualTable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get an <b>copy</b> of current game table. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Current table copy </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad35252a7c6a7e84a34d12a688360a75f"></a><!-- doxytag: member="ChEngn::Engine::nextMove" ref="ad35252a7c6a7e84a34d12a688360a75f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::MoveList::iterator ChEngn::Engine::nextMove </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Iterarator to next move. </p>
+<p>Gets pgn::MoveList::iterator to current move. If there are no aviable moves return vaule will be equal to </p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="return loaded moves">moves</a>()-&gt;end()
+</pre></div><p>, also if there are no maked moves the return value will be equal to </p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="return loaded moves">moves</a>()-&gt;begin(); 
+</pre></div> <dl class="return"><dt><b>Returns:</b></dt><dd>Iterator to next move </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Before using iterator chech is return value different from <div class="fragment"><pre class="fragment"> move()-&gt;end(); 
+</pre></div> </dd>
+<dd>
+You should use the return vallue very careful. Everytime check is iterator valid. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="CEEngine_8h_source.html">CEEngine.h</a></li>
-<li>src/CEEngine.cpp</li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -122,7 +214,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 00:35:53 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Feb 25 2011 19:13:41 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

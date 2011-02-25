@@ -3,7 +3,7 @@
 
 /**
 
-@license GNU GPL @see gnu.org
+@mainpage GNU GPL @see gnu.org
 			GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 

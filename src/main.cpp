@@ -1,13 +1,11 @@
 #include <iostream>
 #include <CEPiece.h>
 #include <CETable.h>
+#include <CEEngine.h>
 
 int main()
 {
-	ChEngn::Table tbl;
-
-	ChEngn::Table other(tbl);
-	std::cout<<tbl<<std::endl;
-	std::cout<<other<<std::endl;
+	ChEngn::Engine en;
+	std::cout<<en<<std::endl;
 	return 0;
 }

@@ -9,14 +9,33 @@
 \hyperlink{classChEngn_1_1Engine_a2bd4b075e86d94d94f3ea97c680b302e}{Engine} ()}
 \label{classChEngn_1_1Engine_a2bd4b075e86d94d94f3ea97c680b302e}
 
-\begin{DoxyCompactList}\small\item\em default constructor \item\end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Engine_ab92c015fc819dc2b7c51cccbc7878002}{Engine} (const \hyperlink{classChEngn_1_1Engine}{Engine} \&other)
-\begin{DoxyCompactList}\small\item\em copy constructor \item\end{DoxyCompactList}\item 
-\hypertarget{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}{
-virtual \hyperlink{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}{$\sim$Engine} ()}
-\label{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}{Engine} (const pgn::Game \&gm)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}{
+virtual \hyperlink{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}{$\sim$Engine} ()}
+\label{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}
 
-\begin{DoxyCompactList}\small\item\em destructor \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Table}{VirtualTable} \hyperlink{classChEngn_1_1Engine_a26f8db48e99d547fbc41eaa9dca8e6cf}{getVirtualTable} () const 
+\begin{DoxyCompactList}\small\item\em Get an {\bfseries copy} of current game table. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
+pgn::MoveList $\ast$ \hyperlink{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{moves} ()}
+\label{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}
+
+\begin{DoxyCompactList}\small\item\em return loaded moves \item\end{DoxyCompactList}\item 
+pgn::MoveList::iterator \hyperlink{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{nextMove} ()
+\begin{DoxyCompactList}\small\item\em Iterarator to next move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classChEngn_1_1Engine_a886da6512b271d26a1fee49a317d2308}{
+std::ostream \& \hyperlink{classChEngn_1_1Engine_a886da6512b271d26a1fee49a317d2308}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Engine}{Engine} \&engn)}
+\label{classChEngn_1_1Engine_a886da6512b271d26a1fee49a317d2308}
+
+\begin{DoxyCompactList}\small\item\em \char`\"{}Print\char`\"{} current table \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -37,14 +56,81 @@ This class {\bfseries does not} manipulate pgn files.
 \label{classChEngn_1_1Engine_ab92c015fc819dc2b7c51cccbc7878002}
 
 
-copy constructor 
+Copy constructor. 
 
 
 \begin{DoxyParams}{Parameters}
 \item[{\em other}]source \end{DoxyParams}
+\hypertarget{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}{
+\index{ChEngn::Engine@{ChEngn::Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{Engine}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Engine::Engine (
+\begin{DoxyParamCaption}
+\item[{const pgn::Game \&}]{ gm}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}
 
 
-The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+Constructor. 
+
+Creates \hyperlink{classChEngn_1_1Engine}{Engine} from pgn::Game 
+\begin{DoxyParams}{Parameters}
+\item[{\em gm}]Game from an opened $\ast$.pgn file \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Engine_a26f8db48e99d547fbc41eaa9dca8e6cf}{
+\index{ChEngn::Engine@{ChEngn::Engine}!getVirtualTable@{getVirtualTable}}
+\index{getVirtualTable@{getVirtualTable}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{getVirtualTable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VirtualTable} ChEngn::Engine::getVirtualTable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Engine_a26f8db48e99d547fbc41eaa9dca8e6cf}
+
+
+Get an {\bfseries copy} of current game table. 
+
+\begin{DoxyReturn}{Returns}
+Current table copy 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{
+\index{ChEngn::Engine@{ChEngn::Engine}!nextMove@{nextMove}}
+\index{nextMove@{nextMove}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{nextMove}]{\setlength{\rightskip}{0pt plus 5cm}pgn::MoveList::iterator ChEngn::Engine::nextMove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}
+
+
+Iterarator to next move. 
+
+Gets pgn::MoveList::iterator to current move. If there are no aviable moves return vaule will be equal to 
+\begin{DoxyCode}
+ moves()->end()
+\end{DoxyCode}
+, also if there are no maked moves the return value will be equal to 
+\begin{DoxyCode}
+ moves()->begin(); 
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+Iterator to next move 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Before using iterator chech is return value different from 
+\begin{DoxyCode}
+ move()->end(); 
+\end{DoxyCode}
+ 
+
+You should use the return vallue very careful. Everytime check is iterator valid. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-src/CEEngine.h\item 
-src/CEEngine.cpp\end{DoxyCompactItemize}
+src/CEEngine.h\end{DoxyCompactItemize}

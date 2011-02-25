@@ -1,16 +1,16 @@
 #ifndef CHESS_ENGINE_PIECE
 #define CHESS_ENGINE_PIECE
 
-#include "license.h"
 #include <iostream>
 /**
  * @file CEPiece.h
- * Here are defined ChEngn::Piece class
- * Most of constants and structs: piece_movement_flag, piece_color, piece_type, 
+ * @brief Here are defined ChEngn::Piece class. Most of constants and structs:
+ * ChEngn::piece_movement_flag, ChEngn::piece_color, ChEngn::piece_type, 
  */
 
 
-/// @namespace ChEngn
+/// @namespace ChEngn Contains all typedefs, constants, classes defined in
+//linchessengine
 namespace ChEngn
 {
 
@@ -54,8 +54,9 @@ namespace ChEngn
 	piece_movement_flag moved  = 1 << 7;
 
 	/**
-	 * @class ChEngn::Piece
 	 * Provides basic interface for init some chess piece, eg "knight"
+	 * @class ChEngn::Piece
+	 * @brief Chess piece
 	 */
 	class Piece
 	{
@@ -67,7 +68,7 @@ namespace ChEngn
 			 *  3. Not moved yet
 			 * @brief Default constructor.
 			 */
-			Piece();
+			Piece(piece_type tpe = unknown, piece_color col = white);
 
 			/**
 			 * @brief Copy constructor.
@@ -95,31 +96,39 @@ namespace ChEngn
 			/**
 			 * @brief Check piece's color state
 			 * @return true if piece is white
-			 * @note Same as if ( piece.color() == ChEngn::white )
-			 * 					{
-			 * 						// routine
-			 * 					}
+			 * @note Same as
+			 * @code
+			 * if ( piece.color() == ChEngn::white )
+			 * {
+			 *  	// routine
+			 * }
+			 * @endcode
 			 */
 			bool isWhite() const;
 
 			/**
 			 * @brief Check piece's color state
 			 * @return true if piece is black
-			 * @note Same as if ( piece.color() == ChEngn::black )
-			 * 					{
-			 * 						// routine
-			 * 					}
+			 * @note Same as
+			 * @code
+			 * if ( piece.color() == ChEngn::black )
+			 * {
+			 * 		// routine
+			 * }
+			 * @endcode
 			 */
 			bool isBlack() const;
 
 			/**
 			 * @brief Check piece's type
 			 * @return true if piece type is unknown
-			 * @note Same as if ( piece.type() == ChEngn::unknown )
-			 * 					{
-			 * 						// routine
-			 * 					}
-			 * 
+			 * @note Same as:
+			 * @code
+			 * if ( piece.type() == ChEngn::unknown )
+			 * {
+			 * 		// routine
+			 * }
+			 * @endcode
 			 * @note Piece initialized by ChEngn::Piece::Piece() will be unknown
 			 * type
 			 */

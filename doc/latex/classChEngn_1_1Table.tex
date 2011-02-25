@@ -4,6 +4,11 @@
 }
 
 
+Chess board.  
+
+
+
+
 {\ttfamily \#include $<$CETable.h$>$}
 
 \subsection*{Public Member Functions}
@@ -16,23 +21,23 @@
 \begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Table_a9ccad112470efda3d3b6cfe55341bf01}{Table} (const \hyperlink{classChEngn_1_1Table}{Table} \&other)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
-\hypertarget{classChEngn_1_1Table_a11ecbf5aaa43cf800da3ccf1a8a20515}{
-virtual \hyperlink{classChEngn_1_1Table_a11ecbf5aaa43cf800da3ccf1a8a20515}{$\sim$Table} ()}
-\label{classChEngn_1_1Table_a11ecbf5aaa43cf800da3ccf1a8a20515}
+\hypertarget{classChEngn_1_1Table_a2fd42d65e704c471d11808d269bb97a7}{
+virtual \hyperlink{classChEngn_1_1Table_a2fd42d65e704c471d11808d269bb97a7}{$\sim$Table} ()}
+\label{classChEngn_1_1Table_a2fd42d65e704c471d11808d269bb97a7}
 
 \begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
-\hypertarget{classChEngn_1_1Table_a450e753570d02411899db0e0eb597a85}{
-const \hyperlink{structChEngn_1_1table__size}{table\_\-size} \hyperlink{classChEngn_1_1Table_a450e753570d02411899db0e0eb597a85}{size} () const }
-\label{classChEngn_1_1Table_a450e753570d02411899db0e0eb597a85}
+\hypertarget{classChEngn_1_1Table_a0dac8a3254790eda3ce920667e3cabbc}{
+const \hyperlink{structChEngn_1_1table__size}{table\_\-size} \hyperlink{classChEngn_1_1Table_a0dac8a3254790eda3ce920667e3cabbc}{size} () const }
+\label{classChEngn_1_1Table_a0dac8a3254790eda3ce920667e3cabbc}
 
 \begin{DoxyCompactList}\small\item\em Get table's size. \item\end{DoxyCompactList}\item 
 const unsigned int \hyperlink{classChEngn_1_1Table_a9502a1090bcb852c162934a792c2360a}{height} () const 
 \begin{DoxyCompactList}\small\item\em Get table's height. \item\end{DoxyCompactList}\item 
 const unsigned int \hyperlink{classChEngn_1_1Table_a6aaaaae9343e67a947b0cdeb6104361b}{width} () const 
 \begin{DoxyCompactList}\small\item\em Get table's width. \item\end{DoxyCompactList}\item 
-\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$$\ast$ \hyperlink{classChEngn_1_1Table_a7fdd83660c669f80a3203f7e705ffdd9}{table} ()
+\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$$\ast$ \hyperlink{classChEngn_1_1Table_a7e403087a7979907ca171e20462f8346}{table} ()
 \begin{DoxyCompactList}\small\item\em Get current table state. \item\end{DoxyCompactList}\item 
-\hyperlink{classChEngn_1_1Piece}{Piece} \hyperlink{classChEngn_1_1Table_a9354d8fd4f32bfbee64a4ff63edea055}{pieceAt} (unsigned int row, unsigned int column) const 
+\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$ \hyperlink{classChEngn_1_1Table_afd9b5d81da9d90ee6fcae57651f08d40}{pieceAt} (unsigned int row, unsigned int column) const 
 \begin{DoxyCompactList}\small\item\em Return piece at given position. \item\end{DoxyCompactList}\item 
 void \hyperlink{classChEngn_1_1Table_a8ece9e9f9f28f209d72f16db0fb2aeed}{resetComplect} ()
 \begin{DoxyCompactList}\small\item\em Set table for beginig gaming. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -44,7 +49,7 @@ std::ostream \& \hyperlink{classChEngn_1_1Table_a9a39b79ad3a5635dfe8075f14598886
 
 
 \subsection{Detailed Description}
-Provides basic manipulations whis chess table (no matter \char`\"{}virtual\char`\"{} ot \char`\"{}real\char`\"{}. Find \hyperlink{classChEngn_1_1Piece}{ChEngn::Piece}, move them. 
+Chess board. Provides basic manipulations whis chess table (no matter \char`\"{}virtual\char`\"{} ot \char`\"{}real\char`\"{}. Find \hyperlink{classChEngn_1_1Piece}{ChEngn::Piece}, move them. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classChEngn_1_1Table_a9ccad112470efda3d3b6cfe55341bf01}{
@@ -82,16 +87,16 @@ Get table's height.
 \begin{DoxyReturn}{Returns}
 height 
 \end{DoxyReturn}
-\hypertarget{classChEngn_1_1Table_a9354d8fd4f32bfbee64a4ff63edea055}{
+\hypertarget{classChEngn_1_1Table_afd9b5d81da9d90ee6fcae57651f08d40}{
 \index{ChEngn::Table@{ChEngn::Table}!pieceAt@{pieceAt}}
 \index{pieceAt@{pieceAt}!ChEngn::Table@{ChEngn::Table}}
-\subsubsection[{pieceAt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::Piece} ChEngn::Table::pieceAt (
+\subsubsection[{pieceAt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$ ChEngn::Table::pieceAt (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{ row, }
 \item[{unsigned int}]{ column}
 \end{DoxyParamCaption}
 ) const}}
-\label{classChEngn_1_1Table_a9354d8fd4f32bfbee64a4ff63edea055}
+\label{classChEngn_1_1Table_afd9b5d81da9d90ee6fcae57651f08d40}
 
 
 Return piece at given position. 
@@ -100,7 +105,7 @@ Get piece from table.
 \begin{DoxyParams}{Parameters}
 \item[{\em row}]-\/ Piece's position row. \item[{\em column}]-\/ Piece's position column. \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
--\/ Referentce to piece, if row and/or column are invalid Piece() will be returned. 
+-\/ Pointer to piece, if row and/or column are invalid 0 will be returned. 
 \end{DoxyReturn}
 \hypertarget{classChEngn_1_1Table_a8ece9e9f9f28f209d72f16db0fb2aeed}{
 \index{ChEngn::Table@{ChEngn::Table}!resetComplect@{resetComplect}}
@@ -118,15 +123,15 @@ Set table for beginig gaming.
 \begin{DoxyWarning}{Warning}
 Function will do changes if table size is 8x8. In another case nothing will be done 
 \end{DoxyWarning}
-\hypertarget{classChEngn_1_1Table_a7fdd83660c669f80a3203f7e705ffdd9}{
+\hypertarget{classChEngn_1_1Table_a7e403087a7979907ca171e20462f8346}{
 \index{ChEngn::Table@{ChEngn::Table}!table@{table}}
 \index{table@{table}!ChEngn::Table@{ChEngn::Table}}
-\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ChEngn::Piece} $\ast$$\ast$ ChEngn::Table::table (
+\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$$\ast$ ChEngn::Table::table (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{classChEngn_1_1Table_a7fdd83660c669f80a3203f7e705ffdd9}
+\label{classChEngn_1_1Table_a7e403087a7979907ca171e20462f8346}
 
 
 Get current table state. 
@@ -175,7 +180,6 @@ Overloaded operator $<$$<$ ().
 \item[{\em out}]-\/ Stream for printing \item[{\em tbl}]-\/ table to print \end{DoxyParams}
 
 
-The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-src/CETable.h\item 
-src/CETable.cpp\end{DoxyCompactItemize}
+src/\hyperlink{CETable_8h}{CETable.h}\end{DoxyCompactItemize}

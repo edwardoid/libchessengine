@@ -1,0 +1,21 @@
+\hypertarget{Hello-example}{
+\section{Hello}
+}
+World whis libchessengine Like this: 
+\begin{DoxyCode}
+                #include<iostream>
+                #include<CEEngine.h>
+                    int main()
+                {
+                    ChEngine::Engine engine;
+                    engine.open("games.pgn");
+                    std::cout<<engine<<std::endl;
+                    return 0;
+                }
+\end{DoxyCode}
+ g++ main.cpp -\/lchessengine -\/o myapp
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 

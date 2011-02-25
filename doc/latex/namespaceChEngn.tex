@@ -2,19 +2,26 @@
 \section{ChEngn Namespace Reference}
 \label{namespaceChEngn}\index{ChEngn@{ChEngn}}
 }
+
+
+Contains all typedefs, constants, classes defined in.  
+
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classChEngn_1_1Engine}{Engine}
 \item 
 class \hyperlink{classChEngn_1_1Piece}{Piece}
-\item 
+\begin{DoxyCompactList}\small\item\em Chess piece. \item\end{DoxyCompactList}\item 
 struct \hyperlink{structChEngn_1_1table__size}{table\_\-size}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Table}{Table} dimensions. \item\end{DoxyCompactList}\item 
 class \hyperlink{classChEngn_1_1Table}{Table}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Chess board. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classChEngn_1_1Table}{ChEngn::Table} \hyperlink{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}{VirtualTable}
 \item 
 \hypertarget{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{
 typedef const unsigned char \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type}}
@@ -31,13 +38,6 @@ typedef const unsigned char \hyperlink{namespaceChEngn_a491b2eba2f766087f4f28948
 \label{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Piece}{Piece} movement flag is just a bit in unsigned char. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-std::ostream \& \hyperlink{namespaceChEngn_a26a6ae0dee7ff3917e673a622e749381}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Piece}{Piece} \&pce)
-\item 
-std::ostream \& \hyperlink{namespaceChEngn_ab50263763556397916f36ce2728ecf88}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Table}{Table} \&tbl)
-\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -104,43 +104,14 @@ const unsigned int \hyperlink{namespaceChEngn_a9dc4a83c122aec6e170ad7a1d40efd8a}
 
 
 \subsection{Detailed Description}
-\begin{DoxyAuthor}{Author}
-Edward Sarkisyan 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-0.0.1a  GPL
-\end{DoxyVersion}
-Provides access to current game. Can make moves, get table state ( Virtual \hyperlink{classChEngn_1_1Table}{Table})
+Contains all typedefs, constants, classes defined in. contains all classes, structs, constants to work whis library.
 
-\begin{DoxyNote}{Note}
-This class {\bfseries does not} manipulate pgn files. contains all classes, structs, constants to work whis library. 
-\end{DoxyNote}
+Contains all typedefs, constans, classes defined in libchessengine 
 
-
-\subsection{Function Documentation}
-\hypertarget{namespaceChEngn_a26a6ae0dee7ff3917e673a622e749381}{
-\index{ChEngn@{ChEngn}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!ChEngn@{ChEngn}}
-\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& ChEngn::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{std::ostream \&}]{ out, }
-\item[{const Piece \&}]{ pce}
-\end{DoxyParamCaption}
-)}}
-\label{namespaceChEngn_a26a6ae0dee7ff3917e673a622e749381}
-\char`\"{}Prints\char`\"{} piece in std::ostream 
-\begin{DoxyParams}{Parameters}
-\item[{\em out}]-\/ Stream for printing \item[{\em pce}]-\/ \hyperlink{classChEngn_1_1Piece}{Piece} to print \end{DoxyParams}
-\hypertarget{namespaceChEngn_ab50263763556397916f36ce2728ecf88}{
-\index{ChEngn@{ChEngn}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!ChEngn@{ChEngn}}
-\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& ChEngn::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{std::ostream \&}]{ out, }
-\item[{const Table \&}]{ tbl}
-\end{DoxyParamCaption}
-)}}
-\label{namespaceChEngn_ab50263763556397916f36ce2728ecf88}
-\char`\"{}Prints\char`\"{} table into std::ostream 
-\begin{DoxyParams}{Parameters}
-\item[{\em out}]-\/ Stream for printing \item[{\em tbl}]-\/ table to print \end{DoxyParams}
+\subsection{Typedef Documentation}
+\hypertarget{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}{
+\index{ChEngn@{ChEngn}!VirtualTable@{VirtualTable}}
+\index{VirtualTable@{VirtualTable}!ChEngn@{ChEngn}}
+\subsubsection[{VirtualTable}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ChEngn::Table} {\bf ChEngn::VirtualTable}}}
+\label{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}
+Every library user will use \char`\"{}Virtual tables\char`\"{}. E.g. you get current table state, and then you can make changes, but all your changes will not change real table. 

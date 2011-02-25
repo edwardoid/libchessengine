@@ -2,9 +2,15 @@
 #define CHESS_ENGINE_TABLE
 #include "CEPiece.h"
 #include <iostream>
+/**
+ * @file CETable.h Here defined ChEngn::Table, ChEngn::table_size,
+ * @brief ChEngn::default_table_height, ChEngn::default_table_width
+ */
+
 
 /**
- * @namespace ChEngn
+ * @namespace ChEngn Contains all typedefs, constans, classes defined in
+ * libchessengine
  */
 namespace ChEngn
 {
@@ -12,6 +18,7 @@ namespace ChEngn
 	/**
 	 * @struct table_size
 	 * Provides information about table size
+	 * @brief Table dimensions
 	 */
 	struct table_size
 	{
@@ -27,10 +34,10 @@ namespace ChEngn
 	const unsigned int default_table_width = 8;
 
 	/**
-	 * @class ChEngn::Table
-	 *
 	 * Provides basic manipulations whis chess table (no matter "virtual" ot
 	 * "real". Find ChEngn::Piece, move them.
+	 * @class ChEngn::Table
+	 * @brief Chess board
 	 */
 	class Table
 	{
@@ -82,10 +89,10 @@ namespace ChEngn
 			 * 	@brief Return piece at given position.
 			 * 	@param row - Piece's position row.
 			 * 	@param column  - Piece's position column.
-			 * 	@return - Referentce to piece, if row and/or column are invalid
-			 * 	Piece() will be returned.
+			 * 	@return - Pointer to piece, if row and/or column are invalid
+			 * 	0 will be returned.
 			 */
-			Piece pieceAt(unsigned int row, unsigned int column) const;
+			Piece* pieceAt(unsigned int row, unsigned int column) const;
 			/**
 			 * @brief Set table for beginig gaming
 			 * @warning Function will do changes if table size is 8x8. In
