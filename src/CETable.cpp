@@ -106,6 +106,16 @@ void ChEngn::Table::resetComplect()
 	m_table[7][4] = Piece ( king, black );
 }
 
+void ChEngn::Table::operator = (const ChEngn::Table &other)
+{
+	cleanMemory();
+	m_size.height = other.height();
+	m_size.width  = other.width();
+	getMemoryForTable();
+	for ( unsigned int i = 0; i < m_size.height; i++ )
+		for (unsigned int j = 0; j < m_size.width; j++)
+			m_table[i][j] = *other.pieceAt(i, j);
+}
 
 namespace ChEngn
 {

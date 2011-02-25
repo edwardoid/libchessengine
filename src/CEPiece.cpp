@@ -67,6 +67,18 @@ void ChEngn::Piece::setMoved()
 	m_piece = m_piece | moved;
 }
 
+void ChEngn::Piece::operator = (const ChEngn::Piece& other)
+{
+	m_piece = other.type() | other.color() | other.moveFlag();
+}
+
+bool ChEngn::Piece::operator == (const ChEngn::Piece& other) const
+{
+	if( m_piece == ( other.type() | other.color() | other.moveFlag() ) )
+		return true;
+	return false;
+}
+
 namespace ChEngn
 {
 	std::ostream & operator << (std::ostream &out, const Piece &pce)

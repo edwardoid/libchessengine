@@ -99,6 +99,13 @@ namespace ChEngn
 			 * another case nothing will be done
 			 */
 			void resetComplect();
+			
+			/**
+			 * Copies given table to current.
+			 * @brief Overloaded operation =
+			 * @param other - Source
+			 */
+			void operator = (const Table& other);
 
 			/**
 			 * "Prints" table into std::ostream
