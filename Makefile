@@ -10,14 +10,14 @@ DEB_FLAGS:= -g3 -gdwarf-2
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
-LINK_LIBS:= -lpgn
+LINK_LIBS:= -lpgnm 
 BINARY_TARGET := test
 .PHONY: all
 all: binary
 
 .PHONY: binary
 binary: $(OBJ_FILES)
-	$(CC) -mwindows  $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
+	$(CC) $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
 
 .PHONY: run
 run: binary

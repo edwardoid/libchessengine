@@ -4,6 +4,7 @@
 #include <CETable.h>
 #include <PGNGame.h>
 #include <PGNMoveList.h>
+#include <PGNPly.h>
 #include <iostream>
 
 /**
@@ -66,7 +67,9 @@ namespace ChEngn
 			VirtualTable getVirtualTable() const;
 
 			/**
-			 * @brief return loaded moves
+			 * @brief Get loaded moves
+			 * @return moves in loaded game, if there are no loaded game will be
+			 * returned empty pgn::MoveList
 			 */
 			pgn::MoveList* moves();
 
@@ -85,6 +88,32 @@ namespace ChEngn
 			 */
 			pgn::MoveList::iterator nextMove();
 			
+			/**
+			 * Try to make next move.
+			 * @brief make next move.
+			 * @return true if move can was successefully did. Else -  fale will
+			 * be returned. False will be returned if no moves is aviable.
+			 */
+			bool makeNextMove();
+
+			/**
+			 * Tryes to make move.
+			 * OK if white player's move did successefully AND black player's
+			 * move did successefully.
+			 * @brief Make move
+			 * @param move - Move which must to do
+			 * @return true if move has been succesefully done. else - otherway
+			 */
+			bool makeMove(pgn::Move& move);
+
+			/**
+			 * Make simple ply move
+			 * @make ply's move
+			 * @param pl - Ply to do
+			 * @param isWhite - true if pl is white player's ply
+			 * @return true if successefully, false - otherway.
+			 */
+			bool makePly(const pgn::Ply* pl, bool isWhite);
 
 			/**
 			 * @brief "Print" current table
