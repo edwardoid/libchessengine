@@ -57,6 +57,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>ChEngn::Engine Class Reference</h1>  </div>
@@ -79,11 +80,19 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a26f8db48e99d547fbc41eaa9dca8e6cf">getVirtualTable</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get an <b>copy</b> of current game table.  <a href="#a26f8db48e99d547fbc41eaa9dca8e6cf"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad1f51b4eed22bb6eab999ffb7fa2516"></a><!-- doxytag: member="ChEngn::Engine::moves" ref="aad1f51b4eed22bb6eab999ffb7fa2516" args="()" -->
-pgn::MoveList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516">moves</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">return loaded moves <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">pgn::MoveList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516">moves</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get loaded moves.  <a href="#aad1f51b4eed22bb6eab999ffb7fa2516"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">pgn::MoveList::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ad35252a7c6a7e84a34d12a688360a75f">nextMove</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Iterarator to next move.  <a href="#ad35252a7c6a7e84a34d12a688360a75f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a16b3f2bb7787bccf321f8a03935947c2">makeNextMove</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">make next move.  <a href="#a16b3f2bb7787bccf321f8a03935947c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d">makeMove</a> (pgn::Move &amp;move)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Make move.  <a href="#a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a> (const pgn::Ply *pl, bool isWhite)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a5ee94d0b489d05ef5e643cb9cfe5ac1a">makePawnPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes pawn's move.  <a href="#a5ee94d0b489d05ef5e643cb9cfe5ac1a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a886da6512b271d26a1fee49a317d2308"></a><!-- doxytag: member="ChEngn::Engine::operator&lt;&lt;" ref="a886da6512b271d26a1fee49a317d2308" args="(std::ostream &amp;out, const Engine &amp;engn)" -->
@@ -168,6 +177,149 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<a class="anchor" id="a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><!-- doxytag: member="ChEngn::Engine::makeMove" ref="a3bfc7cfe7e147e4d5d7f645d0cb72c8d" args="(pgn::Move &amp;move)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makeMove </td>
+          <td>(</td>
+          <td class="paramtype">pgn::Move &amp;&nbsp;</td>
+          <td class="paramname"> <em>move</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Make move. </p>
+<p>Tryes to make move. OK if white player's move did successefully AND black player's move did successefully. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>move</em>&nbsp;</td><td>- Move which must to do </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if move has been succesefully done. else - otherway </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a16b3f2bb7787bccf321f8a03935947c2"></a><!-- doxytag: member="ChEngn::Engine::makeNextMove" ref="a16b3f2bb7787bccf321f8a03935947c2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makeNextMove </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>make next move. </p>
+<p>Try to make next move. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if move can was successefully did. Else - fale will be returned. False will be returned if no moves is aviable. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ee94d0b489d05ef5e643cb9cfe5ac1a"></a><!-- doxytag: member="ChEngn::Engine::makePawnPly" ref="a5ee94d0b489d05ef5e643cb9cfe5ac1a" args="(const pgn::Ply *ply, bool isWhite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makePawnPly </td>
+          <td>(</td>
+          <td class="paramtype">const pgn::Ply *&nbsp;</td>
+          <td class="paramname"> <em>ply</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isWhite</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Makes pawn's move. </p>
+<p>Tryes to make pawn's move) </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ply</em>&nbsp;</td><td>- Ply to do </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>is</em>&nbsp;</td><td>isWhite - True if ply's owner is white player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a66f202e6cd42b2eeff43c8d58fe9ce38"></a><!-- doxytag: member="ChEngn::Engine::makePly" ref="a66f202e6cd42b2eeff43c8d58fe9ce38" args="(const pgn::Ply *pl, bool isWhite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makePly </td>
+          <td>(</td>
+          <td class="paramtype">const pgn::Ply *&nbsp;</td>
+          <td class="paramname"> <em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isWhite</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Make simple ply move  ply's move </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pl</em>&nbsp;</td><td>- Ply to do </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>isWhite</em>&nbsp;</td><td>- true if pl is white player's ply </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if successefully, false - otherway. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aad1f51b4eed22bb6eab999ffb7fa2516"></a><!-- doxytag: member="ChEngn::Engine::moves" ref="aad1f51b4eed22bb6eab999ffb7fa2516" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::MoveList* ChEngn::Engine::moves </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get loaded moves. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>moves in loaded game, if there are no loaded game will be returned empty pgn::MoveList </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad35252a7c6a7e84a34d12a688360a75f"></a><!-- doxytag: member="ChEngn::Engine::nextMove" ref="ad35252a7c6a7e84a34d12a688360a75f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -185,9 +337,9 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Iterarator to next move. </p>
 <p>Gets pgn::MoveList::iterator to current move. If there are no aviable moves return vaule will be equal to </p>
-<div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="return loaded moves">moves</a>()-&gt;end()
+<div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="Get loaded moves.">moves</a>()-&gt;end()
 </pre></div><p>, also if there are no maked moves the return value will be equal to </p>
-<div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="return loaded moves">moves</a>()-&gt;begin(); 
+<div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="Get loaded moves.">moves</a>()-&gt;begin(); 
 </pre></div> <dl class="return"><dt><b>Returns:</b></dt><dd>Iterator to next move </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Before using iterator chech is return value different from <div class="fragment"><pre class="fragment"> move()-&gt;end(); 
 </pre></div> </dd>
@@ -214,7 +366,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Feb 26 2011 01:32:55 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 1 2011 00:44:47 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

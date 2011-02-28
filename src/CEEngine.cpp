@@ -1,4 +1,5 @@
 #include "CEEngine.h"
+#include <PGNPly.h>
 
 ChEngn::Engine::Engine()
 {
@@ -50,15 +51,17 @@ bool ChEngn::Engine::makeMove( pgn::Move& move)
 
 bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 {
+
+	std::cout<<"Make:\n"<<(*pl)<<std::endl;
 	if( pl->isShortCastle() )
 		return true;
 	
 	if ( pl->isLongCastle() )
 		return true;
-
-	if ( (*(pl->promoted())) == pgn::Piece::Pawn() )
-		return true;
-
+	if ( (pl->piece()) == pgn::Piece::Pawn() )
+	{
+		return makePawnPly(pl, isWhite);
+	}
 	if ( (*(pl->promoted())) == pgn::Piece::Knight() )
 		return true;
 
@@ -77,7 +80,63 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 	return false;
 }
 
+bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
+{
+	short coef = (isWhite? 1 : -1);
+	if(ply->isCapture())
+	{
+	}
+	else
+	{
+		pgn::Square destination = ply->toSquare();
+		int row = destination.row() - (coef);
+		ChEngn::Piece* movedItem = m_table.pieceAt(row, ply->toSquare().col() );
+		if ( movedItem != 0 )
+		{
+			if( movedItem->color() == ( isWhite? white: black) )
+			{
+				// make move
+				Piece *dest = m_table.pieceAt( ply->toSquare().row(), ply->toSquare().col() );
+				if ( dest != 0 )
+					if( dest->type() == ChEngn::unknown)
+					{
+						movedItem->setMoved();
+						ChEngn::Piece *tmp = movedItem;
+						movedItem = dest;
+						dest = movedItem;
+						return true;
+					}
+			}
+		}
+
+		movedItem = m_table.pieceAt(row - coef, ply->toSquare().col() );
+		if ( movedItem != 0 )
+		{
+			std::cout<<"OK!";
+			if( movedItem->moveFlag() != ChEngn::moved )
+			{
+				if( movedItem->color() == ( isWhite? white: black) )
+				{
+					// make move
+					Piece *dest = m_table.pieceAt( ply->toSquare().row(), ply->toSquare().col() );
+					if ( dest != 0 )
+						if( dest->type() == ChEngn::unknown)
+						{
+							movedItem->setMoved();
+							ChEngn::Piece *tmp = movedItem;
+							movedItem = dest;
+							dest = movedItem;
+							return true;
+						}
+				}
+			}
+		}
+	}
+	return false;
+}
+
 namespace ChEngn
+
 {
 	std::ostream& operator << ( std::ostream& out, const Engine& engn)
 	{

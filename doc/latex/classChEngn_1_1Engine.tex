@@ -21,13 +21,21 @@ virtual \hyperlink{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}{$\si
 \begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Table}{VirtualTable} \hyperlink{classChEngn_1_1Engine_a26f8db48e99d547fbc41eaa9dca8e6cf}{getVirtualTable} () const 
 \begin{DoxyCompactList}\small\item\em Get an {\bfseries copy} of current game table. \item\end{DoxyCompactList}\item 
-\hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
-pgn::MoveList $\ast$ \hyperlink{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{moves} ()}
-\label{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}
-
-\begin{DoxyCompactList}\small\item\em return loaded moves \item\end{DoxyCompactList}\item 
+pgn::MoveList $\ast$ \hyperlink{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{moves} ()
+\begin{DoxyCompactList}\small\item\em Get loaded moves. \item\end{DoxyCompactList}\item 
 pgn::MoveList::iterator \hyperlink{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{nextMove} ()
-\begin{DoxyCompactList}\small\item\em Iterarator to next move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Iterarator to next move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a16b3f2bb7787bccf321f8a03935947c2}{makeNextMove} ()
+\begin{DoxyCompactList}\small\item\em make next move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{makeMove} (pgn::Move \&move)
+\begin{DoxyCompactList}\small\item\em Make move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly} (const pgn::Ply $\ast$pl, bool isWhite)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{makePawnPly} (const pgn::Ply $\ast$ply, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Makes pawn's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -95,6 +103,93 @@ Get an {\bfseries copy} of current game table.
 
 \begin{DoxyReturn}{Returns}
 Current table copy 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeMove}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeMove (
+\begin{DoxyParamCaption}
+\item[{pgn::Move \&}]{ move}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}
+
+
+Make move. 
+
+Tryes to make move. OK if white player's move did successefully AND black player's move did successefully. 
+\begin{DoxyParams}{Parameters}
+\item[{\em move}]-\/ Move which must to do \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if move has been succesefully done. else -\/ otherway 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a16b3f2bb7787bccf321f8a03935947c2}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeNextMove@{makeNextMove}}
+\index{makeNextMove@{makeNextMove}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeNextMove}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeNextMove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_a16b3f2bb7787bccf321f8a03935947c2}
+
+
+make next move. 
+
+Try to make next move. \begin{DoxyReturn}{Returns}
+true if move can was successefully did. Else -\/ fale will be returned. False will be returned if no moves is aviable. 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makePawnPly@{makePawnPly}}
+\index{makePawnPly@{makePawnPly}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makePawnPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makePawnPly (
+\begin{DoxyParamCaption}
+\item[{const pgn::Ply $\ast$}]{ ply, }
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}
+
+
+Makes pawn's move. 
+
+Tryes to make pawn's move) \begin{DoxyReturn}{Returns}
+true if ply has been done successefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+\hypertarget{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makePly@{makePly}}
+\index{makePly@{makePly}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makePly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makePly (
+\begin{DoxyParamCaption}
+\item[{const pgn::Ply $\ast$}]{ pl, }
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}
+Make simple ply move  ply's move 
+\begin{DoxyParams}{Parameters}
+\item[{\em pl}]-\/ Ply to do \item[{\em isWhite}]-\/ true if pl is white player's ply \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successefully, false -\/ otherway. 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
+\index{ChEngn::Engine@{ChEngn::Engine}!moves@{moves}}
+\index{moves@{moves}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{moves}]{\setlength{\rightskip}{0pt plus 5cm}pgn::MoveList$\ast$ ChEngn::Engine::moves (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}
+
+
+Get loaded moves. 
+
+\begin{DoxyReturn}{Returns}
+moves in loaded game, if there are no loaded game will be returned empty pgn::MoveList 
 \end{DoxyReturn}
 \hypertarget{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{
 \index{ChEngn::Engine@{ChEngn::Engine}!nextMove@{nextMove}}

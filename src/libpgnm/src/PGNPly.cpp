@@ -242,7 +242,7 @@ bool pgn::Ply::operator == (const pgn::Ply& src) const
 	return true;
 }
 
-std::string pgn::Ply::toStdString()
+std::string pgn::Ply::toStdString() const
 {
 	std::string res;
 	if (isLongCastle())

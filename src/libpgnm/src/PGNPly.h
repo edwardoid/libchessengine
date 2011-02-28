@@ -57,7 +57,7 @@ namespace pgn
 			Piece piece() const;
 			Piece* promoted() const;
 
-			std::string toStdString();
+			std::string toStdString() const;
 			friend std::ostream& operator << ( std::ostream& os, const pgn::Ply& src);
 
 		private:

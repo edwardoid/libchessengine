@@ -119,8 +119,16 @@ namespace ChEngn
 			 * @brief "Print" current table
 			 */
 			friend std::ostream& operator << (std::ostream &out, const Engine& engn );
-		private: // functions
+		protected: //protected functions
 
+			/** Tryes to make pawn's move)
+			 * @brief Makes pawn's move
+			 * @return true if ply has been done successefully
+			 * @param ply - Ply to do
+			 * @param is isWhite - True if ply's owner is white player.
+			 */
+			bool makePawnPly( const pgn::Ply* ply, bool isWhite);
+		private: // functions
 		private: // variables
 			VirtualTable m_table;
 			pgn::MoveList m_moves;

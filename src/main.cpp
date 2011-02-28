@@ -15,6 +15,9 @@ int main()
 		ChEngn::Engine en( (*cG)[0] );
 		std::cout<< en.moves()->size() << " moves in loaded game"<<std::endl;
 		std::cout<<en<<std::endl;
+
+		while(en.makeNextMove())
+			std::cout<<en.getVirtualTable()<<std::endl;
 	}
 	else
 	{
