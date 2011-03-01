@@ -35,7 +35,9 @@ bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{makePawnPly} (const pgn::Ply $\ast$ply, bool isWhite)
-\begin{DoxyCompactList}\small\item\em Makes pawn's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Makes pawn's move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{makeKnightPly} (const pgn::Ply $\ast$ply, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Makes knight's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -104,6 +106,26 @@ Get an {\bfseries copy} of current game table.
 \begin{DoxyReturn}{Returns}
 Current table copy 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeKnightPly@{makeKnightPly}}
+\index{makeKnightPly@{makeKnightPly}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeKnightPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeKnightPly (
+\begin{DoxyParamCaption}
+\item[{const pgn::Ply $\ast$}]{ ply, }
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}
+
+
+Makes knight's move. 
+
+Tryes to make knight's move) \begin{DoxyReturn}{Returns}
+true if ply has been done successefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeMove@{makeMove}}
 \index{makeMove@{makeMove}!ChEngn::Engine@{ChEngn::Engine}}

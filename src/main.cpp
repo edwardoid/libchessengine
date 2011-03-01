@@ -12,7 +12,7 @@ int main()
 	if( cG != 0 )
 	{
 		std::cout<<"Loaded: "<<cG->size()<<" games"<<std::endl;
-		ChEngn::Engine en( (*cG)[1] );
+		ChEngn::Engine en( (*cG)[0] );
 		std::cout<< en.moves()->size() << " moves in loaded game"<<std::endl;
 		std::cout<<en<<std::endl;
 

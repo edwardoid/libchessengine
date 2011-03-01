@@ -128,6 +128,15 @@ namespace ChEngn
 			 * @param is isWhite - True if ply's owner is white player.
 			 */
 			bool makePawnPly( const pgn::Ply* ply, bool isWhite);
+	
+			/** Tryes to make knight's move)
+			 * @brief Makes knight's move
+			 * @return true if ply has been done successefully
+			 * @param ply - Ply to do
+			 * @param is isWhite - True if ply's owner is white player.
+			 */	
+			bool makeKnightPly( const pgn::Ply* ply, bool isWhite);
+
 		private: // functions
 		private: // variables
 			VirtualTable m_table;
