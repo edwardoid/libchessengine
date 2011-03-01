@@ -110,6 +110,10 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 					if( dest->type() == unknown )
 					{
 						dest->setType( pawn );
+						if( isWhite )
+							dest->setWhite();
+						else
+							dest->setBlack();
 						movedPiece->setType ( unknown );
 						return true;
 					}
