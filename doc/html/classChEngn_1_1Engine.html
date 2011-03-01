@@ -57,6 +57,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
@@ -89,6 +90,12 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d">makeMove</a> (pgn::Move &amp;move)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Make move.  <a href="#a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a> (const pgn::Ply *pl, bool isWhite)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aebba3d5fac90f1e829fc122b31f26064">checkForEmptynessH</a> (char from, char to, char row, <a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> *table)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check horisontal for emptyness.  <a href="#aebba3d5fac90f1e829fc122b31f26064"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ab812e459beb68c21e02370d0f7767299">checkForEmptynessV</a> (char from, char to, char column, <a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> *table)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check horisontal for emptyness.  <a href="#ab812e459beb68c21e02370d0f7767299"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a5ee94d0b489d05ef5e643cb9cfe5ac1a">makePawnPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
@@ -159,6 +166,110 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aebba3d5fac90f1e829fc122b31f26064"></a><!-- doxytag: member="ChEngn::Engine::checkForEmptynessH" ref="aebba3d5fac90f1e829fc122b31f26064" args="(char from, char to, char row, VirtualTable *table)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ChEngn::Engine::checkForEmptynessH </td>
+          <td>(</td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> *&nbsp;</td>
+          <td class="paramname"> <em>table</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check horisontal for emptyness. </p>
+<p>Checks for emptyness horisontal. (from .... to) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>from</em>&nbsp;</td><td>- source column </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>to</em>&nbsp;</td><td>- destination column </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>- checking row </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>table</em>&nbsp;</td><td>- table to searching </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if line is empty, false if there're some figure or table is invalid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab812e459beb68c21e02370d0f7767299"></a><!-- doxytag: member="ChEngn::Engine::checkForEmptynessV" ref="ab812e459beb68c21e02370d0f7767299" args="(char from, char to, char column, VirtualTable *table)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ChEngn::Engine::checkForEmptynessV </td>
+          <td>(</td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> *&nbsp;</td>
+          <td class="paramname"> <em>table</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check horisontal for emptyness. </p>
+<p>Checks for emptyness horisontal. (from .... to) </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>from</em>&nbsp;</td><td>- source row </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>to</em>&nbsp;</td><td>- destination row </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>- checking column </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>table</em>&nbsp;</td><td>- table to searching </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if vertical is empty, false if there're some figure or table is invalid </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a26f8db48e99d547fbc41eaa9dca8e6cf"></a><!-- doxytag: member="ChEngn::Engine::getVirtualTable" ref="a26f8db48e99d547fbc41eaa9dca8e6cf" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -406,7 +517,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 1 2011 22:22:06 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 1 2011 23:47:20 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

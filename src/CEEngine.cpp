@@ -379,3 +379,58 @@ namespace ChEngn
 		return out<<engn.getVirtualTable();
 	}
 };
+
+
+bool ChEngn::Engine::checkForEmptynessH(char from, char to, char row, VirtualTable *table)
+{
+	if ( table == 0 )
+		return false;
+	if ( from > to)
+	{
+		char tmp = from;
+		from = to;
+		to = tmp;
+	}
+	if ( ( from < ( table->width() - 'a') ) && 
+		 ( to < ( table->width() - 'a') ) && 
+		 ( row < ( table->height() - '1' ) ) &&
+		 ( from > 0) &&
+		 ( to > 0 ))
+	{
+		for ( char i = from + 1; i < to; i++)
+		{
+			if ( table->pieceAtC(i, row)->type() != unknown)
+				return false;
+		}
+	}
+	else
+		return false;
+	return true;
+}
+
+bool ChEngn::Engine::checkForEmptynessV(char from, char to, char column, VirtualTable *table)
+{
+	if ( table == 0 )
+		return false;
+	if ( from > to)
+	{
+		char tmp = from;
+		from = to;
+		to = tmp;
+	}
+	if ( ( from < ( table->width() - '1') ) &&
+			( to < ( table->width() - '1') ) &&
+			( column< ( table->height() - 'a' ) ) &&
+			( to > 0) &&
+			(from > 0 ))
+	{
+		for ( char i = from + 1; i < to; i++)
+		{
+			if ( table->pieceAtC(column, i)->type() != unknown)
+				return false;
+		}
+	}
+	else
+		return false;
+	return true;
+}
