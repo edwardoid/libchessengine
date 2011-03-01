@@ -86,13 +86,24 @@ namespace ChEngn
 			
 			/**
 			 * 	Get piece from table.
-			 * 	@brief Return piece at given position.
-			 * 	@param row - Piece's position row.
-			 * 	@param column  - Piece's position column.
+			 * 	@brief Return piece at given numeric position.
+			 * 	@param row - Piece's position numeric row.
+			 * 	@param column  - Piece's position numeric column.
 			 * 	@return - Pointer to piece, if row and/or column are invalid
 			 * 	0 will be returned.
 			 */
-			Piece* pieceAt(unsigned int row, unsigned int column) const;
+			Piece* pieceAt(unsigned int column, unsigned int row) const;
+
+			/**
+			 * 	Get piece from table.
+			 * 	@brief Return piece at given numeric position.
+			 * 	@param column - Piece's position column as character, like 'd'
+			 * 	@param row - Piece's position row as character, like '3'.
+			 * 	@return - Pointer to piece, if row and/or column are invalid
+			 * 	0 will be returned.
+			 */
+			Piece* pieceAtC(char column, char row) const;
+
 			/**
 			 * @brief Set table for beginig gaming
 			 * @warning Function will do changes if table size is 8x8. In

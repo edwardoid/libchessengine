@@ -89,8 +89,10 @@ const <a class="el" href="structChEngn_1_1table__size.html">table_size</a>&nbsp;
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get table's width.  <a href="#a6aaaaae9343e67a947b0cdeb6104361b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a7e403087a7979907ca171e20462f8346">table</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get current table state.  <a href="#a7e403087a7979907ca171e20462f8346"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#afd9b5d81da9d90ee6fcae57651f08d40">pieceAt</a> (unsigned int row, unsigned int column) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return piece at given position.  <a href="#afd9b5d81da9d90ee6fcae57651f08d40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a5f797f91cf61269b04d19ede97875ba4">pieceAt</a> (unsigned int column, unsigned int row) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return piece at given numeric position.  <a href="#a5f797f91cf61269b04d19ede97875ba4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Piece.html">Piece</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a715d819b37f5cb853209ac36d06c8a89">pieceAtC</a> (char column, char row) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return piece at given numeric position.  <a href="#a715d819b37f5cb853209ac36d06c8a89"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a8ece9e9f9f28f209d72f16db0fb2aeed">resetComplect</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set table for beginig gaming.  <a href="#a8ece9e9f9f28f209d72f16db0fb2aeed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Table.html#a5b45cb67e40f75358145826e72b319b4">operator=</a> (const <a class="el" href="classChEngn_1_1Table.html">Table</a> &amp;other)</td></tr>
@@ -178,7 +180,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afd9b5d81da9d90ee6fcae57651f08d40"></a><!-- doxytag: member="ChEngn::Table::pieceAt" ref="afd9b5d81da9d90ee6fcae57651f08d40" args="(unsigned int row, unsigned int column) const " -->
+<a class="anchor" id="a5f797f91cf61269b04d19ede97875ba4"></a><!-- doxytag: member="ChEngn::Table::pieceAt" ref="a5f797f91cf61269b04d19ede97875ba4" args="(unsigned int column, unsigned int row) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -186,13 +188,13 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="classChEngn_1_1Piece.html">Piece</a>* ChEngn::Table::pieceAt </td>
           <td>(</td>
           <td class="paramtype">unsigned int&nbsp;</td>
-          <td class="paramname"> <em>row</em>, </td>
+          <td class="paramname"> <em>column</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&nbsp;</td>
-          <td class="paramname"> <em>column</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -203,12 +205,50 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Return piece at given position. </p>
+<p>Return piece at given numeric position. </p>
 <p>Get piece from table. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>- Piece's position row. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>column</em>&nbsp;</td><td>- Piece's position column. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>- Piece's position numeric row. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>column</em>&nbsp;</td><td>- Piece's position numeric column. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>- Pointer to piece, if row and/or column are invalid 0 will be returned. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a715d819b37f5cb853209ac36d06c8a89"></a><!-- doxytag: member="ChEngn::Table::pieceAtC" ref="a715d819b37f5cb853209ac36d06c8a89" args="(char column, char row) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classChEngn_1_1Piece.html">Piece</a>* ChEngn::Table::pieceAtC </td>
+          <td>(</td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>row</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return piece at given numeric position. </p>
+<p>Get piece from table. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>column</em>&nbsp;</td><td>- Piece's position column as character, like 'd' </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>row</em>&nbsp;</td><td>- Piece's position row as character, like '3'. </td></tr>
   </table>
   </dd>
 </dl>
@@ -333,7 +373,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 1 2011 00:44:47 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 1 2011 13:01:14 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

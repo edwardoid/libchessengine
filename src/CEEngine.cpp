@@ -39,7 +39,11 @@ bool ChEngn::Engine::makeNextMove()
 {
 	pgn::MoveList::iterator it = nextMove();
 	if( it != m_moves.end() )
-			return ( makePly( it->white(), true) && makePly( it->black(), false) );
+			if( makePly( it->white(), true) && makePly( it->black(), false) )
+			{
+				it++;
+				return true;
+			}
 	return false;
 }
 
@@ -62,19 +66,19 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 	{
 		return makePawnPly(pl, isWhite);
 	}
-	if ( (*(pl->promoted())) == pgn::Piece::Knight() )
+	if ( (pl->piece()) == pgn::Piece::Knight() )
 		return true;
 
-	if ( (*(pl->promoted())) == pgn::Piece::Bishop() )
+	if ( (pl->piece()) == pgn::Piece::Bishop() )
 		return true;
 
-	if ( (*(pl->promoted())) == pgn::Piece::Rook() )
+	if ( (pl->piece()) == pgn::Piece::Rook() )
 		return true;
 
-	if ( (*(pl->promoted())) == pgn::Piece::Queen() )
+	if ( (pl->piece()) == pgn::Piece::Queen() )
 		return true;
 
-	if ( (*(pl->promoted())) == pgn::Piece::King() )
+	if ( (pl->piece()) == pgn::Piece::King() )
 		return true;
 
 	return false;
@@ -88,47 +92,27 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 	}
 	else
 	{
-		pgn::Square destination = ply->toSquare();
-		int row = destination.row() - (coef);
-		ChEngn::Piece* movedItem = m_table.pieceAt(row, ply->toSquare().col() );
-		if ( movedItem != 0 )
+		int coef = ( isWhite? 1: -1);
+		pgn::Square newPos = ply->toSquare();
+		pgn::Square oldPos(newPos.col(), newPos.row() - coef);
+		Piece* movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
+		if( (movedPiece == 0) || (movedPiece->type() != pawn))
 		{
-			if( movedItem->color() == ( isWhite? white: black) )
+			oldPos = pgn::Square(newPos.col(), newPos.row() - 2*coef);
+			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
+		}
+		if( movedPiece != 0 )
+		{
+			if( (movedPiece->type() == pawn ) && (movedPiece->isWhite() == isWhite) )
 			{
-				// make move
-				Piece *dest = m_table.pieceAt( ply->toSquare().row(), ply->toSquare().col() );
-				if ( dest != 0 )
-					if( dest->type() == ChEngn::unknown)
+				Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
+				if( dest != 0 )
+					if( dest->type() == unknown )
 					{
-						movedItem->setMoved();
-						ChEngn::Piece *tmp = movedItem;
-						movedItem = dest;
-						dest = movedItem;
+						dest->setType( pawn );
+						movedPiece->setType ( unknown );
 						return true;
 					}
-			}
-		}
-
-		movedItem = m_table.pieceAt(row - coef, ply->toSquare().col() );
-		if ( movedItem != 0 )
-		{
-			std::cout<<"OK!";
-			if( movedItem->moveFlag() != ChEngn::moved )
-			{
-				if( movedItem->color() == ( isWhite? white: black) )
-				{
-					// make move
-					Piece *dest = m_table.pieceAt( ply->toSquare().row(), ply->toSquare().col() );
-					if ( dest != 0 )
-						if( dest->type() == ChEngn::unknown)
-						{
-							movedItem->setMoved();
-							ChEngn::Piece *tmp = movedItem;
-							movedItem = dest;
-							dest = movedItem;
-							return true;
-						}
-				}
 			}
 		}
 	}

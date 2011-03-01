@@ -43,13 +43,18 @@ ChEngn::Piece** ChEngn::Table::table()
 	return m_table;
 }
 
-ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int row, unsigned int column) const
+ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int column, unsigned int row) const
 {
 	if( (row < m_size.width) && (column < m_size.height) )
 		return &m_table[row][column];
 	return 0;
 }
 
+ChEngn::Piece* ChEngn::Table::pieceAtC(char column, char row) const
+{
+
+	return pieceAt( column -'a', row - '1');
+}
 void ChEngn::Table::getMemoryForTable()
 {
 	m_table = new Piece*[m_size.height];

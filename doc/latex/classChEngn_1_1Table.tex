@@ -37,8 +37,10 @@ const unsigned int \hyperlink{classChEngn_1_1Table_a6aaaaae9343e67a947b0cdeb6104
 \begin{DoxyCompactList}\small\item\em Get table's width. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Piece}{Piece} $\ast$$\ast$ \hyperlink{classChEngn_1_1Table_a7e403087a7979907ca171e20462f8346}{table} ()
 \begin{DoxyCompactList}\small\item\em Get current table state. \item\end{DoxyCompactList}\item 
-\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$ \hyperlink{classChEngn_1_1Table_afd9b5d81da9d90ee6fcae57651f08d40}{pieceAt} (unsigned int row, unsigned int column) const 
-\begin{DoxyCompactList}\small\item\em Return piece at given position. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$ \hyperlink{classChEngn_1_1Table_a5f797f91cf61269b04d19ede97875ba4}{pieceAt} (unsigned int column, unsigned int row) const 
+\begin{DoxyCompactList}\small\item\em Return piece at given numeric position. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Piece}{Piece} $\ast$ \hyperlink{classChEngn_1_1Table_a715d819b37f5cb853209ac36d06c8a89}{pieceAtC} (char column, char row) const 
+\begin{DoxyCompactList}\small\item\em Return piece at given numeric position. \item\end{DoxyCompactList}\item 
 void \hyperlink{classChEngn_1_1Table_a8ece9e9f9f28f209d72f16db0fb2aeed}{resetComplect} ()
 \begin{DoxyCompactList}\small\item\em Set table for beginig gaming. \item\end{DoxyCompactList}\item 
 void \hyperlink{classChEngn_1_1Table_a5b45cb67e40f75358145826e72b319b4}{operator=} (const \hyperlink{classChEngn_1_1Table}{Table} \&other)
@@ -105,23 +107,43 @@ Overloaded operation =.
 Copies given table to current. 
 \begin{DoxyParams}{Parameters}
 \item[{\em other}]-\/ Source \end{DoxyParams}
-\hypertarget{classChEngn_1_1Table_afd9b5d81da9d90ee6fcae57651f08d40}{
+\hypertarget{classChEngn_1_1Table_a5f797f91cf61269b04d19ede97875ba4}{
 \index{ChEngn::Table@{ChEngn::Table}!pieceAt@{pieceAt}}
 \index{pieceAt@{pieceAt}!ChEngn::Table@{ChEngn::Table}}
 \subsubsection[{pieceAt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$ ChEngn::Table::pieceAt (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{ row, }
-\item[{unsigned int}]{ column}
+\item[{unsigned int}]{ column, }
+\item[{unsigned int}]{ row}
 \end{DoxyParamCaption}
 ) const}}
-\label{classChEngn_1_1Table_afd9b5d81da9d90ee6fcae57651f08d40}
+\label{classChEngn_1_1Table_a5f797f91cf61269b04d19ede97875ba4}
 
 
-Return piece at given position. 
+Return piece at given numeric position. 
 
 Get piece from table. 
 \begin{DoxyParams}{Parameters}
-\item[{\em row}]-\/ Piece's position row. \item[{\em column}]-\/ Piece's position column. \end{DoxyParams}
+\item[{\em row}]-\/ Piece's position numeric row. \item[{\em column}]-\/ Piece's position numeric column. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ Pointer to piece, if row and/or column are invalid 0 will be returned. 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Table_a715d819b37f5cb853209ac36d06c8a89}{
+\index{ChEngn::Table@{ChEngn::Table}!pieceAtC@{pieceAtC}}
+\index{pieceAtC@{pieceAtC}!ChEngn::Table@{ChEngn::Table}}
+\subsubsection[{pieceAtC}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$ ChEngn::Table::pieceAtC (
+\begin{DoxyParamCaption}
+\item[{char}]{ column, }
+\item[{char}]{ row}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Table_a715d819b37f5cb853209ac36d06c8a89}
+
+
+Return piece at given numeric position. 
+
+Get piece from table. 
+\begin{DoxyParams}{Parameters}
+\item[{\em column}]-\/ Piece's position column as character, like 'd' \item[{\em row}]-\/ Piece's position row as character, like '3'. \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 -\/ Pointer to piece, if row and/or column are invalid 0 will be returned. 
 \end{DoxyReturn}
