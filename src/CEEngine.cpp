@@ -434,3 +434,34 @@ bool ChEngn::Engine::checkForEmptynessV(char from, char to, char column, Virtual
 		return false;
 	return true;
 }
+
+bool ChEngn::Engine::checkForEmptynessDiagonal(char fromC, char fromR, char toC, char toR, VirtualTable *table)
+{
+	char stepC = 1;
+	char stepR = 1;
+
+	if ( fromC > toC )
+		stepC = -1;
+
+	if ( fromR > toR )
+		stepR = -1;
+
+	char incC = 0;
+	char incR = 0;
+	for ( int r = fromR + stepR; r < toR; r+= stepR )
+	{
+		incR++;
+		for ( int c = fromC + stepC; c < toC; c+=stepC)
+		{
+			incC++;
+			if( incR == incC)
+			{
+				Piece* tmp = table->pieceAtC(c, r);
+				if ( (tmp == 0) || (tmp->type() != unknown) )
+					return false;
+			}
+		}
+	}
+
+	return true;
+}

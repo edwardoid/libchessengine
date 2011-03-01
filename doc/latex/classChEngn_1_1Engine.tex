@@ -37,6 +37,8 @@ bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly
 static bool \hyperlink{classChEngn_1_1Engine_aebba3d5fac90f1e829fc122b31f26064}{checkForEmptynessH} (char from, char to, char row, \hyperlink{classChEngn_1_1Table}{VirtualTable} $\ast$table)
 \begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\item 
 static bool \hyperlink{classChEngn_1_1Engine_ab812e459beb68c21e02370d0f7767299}{checkForEmptynessV} (char from, char to, char column, \hyperlink{classChEngn_1_1Table}{VirtualTable} $\ast$table)
+\begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}{checkForEmptynessDiagonal} (char fromC, char fromR, char toC, char toR, \hyperlink{classChEngn_1_1Table}{VirtualTable} $\ast$table)
 \begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -97,6 +99,29 @@ Creates \hyperlink{classChEngn_1_1Engine}{Engine} from pgn::Game
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}{
+\index{ChEngn::Engine@{ChEngn::Engine}!checkForEmptynessDiagonal@{checkForEmptynessDiagonal}}
+\index{checkForEmptynessDiagonal@{checkForEmptynessDiagonal}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{checkForEmptynessDiagonal}]{\setlength{\rightskip}{0pt plus 5cm}static bool ChEngn::Engine::checkForEmptynessDiagonal (
+\begin{DoxyParamCaption}
+\item[{char}]{ fromC, }
+\item[{char}]{ fromR, }
+\item[{char}]{ toC, }
+\item[{char}]{ toR, }
+\item[{{\bf VirtualTable} $\ast$}]{ table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}
+
+
+Check horisontal for emptyness. 
+
+Checks for emptyness given diagonal. (from .... to) 
+\begin{DoxyParams}{Parameters}
+\item[{\em fromC}]-\/ source column \item[{\em fromR}]-\/ source row \item[{\em toC}]-\/ destination column \item[{\em roR}]-\/ destination row \item[{\em table}]-\/ table to searching \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if diagonal is empty, false if there're some figure or table is invalid 
+\end{DoxyReturn}
 \hypertarget{classChEngn_1_1Engine_aebba3d5fac90f1e829fc122b31f26064}{
 \index{ChEngn::Engine@{ChEngn::Engine}!checkForEmptynessH@{checkForEmptynessH}}
 \index{checkForEmptynessH@{checkForEmptynessH}!ChEngn::Engine@{ChEngn::Engine}}
@@ -113,7 +138,7 @@ Creates \hyperlink{classChEngn_1_1Engine}{Engine} from pgn::Game
 
 Check horisontal for emptyness. 
 
-Checks for emptyness horisontal. (from .... to) 
+Checks for emptyness given horisontal. (from .... to) 
 \begin{DoxyParams}{Parameters}
 \item[{\em from}]-\/ source column \item[{\em to}]-\/ destination column \item[{\em row}]-\/ checking row \item[{\em table}]-\/ table to searching \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -135,7 +160,7 @@ true if line is empty, false if there're some figure or table is invalid
 
 Check horisontal for emptyness. 
 
-Checks for emptyness horisontal. (from .... to) 
+Checks for emptyness given vertical. (from .... to) 
 \begin{DoxyParams}{Parameters}
 \item[{\em from}]-\/ source row \item[{\em to}]-\/ destination row \item[{\em row}]-\/ checking column \item[{\em table}]-\/ table to searching \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

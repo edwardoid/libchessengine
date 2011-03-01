@@ -121,7 +121,7 @@ namespace ChEngn
 			friend std::ostream& operator << (std::ostream &out, const Engine& engn );
 
 			/**
-			 * Checks for emptyness horisontal. (from .... to)
+			 * Checks for emptyness given horisontal. (from .... to)
 			 * @brief Check horisontal for emptyness
 			 * @param from - source column
 			 * @param to - destination column
@@ -133,7 +133,7 @@ namespace ChEngn
 			static bool checkForEmptynessH(char from, char to, char row, VirtualTable* table);
 
 			/**
-			 * Checks for emptyness horisontal. (from .... to)
+			 * Checks for emptyness given vertical. (from .... to)
 			 * @brief Check horisontal for emptyness
 			 * @param from - source row
 			 * @param to - destination row
@@ -143,6 +143,20 @@ namespace ChEngn
 			 * table is invalid
 			 */
 			static bool checkForEmptynessV(char from, char to, char column, VirtualTable* table);
+
+			/**
+			 * Checks for emptyness given diagonal. (from .... to)
+			 * @brief Check horisontal for emptyness
+			 * @param fromC - source column
+			 * @param fromR - source row
+			 * @param toC - destination column
+			 * @param roR - destination row
+			 * @param table - table to searching
+			 * @return true if diagonal is empty, false if there're some figure or
+			 * table is invalid
+			 */
+			static bool checkForEmptynessDiagonal(char fromC, char fromR, char toC, char toR, VirtualTable* table);
+
 
 		protected: //protected functions
 
