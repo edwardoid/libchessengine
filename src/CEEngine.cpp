@@ -87,13 +87,40 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 {
 	short coef = (isWhite? 1 : -1);
+	pgn::Square newPos = ply->toSquare();
 	if(ply->isCapture())
 	{
+		char specifiedCol = ply->toSquare().col() -1 ;
+
+		if ( ply->fromSquare() != '-' )
+			specifiedCol = ply->fromSquare();
+
+		pgn::Square oldPos(	specifiedCol, ply->toSquare().row() );
+		Piece *movedPiece = m_table.pieceAtC( oldPos.col(), oldPos.row() );
+
+		if( (movedPiece == 0 ) || (movedPiece->type() != pawn) )
+		{
+			oldPos = pgn::Square( char (ply->toSquare().col() + 1) , newPos.row());
+			movedPiece = m_table.pieceAtC( oldPos.col(), oldPos.row() );
+		}
+		if ( movedPiece != 0 )
+		{
+			Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
+			if( dest != 0 )
+				if( dest->type() != unknown )
+				{
+					dest->setType( pawn );
+					if( isWhite )
+						dest->setWhite();
+					else
+						dest->setBlack();
+					movedPiece->setType ( unknown );
+					return true;
+				}
+		}
 	}
 	else
 	{
-		int coef = ( isWhite? 1: -1);
-		pgn::Square newPos = ply->toSquare();
 		pgn::Square oldPos(newPos.col(), newPos.row() - coef);
 		Piece* movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
 		if( (movedPiece == 0) || (movedPiece->type() != pawn))
