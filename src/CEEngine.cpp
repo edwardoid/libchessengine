@@ -73,7 +73,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 		return makeBishopPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Rook() )
-		return true;
+		return makeRookPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Queen() )
 		return true;
@@ -412,6 +412,53 @@ bool ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 			tmp->setBlack();
 		movedPiece->setType( unknown );
 		return true;
+	}
+	return false;
+}
+
+
+bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
+{
+	pgn::Square newPos = ply->toSquare();
+	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
+	Piece *movedPiece = 0;
+
+	char end='h';
+
+	if ( ( ply->fromSquare() >= 'a') && ( ply->fromSquare() <= 'h') )
+		end = ply->fromSquare();
+	
+	for (int i = 'a'; i<= end ; i++)
+	{
+		Piece* tmp = m_table.pieceAtC(i, newPos.row() );
+		if( ( movedPiece != 0 ) && ( movedPiece->type() == rook ) && ( movedPiece->isWhite() == isWhite ) )
+		{
+			movedPiece = tmp;
+		}
+	}
+
+	end='8';
+
+	if ( ( ply->fromSquare() >= '1') && ( ply->fromSquare() <= '8') )
+		end = ply->fromSquare();
+	
+	for (int i = '1'; i<= end ; i++)
+	{
+		Piece* tmp = m_table.pieceAtC(i, newPos.col() );
+		if( ( movedPiece != 0 ) && ( movedPiece->type() == rook ) && ( movedPiece->isWhite() == isWhite ) ) 
+		{
+			movedPiece = tmp;
+		}
+	}
+
+	if ( ( movedPiece != 0 ) && (dest != 0 ) )
+	{
+		if ( ply->isCapture() && ( dest->type() == unknown ) )
+			return false;
+		(*dest) = (*movedPiece);
+		movedPiece->setType(unknown);
+		return true;
+		
 	}
 	return false;
 }

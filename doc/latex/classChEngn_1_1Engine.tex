@@ -48,6 +48,8 @@ bool \hyperlink{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{makePaw
 bool \hyperlink{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{makeKnightPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes knight's move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{makeBishopPly} (const pgn::Ply $\ast$ply, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{makeRookPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -295,6 +297,26 @@ Make simple ply move  ply's move
 \begin{DoxyReturn}{Returns}
 true if successefully, false -\/ otherway. 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeRookPly@{makeRookPly}}
+\index{makeRookPly@{makeRookPly}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeRookPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeRookPly (
+\begin{DoxyParamCaption}
+\item[{const pgn::Ply $\ast$}]{ ply, }
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}
+
+
+Makes bishop's move. 
+
+Tryes to make bishop's move) \begin{DoxyReturn}{Returns}
+true if ply has been done successefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
 \index{ChEngn::Engine@{ChEngn::Engine}!moves@{moves}}
 \index{moves@{moves}!ChEngn::Engine@{ChEngn::Engine}}
