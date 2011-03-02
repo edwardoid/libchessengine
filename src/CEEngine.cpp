@@ -1,5 +1,6 @@
 #include "CEEngine.h"
 #include <PGNPly.h>
+#include <stdlib.h>
 
 ChEngn::Engine::Engine()
 {
@@ -69,7 +70,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 		return makeKnightPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Bishop() )
-		return true;
+		return makeBishopPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Rook() )
 		return true;
@@ -368,6 +369,49 @@ bool ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 			movedPiece->setType( unknown );
 			return true;
 		}
+	}
+	return false;
+}
+
+bool ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
+{
+	pgn::Square newPos = ply->toSquare();
+	Piece *movedPiece = 0;
+	for( char  i = 'a'; i <= 'h'; i++ )
+		for ( char j = '1'; j <= '8'; j++)
+		{
+			Piece *tmp = m_table.pieceAtC(i, j);
+			if( ( tmp != 0 ) && ( tmp->type() == bishop) &&
+				( tmp->isWhite() == isWhite) &&
+				( abs( i - newPos.col()) == abs( j - newPos.row() ) ) )
+				  if( ply->fromSquare() == '-' )
+				  {
+				  		movedPiece = tmp;
+				  }
+				  else
+				  {
+				  	if( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') && ( i == ply->fromSquare() ) )
+				  		movedPiece = tmp;
+				  	if( (ply->fromSquare() >= '1') && (ply->fromSquare() <= '8') && ( i == ply->fromSquare() ) )
+				  		movedPiece = tmp;
+				  }
+		}
+
+		
+	Piece* tmp = m_table.pieceAtC( newPos.col() , newPos.row() );
+
+	if ( ply->isCapture() )
+		if( (tmp == 0) || (tmp->isWhite() == isWhite) || (tmp->type() == unknown) )
+			return false;
+	if ( ( movedPiece != 0 ) && (tmp != 0 ) )
+	{
+		tmp->setType ( bishop );
+		if( isWhite )
+			tmp->setWhite();
+		else
+			tmp->setBlack();
+		movedPiece->setType( unknown );
+		return true;
 	}
 	return false;
 }

@@ -46,7 +46,9 @@ static bool \hyperlink{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}{
 bool \hyperlink{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{makePawnPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes pawn's move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{makeKnightPly} (const pgn::Ply $\ast$ply, bool isWhite)
-\begin{DoxyCompactList}\small\item\em Makes knight's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Makes knight's move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{makeBishopPly} (const pgn::Ply $\ast$ply, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -182,6 +184,26 @@ Get an {\bfseries copy} of current game table.
 \begin{DoxyReturn}{Returns}
 Current table copy 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeBishopPly@{makeBishopPly}}
+\index{makeBishopPly@{makeBishopPly}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeBishopPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeBishopPly (
+\begin{DoxyParamCaption}
+\item[{const pgn::Ply $\ast$}]{ ply, }
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}
+
+
+Makes bishop's move. 
+
+Tryes to make bishop's move) \begin{DoxyReturn}{Returns}
+true if ply has been done successefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKnightPly@{makeKnightPly}}
 \index{makeKnightPly@{makeKnightPly}!ChEngn::Engine@{ChEngn::Engine}}

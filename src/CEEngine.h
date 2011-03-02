@@ -176,6 +176,14 @@ namespace ChEngn
 			 */	
 			bool makeKnightPly( const pgn::Ply* ply, bool isWhite);
 
+			/** Tryes to make bishop's move)
+			 * @brief Makes bishop's move
+			 * @return true if ply has been done successefully
+			 * @param ply - Ply to do
+			 * @param is isWhite - True if ply's owner is white player.
+			 */	
+			bool makeBishopPly( const pgn::Ply* ply, bool isWhite);
+
 		private: // functions
 		private: // variables
 			VirtualTable m_table;
