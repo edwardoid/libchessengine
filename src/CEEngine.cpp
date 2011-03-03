@@ -76,7 +76,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 		return makeRookPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Queen() )
-		return true;
+		return makeQueenPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::King() )
 		return true;
@@ -456,10 +456,46 @@ bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 		if ( ply->isCapture() && ( dest->type() == unknown ) )
 			return false;
 		(*dest) = (*movedPiece);
+		dest->setMoved();
 		movedPiece->setType(unknown);
 		return true;
 		
 	}
+	return false;
+}
+
+bool ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
+{
+	pgn::Square newPos = ply->toSquare();
+
+	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
+
+	if(dest == 0 )
+		return false;
+
+	if ( ply->isCapture())
+		if ( dest->type() == unknown)
+			return false;
+	Piece *movedPiece = 0;
+
+
+	for ( char c = 'a'; c <= 'h'; c++ )
+		for ( char r = '1'; r<= '8'; r++)
+		{
+			Piece *tmp = m_table.pieceAtC( c, r );
+			if ( ( tmp != 0 ) && (tmp->type() == queen ) && (tmp->isWhite() == isWhite) )
+			{
+				movedPiece = tmp;
+				break;
+			}
+		}
+
+		if ( movedPiece != 0 )
+		{
+			(*dest) = (*movedPiece);
+			movedPiece->setType( unknown );
+			return true;
+		}
 	return false;
 }
 

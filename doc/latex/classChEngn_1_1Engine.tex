@@ -50,7 +50,9 @@ bool \hyperlink{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{makeKni
 bool \hyperlink{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{makeBishopPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{makeRookPly} (const pgn::Ply $\ast$ply, bool isWhite)
-\begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}{makeQueenPly} (const pgn::Ply $\ast$ply, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Makes queen's move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -297,6 +299,26 @@ Make simple ply move  ply's move
 \begin{DoxyReturn}{Returns}
 true if successefully, false -\/ otherway. 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeQueenPly@{makeQueenPly}}
+\index{makeQueenPly@{makeQueenPly}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeQueenPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeQueenPly (
+\begin{DoxyParamCaption}
+\item[{const pgn::Ply $\ast$}]{ ply, }
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}
+
+
+Makes queen's move. 
+
+Tryes to make queen's move) \begin{DoxyReturn}{Returns}
+true if ply has been done successefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeRookPly@{makeRookPly}}
 \index{makeRookPly@{makeRookPly}!ChEngn::Engine@{ChEngn::Engine}}

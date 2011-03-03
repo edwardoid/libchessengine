@@ -108,6 +108,8 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes bishop's move.  <a href="#a066d78b55f68fe6dbcd6581f64ae512a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aaf471f4ff06fbb4302e214a3c447bf1b">makeRookPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes bishop's move.  <a href="#aaf471f4ff06fbb4302e214a3c447bf1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a647b1fb60e06af87b271789c11fe9b8f">makeQueenPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes queen's move.  <a href="#a647b1fb60e06af87b271789c11fe9b8f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a886da6512b271d26a1fee49a317d2308"></a><!-- doxytag: member="ChEngn::Engine::operator&lt;&lt;" ref="a886da6512b271d26a1fee49a317d2308" args="(std::ostream &amp;out, const Engine &amp;engn)" -->
@@ -554,6 +556,44 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<a class="anchor" id="a647b1fb60e06af87b271789c11fe9b8f"></a><!-- doxytag: member="ChEngn::Engine::makeQueenPly" ref="a647b1fb60e06af87b271789c11fe9b8f" args="(const pgn::Ply *ply, bool isWhite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makeQueenPly </td>
+          <td>(</td>
+          <td class="paramtype">const pgn::Ply *&nbsp;</td>
+          <td class="paramname"> <em>ply</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isWhite</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Makes queen's move. </p>
+<p>Tryes to make queen's move) </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ply</em>&nbsp;</td><td>- Ply to do </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>is</em>&nbsp;</td><td>isWhite - True if ply's owner is white player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aaf471f4ff06fbb4302e214a3c447bf1b"></a><!-- doxytag: member="ChEngn::Engine::makeRookPly" ref="aaf471f4ff06fbb4302e214a3c447bf1b" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
@@ -658,7 +698,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Mar 3 2011 00:46:39 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Mar 3 2011 23:58:19 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

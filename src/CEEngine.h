@@ -192,6 +192,13 @@ namespace ChEngn
 			 */	
 			bool makeRookPly( const pgn::Ply* ply, bool isWhite);
 
+			/** Tryes to make queen's move)
+			 * @brief Makes queen's move
+			 * @return true if ply has been done successefully
+			 * @param ply - Ply to do
+			 * @param is isWhite - True if ply's owner is white player.
+			 */	
+			bool makeQueenPly( const pgn::Ply* ply, bool isWhite);
 
 		private: // functions
 		private: // variables
