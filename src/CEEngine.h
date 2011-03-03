@@ -199,6 +199,22 @@ namespace ChEngn
 			 * @param is isWhite - True if ply's owner is white player.
 			 */	
 			bool makeQueenPly( const pgn::Ply* ply, bool isWhite);
+		
+			/** Tryes to make king's move)
+			 * @brief Makes kings's move
+			 * @return true if ply has been done successefully
+			 * @param ply - Ply to do
+			 * @param is isWhite - True if ply's owner is white player.
+			 */	
+			bool makeKingPly( const pgn::Ply* ply, bool isWhite);
+
+			/** Tryes to make short castling
+			 * @brief Makes short castling move
+			 * @return true if castling has been done successefully
+			 * @param is isWhite - True if castling  owner is white player.
+			 */	
+			bool makeShortCastling( bool isWhite);
+
 
 		private: // functions
 		private: // variables

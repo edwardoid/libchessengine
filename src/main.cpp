@@ -16,8 +16,9 @@ int main()
 		std::cout<< en.moves()->size() << " moves in loaded game"<<std::endl;
 		std::cout<<en<<std::endl;
 
+		int i=0;
 		while(en.makeNextMove())
-			std::cout<<en.getVirtualTable()<<std::endl;
+			std::cout<< ++i <<" "<<en.getVirtualTable()<<std::endl;
 	}
 	else
 	{

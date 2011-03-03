@@ -2,6 +2,7 @@
 #include <PGNPly.h>
 #include <stdlib.h>
 
+
 ChEngn::Engine::Engine()
 {
 	m_currentMoveIt = m_moves.begin();
@@ -58,7 +59,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 
 	std::cout<<"Make:\n"<<(*pl)<<std::endl;
 	if( pl->isShortCastle() )
-		return true;
+		return makeShortCastling(isWhite);
 	
 	if ( pl->isLongCastle() )
 		return true;
@@ -497,6 +498,45 @@ bool ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 			return true;
 		}
 	return false;
+}
+
+bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
+{
+	pgn::Square newPos = ply->toSquare();
+	return true;
+}
+
+bool ChEngn::Engine::makeShortCastling( bool isWhite)
+{
+	char kingCol = 'e';
+	char row = (isWhite? '1': '8');
+	char rookCol = 'h';
+
+	Piece *kingPiece = m_table.pieceAtC( kingCol, row);
+	Piece *rookPiece = m_table.pieceAtC( rookCol, row);
+	
+/*	
+	if ( ( kingPiece != 0 ) && ( rookPiece != 0 ) &&
+		 ( kingPiece->type() == king ) && ( rookPiece->type() == rook ) &&
+		 ( kingPiece->moveFlag() != moved ) && (rookPiece->moveFlag() != moved) &&
+		   checkForEmptynessH('e', row,'h', &m_table) )
+	{*/
+		Piece *newKingPiece = m_table.pieceAtC('g', row);
+		Piece *newRookPiece = m_table.pieceAtC('f', row);
+
+		if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
+		{
+			(*newKingPiece) = (*kingPiece);
+			(*newRookPiece) = (*rookPiece);
+			newKingPiece->setMoved();
+			newRookPiece->setMoved();
+			kingPiece->setType( unknown );
+			rookPiece->setType( unknown );
+			return true;
+		}
+//	}
+	return false;
+		 
 }
 
 namespace ChEngn
