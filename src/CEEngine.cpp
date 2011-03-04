@@ -45,6 +45,7 @@ bool ChEngn::Engine::makeNextMove()
 				m_currentMoveIt++;
 				return true;
 			}
+	bool eql = (m_currentMoveIt == m_moves.end() );
 	return false;
 }
 
@@ -108,13 +109,8 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 		{
 			Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
 			if( dest != 0 )
-				if( dest->type() != unknown )
 				{
-					dest->setType( pawn );
-					if( isWhite )
-						dest->setWhite();
-					else
-						dest->setBlack();
+					(*dest) = (*movedPiece);
 					movedPiece->setType ( unknown );
 					return true;
 				}
@@ -428,11 +424,18 @@ bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 
 	if ( ( ply->fromSquare() >= 'a') && ( ply->fromSquare() <= 'h') )
 		end = ply->fromSquare();
-	
-	for (int i = 'a'; i<= end ; i++)
+
+	char tmpRow = newPos.row();
+	for (char i = 'a'; i<= end ; i++)
 	{
 		Piece* tmp = m_table.pieceAtC(i, newPos.row() );
-		if( ( movedPiece != 0 ) && ( movedPiece->type() == rook ) && ( movedPiece->isWhite() == isWhite ) )
+		if( ( tmp != 0 ) &&
+			( tmp->type() == rook ) &&
+			( tmp->isWhite() == isWhite )  &&
+			checkForEmptynessH( i,
+								newPos.col(),
+								newPos.row() ,
+								&m_table) )
 		{
 			movedPiece = tmp;
 		}
@@ -440,13 +443,20 @@ bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 
 	end='8';
 
+	char tmpCol = newPos.col();
 	if ( ( ply->fromSquare() >= '1') && ( ply->fromSquare() <= '8') )
 		end = ply->fromSquare();
 	
-	for (int i = '1'; i<= end ; i++)
+	for (char i = '1'; i<= end ; i++)
 	{
-		Piece* tmp = m_table.pieceAtC(i, newPos.col() );
-		if( ( movedPiece != 0 ) && ( movedPiece->type() == rook ) && ( movedPiece->isWhite() == isWhite ) ) 
+		Piece* tmp = m_table.pieceAtC(newPos.col(), i );
+		if( ( tmp != 0 ) &&
+			( tmp->type() == rook ) && 
+			( tmp->isWhite() == isWhite ) && 
+			checkForEmptynessV( i,
+								newPos.row() ,
+		  						newPos.col(),
+								&m_table) ) 
 		{
 			movedPiece = tmp;
 		}
@@ -484,7 +494,7 @@ bool ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 		for ( char r = '1'; r<= '8'; r++)
 		{
 			Piece *tmp = m_table.pieceAtC( c, r );
-			if ( ( tmp != 0 ) && (tmp->type() == queen ) && (tmp->isWhite() == isWhite) )
+			if ( (movedPiece == 0) && ( tmp != 0 ) && (tmp->type() == queen ) && (tmp->isWhite() == isWhite) )
 			{
 				movedPiece = tmp;
 				break;
