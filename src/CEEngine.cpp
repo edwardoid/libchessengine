@@ -546,7 +546,31 @@ bool ChEngn::Engine::makeLongCastling( bool isWhite)
 bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
 {
 	pgn::Square newPos = ply->toSquare();
-	return true;
+	char beginR = newPos.row() - 1;
+	char beginC = newPos.col() - 1;
+	char endR   = newPos.row() + 1;
+	char endC   = newPos.col() + 1;
+
+	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
+	
+	if ( ( dest == 0 ) || ( dest->type() == king ) )
+		return false;
+
+	for ( char c = beginC; c <= endC; c++) 
+		for ( char r = beginR; r<= endR; r++ )
+		{
+			Piece *movedPiece = m_table.pieceAtC( c, r );
+			if ( ( movedPiece != 0 ) &&
+				 ( movedPiece->type() == king ) &&
+				 ( movedPiece->isWhite() == isWhite )
+				 )
+			{
+				( *dest ) == ( *movedPiece );
+				movedPiece->setType( unknown );
+				return true;
+			}
+		}
+	return false;
 }
 
 bool ChEngn::Engine::makeShortCastling( bool isWhite)
