@@ -114,6 +114,8 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes kings's move.  <a href="#a44d51599b5d1f4a8938938b0d6231e34"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a04d2b1d6bbc5a8de80fb7363ba335a62">makeShortCastling</a> (bool isWhite)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes short castling move.  <a href="#a04d2b1d6bbc5a8de80fb7363ba335a62"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a23f8ac32bc551e617310dccd84ac6579">makeLongCastling</a> (bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Makes long castling move.  <a href="#a23f8ac32bc551e617310dccd84ac6579"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a886da6512b271d26a1fee49a317d2308"></a><!-- doxytag: member="ChEngn::Engine::operator&lt;&lt;" ref="a886da6512b271d26a1fee49a317d2308" args="(std::ostream &amp;out, const Engine &amp;engn)" -->
@@ -475,6 +477,34 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<a class="anchor" id="a23f8ac32bc551e617310dccd84ac6579"></a><!-- doxytag: member="ChEngn::Engine::makeLongCastling" ref="a23f8ac32bc551e617310dccd84ac6579" args="(bool isWhite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makeLongCastling </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>isWhite</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Makes long castling move. </p>
+<p>Tryes to make long castling </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if castling has been done successefully </dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>is</em>&nbsp;</td><td>isWhite - True if castling owner is white player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><!-- doxytag: member="ChEngn::Engine::makeMove" ref="a3bfc7cfe7e147e4d5d7f645d0cb72c8d" args="(pgn::Move &amp;move)" -->
 <div class="memitem">
 <div class="memproto">
@@ -768,7 +798,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Mar 5 2011 01:42:31 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Mar 5 2011 12:56:10 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

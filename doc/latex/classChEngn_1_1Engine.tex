@@ -56,7 +56,9 @@ bool \hyperlink{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}{makeQue
 bool \hyperlink{classChEngn_1_1Engine_a44d51599b5d1f4a8938938b0d6231e34}{makeKingPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes kings's move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a04d2b1d6bbc5a8de80fb7363ba335a62}{makeShortCastling} (bool isWhite)
-\begin{DoxyCompactList}\small\item\em Makes short castling move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Makes short castling move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}{makeLongCastling} (bool isWhite)
+\begin{DoxyCompactList}\small\item\em Makes long castling move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -252,6 +254,25 @@ true if ply has been done successefully
 
 \begin{DoxyParams}{Parameters}
 \item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+\hypertarget{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeLongCastling@{makeLongCastling}}
+\index{makeLongCastling@{makeLongCastling}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeLongCastling}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeLongCastling (
+\begin{DoxyParamCaption}
+\item[{bool}]{ isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}
+
+
+Makes long castling move. 
+
+Tryes to make long castling \begin{DoxyReturn}{Returns}
+true if castling has been done successefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em is}]isWhite -\/ True if castling owner is white player. \end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeMove@{makeMove}}
 \index{makeMove@{makeMove}!ChEngn::Engine@{ChEngn::Engine}}

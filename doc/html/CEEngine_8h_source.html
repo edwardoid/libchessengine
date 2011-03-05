@@ -112,15 +112,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00216"></a>00216             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a04d2b1d6bbc5a8de80fb7363ba335a62" title="Makes short castling move.">makeShortCastling</a>( <span class="keywordtype">bool</span> isWhite);
 <a name="l00217"></a>00217 
 <a name="l00218"></a>00218 
-<a name="l00219"></a>00219         <span class="keyword">private</span>: <span class="comment">// functions</span>
-<a name="l00220"></a>00220         <span class="keyword">private</span>: <span class="comment">// variables</span>
-<a name="l00221"></a>00221             <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a> m_table;
-<a name="l00222"></a>00222             pgn::MoveList m_moves;
-<a name="l00223"></a>00223             pgn::MoveList::iterator m_currentMoveIt;
-<a name="l00224"></a>00224     };
-<a name="l00225"></a>00225 };
-<a name="l00226"></a>00226 
-<a name="l00227"></a>00227 <span class="preprocessor">#endif</span>
+<a name="l00224"></a>00224             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a23f8ac32bc551e617310dccd84ac6579" title="Makes long castling move.">makeLongCastling</a>( <span class="keywordtype">bool</span> isWhite);
+<a name="l00225"></a>00225 
+<a name="l00226"></a>00226         <span class="keyword">private</span>: <span class="comment">// functions</span>
+<a name="l00227"></a>00227         <span class="keyword">private</span>: <span class="comment">// variables</span>
+<a name="l00228"></a>00228             <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a> m_table;
+<a name="l00229"></a>00229             pgn::MoveList m_moves;
+<a name="l00230"></a>00230             pgn::MoveList::iterator m_currentMoveIt;
+<a name="l00231"></a>00231     };
+<a name="l00232"></a>00232 };
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -137,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Mar 5 2011 01:42:31 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Mar 5 2011 12:56:10 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

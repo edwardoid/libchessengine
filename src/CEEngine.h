@@ -216,6 +216,13 @@ namespace ChEngn
 			bool makeShortCastling( bool isWhite);
 
 
+			/** Tryes to make long castling
+			 * @brief Makes long castling move
+			 * @return true if castling has been done successefully
+			 * @param is isWhite - True if castling  owner is white player.
+			 */	
+			bool makeLongCastling( bool isWhite);
+
 		private: // functions
 		private: // variables
 			VirtualTable m_table;

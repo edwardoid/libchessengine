@@ -63,7 +63,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 		return makeShortCastling(isWhite);
 	
 	if ( pl->isLongCastle() )
-		return true;
+		return makeLongCastling(isWhite);
 	if ( (pl->piece()) == pgn::Piece::Pawn() )
 	{
 		return makePawnPly(pl, isWhite);
@@ -508,6 +508,39 @@ bool ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 			return true;
 		}
 	return false;
+}
+
+bool ChEngn::Engine::makeLongCastling( bool isWhite)
+{
+	char kingCol = 'e';
+	char row = (isWhite? '1': '8');
+	char rookCol = 'a';
+
+	Piece *kingPiece = m_table.pieceAtC( kingCol, row);
+	Piece *rookPiece = m_table.pieceAtC( rookCol, row);
+	
+/*	
+	if ( ( kingPiece != 0 ) && ( rookPiece != 0 ) &&
+		 ( kingPiece->type() == king ) && ( rookPiece->type() == rook ) &&
+		 ( kingPiece->moveFlag() != moved ) && (rookPiece->moveFlag() != moved) &&
+		   checkForEmptynessH('e', row,'h', &m_table) )
+	{*/
+		Piece *newKingPiece = m_table.pieceAtC('c', row);
+		Piece *newRookPiece = m_table.pieceAtC('d', row);
+
+		if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
+		{
+			(*newKingPiece) = (*kingPiece);
+			(*newRookPiece) = (*rookPiece);
+			newKingPiece->setMoved();
+			newRookPiece->setMoved();
+			kingPiece->setType( unknown );
+			rookPiece->setType( unknown );
+			return true;
+		}
+//	}
+	return false;
+		 
 }
 
 bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
