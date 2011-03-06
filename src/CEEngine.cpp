@@ -92,42 +92,64 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 	pgn::Square newPos = ply->toSquare();
 	if(ply->isCapture())
 	{
-		char specifiedCol = ply->toSquare().col() -1 ;
+		Piece *movedPiece = 0;
+		Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 
-		if ( ply->fromSquare() != '-' )
-			specifiedCol = ply->fromSquare();
+		if ( ( dest == 0 ) ||
+			 ( dest->isWhite() == isWhite ) || 
+			 ( dest->type() == unknown) 
+			)
+				return false;
 
-		pgn::Square oldPos(	specifiedCol, ply->toSquare().row() );
-		Piece *movedPiece = m_table.pieceAtC( oldPos.col(), oldPos.row() );
-
-		if( (movedPiece == 0 ) || (movedPiece->type() != pawn) )
+		char specifiedCol = ply->fromSquare();
+		if ( specifiedCol != '-')
 		{
-			oldPos = pgn::Square( char (ply->toSquare().col() + 1) , newPos.row());
-			movedPiece = m_table.pieceAtC( oldPos.col(), oldPos.row() );
+			pgn::Square oldPos(specifiedCol, newPos.row() - coef);
+			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
+
+			if ( ( movedPiece == 0 ) || 
+				 ( movedPiece->type() != pawn ) || 
+				 ( movedPiece->isWhite() != isWhite ) )
+				return false;
 		}
+		else
+		{
+			Piece *tmp = m_table.pieceAtC ( newPos.col() - 1, newPos.row() - coef );
+			
+			if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
+				movedPiece == tmp;
+			else
+			{
+				tmp = m_table.pieceAtC ( newPos.col() + 1, newPos.row() - coef );
+				if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
+					movedPiece == tmp;
+
+			}
+		}
+
 		if ( movedPiece != 0 )
 		{
-			Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
-			if( dest != 0 )
-				{
-					(*dest) = (*movedPiece);
-					movedPiece->setType ( unknown );
-					return true;
-				}
+			(*dest) = (*movedPiece);
+			movedPiece->setType(unknown);
+			return true;
 		}
 	}
-	else
+	else 
 	{
 		pgn::Square oldPos(newPos.col(), newPos.row() - coef);
 		Piece* movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
-		if( (movedPiece == 0) || (movedPiece->type() != pawn) || (movedPiece->isWhite() != isWhite) )
+		if( (movedPiece == 0) || 
+		    (movedPiece->type() != pawn) || 
+		    (movedPiece->isWhite() != isWhite) )
 		{
 			oldPos = pgn::Square(newPos.col(), newPos.row() - 2*coef);
 			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
 		}
 		if( movedPiece != 0 )
 		{
-			if( (movedPiece->type() == pawn ) && (movedPiece->isWhite() == isWhite) && (movedPiece->isWhite() == isWhite) )
+			if( (movedPiece->type() == pawn ) && 
+				(movedPiece->isWhite() == isWhite) && 
+				(movedPiece->isWhite() == isWhite) )
 			{
 				Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
 				if( dest != 0 )
