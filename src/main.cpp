@@ -17,7 +17,7 @@ int main()
 		std::cout<<en<<std::endl;
 
 		int i=0;
-		while(en.makeNextMove())
+		while(en.makeNextHalfMove())
 			std::cout<< ++i <<" "<<en.getVirtualTable()<<std::endl;
 	}
 	else

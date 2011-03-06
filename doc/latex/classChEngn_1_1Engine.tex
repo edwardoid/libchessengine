@@ -27,6 +27,8 @@ pgn::MoveList::iterator \hyperlink{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a
 \begin{DoxyCompactList}\small\item\em Iterarator to next move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a16b3f2bb7787bccf321f8a03935947c2}{makeNextMove} ()
 \begin{DoxyCompactList}\small\item\em make next move. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Engine_ab9f6f3cbf3e7866887b049f61f9ce46b}{makeNextHalfMove} ()
+\begin{DoxyCompactList}\small\item\em make next half-\/move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{makeMove} (pgn::Move \&move)
 \begin{DoxyCompactList}\small\item\em Make move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly} (const pgn::Ply $\ast$pl, bool isWhite)
@@ -291,6 +293,22 @@ Tryes to make move. OK if white player's move did successefully AND black player
 \item[{\em move}]-\/ Move which must to do \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if move has been succesefully done. else -\/ otherway 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_ab9f6f3cbf3e7866887b049f61f9ce46b}{
+\index{ChEngn::Engine@{ChEngn::Engine}!makeNextHalfMove@{makeNextHalfMove}}
+\index{makeNextHalfMove@{makeNextHalfMove}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{makeNextHalfMove}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeNextHalfMove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Engine_ab9f6f3cbf3e7866887b049f61f9ce46b}
+
+
+make next half-\/move. 
+
+Try to make next half-\/move. \begin{DoxyReturn}{Returns}
+true if move can was successefully did. Else -\/ fale will be returned. False will be returned if no moves is aviable. 
 \end{DoxyReturn}
 \hypertarget{classChEngn_1_1Engine_a16b3f2bb7787bccf321f8a03935947c2}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeNextMove@{makeNextMove}}

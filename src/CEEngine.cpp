@@ -49,6 +49,23 @@ bool ChEngn::Engine::makeNextMove()
 	return false;
 }
 
+bool ChEngn::Engine::makeNextHalfMove()
+{
+	if ( m_currentMoveIt != m_moves.end() )
+	if ( m_halfMove)
+	{
+		m_halfMove = false;
+		bool res = makePly( m_currentMoveIt->black() , false);
+		m_currentMoveIt++;
+		return res;
+	}
+	else
+	{	
+		m_halfMove = true;
+		return makePly( m_currentMoveIt->white() , true);
+	}
+	return false;
+}
 
 bool ChEngn::Engine::makeMove( pgn::Move& move)
 {
@@ -96,8 +113,7 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 		Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 
 		if ( ( dest == 0 ) ||
-			 ( dest->isWhite() == isWhite ) || 
-			 ( dest->type() == unknown) 
+			 ( dest->isWhite() == isWhite ) 
 			)
 				return false;
 

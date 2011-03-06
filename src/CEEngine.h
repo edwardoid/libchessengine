@@ -97,7 +97,14 @@ namespace ChEngn
 			bool makeNextMove();
 
 			/**
-			 * Tryes to make move.
+			 * Try to make next half-move.
+			 * @brief make next half-move.
+			 * @return true if move can was successefully did. Else -  fale will
+			 * be returned. False will be returned if no moves is aviable.
+			 */
+			bool makeNextHalfMove();
+			
+			/** Tryes to make move.
 			 * OK if white player's move did successefully AND black player's
 			 * move did successefully.
 			 * @brief Make move
@@ -225,6 +232,7 @@ namespace ChEngn
 
 		private: // functions
 		private: // variables
+			bool m_halfMove;
 			VirtualTable m_table;
 			pgn::MoveList m_moves;
 			pgn::MoveList::iterator m_currentMoveIt;

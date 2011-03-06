@@ -87,6 +87,8 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Iterarator to next move.  <a href="#ad35252a7c6a7e84a34d12a688360a75f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a16b3f2bb7787bccf321f8a03935947c2">makeNextMove</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">make next move.  <a href="#a16b3f2bb7787bccf321f8a03935947c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ab9f6f3cbf3e7866887b049f61f9ce46b">makeNextHalfMove</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">make next half-move.  <a href="#ab9f6f3cbf3e7866887b049f61f9ce46b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d">makeMove</a> (pgn::Move &amp;move)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Make move.  <a href="#a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a> (const pgn::Ply *pl, bool isWhite)</td></tr>
@@ -533,6 +535,27 @@ std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<a class="anchor" id="ab9f6f3cbf3e7866887b049f61f9ce46b"></a><!-- doxytag: member="ChEngn::Engine::makeNextHalfMove" ref="ab9f6f3cbf3e7866887b049f61f9ce46b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::makeNextHalfMove </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>make next half-move. </p>
+<p>Try to make next half-move. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if move can was successefully did. Else - fale will be returned. False will be returned if no moves is aviable. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a16b3f2bb7787bccf321f8a03935947c2"></a><!-- doxytag: member="ChEngn::Engine::makeNextMove" ref="a16b3f2bb7787bccf321f8a03935947c2" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -798,7 +821,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Mar 5 2011 12:56:10 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 6 2011 15:05:34 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
