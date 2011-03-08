@@ -11,14 +11,13 @@ int main()
 	pgn::GameCollection *cG = file.games();
 	if( cG != 0 )
 	{
-		std::cout<<"Loaded: "<<cG->size()<<" games"<<std::endl;
-		ChEngn::Engine en( (*cG)[0] );
-		std::cout<< en.moves()->size() << " moves in loaded game"<<std::endl;
-		std::cout<<en<<std::endl;
+		ChEngn::Engine en( (*cG)[1] );
 
 		int i=0;
-		while(en.makeNextHalfMove())
-			std::cout<< ++i <<" "<<en.getVirtualTable()<<std::endl;
+		while(en.makeNextMove())
+			++i;
+
+		std::cout<<"Game: "<<4 << " from: "<<cG->size()<< " Moves done: "<<i<<"/"<<en.moves()->size()<<std::endl;
 	}
 	else
 	{

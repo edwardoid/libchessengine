@@ -1,3 +1,24 @@
+//
+// Copyright (C) 2002 Edward Sarkisyan <edward.sarkisyan@gmail.com>
+//
+//     This file is part of libchessengine.
+//
+//     libchessengine is free software; you can redistribute it and/or modify
+//     it under the terms of the GNU General Public License as published by
+//     the Free Software Foundation; either version 2 of the License, or
+//     (at your option) any later version.     
+// 
+//     libchessengine is distributed in the hope that it will be useful,
+//     but WITHOUT ANY WARRANTY; without even the implied warranty of
+//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+// 
+//     See the GNU General Public License for more details. 
+// 
+//     You should have received a copy of the GNU General Public License
+//     along with pgnlib; if not, write to the Free Software Foundation, 
+//     Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+//
+
 #include "CEEngine.h"
 #include <PGNPly.h>
 #include <stdlib.h>
@@ -77,7 +98,7 @@ bool ChEngn::Engine::makeMove( pgn::Move& move)
 bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 {
 
-	std::cout<<"Make:\n"<<(*pl)<< (isWhite?" white": " black")<< std::endl;
+	//d::cout<<"Make:\n"<<(*pl)<< (isWhite?" white": " black")<< std::endl;
 	if( pl->isShortCastle() )
 		return makeShortCastling(isWhite);
 	
@@ -114,9 +135,7 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 		Piece *movedPiece = 0;
 		Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 
-		if ( ( dest == 0 ) ||
-			 ( dest->isWhite() == isWhite ) 
-			)
+		if ( ( dest == 0 ) )
 				return false;
 
 		char specifiedCol = ply->fromSquare();
@@ -147,6 +166,14 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 
 		if ( movedPiece != 0 )
 		{
+			if ( dest->type() == unknown )
+			{
+				Piece *longDest = m_table.pieceAtC(newPos.col(), newPos.row() - coef);
+				if ( ( longDest != 0 ) &&
+					 ( longDest->isWhite() != isWhite) &&
+					 ( longDest->type() == pawn ) )
+					 longDest->setType( unknown );
+			}
 			(*dest) = (*movedPiece);
 			movedPiece->setType(unknown);
 			return true;
@@ -394,7 +421,7 @@ bool ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 
 	if ( ( movedPiece != 0) && ( dest != 0 ) )
 	{
-		if ( ( (ply->isCapture()) && (dest->type() != unknown) && (dest->isWhite() == isWhite) )
+		if ( ( (ply->isCapture()) && (dest->type() != unknown) )
 			|| 
 		 ( (dest->type() == unknown) && (! ply->isCapture() )  ) )
 		 {
@@ -492,7 +519,8 @@ bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 		Piece* tmp = m_table.pieceAtC(newPos.col(), i );
 		if( ( tmp != 0 ) &&
 			( tmp->type() == rook ) && 
-			( tmp->isWhite() == isWhite ) && 
+			( tmp->isWhite() == isWhite ) &&
+			( movedPiece == 0 ) &&
 			checkForEmptynessV( i,
 								newPos.row() ,
 		  						newPos.col(),

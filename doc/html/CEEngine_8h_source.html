@@ -50,82 +50,103 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>src/CEEngine.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CHESS_ENGINE_ENGINE</span>
-<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CHESS_ENGINE_ENGINE</span>
-<a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;<a class="code" href="CETable_8h.html" title="ChEngn::default_table_height, ChEngn::default_table_width.">CETable.h</a>&gt;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;PGNGame.h&gt;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;PGNMoveList.h&gt;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;PGNPly.h&gt;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00009"></a>00009 
-<a name="l00021"></a>00021 <span class="keyword">namespace </span>ChEngn
-<a name="l00022"></a>00022 {
-<a name="l00035"></a><a class="code" href="namespaceChEngn.html#a5ba229504d25ed1b2086f1df62f6db41">00035</a>     <span class="keyword">typedef</span> <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">ChEngn::Table</a> <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="classChEngn_1_1Engine.html">00037</a>     <span class="keyword">class </span><a class="code" href="classChEngn_1_1Engine.html">Engine</a>
-<a name="l00038"></a>00038     {
-<a name="l00039"></a>00039         <span class="keyword">public</span>:
-<a name="l00043"></a>00043             <a class="code" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e" title="Default constructor.">Engine</a>();
-<a name="l00044"></a>00044 
-<a name="l00049"></a>00049             <a class="code" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e" title="Default constructor.">Engine</a>(<span class="keyword">const</span> <a class="code" href="classChEngn_1_1Engine.html">Engine</a> &amp;other);
-<a name="l00050"></a>00050 
-<a name="l00056"></a>00056             <a class="code" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e" title="Default constructor.">Engine</a>(<span class="keyword">const</span> pgn::Game &amp;gm);
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">// Copyright (C) 2002 Edward Sarkisyan &lt;edward.sarkisyan@gmail.com&gt;</span>
+<a name="l00003"></a>00003 <span class="comment">//</span>
+<a name="l00004"></a>00004 <span class="comment">//     This file is part of libchessengine.</span>
+<a name="l00005"></a>00005 <span class="comment">//</span>
+<a name="l00006"></a>00006 <span class="comment">//     libchessengine is free software; you can redistribute it and/or modify</span>
+<a name="l00007"></a>00007 <span class="comment">//     it under the terms of the GNU General Public License as published by</span>
+<a name="l00008"></a>00008 <span class="comment">//     the Free Software Foundation; either version 2 of the License, or</span>
+<a name="l00009"></a>00009 <span class="comment">//     (at your option) any later version.     </span>
+<a name="l00010"></a>00010 <span class="comment">// </span>
+<a name="l00011"></a>00011 <span class="comment">//     libchessengine is distributed in the hope that it will be useful,</span>
+<a name="l00012"></a>00012 <span class="comment">//     but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00013"></a>00013 <span class="comment">//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  </span>
+<a name="l00014"></a>00014 <span class="comment">// </span>
+<a name="l00015"></a>00015 <span class="comment">//     See the GNU General Public License for more details. </span>
+<a name="l00016"></a>00016 <span class="comment">// </span>
+<a name="l00017"></a>00017 <span class="comment">//     You should have received a copy of the GNU General Public License</span>
+<a name="l00018"></a>00018 <span class="comment">//     along with pgnlib; if not, write to the Free Software Foundation, </span>
+<a name="l00019"></a>00019 <span class="comment">//     Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span>
+<a name="l00020"></a>00020 <span class="comment">//</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef CHESS_ENGINE_ENGINE</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define CHESS_ENGINE_ENGINE</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="CETable_8h.html" title="ChEngn::default_table_height, ChEngn::default_table_width.">CETable.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;PGNGame.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;PGNMoveList.h&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;PGNPly.h&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00042"></a>00042 <span class="keyword">namespace </span>ChEngn
+<a name="l00043"></a>00043 {
+<a name="l00056"></a><a class="code" href="namespaceChEngn.html#a5ba229504d25ed1b2086f1df62f6db41">00056</a>     <span class="keyword">typedef</span> <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">ChEngn::Table</a> <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>;
 <a name="l00057"></a>00057 
-<a name="l00061"></a>00061             <span class="keyword">virtual</span> <a class="code" href="classChEngn_1_1Engine.html#a83fcd852ca53c24a7af0e3dd689fe0f7" title="Destructor.">~Engine</a>();
-<a name="l00062"></a>00062 
-<a name="l00067"></a>00067             <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a> <a class="code" href="classChEngn_1_1Engine.html#a26f8db48e99d547fbc41eaa9dca8e6cf" title="Get an copy of current game table.">getVirtualTable</a>() <span class="keyword">const</span>;
-<a name="l00068"></a>00068 
-<a name="l00074"></a>00074             pgn::MoveList* <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="Get loaded moves.">moves</a>();
-<a name="l00075"></a>00075 
-<a name="l00089"></a>00089             pgn::MoveList::iterator <a class="code" href="classChEngn_1_1Engine.html#ad35252a7c6a7e84a34d12a688360a75f" title="Iterarator to next move.">nextMove</a>();
-<a name="l00090"></a>00090             
-<a name="l00097"></a>00097             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a16b3f2bb7787bccf321f8a03935947c2" title="make next move.">makeNextMove</a>();
-<a name="l00098"></a>00098 
-<a name="l00105"></a>00105             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#ab9f6f3cbf3e7866887b049f61f9ce46b" title="make next half-move.">makeNextHalfMove</a>();
-<a name="l00106"></a>00106             
-<a name="l00114"></a>00114             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d" title="Make move.">makeMove</a>(pgn::Move&amp; move);
-<a name="l00115"></a>00115 
-<a name="l00123"></a>00123             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a>(<span class="keyword">const</span> pgn::Ply* pl, <span class="keywordtype">bool</span> isWhite);
-<a name="l00124"></a>00124 
-<a name="l00128"></a>00128             <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classChEngn_1_1Engine.html#a886da6512b271d26a1fee49a317d2308" title="&amp;quot;Print&amp;quot; current table">operator &lt;&lt; </a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="classChEngn_1_1Engine.html">Engine</a>&amp; engn );
-<a name="l00129"></a>00129 
-<a name="l00140"></a>00140             <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#aebba3d5fac90f1e829fc122b31f26064" title="Check horisontal for emptyness.">checkForEmptynessH</a>(<span class="keywordtype">char</span> from, <span class="keywordtype">char</span> to, <span class="keywordtype">char</span> row, <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>* table);
-<a name="l00141"></a>00141 
-<a name="l00152"></a>00152             <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#ab812e459beb68c21e02370d0f7767299" title="Check horisontal for emptyness.">checkForEmptynessV</a>(<span class="keywordtype">char</span> from, <span class="keywordtype">char</span> to, <span class="keywordtype">char</span> column, <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>* table);
-<a name="l00153"></a>00153 
-<a name="l00165"></a>00165             <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#afa008c74a0a46fc1dacd41ad2d8210e2" title="Check horisontal for emptyness.">checkForEmptynessDiagonal</a>(<span class="keywordtype">char</span> fromC, <span class="keywordtype">char</span> fromR, <span class="keywordtype">char</span> toC, <span class="keywordtype">char</span> toR, <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>* table);
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167 
-<a name="l00168"></a>00168         <span class="keyword">protected</span>: <span class="comment">//protected functions</span>
-<a name="l00169"></a>00169 
-<a name="l00176"></a>00176             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a5ee94d0b489d05ef5e643cb9cfe5ac1a" title="Makes pawn&amp;#39;s move.">makePawnPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
-<a name="l00177"></a>00177     
-<a name="l00184"></a>00184             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a1dc6130dd986b0b0b8960a3c1e99f87c" title="Makes knight&amp;#39;s move.">makeKnightPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
-<a name="l00185"></a>00185 
-<a name="l00192"></a>00192             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a066d78b55f68fe6dbcd6581f64ae512a" title="Makes bishop&amp;#39;s move.">makeBishopPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
-<a name="l00193"></a>00193 
-<a name="l00200"></a>00200             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#aaf471f4ff06fbb4302e214a3c447bf1b" title="Makes bishop&amp;#39;s move.">makeRookPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
-<a name="l00201"></a>00201 
-<a name="l00208"></a>00208             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a647b1fb60e06af87b271789c11fe9b8f" title="Makes queen&amp;#39;s move.">makeQueenPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
-<a name="l00209"></a>00209         
-<a name="l00216"></a>00216             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a44d51599b5d1f4a8938938b0d6231e34" title="Makes kings&amp;#39;s move.">makeKingPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
-<a name="l00217"></a>00217 
-<a name="l00223"></a>00223             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a04d2b1d6bbc5a8de80fb7363ba335a62" title="Makes short castling move.">makeShortCastling</a>( <span class="keywordtype">bool</span> isWhite);
-<a name="l00224"></a>00224 
-<a name="l00225"></a>00225 
-<a name="l00231"></a>00231             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a23f8ac32bc551e617310dccd84ac6579" title="Makes long castling move.">makeLongCastling</a>( <span class="keywordtype">bool</span> isWhite);
-<a name="l00232"></a>00232 
-<a name="l00233"></a>00233         <span class="keyword">private</span>: <span class="comment">// functions</span>
-<a name="l00234"></a>00234         <span class="keyword">private</span>: <span class="comment">// variables</span>
-<a name="l00235"></a>00235             <span class="keywordtype">bool</span> m_halfMove;
-<a name="l00236"></a>00236             <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a> m_table;
-<a name="l00237"></a>00237             pgn::MoveList m_moves;
-<a name="l00238"></a>00238             pgn::MoveList::iterator m_currentMoveIt;
-<a name="l00239"></a>00239     };
-<a name="l00240"></a>00240 };
-<a name="l00241"></a>00241 
-<a name="l00242"></a>00242 <span class="preprocessor">#endif</span>
+<a name="l00058"></a><a class="code" href="classChEngn_1_1Engine.html">00058</a>     <span class="keyword">class </span><a class="code" href="classChEngn_1_1Engine.html">Engine</a>
+<a name="l00059"></a>00059     {
+<a name="l00060"></a>00060         <span class="keyword">public</span>:
+<a name="l00064"></a>00064             <a class="code" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e" title="Default constructor.">Engine</a>();
+<a name="l00065"></a>00065 
+<a name="l00070"></a>00070             <a class="code" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e" title="Default constructor.">Engine</a>(<span class="keyword">const</span> <a class="code" href="classChEngn_1_1Engine.html">Engine</a> &amp;other);
+<a name="l00071"></a>00071 
+<a name="l00077"></a>00077             <a class="code" href="classChEngn_1_1Engine.html#a2bd4b075e86d94d94f3ea97c680b302e" title="Default constructor.">Engine</a>(<span class="keyword">const</span> pgn::Game &amp;gm);
+<a name="l00078"></a>00078 
+<a name="l00082"></a>00082             <span class="keyword">virtual</span> <a class="code" href="classChEngn_1_1Engine.html#a83fcd852ca53c24a7af0e3dd689fe0f7" title="Destructor.">~Engine</a>();
+<a name="l00083"></a>00083 
+<a name="l00088"></a>00088             <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a> <a class="code" href="classChEngn_1_1Engine.html#a26f8db48e99d547fbc41eaa9dca8e6cf" title="Get an copy of current game table.">getVirtualTable</a>() <span class="keyword">const</span>;
+<a name="l00089"></a>00089 
+<a name="l00095"></a>00095             pgn::MoveList* <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="Get loaded moves.">moves</a>();
+<a name="l00096"></a>00096 
+<a name="l00110"></a>00110             pgn::MoveList::iterator <a class="code" href="classChEngn_1_1Engine.html#ad35252a7c6a7e84a34d12a688360a75f" title="Iterarator to next move.">nextMove</a>();
+<a name="l00111"></a>00111             
+<a name="l00118"></a>00118             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a16b3f2bb7787bccf321f8a03935947c2" title="make next move.">makeNextMove</a>();
+<a name="l00119"></a>00119 
+<a name="l00126"></a>00126             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#ab9f6f3cbf3e7866887b049f61f9ce46b" title="make next half-move.">makeNextHalfMove</a>();
+<a name="l00127"></a>00127             
+<a name="l00135"></a>00135             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d" title="Make move.">makeMove</a>(pgn::Move&amp; move);
+<a name="l00136"></a>00136 
+<a name="l00144"></a>00144             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a>(<span class="keyword">const</span> pgn::Ply* pl, <span class="keywordtype">bool</span> isWhite);
+<a name="l00145"></a>00145 
+<a name="l00149"></a>00149             <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classChEngn_1_1Engine.html#a886da6512b271d26a1fee49a317d2308" title="&amp;quot;Print&amp;quot; current table">operator &lt;&lt; </a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code" href="classChEngn_1_1Engine.html">Engine</a>&amp; engn );
+<a name="l00150"></a>00150 
+<a name="l00161"></a>00161             <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#aebba3d5fac90f1e829fc122b31f26064" title="Check horisontal for emptyness.">checkForEmptynessH</a>(<span class="keywordtype">char</span> from, <span class="keywordtype">char</span> to, <span class="keywordtype">char</span> row, <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>* table);
+<a name="l00162"></a>00162 
+<a name="l00173"></a>00173             <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#ab812e459beb68c21e02370d0f7767299" title="Check horisontal for emptyness.">checkForEmptynessV</a>(<span class="keywordtype">char</span> from, <span class="keywordtype">char</span> to, <span class="keywordtype">char</span> column, <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>* table);
+<a name="l00174"></a>00174 
+<a name="l00186"></a>00186             <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#afa008c74a0a46fc1dacd41ad2d8210e2" title="Check horisontal for emptyness.">checkForEmptynessDiagonal</a>(<span class="keywordtype">char</span> fromC, <span class="keywordtype">char</span> fromR, <span class="keywordtype">char</span> toC, <span class="keywordtype">char</span> toR, <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a>* table);
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         <span class="keyword">protected</span>: <span class="comment">//protected functions</span>
+<a name="l00190"></a>00190 
+<a name="l00197"></a>00197             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a5ee94d0b489d05ef5e643cb9cfe5ac1a" title="Makes pawn&amp;#39;s move.">makePawnPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
+<a name="l00198"></a>00198     
+<a name="l00205"></a>00205             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a1dc6130dd986b0b0b8960a3c1e99f87c" title="Makes knight&amp;#39;s move.">makeKnightPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
+<a name="l00206"></a>00206 
+<a name="l00213"></a>00213             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a066d78b55f68fe6dbcd6581f64ae512a" title="Makes bishop&amp;#39;s move.">makeBishopPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
+<a name="l00214"></a>00214 
+<a name="l00221"></a>00221             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#aaf471f4ff06fbb4302e214a3c447bf1b" title="Makes bishop&amp;#39;s move.">makeRookPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
+<a name="l00222"></a>00222 
+<a name="l00229"></a>00229             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a647b1fb60e06af87b271789c11fe9b8f" title="Makes queen&amp;#39;s move.">makeQueenPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
+<a name="l00230"></a>00230         
+<a name="l00237"></a>00237             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a44d51599b5d1f4a8938938b0d6231e34" title="Makes kings&amp;#39;s move.">makeKingPly</a>( <span class="keyword">const</span> pgn::Ply* ply, <span class="keywordtype">bool</span> isWhite);
+<a name="l00238"></a>00238 
+<a name="l00244"></a>00244             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a04d2b1d6bbc5a8de80fb7363ba335a62" title="Makes short castling move.">makeShortCastling</a>( <span class="keywordtype">bool</span> isWhite);
+<a name="l00245"></a>00245 
+<a name="l00246"></a>00246 
+<a name="l00252"></a>00252             <span class="keywordtype">bool</span> <a class="code" href="classChEngn_1_1Engine.html#a23f8ac32bc551e617310dccd84ac6579" title="Makes long castling move.">makeLongCastling</a>( <span class="keywordtype">bool</span> isWhite);
+<a name="l00253"></a>00253 
+<a name="l00254"></a>00254         <span class="keyword">private</span>: <span class="comment">// functions</span>
+<a name="l00255"></a>00255         <span class="keyword">private</span>: <span class="comment">// variables</span>
+<a name="l00256"></a>00256             <span class="keywordtype">bool</span> m_halfMove;
+<a name="l00257"></a>00257             <a class="code" href="classChEngn_1_1Table.html" title="Chess board.">VirtualTable</a> m_table;
+<a name="l00258"></a>00258             pgn::MoveList m_moves;
+<a name="l00259"></a>00259             pgn::MoveList::iterator m_currentMoveIt;
+<a name="l00260"></a>00260     };
+<a name="l00261"></a>00261 };
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -142,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 6 2011 15:05:34 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 8 2011 15:13:32 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
