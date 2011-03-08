@@ -10,12 +10,14 @@ ChEngn::Engine::Engine()
 
 ChEngn::Engine::Engine(const Engine &other)
 {
+	m_halfMove = false;
 }
 
 ChEngn::Engine::Engine(const pgn::Game &gm)
 {
 	m_moves = gm.moves();
 	m_currentMoveIt = m_moves.begin();
+	m_halfMove = false;
 }
 
 ChEngn::Engine::~Engine()
@@ -75,7 +77,7 @@ bool ChEngn::Engine::makeMove( pgn::Move& move)
 bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 {
 
-	std::cout<<"Make:\n"<<(*pl)<<std::endl;
+	std::cout<<"Make:\n"<<(*pl)<< (isWhite?" white": " black")<< std::endl;
 	if( pl->isShortCastle() )
 		return makeShortCastling(isWhite);
 	
@@ -98,7 +100,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 		return makeQueenPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::King() )
-		return true;
+		return makeKingPly(pl, isWhite);
 
 	return false;
 }
@@ -603,7 +605,7 @@ bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
 				 ( movedPiece->isWhite() == isWhite )
 				 )
 			{
-				( *dest ) == ( *movedPiece );
+				( *dest ) = ( *movedPiece );
 				movedPiece->setType( unknown );
 				return true;
 			}
