@@ -54,3 +54,8 @@ clean:
 test: all
 	g++ $(TST_DIR)main.cpp -lpgnm -lchessengine -L$(LIB_DIR) -o $(TST_DIR)test
 	./$(TST_DIR)test
+
+.PHONY: install
+install: static shared
+	cp $(LIB_DIR)* /usr/local/lib
+	cp $(SRC_DIR)*.h /usr/local/include
