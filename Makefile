@@ -3,37 +3,29 @@ OBJ_DIR := obj/
 BIN_DIR := bin/
 DEP_DIR := dep/
 LIB_DIR := lib/
-INC_DIR := ./src 
-ADDITIONAL_INC := ./src/libpgnm/src
+INC_DIR := ./src
+TST_DIR := tests/
 CC:= g++
 DEB_FLAGS:= -g3 -gdwarf-2
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
-LINK_LIBS:= -static -lpgnm 
-BINARY_TARGET := test
+LIBRARY_TARGET := chessengine
 .PHONY: all
-all: binary
+all: library
 
-.PHONY: binary
-binary: $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
+.PHONY: library
+library: static shared
 
-.PHONY: run
-run: binary
-	./$(BIN_DIR)$(BINARY_TARGET)
+.PHONY: static
+static: $(OBJ_FILES)
+	ar -r $(LIB_DIR)lib$(LIBRARY_TARGET).a $(OBJ_FILES)
 
-
-.PHONY: build_debug
-build_debug: $(OBJ_FILES)
-	$(CC) -g $(DEB_FLAGS) $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
-
-.PHONY: debug
-debug: build_debug
-	gdb ./$(BIN_DIR)$(BINARY_TARGET)
-	
+.PHONY: shared
+shared: $(OBJ_FILES)
+	$(CC) $(OBJ_FILES) -shared -o $(LIB_DIR)lib$(LIBRARY_TARGET).so
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	$(CC) -g $(DEB_FLAGS) -c $< -I$(INC_DIR) -I$(ADDITIONAL_INC) -o $@
+	$(CC) -c $< -I$(INC_DIR) -o $@
 $(DEP_DIR)%.dep: $(SRC_DIR)%.cpp
 	$(CC) -MM $< -MT "$@ $(patsubst $(DEP_DIR)%.dep,$(OBJ_DIR)%o,$@)" -I$(INC_DIR) -o $@
 
@@ -56,3 +48,9 @@ clean:
 	rm -rf $(LIB_DIR)*
 	rm -rf $(OBJ_DIR)*
 	rm -rf $(DEP_DIR)*
+	rm -rf $(TST_DIR)test
+
+.PHONY: test
+test: all
+	g++ $(TST_DIR)main.cpp -lpgnm -lchessengine -L$(LIB_DIR) -o $(TST_DIR)test
+	./$(TST_DIR)test

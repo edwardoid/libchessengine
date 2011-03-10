@@ -7,7 +7,7 @@
 int main()
 {
 	pgn::File file;
-	file.loadFile("tests/1963.pgn");
+	file.loadFile("tests/1966.pgn");
 	pgn::GameCollection *cG = file.games();
 	if( cG != 0 )
 	{

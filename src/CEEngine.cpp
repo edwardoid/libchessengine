@@ -98,6 +98,8 @@ bool ChEngn::Engine::makeMove( pgn::Move& move)
 bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 {
 
+	if ( pl == 0 )
+		return false;
 	//d::cout<<"Make:\n"<<(*pl)<< (isWhite?" white": " black")<< std::endl;
 	if( pl->isShortCastle() )
 		return makeShortCastling(isWhite);
