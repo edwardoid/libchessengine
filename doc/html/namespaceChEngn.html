@@ -51,6 +51,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <h1>ChEngn Namespace Reference</h1>  </div>
@@ -63,6 +64,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html">Engine</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Enumerator.html">Enumerator</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Enumerator.html" title="Enumerator possibilites.">Enumerator</a> possibilites.  <a href="classChEngn_1_1Enumerator.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html">Piece</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Chess piece.  <a href="classChEngn_1_1Piece.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structChEngn_1_1table__size.html">table_size</a></td></tr>
@@ -81,6 +84,12 @@ typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a491b2eba2f766087f4f28948005ab16a"></a><!-- doxytag: member="ChEngn::piece_movement_flag" ref="a491b2eba2f766087f4f28948005ab16a" args="" -->
 typedef const unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a491b2eba2f766087f4f28948005ab16a">piece_movement_flag</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classChEngn_1_1Piece.html" title="Chess piece.">Piece</a> movement flag is just a bit in unsigned char. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3">EnumerationSide</a> { <b>UndefinedSide</b> =  0, 
+<a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8">WhiteSide</a>, 
+<a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1">BlackSide</a>
+ }</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a538ef441c024a7e5d4c1dedb5e03fc21"></a><!-- doxytag: member="ChEngn::unknown" ref="a538ef441c024a7e5d4c1dedb5e03fc21" args="" -->
@@ -139,13 +148,38 @@ const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="a680bcca190861d8cee0f8627ce8f9de3"></a><!-- doxytag: member="ChEngn::EnumerationSide" ref="a680bcca190861d8cee0f8627ce8f9de3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3">ChEngn::EnumerationSide</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8"></a><!-- doxytag: member="WhiteSide" ref="a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8" args="" -->WhiteSide</em>&nbsp;</td><td>
+<p>&lt;- Default value </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1"></a><!-- doxytag: member="BlackSide" ref="a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1" args="" -->BlackSide</em>&nbsp;</td><td>
+<p>&lt;- White player's side </p>
+<p>&lt;- Black Player side </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -154,7 +188,7 @@ const unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 8 2011 15:13:32 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 11 2011 14:27:40 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

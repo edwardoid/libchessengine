@@ -1,0 +1,171 @@
+\hypertarget{classChEngn_1_1Enumerator}{
+\section{ChEngn::Enumerator Class Reference}
+\label{classChEngn_1_1Enumerator}\index{ChEngn::Enumerator@{ChEngn::Enumerator}}
+}
+
+
+\hyperlink{classChEngn_1_1Enumerator}{Enumerator} possibilites.  
+
+
+
+
+{\ttfamily \#include $<$CEEnumerator.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classChEngn_1_1Enumerator_a5103837e1ff53c5cd9dd3eba8f2bb555}{Enumerator} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classChEngn_1_1Enumerator_a3f3a7d688b6753ff1b6118c43745ed79}{Enumerator} (const \hyperlink{classChEngn_1_1Table}{Table} \&table, \hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSide} enumSide=UndefinedSide, unsigned short deep=2)
+\begin{DoxyCompactList}\small\item\em Custom constructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Enumerator_ad863ed7a8a9d3bf4c2f6515b822127b9}{setDeep} (unsigned short deep)
+\begin{DoxyCompactList}\small\item\em Sets enumeration deepness. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Enumerator_aece55d1e95762d5a36c1bf43f72936a1}{setTable} (const \hyperlink{classChEngn_1_1Table}{Table} \&table)
+\begin{DoxyCompactList}\small\item\em Initialize start position. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Enumerator_a844e2aa677c8e7cf24ca4a646ddffbb6}{setSide} (\hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSide})
+\begin{DoxyCompactList}\small\item\em Sets enumeration side. \item\end{DoxyCompactList}\item 
+unsigned short \hyperlink{classChEngn_1_1Enumerator_a6961fa1ffbbbcf77a2e4e12deef1a803}{deepness} () const 
+\item 
+\hyperlink{classChEngn_1_1Table}{Table} $\ast$ \hyperlink{classChEngn_1_1Enumerator_a754b2dda2fb07adf3a8e50107e697784}{startPosition} () const 
+\item 
+\hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSide} \hyperlink{classChEngn_1_1Enumerator_a1f3a61edf6e28595e6bb18533b86bbf2}{side} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classChEngn_1_1Enumerator}{Enumerator} possibilites. Enumerate possible moves in given deep 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classChEngn_1_1Enumerator_a5103837e1ff53c5cd9dd3eba8f2bb555}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!Enumerator@{Enumerator}}
+\index{Enumerator@{Enumerator}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{Enumerator}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Enumerator::Enumerator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Enumerator_a5103837e1ff53c5cd9dd3eba8f2bb555}
+
+
+Constructor. 
+
+Default constructor creates \hyperlink{classChEngn_1_1Enumerator}{ChEngn::Enumerator} whithout \hyperlink{classChEngn_1_1Table}{ChEngn::Table} 
+\begin{DoxyCode}
+        Enumerator tmpEnumerator;
+        if ( tmpEnumerator.table() == 0 ) // <- will return true
+        ...
+\end{DoxyCode}
+
+
+And enumeration deep will be set 0 And side will be
+
+: Enumeration process is hard process, if it's possible use small values for deep \hypertarget{classChEngn_1_1Enumerator_a3f3a7d688b6753ff1b6118c43745ed79}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!Enumerator@{Enumerator}}
+\index{Enumerator@{Enumerator}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{Enumerator}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Enumerator::Enumerator (
+\begin{DoxyParamCaption}
+\item[{const {\bf Table} \&}]{ table, }
+\item[{{\bf EnumerationSide}}]{ enumSide = {\ttfamily UndefinedSide}, }
+\item[{unsigned short}]{ deep = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Enumerator_a3f3a7d688b6753ff1b6118c43745ed79}
+
+
+Custom constructor. 
+
+Created \hyperlink{classChEngn_1_1Enumerator}{ChEngn::Enumerator} whis given table, side, deepness 
+\begin{DoxyParams}{Parameters}
+\item[{\em table}]Start position for enumeration \item[{\em side}]Enumeration side, default value ChEngn::UndefinedSide \item[{\em deep}]Enumeration deep : Enumeration process is hard process, if it's possible use small values for deep \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Enumerator_a6961fa1ffbbbcf77a2e4e12deef1a803}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!deepness@{deepness}}
+\index{deepness@{deepness}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{deepness}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short ChEngn::Enumerator::deepness (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Enumerator_a6961fa1ffbbbcf77a2e4e12deef1a803}
+Return Enumeration deepness \begin{DoxyReturn}{Returns}
+Enumeration depness 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Enumerator_ad863ed7a8a9d3bf4c2f6515b822127b9}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!setDeep@{setDeep}}
+\index{setDeep@{setDeep}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{setDeep}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Enumerator::setDeep (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{ deep}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Enumerator_ad863ed7a8a9d3bf4c2f6515b822127b9}
+
+
+Sets enumeration deepness. 
+
+Set enumeration deepness 
+\begin{DoxyParams}{Parameters}
+\item[{\em deep}]Enumeration depness \end{DoxyParams}
+\hypertarget{classChEngn_1_1Enumerator_a844e2aa677c8e7cf24ca4a646ddffbb6}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!setSide@{setSide}}
+\index{setSide@{setSide}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{setSide}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Enumerator::setSide (
+\begin{DoxyParamCaption}
+\item[{{\bf EnumerationSide}}]{}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Enumerator_a844e2aa677c8e7cf24ca4a646ddffbb6}
+
+
+Sets enumeration side. 
+
+Sets enumeration side 
+\begin{DoxyParams}{Parameters}
+\item[{\em enumSide}]Enumeration side \end{DoxyParams}
+\hypertarget{classChEngn_1_1Enumerator_aece55d1e95762d5a36c1bf43f72936a1}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!setTable@{setTable}}
+\index{setTable@{setTable}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{setTable}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Enumerator::setTable (
+\begin{DoxyParamCaption}
+\item[{const {\bf Table} \&}]{ table}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Enumerator_aece55d1e95762d5a36c1bf43f72936a1}
+
+
+Initialize start position. 
+
+Set give table as start position 
+\begin{DoxyParams}{Parameters}
+\item[{\em table}]Start position \end{DoxyParams}
+\hypertarget{classChEngn_1_1Enumerator_a1f3a61edf6e28595e6bb18533b86bbf2}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!side@{side}}
+\index{side@{side}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{side}]{\setlength{\rightskip}{0pt plus 5cm}{\bf EnumerationSide} ChEngn::Enumerator::side (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Enumerator_a1f3a61edf6e28595e6bb18533b86bbf2}
+Get Enumeration side \begin{DoxyReturn}{Returns}
+Enumeration side 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Enumerator_a754b2dda2fb07adf3a8e50107e697784}{
+\index{ChEngn::Enumerator@{ChEngn::Enumerator}!startPosition@{startPosition}}
+\index{startPosition@{startPosition}!ChEngn::Enumerator@{ChEngn::Enumerator}}
+\subsubsection[{startPosition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table}$\ast$ ChEngn::Enumerator::startPosition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Enumerator_a754b2dda2fb07adf3a8e50107e697784}
+Get start position table \begin{DoxyReturn}{Returns}
+Start position 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CEEnumerator_8h}{CEEnumerator.h}\end{DoxyCompactItemize}

@@ -51,6 +51,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="namespacemembers.html"><span>All</span></a></li>
       <li><a href="namespacemembers_vars.html"><span>Variables</span></a></li>
       <li><a href="namespacemembers_type.html"><span>Typedefs</span></a></li>
+      <li><a href="namespacemembers_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="namespacemembers_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
 </div>
@@ -62,11 +64,17 @@ Here is a list of all documented namespace members with links to the namespaces 
 <li>black
 : <a class="el" href="namespaceChEngn.html#aa2bfc6fe87969d3e28eecbb682e802c8">ChEngn</a>
 </li>
+<li>BlackSide
+: <a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1">ChEngn</a>
+</li>
 <li>default_table_height
 : <a class="el" href="namespaceChEngn.html#ae87757a4f2d9ae9e25d48213cad79ddd">ChEngn</a>
 </li>
 <li>default_table_width
 : <a class="el" href="namespaceChEngn.html#a9dc4a83c122aec6e170ad7a1d40efd8a">ChEngn</a>
+</li>
+<li>EnumerationSide
+: <a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3">ChEngn</a>
 </li>
 <li>king
 : <a class="el" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea">ChEngn</a>
@@ -104,6 +112,9 @@ Here is a list of all documented namespace members with links to the namespaces 
 <li>white
 : <a class="el" href="namespaceChEngn.html#aa3212b290980eb5db7f91e88f8803a9c">ChEngn</a>
 </li>
+<li>WhiteSide
+: <a class="el" href="namespaceChEngn.html#a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8">ChEngn</a>
+</li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -111,7 +122,7 @@ Here is a list of all documented namespace members with links to the namespaces 
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,7 +131,7 @@ Here is a list of all documented namespace members with links to the namespaces 
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 8 2011 15:13:32 for libchessengine by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 11 2011 14:27:41 for libchessengine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

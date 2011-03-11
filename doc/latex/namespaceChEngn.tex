@@ -12,6 +12,8 @@ Contains all typedefs, constants, classes defined in.
 \item 
 class \hyperlink{classChEngn_1_1Engine}{Engine}
 \item 
+class \hyperlink{classChEngn_1_1Enumerator}{Enumerator}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Enumerator}{Enumerator} possibilites. \item\end{DoxyCompactList}\item 
 class \hyperlink{classChEngn_1_1Piece}{Piece}
 \begin{DoxyCompactList}\small\item\em Chess piece. \item\end{DoxyCompactList}\item 
 struct \hyperlink{structChEngn_1_1table__size}{table\_\-size}
@@ -38,6 +40,14 @@ typedef const unsigned char \hyperlink{namespaceChEngn_a491b2eba2f766087f4f28948
 \label{namespaceChEngn_a491b2eba2f766087f4f28948005ab16a}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classChEngn_1_1Piece}{Piece} movement flag is just a bit in unsigned char. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSide} \{ {\bfseries UndefinedSide} =  0, 
+\hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8}{WhiteSide}, 
+\hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1}{BlackSide}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -115,3 +125,24 @@ Contains all typedefs, constans, classes defined in libchessengine
 \subsubsection[{VirtualTable}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ChEngn::Table} {\bf ChEngn::VirtualTable}}}
 \label{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}
 Every library user will use \char`\"{}Virtual tables\char`\"{}. E.g. you get current table state, and then you can make changes, but all your changes will not change real table. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{
+\index{ChEngn@{ChEngn}!EnumerationSide@{EnumerationSide}}
+\index{EnumerationSide@{EnumerationSide}!ChEngn@{ChEngn}}
+\subsubsection[{EnumerationSide}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ChEngn::EnumerationSide}}}
+\label{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{WhiteSide@{WhiteSide}!ChEngn@{ChEngn}}\index{ChEngn@{ChEngn}!WhiteSide@{WhiteSide}}\item[{\em 
+\hypertarget{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8}{
+WhiteSide}
+\label{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a1216fa4a94b6a39e924f5965c2f077c8}
+}]$<$-\/ Default value \index{BlackSide@{BlackSide}!ChEngn@{ChEngn}}\index{ChEngn@{ChEngn}!BlackSide@{BlackSide}}\item[{\em 
+\hypertarget{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1}{
+BlackSide}
+\label{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a957467874ae046942182f37a5dd95cf1}
+}]$<$-\/ White player's side $<$-\/ Black Player side \end{description}
+\end{Desc}
+
