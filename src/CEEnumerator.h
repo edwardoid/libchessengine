@@ -45,16 +45,22 @@ namespace ChEngn
 	 */
 	enum EnumerationSide
 		{
-			UndefinedSide = 0, /// <- Default value
-			WhiteSide,         /// <- White player's side
-			BlackSide          /// <- Black Player side
+
+			/// Default value
+			UndefinedSide = 0,
+
+			/// White player's side
+			WhiteSide,
+
+			/// Black player's side
+			BlackSide 
 		};
 
 
 	/**
 	 * Enumerate possible moves in given deep 
 	 * @class ChEngn::Enumerator
-	 * @brief Enumerator possibilites
+	 * @brief Enumerate possibile moves
 	 */
 
 	class Enumerator
@@ -64,7 +70,7 @@ namespace ChEngn
 			/**
 			 * Default constructor creates ChEngn::Enumerator whithout ChEngn::Table
 			 * @code
-			 * 		Enumerator tmpEnumerator;
+			 * 		ChEngn::Enumerator tmpEnumerator;
 			 * 		if ( tmpEnumerator.table() == 0 ) // <- will return true
 			 * 		...
 			 * @endcode
