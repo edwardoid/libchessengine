@@ -36,18 +36,6 @@
 namespace ChEngn
 {
 
-	/**
-	 * @struct table_size
-	 * Provides information about table size
-	 * @brief Table dimensions
-	 */
-	struct table_size
-	{
-		unsigned int height;
-		unsigned int width;
-	};
-
-
 	/// Standart table height
 	const unsigned int default_table_height = 8;
 
@@ -80,23 +68,6 @@ namespace ChEngn
 			 */
 			virtual ~Table();
 
-			/**
-			 * @brief Get table's size
-			 */
-			const table_size size() const;
-
-			/**
-			 * @brief Get table's height
-			 * @return height
-			 */
-			const unsigned int height() const;
-
-			/**
-			 * @brief Get table's width
-			 * @return width
-			 */
-			const unsigned int width() const;
-			
 			/**
 			 * @brief Get current table state
 			 * @return Current table state
@@ -154,7 +125,6 @@ namespace ChEngn
 			void setDefaultComplect();
 		private: // variables
 
-			table_size m_size;
 			Piece **m_table;
 	};
 };

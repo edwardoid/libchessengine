@@ -695,9 +695,9 @@ bool ChEngn::Engine::checkForEmptynessH(char from, char to, char row, VirtualTab
 		from = to;
 		to = tmp;
 	}
-	if ( ( from < ( table->width() - 'a') ) && 
-		 ( to < ( table->width() - 'a') ) && 
-		 ( row < ( table->height() - '1' ) ) &&
+	if ( ( from < ( default_table_width - 'a') ) && 
+		 ( to < ( default_table_width - 'a') ) && 
+		 ( row < ( default_table_height - '1' ) ) &&
 		 ( from > 0) &&
 		 ( to > 0 ))
 	{
@@ -722,9 +722,9 @@ bool ChEngn::Engine::checkForEmptynessV(char from, char to, char column, Virtual
 		from = to;
 		to = tmp;
 	}
-	if ( ( from < ( table->width() - '1') ) &&
-			( to < ( table->width() - '1') ) &&
-			( column< ( table->height() - 'a' ) ) &&
+	if ( ( from < ( default_table_width - '1') ) &&
+			( to < ( default_table_width - '1') ) &&
+			( column< ( default_table_height - 'a' ) ) &&
 			( to > 0) &&
 			(from > 0 ))
 	{
