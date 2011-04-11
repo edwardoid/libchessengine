@@ -1,10 +1,10 @@
-SRC_DIR := src/
-OBJ_DIR := obj/
-BIN_DIR := bin/
-DEP_DIR := dep/
-LIB_DIR := lib/
-INC_DIR := ./src
-TST_DIR := tests/
+SRC_DIR := ./src/
+OBJ_DIR := ./obj/
+BIN_DIR := ./bin/
+DEP_DIR := ./dep/
+LIB_DIR := ./lib/
+INC_DIR := ./src/
+TST_DIR := ./tests/
 CC:= g++
 DEB_FLAGS:= -g3 -gdwarf-2
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
@@ -52,7 +52,7 @@ clean:
 
 .PHONY: test
 test: all
-	g++ $(TST_DIR)main.cpp -lpgnm -lchessengine -L$(LIB_DIR) -I$(INC_DIR) -o $(BIN_DIR)test
+	g++ $(DEB_FLAGS) $(TST_DIR)main.cpp -static  -lpgnm -lchessengine -L$(LIB_DIR) -I$(INC_DIR) -o $(BIN_DIR)test
 	./$(BIN_DIR)test
 
 .PHONY: install

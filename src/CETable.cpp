@@ -31,6 +31,7 @@ ChEngn::Table::Table()
 
 ChEngn::Table::Table(const Table &other)
 {
+	m_table = 0;
 	getMemoryForTable();
 	assert( 0 != m_table );
 	for (unsigned int i = 0; i < default_table_height; i++ )
@@ -40,13 +41,12 @@ ChEngn::Table::Table(const Table &other)
 			if ( 0 != tmp )
 				m_table[i][j] = *tmp;
 			else
-				;
+				std::cerr << "Got invalid pointer to piece in copy-constructor" << std::endl;
 		}
 }
 
 ChEngn::Table::~Table()
 {
-	cleanMemory();
 }
 
 ChEngn::Piece** ChEngn::Table::table()
@@ -87,18 +87,16 @@ void ChEngn::Table::fillDefault()
 
 void ChEngn::Table::cleanMemory()
 {
-	if ( m_table == 0 )
-		return;
-
+	assert( 0 != m_table );
 	for ( unsigned int i = 0; i < default_table_height; i++ )
-		delete []m_table[i];
+		delete m_table[i];
 	delete []m_table;
 }
 
 void ChEngn::Table::resetComplect()
 {
 	if ( m_table == 0 )
-		return;
+		getMemoryForTable();
 	// Set white player's complect
 	// Pawns first of all
 	for ( unsigned int i = 0; i < default_table_width; i++ )
@@ -128,7 +126,7 @@ void ChEngn::Table::resetComplect()
 
 void ChEngn::Table::operator = (const ChEngn::Table &other)
 {
-	cleanMemory();
+//	cleanMemory();
 	getMemoryForTable();
 	for ( unsigned int i = 0; i < default_table_height; i++ )
 		for (unsigned int j = 0; j < default_table_width; j++)

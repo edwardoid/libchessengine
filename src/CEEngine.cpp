@@ -22,7 +22,7 @@
 #include "CEEngine.h"
 #include <PGNPly.h>
 #include <stdlib.h>
-
+#include <iostream>
 
 ChEngn::Engine::Engine()
 {
@@ -99,7 +99,11 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 {
 
 	if ( pl == 0 )
+	{
+		std::cerr << "Engine: can't make move: given ply is NULL. Color: "
+				  << ( isWhite? "white" : "black" ) << std::endl;
 		return false;
+	}
 	
 	if( pl->isShortCastle() )
 		return makeShortCastling(isWhite);
