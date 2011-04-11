@@ -41,7 +41,9 @@ static bool \hyperlink{classChEngn_1_1Engine_aebba3d5fac90f1e829fc122b31f26064}{
 static bool \hyperlink{classChEngn_1_1Engine_ab812e459beb68c21e02370d0f7767299}{checkForEmptynessV} (char from, char to, char column, \hyperlink{classChEngn_1_1Table}{VirtualTable} $\ast$table)
 \begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\item 
 static bool \hyperlink{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}{checkForEmptynessDiagonal} (char fromC, char fromR, char toC, char toR, \hyperlink{classChEngn_1_1Table}{VirtualTable} $\ast$table)
-\begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\item 
+static \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{classChEngn_1_1Engine_a57cb976b2427ba1da47365424de049e2}{guessTypeByChar} (const char character)
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -83,7 +85,7 @@ This class {\bfseries does not} manipulate pgn files.
 \index{Engine@{Engine}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{Engine}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Engine::Engine (
 \begin{DoxyParamCaption}
-\item[{const {\bf Engine} \&}]{ other}
+\item[{const {\bf Engine} \&}]{other}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_ab92c015fc819dc2b7c51cccbc7878002}
@@ -93,13 +95,15 @@ Copy constructor.
 
 
 \begin{DoxyParams}{Parameters}
-\item[{\em other}]source \end{DoxyParams}
+{\em other} & source \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}{
 \index{ChEngn::Engine@{ChEngn::Engine}!Engine@{Engine}}
 \index{Engine@{Engine}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{Engine}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Engine::Engine (
 \begin{DoxyParamCaption}
-\item[{const pgn::Game \&}]{ gm}
+\item[{const pgn::Game \&}]{gm}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}
@@ -109,7 +113,9 @@ Constructor.
 
 Creates \hyperlink{classChEngn_1_1Engine}{Engine} from pgn::Game 
 \begin{DoxyParams}{Parameters}
-\item[{\em gm}]Game from an opened $\ast$.pgn file \end{DoxyParams}
+{\em gm} & Game from an opened $\ast$.pgn file \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -118,11 +124,11 @@ Creates \hyperlink{classChEngn_1_1Engine}{Engine} from pgn::Game
 \index{checkForEmptynessDiagonal@{checkForEmptynessDiagonal}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{checkForEmptynessDiagonal}]{\setlength{\rightskip}{0pt plus 5cm}static bool ChEngn::Engine::checkForEmptynessDiagonal (
 \begin{DoxyParamCaption}
-\item[{char}]{ fromC, }
-\item[{char}]{ fromR, }
-\item[{char}]{ toC, }
-\item[{char}]{ toR, }
-\item[{{\bf VirtualTable} $\ast$}]{ table}
+\item[{char}]{fromC, }
+\item[{char}]{fromR, }
+\item[{char}]{toC, }
+\item[{char}]{toR, }
+\item[{{\bf VirtualTable} $\ast$}]{table}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
 \label{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}
@@ -132,7 +138,17 @@ Check horisontal for emptyness.
 
 Checks for emptyness given diagonal. (from .... to) 
 \begin{DoxyParams}{Parameters}
-\item[{\em fromC}]-\/ source column \item[{\em fromR}]-\/ source row \item[{\em toC}]-\/ destination column \item[{\em roR}]-\/ destination row \item[{\em table}]-\/ table to searching \end{DoxyParams}
+{\em fromC} & -\/ source column \\
+\hline
+{\em fromR} & -\/ source row \\
+\hline
+{\em toC} & -\/ destination column \\
+\hline
+{\em roR} & -\/ destination row \\
+\hline
+{\em table} & -\/ table to searching \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if diagonal is empty, false if there're some figure or table is invalid 
 \end{DoxyReturn}
@@ -141,10 +157,10 @@ true if diagonal is empty, false if there're some figure or table is invalid
 \index{checkForEmptynessH@{checkForEmptynessH}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{checkForEmptynessH}]{\setlength{\rightskip}{0pt plus 5cm}static bool ChEngn::Engine::checkForEmptynessH (
 \begin{DoxyParamCaption}
-\item[{char}]{ from, }
-\item[{char}]{ to, }
-\item[{char}]{ row, }
-\item[{{\bf VirtualTable} $\ast$}]{ table}
+\item[{char}]{from, }
+\item[{char}]{to, }
+\item[{char}]{row, }
+\item[{{\bf VirtualTable} $\ast$}]{table}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
 \label{classChEngn_1_1Engine_aebba3d5fac90f1e829fc122b31f26064}
@@ -154,7 +170,15 @@ Check horisontal for emptyness.
 
 Checks for emptyness given horisontal. (from .... to) 
 \begin{DoxyParams}{Parameters}
-\item[{\em from}]-\/ source column \item[{\em to}]-\/ destination column \item[{\em row}]-\/ checking row \item[{\em table}]-\/ table to searching \end{DoxyParams}
+{\em from} & -\/ source column \\
+\hline
+{\em to} & -\/ destination column \\
+\hline
+{\em row} & -\/ checking row \\
+\hline
+{\em table} & -\/ table to searching \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if line is empty, false if there're some figure or table is invalid 
 \end{DoxyReturn}
@@ -163,10 +187,10 @@ true if line is empty, false if there're some figure or table is invalid
 \index{checkForEmptynessV@{checkForEmptynessV}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{checkForEmptynessV}]{\setlength{\rightskip}{0pt plus 5cm}static bool ChEngn::Engine::checkForEmptynessV (
 \begin{DoxyParamCaption}
-\item[{char}]{ from, }
-\item[{char}]{ to, }
-\item[{char}]{ column, }
-\item[{{\bf VirtualTable} $\ast$}]{ table}
+\item[{char}]{from, }
+\item[{char}]{to, }
+\item[{char}]{column, }
+\item[{{\bf VirtualTable} $\ast$}]{table}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
 \label{classChEngn_1_1Engine_ab812e459beb68c21e02370d0f7767299}
@@ -176,7 +200,15 @@ Check horisontal for emptyness.
 
 Checks for emptyness given vertical. (from .... to) 
 \begin{DoxyParams}{Parameters}
-\item[{\em from}]-\/ source row \item[{\em to}]-\/ destination row \item[{\em row}]-\/ checking column \item[{\em table}]-\/ table to searching \end{DoxyParams}
+{\em from} & -\/ source row \\
+\hline
+{\em to} & -\/ destination row \\
+\hline
+{\em row} & -\/ checking column \\
+\hline
+{\em table} & -\/ table to searching \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if vertical is empty, false if there're some figure or table is invalid 
 \end{DoxyReturn}
@@ -196,13 +228,30 @@ Get an {\bfseries copy} of current game table.
 \begin{DoxyReturn}{Returns}
 Current table copy 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_a57cb976b2427ba1da47365424de049e2}{
+\index{ChEngn::Engine@{ChEngn::Engine}!guessTypeByChar@{guessTypeByChar}}
+\index{guessTypeByChar@{guessTypeByChar}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{guessTypeByChar}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf piece\_\-type} ChEngn::Engine::guessTypeByChar (
+\begin{DoxyParamCaption}
+\item[{const char}]{character}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classChEngn_1_1Engine_a57cb976b2427ba1da47365424de049e2}
+Tryes to guess piece's type by given character 
+\begin{DoxyParams}{Parameters}
+{\em character} & character to process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type != \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown}, \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown} other way 
+\end{DoxyReturn}
 \hypertarget{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeBishopPly@{makeBishopPly}}
 \index{makeBishopPly@{makeBishopPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeBishopPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeBishopPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ ply, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}
@@ -215,14 +264,18 @@ true if ply has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+{\em ply} & -\/ Ply to do \\
+\hline
+{\em is} & isWhite -\/ True if ply's owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a44d51599b5d1f4a8938938b0d6231e34}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKingPly@{makeKingPly}}
 \index{makeKingPly@{makeKingPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeKingPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeKingPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ ply, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a44d51599b5d1f4a8938938b0d6231e34}
@@ -235,14 +288,18 @@ true if ply has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+{\em ply} & -\/ Ply to do \\
+\hline
+{\em is} & isWhite -\/ True if ply's owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKnightPly@{makeKnightPly}}
 \index{makeKnightPly@{makeKnightPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeKnightPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeKnightPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ ply, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}
@@ -255,13 +312,17 @@ true if ply has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+{\em ply} & -\/ Ply to do \\
+\hline
+{\em is} & isWhite -\/ True if ply's owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeLongCastling@{makeLongCastling}}
 \index{makeLongCastling@{makeLongCastling}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeLongCastling}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeLongCastling (
 \begin{DoxyParamCaption}
-\item[{bool}]{ isWhite}
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}
@@ -274,13 +335,15 @@ true if castling has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em is}]isWhite -\/ True if castling owner is white player. \end{DoxyParams}
+{\em is} & isWhite -\/ True if castling owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeMove@{makeMove}}
 \index{makeMove@{makeMove}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeMove}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeMove (
 \begin{DoxyParamCaption}
-\item[{pgn::Move \&}]{ move}
+\item[{pgn::Move \&}]{move}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}
@@ -290,7 +353,9 @@ Make move.
 
 Tryes to make move. OK if white player's move did successefully AND black player's move did successefully. 
 \begin{DoxyParams}{Parameters}
-\item[{\em move}]-\/ Move which must to do \end{DoxyParams}
+{\em move} & -\/ Move which must to do \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if move has been succesefully done. else -\/ otherway 
 \end{DoxyReturn}
@@ -331,8 +396,8 @@ true if move can was successefully did. Else -\/ fale will be returned. False wi
 \index{makePawnPly@{makePawnPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makePawnPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makePawnPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ ply, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}
@@ -345,20 +410,28 @@ true if ply has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+{\em ply} & -\/ Ply to do \\
+\hline
+{\em is} & isWhite -\/ True if ply's owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makePly@{makePly}}
 \index{makePly@{makePly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makePly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makePly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ pl, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{pl, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}
 Make simple ply move  ply's move 
 \begin{DoxyParams}{Parameters}
-\item[{\em pl}]-\/ Ply to do \item[{\em isWhite}]-\/ true if pl is white player's ply \end{DoxyParams}
+{\em pl} & -\/ Ply to do \\
+\hline
+{\em isWhite} & -\/ true if pl is white player's ply \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if successefully, false -\/ otherway. 
 \end{DoxyReturn}
@@ -367,8 +440,8 @@ true if successefully, false -\/ otherway.
 \index{makeQueenPly@{makeQueenPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeQueenPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeQueenPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ ply, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}
@@ -381,14 +454,18 @@ true if ply has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+{\em ply} & -\/ Ply to do \\
+\hline
+{\em is} & isWhite -\/ True if ply's owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeRookPly@{makeRookPly}}
 \index{makeRookPly@{makeRookPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeRookPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeRookPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ ply, }
-\item[{bool}]{ isWhite}
+\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}
@@ -401,13 +478,17 @@ true if ply has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em ply}]-\/ Ply to do \item[{\em is}]isWhite -\/ True if ply's owner is white player. \end{DoxyParams}
+{\em ply} & -\/ Ply to do \\
+\hline
+{\em is} & isWhite -\/ True if ply's owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_a04d2b1d6bbc5a8de80fb7363ba335a62}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeShortCastling@{makeShortCastling}}
 \index{makeShortCastling@{makeShortCastling}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeShortCastling}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeShortCastling (
 \begin{DoxyParamCaption}
-\item[{bool}]{ isWhite}
+\item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classChEngn_1_1Engine_a04d2b1d6bbc5a8de80fb7363ba335a62}
@@ -420,7 +501,9 @@ true if castling has been done successefully
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-\item[{\em is}]isWhite -\/ True if castling owner is white player. \end{DoxyParams}
+{\em is} & isWhite -\/ True if castling owner is white player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
 \index{ChEngn::Engine@{ChEngn::Engine}!moves@{moves}}
 \index{moves@{moves}!ChEngn::Engine@{ChEngn::Engine}}

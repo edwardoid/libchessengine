@@ -52,8 +52,8 @@ clean:
 
 .PHONY: test
 test: all
-	g++ $(TST_DIR)main.cpp -lpgnm -lchessengine -L$(LIB_DIR) -I$(INC_DIR) -o $(TST_DIR)test
-	./$(TST_DIR)test
+	g++ $(TST_DIR)main.cpp -lpgnm -lchessengine -L$(LIB_DIR) -I$(INC_DIR) -o $(BIN_DIR)test
+	./$(BIN_DIR)test
 
 .PHONY: install
 install: static shared

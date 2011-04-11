@@ -26,7 +26,7 @@ Chess piece.
 \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{classChEngn_1_1Piece_ada7e6cf6a90f169f2ea1a5d7cefd0900}{type} () const 
 \begin{DoxyCompactList}\small\item\em Get the piece's type. \item\end{DoxyCompactList}\item 
 \hyperlink{namespaceChEngn_a9c81426c0134a97288a226c122daf62f}{piece\_\-color} \hyperlink{classChEngn_1_1Piece_a9070b15958ab83d1a093456fa8d1e4fd}{color} () const 
-\begin{DoxyCompactList}\small\item\em Get the piece's color ( white $|$ black ). \item\end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the piece's color ( white $|$ black ) \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Piece_a98920893afeab5395dba002ab3f88703}{isWhite} () const 
 \begin{DoxyCompactList}\small\item\em Check piece's color state. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Piece_a481b3d61628762f87d674fad3f858c3b}{isBlack} () const 
@@ -57,7 +57,7 @@ bool \hyperlink{classChEngn_1_1Piece_a6b6b6e455671ac4f3f9996ef31602a13}{operator
 \begin{DoxyCompactItemize}
 \item 
 std::ostream \& \hyperlink{classChEngn_1_1Piece_a5e9692fde1be0ae7eda4e5cd3fc42f6d}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Piece}{Piece} \&pce)
-\begin{DoxyCompactList}\small\item\em Overloaded operator $<$$<$ (). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overloaded operator $<$$<$ () \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -69,8 +69,8 @@ Chess piece. Provides basic interface for init some chess piece, eg \char`\"{}kn
 \index{Piece@{Piece}!ChEngn::Piece@{ChEngn::Piece}}
 \subsubsection[{Piece}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Piece::Piece (
 \begin{DoxyParamCaption}
-\item[{{\bf piece\_\-type}}]{ tpe = {\ttfamily {\bf unknown}}, }
-\item[{{\bf piece\_\-color}}]{ col = {\ttfamily {\bf white}}}
+\item[{{\bf piece\_\-type}}]{tpe = {\ttfamily {\bf unknown}}, }
+\item[{{\bf piece\_\-color}}]{col = {\ttfamily {\bf white}}}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Piece_a8fab80193d22fc9f4a4645a50fe90dc3}
@@ -83,7 +83,7 @@ After this piece is: 1. White piece 2. Of unknown type 3. Not moved yet \hyperta
 \index{Piece@{Piece}!ChEngn::Piece@{ChEngn::Piece}}
 \subsubsection[{Piece}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Piece::Piece (
 \begin{DoxyParamCaption}
-\item[{const {\bf Piece} \&}]{ other}
+\item[{const {\bf Piece} \&}]{other}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Piece_a5abff07a09fc78b6fc805cde2a298b41}
@@ -93,7 +93,9 @@ Copy constructor.
 
 
 \begin{DoxyParams}{Parameters}
-\item[{\em other}]-\/ source \end{DoxyParams}
+{\em other} & -\/ source \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -108,7 +110,7 @@ Copy constructor.
 \label{classChEngn_1_1Piece_a9070b15958ab83d1a093456fa8d1e4fd}
 
 
-Get the piece's color ( white $|$ black ). 
+Get the piece's color ( white $|$ black ) 
 
 \begin{DoxyReturn}{Returns}
 Color 
@@ -214,7 +216,7 @@ flag's value
 \index{operator=@{operator=}!ChEngn::Piece@{ChEngn::Piece}}
 \subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Piece::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf Piece} \&}]{ other}
+\item[{const {\bf Piece} \&}]{other}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Piece_a8142dd8313cf7ea1ded23af47fc45532}
@@ -224,13 +226,15 @@ Overloaded operator =.
 
 Overloaded operation =. Will be copied type, color, moving flag 
 \begin{DoxyParams}{Parameters}
-\item[{\em other}]-\/ Source \end{DoxyParams}
+{\em other} & -\/ Source \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Piece_a6b6b6e455671ac4f3f9996ef31602a13}{
 \index{ChEngn::Piece@{ChEngn::Piece}!operator==@{operator==}}
 \index{operator==@{operator==}!ChEngn::Piece@{ChEngn::Piece}}
 \subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Piece::operator== (
 \begin{DoxyParamCaption}
-\item[{const {\bf Piece} \&}]{ other}
+\item[{const {\bf Piece} \&}]{other}
 \end{DoxyParamCaption}
 ) const}}
 \label{classChEngn_1_1Piece_a6b6b6e455671ac4f3f9996ef31602a13}
@@ -240,7 +244,9 @@ Compare pieces.
 
 Compare two pieces. Pieces are equal if their types, color, moving flag are same. 
 \begin{DoxyParams}{Parameters}
-\item[{\em other}]-\/ Source \end{DoxyParams}
+{\em other} & -\/ Source \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Piece_a49e68ef199415d60ea2a394501a52f5a}{
 \index{ChEngn::Piece@{ChEngn::Piece}!setMoved@{setMoved}}
 \index{setMoved@{setMoved}!ChEngn::Piece@{ChEngn::Piece}}
@@ -275,7 +281,9 @@ Set Piece's type.
 
 
 \begin{DoxyParams}{Parameters}
-\item[{\em tpe}]-\/ New piece's type \end{DoxyParams}
+{\em tpe} & -\/ New piece's type \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Piece_ada7e6cf6a90f169f2ea1a5d7cefd0900}{
 \index{ChEngn::Piece@{ChEngn::Piece}!type@{type}}
 \index{type@{type}!ChEngn::Piece@{ChEngn::Piece}}
@@ -300,18 +308,22 @@ Type
 \index{operator$<$$<$@{operator$<$$<$}!ChEngn::Piece@{ChEngn::Piece}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
 \begin{DoxyParamCaption}
-\item[{std::ostream \&}]{ out, }
-\item[{const {\bf Piece} \&}]{ pce}
+\item[{std::ostream \&}]{out, }
+\item[{const {\bf Piece} \&}]{pce}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{classChEngn_1_1Piece_a5e9692fde1be0ae7eda4e5cd3fc42f6d}
 
 
-Overloaded operator $<$$<$ (). 
+Overloaded operator $<$$<$ () 
 
 \char`\"{}Prints\char`\"{} piece in std::ostream 
 \begin{DoxyParams}{Parameters}
-\item[{\em out}]-\/ Stream for printing \item[{\em pce}]-\/ \hyperlink{classChEngn_1_1Piece}{Piece} to print \end{DoxyParams}
+{\em out} & -\/ Stream for printing \\
+\hline
+{\em pce} & -\/ \hyperlink{classChEngn_1_1Piece}{Piece} to print \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

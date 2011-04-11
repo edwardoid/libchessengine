@@ -185,6 +185,15 @@ namespace ChEngn
 			 */
 			static bool checkForEmptynessDiagonal(char fromC, char fromR, char toC, char toR, VirtualTable* table);
 
+			
+			/**
+			 * Tryes to guess piece's type by given character
+			 * @param character character to process
+			 * @return type != ChEngn::unknown, ChEngn::unknown other way
+			 */
+			static piece_type guessTypeByChar( const char character );
+
+
 
 		protected: //protected functions
 

@@ -40,7 +40,7 @@ void \hyperlink{classChEngn_1_1Table_a5b45cb67e40f75358145826e72b319b4}{operator
 \begin{DoxyCompactItemize}
 \item 
 std::ostream \& \hyperlink{classChEngn_1_1Table_a9a39b79ad3a5635dfe8075f14598886e}{operator$<$$<$} (std::ostream \&out, const \hyperlink{classChEngn_1_1Table}{Table} \&tbl)
-\begin{DoxyCompactList}\small\item\em Overloaded operator $<$$<$ (). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overloaded operator $<$$<$ () \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,7 +52,7 @@ Chess board. Provides basic manipulations whis chess table (no matter \char`\"{}
 \index{Table@{Table}!ChEngn::Table@{ChEngn::Table}}
 \subsubsection[{Table}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Table::Table (
 \begin{DoxyParamCaption}
-\item[{const {\bf Table} \&}]{ other}
+\item[{const {\bf Table} \&}]{other}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Table_a9ccad112470efda3d3b6cfe55341bf01}
@@ -62,7 +62,9 @@ Copy constructor.
 
 
 \begin{DoxyParams}{Parameters}
-\item[{\em other}]-\/ Source. \end{DoxyParams}
+{\em other} & -\/ Source. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -71,7 +73,7 @@ Copy constructor.
 \index{operator=@{operator=}!ChEngn::Table@{ChEngn::Table}}
 \subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Table::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf Table} \&}]{ other}
+\item[{const {\bf Table} \&}]{other}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Table_a5b45cb67e40f75358145826e72b319b4}
@@ -81,14 +83,16 @@ Overloaded operation =.
 
 Copies given table to current. 
 \begin{DoxyParams}{Parameters}
-\item[{\em other}]-\/ Source \end{DoxyParams}
+{\em other} & -\/ Source \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Table_a5f797f91cf61269b04d19ede97875ba4}{
 \index{ChEngn::Table@{ChEngn::Table}!pieceAt@{pieceAt}}
 \index{pieceAt@{pieceAt}!ChEngn::Table@{ChEngn::Table}}
 \subsubsection[{pieceAt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$ ChEngn::Table::pieceAt (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{ column, }
-\item[{unsigned int}]{ row}
+\item[{unsigned int}]{column, }
+\item[{unsigned int}]{row}
 \end{DoxyParamCaption}
 ) const}}
 \label{classChEngn_1_1Table_a5f797f91cf61269b04d19ede97875ba4}
@@ -98,7 +102,11 @@ Return piece at given numeric position.
 
 Get piece from table. 
 \begin{DoxyParams}{Parameters}
-\item[{\em row}]-\/ Piece's position numeric row. \item[{\em column}]-\/ Piece's position numeric column. \end{DoxyParams}
+{\em row} & -\/ Piece's position numeric row. \\
+\hline
+{\em column} & -\/ Piece's position numeric column. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 -\/ Pointer to piece, if row and/or column are invalid 0 will be returned. 
 \end{DoxyReturn}
@@ -107,8 +115,8 @@ Get piece from table.
 \index{pieceAtC@{pieceAtC}!ChEngn::Table@{ChEngn::Table}}
 \subsubsection[{pieceAtC}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$ ChEngn::Table::pieceAtC (
 \begin{DoxyParamCaption}
-\item[{char}]{ column, }
-\item[{char}]{ row}
+\item[{char}]{column, }
+\item[{char}]{row}
 \end{DoxyParamCaption}
 ) const}}
 \label{classChEngn_1_1Table_a715d819b37f5cb853209ac36d06c8a89}
@@ -118,7 +126,11 @@ Return piece at given numeric position.
 
 Get piece from table. 
 \begin{DoxyParams}{Parameters}
-\item[{\em column}]-\/ Piece's position column as character, like 'd' \item[{\em row}]-\/ Piece's position row as character, like '3'. \end{DoxyParams}
+{\em column} & -\/ Piece's position column as character, like 'd' \\
+\hline
+{\em row} & -\/ Piece's position row as character, like '3'. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 -\/ Pointer to piece, if row and/or column are invalid 0 will be returned. 
 \end{DoxyReturn}
@@ -165,18 +177,22 @@ If you don't gonna change the table use const-\/version
 \index{operator$<$$<$@{operator$<$$<$}!ChEngn::Table@{ChEngn::Table}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
 \begin{DoxyParamCaption}
-\item[{std::ostream \&}]{ out, }
-\item[{const {\bf Table} \&}]{ tbl}
+\item[{std::ostream \&}]{out, }
+\item[{const {\bf Table} \&}]{tbl}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{classChEngn_1_1Table_a9a39b79ad3a5635dfe8075f14598886e}
 
 
-Overloaded operator $<$$<$ (). 
+Overloaded operator $<$$<$ () 
 
 \char`\"{}Prints\char`\"{} table into std::ostream 
 \begin{DoxyParams}{Parameters}
-\item[{\em out}]-\/ Stream for printing \item[{\em tbl}]-\/ table to print \end{DoxyParams}
+{\em out} & -\/ Stream for printing \\
+\hline
+{\em tbl} & -\/ table to print \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

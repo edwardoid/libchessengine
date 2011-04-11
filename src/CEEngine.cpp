@@ -100,16 +100,16 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 
 	if ( pl == 0 )
 		return false;
-	//d::cout<<"Make:\n"<<(*pl)<< (isWhite?" white": " black")<< std::endl;
+	
 	if( pl->isShortCastle() )
 		return makeShortCastling(isWhite);
 	
 	if ( pl->isLongCastle() )
 		return makeLongCastling(isWhite);
+
 	if ( (pl->piece()) == pgn::Piece::Pawn() )
-	{
 		return makePawnPly(pl, isWhite);
-	}
+
 	if ( (pl->piece()) == pgn::Piece::Knight() )
 		return makeKnightPly(pl, isWhite);
 
@@ -145,9 +145,7 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 		{
 			pgn::Square oldPos(specifiedCol, newPos.row() - coef);
 			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
-
-			if ( ( movedPiece == 0 ) || 
-				 ( movedPiece->type() != pawn ) || 
+			if ( ( movedPiece->type() != pawn ) || 
 				 ( movedPiece->isWhite() != isWhite ) )
 				return false;
 		}
@@ -178,6 +176,12 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 			}
 			(*dest) = (*movedPiece);
 			movedPiece->setType(unknown);
+			if( ply->promoted() != 0 )
+			{
+				piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
+				if ( ( tmpType != pawn ) || ( tmpType != king ) )
+					dest->setType( tmpType );				
+			}
 			return true;
 		}
 	}
@@ -208,6 +212,12 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 						else
 							dest->setBlack();
 						movedPiece->setType ( unknown );
+						if( ply->promoted() != 0 )
+						{
+							piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
+							if ( ( tmpType != pawn ) || ( tmpType != king ) )
+								dest->setType( tmpType );
+						}
 						return true;
 					}
 			}
@@ -768,4 +778,27 @@ bool ChEngn::Engine::checkForEmptynessDiagonal(char fromC, char fromR, char toC,
 	}
 
 	return true;
+}
+
+ChEngn::piece_type ChEngn::Engine::guessTypeByChar( const char character )
+{
+	if( ( character == 'P') || ( character == '-') || ( character == 'p' ) )
+		return pawn;
+
+	if ( ( character == 'N' ) || ( character == 'n' ) )
+		 return knight;
+
+	if ( ( character == 'B' ) || ( character == 'b' ) )
+		 return bishop;
+
+	if ( ( character == 'R' ) || ( character == 'r' ) )
+		 return rook;
+
+	if ( ( character == 'Q' ) || ( character == 'q' ) )
+		 return queen;
+
+	if ( ( character == 'k' ) || ( character == 'K' ) )
+		 return king;
+	
+	return unknown;
 }

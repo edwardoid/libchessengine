@@ -20,9 +20,11 @@
 //
 
 #include "CETable.h"
+#include <assert.h>
 
 ChEngn::Table::Table()
 {
+	m_table = 0;
 	getMemoryForTable();
 	resetComplect();
 }
@@ -30,9 +32,16 @@ ChEngn::Table::Table()
 ChEngn::Table::Table(const Table &other)
 {
 	getMemoryForTable();
+	assert( 0 != m_table );
 	for (unsigned int i = 0; i < default_table_height; i++ )
 		for (unsigned int j = 0; j< default_table_width; j++)
-				m_table[i][j] = *other.pieceAt(i, j);
+		{
+			Piece* tmp = other.pieceAt( i, j );
+			if ( 0 != tmp )
+				m_table[i][j] = *tmp;
+			else
+				;
+		}
 }
 
 ChEngn::Table::~Table()
@@ -47,6 +56,7 @@ ChEngn::Piece** ChEngn::Table::table()
 
 ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int column, unsigned int row) const
 {
+	assert( 0 != m_table );
 	if( (row < default_table_height) && (column < default_table_width) )
 		return &m_table[row][column];
 	return 0;
@@ -54,11 +64,12 @@ ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int column, unsigned int row) con
 
 ChEngn::Piece* ChEngn::Table::pieceAtC(char column, char row) const
 {
-
 	return pieceAt( column -'a', row - '1');
 }
 void ChEngn::Table::getMemoryForTable()
 {
+	if( 0 != m_table )
+		return;
 	m_table = new Piece*[default_table_height];
 	for ( unsigned int i = 0; i < default_table_height; i++ )
 		m_table[i] = new Piece[default_table_width];
@@ -66,6 +77,7 @@ void ChEngn::Table::getMemoryForTable()
 
 void ChEngn::Table::fillDefault()
 {
+	assert( 0 != m_table );
 	for ( unsigned int i = 0; i < default_table_height; i++ )
 	{
 		for (unsigned int  j = 0; j < default_table_width; j++ )
@@ -75,6 +87,9 @@ void ChEngn::Table::fillDefault()
 
 void ChEngn::Table::cleanMemory()
 {
+	if ( m_table == 0 )
+		return;
+
 	for ( unsigned int i = 0; i < default_table_height; i++ )
 		delete []m_table[i];
 	delete []m_table;
@@ -82,6 +97,8 @@ void ChEngn::Table::cleanMemory()
 
 void ChEngn::Table::resetComplect()
 {
+	if ( m_table == 0 )
+		return;
 	// Set white player's complect
 	// Pawns first of all
 	for ( unsigned int i = 0; i < default_table_width; i++ )
