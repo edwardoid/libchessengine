@@ -1,0 +1,468 @@
+.TH "ChEngn::Engine" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn::Engine \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEngine\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "\fBEngine\fP (const \fBEngine\fP &other)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fBEngine\fP (const pgn::Game &gm)"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "virtual \fB~Engine\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "\fBVirtualTable\fP \fBgetVirtualTable\fP () const "
+.br
+.RI "\fIGet an \fBcopy\fP of current game table. \fP"
+.ti -1c
+.RI "pgn::MoveList * \fBmoves\fP ()"
+.br
+.RI "\fIGet loaded moves. \fP"
+.ti -1c
+.RI "pgn::MoveList::iterator \fBnextMove\fP ()"
+.br
+.RI "\fIIterarator to next move. \fP"
+.ti -1c
+.RI "bool \fBmakeNextMove\fP ()"
+.br
+.RI "\fImake next move. \fP"
+.ti -1c
+.RI "bool \fBmakeNextHalfMove\fP ()"
+.br
+.RI "\fImake next half-move. \fP"
+.ti -1c
+.RI "bool \fBmakeMove\fP (pgn::Move &move)"
+.br
+.RI "\fIMake move. \fP"
+.ti -1c
+.RI "bool \fBmakePly\fP (const pgn::Ply *pl, bool isWhite)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcheckForEmptynessH\fP (char from, char to, char row, \fBVirtualTable\fP *table)"
+.br
+.RI "\fICheck horisontal for emptyness. \fP"
+.ti -1c
+.RI "static bool \fBcheckForEmptynessV\fP (char from, char to, char column, \fBVirtualTable\fP *table)"
+.br
+.RI "\fICheck horisontal for emptyness. \fP"
+.ti -1c
+.RI "static bool \fBcheckForEmptynessDiagonal\fP (char fromC, char fromR, char toC, char toR, \fBVirtualTable\fP *table)"
+.br
+.RI "\fICheck horisontal for emptyness. \fP"
+.ti -1c
+.RI "static \fBpiece_type\fP \fBguessTypeByChar\fP (const char character)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBmakePawnPly\fP (const pgn::Ply *ply, bool isWhite)"
+.br
+.RI "\fIMakes pawn's move. \fP"
+.ti -1c
+.RI "bool \fBmakeKnightPly\fP (const pgn::Ply *ply, bool isWhite)"
+.br
+.RI "\fIMakes knight's move. \fP"
+.ti -1c
+.RI "bool \fBmakeBishopPly\fP (const pgn::Ply *ply, bool isWhite)"
+.br
+.RI "\fIMakes bishop's move. \fP"
+.ti -1c
+.RI "bool \fBmakeRookPly\fP (const pgn::Ply *ply, bool isWhite)"
+.br
+.RI "\fIMakes bishop's move. \fP"
+.ti -1c
+.RI "bool \fBmakeQueenPly\fP (const pgn::Ply *ply, bool isWhite)"
+.br
+.RI "\fIMakes queen's move. \fP"
+.ti -1c
+.RI "bool \fBmakeKingPly\fP (const pgn::Ply *ply, bool isWhite)"
+.br
+.RI "\fIMakes kings's move. \fP"
+.ti -1c
+.RI "bool \fBmakeShortCastling\fP (bool isWhite)"
+.br
+.RI "\fIMakes short castling move. \fP"
+.ti -1c
+.RI "bool \fBmakeLongCastling\fP (bool isWhite)"
+.br
+.RI "\fIMakes long castling move. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, const \fBEngine\fP &engn)"
+.br
+.RI "\fI'Print' current table \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+functionality Provides access to current game. Can make moves, get table current state (Virtual \fBTable\fP) 
+.PP
+\fBNote:\fP
+.RS 4
+This class \fBdoes not\fP manipulate pgn files. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChEngn::Engine::Engine (const \fBEngine\fP &other)"
+.PP
+Copy constructor. \fBParameters:\fP
+.RS 4
+\fIother\fP source 
+.RE
+.PP
+
+.SS "ChEngn::Engine::Engine (const pgn::Game &gm)"
+.PP
+Constructor. Creates \fBEngine\fP from pgn::Game 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgm\fP Game from an opened *.pgn file 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static bool ChEngn::Engine::checkForEmptynessDiagonal (charfromC, charfromR, chartoC, chartoR, \fBVirtualTable\fP *table)\fC [static]\fP"
+.PP
+Check horisontal for emptyness. Checks for emptyness given diagonal. (from .... to) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfromC\fP - source column 
+.br
+\fIfromR\fP - source row 
+.br
+\fItoC\fP - destination column 
+.br
+\fIroR\fP - destination row 
+.br
+\fItable\fP - table to searching 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if diagonal is empty, false if there're some figure or table is invalid 
+.RE
+.PP
+
+.SS "static bool ChEngn::Engine::checkForEmptynessH (charfrom, charto, charrow, \fBVirtualTable\fP *table)\fC [static]\fP"
+.PP
+Check horisontal for emptyness. Checks for emptyness given horisontal. (from .... to) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfrom\fP - source column 
+.br
+\fIto\fP - destination column 
+.br
+\fIrow\fP - checking row 
+.br
+\fItable\fP - table to searching 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if line is empty, false if there're some figure or table is invalid 
+.RE
+.PP
+
+.SS "static bool ChEngn::Engine::checkForEmptynessV (charfrom, charto, charcolumn, \fBVirtualTable\fP *table)\fC [static]\fP"
+.PP
+Check horisontal for emptyness. Checks for emptyness given vertical. (from .... to) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfrom\fP - source row 
+.br
+\fIto\fP - destination row 
+.br
+\fIrow\fP - checking column 
+.br
+\fItable\fP - table to searching 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if vertical is empty, false if there're some figure or table is invalid 
+.RE
+.PP
+
+.SS "\fBVirtualTable\fP ChEngn::Engine::getVirtualTable () const"
+.PP
+Get an \fBcopy\fP of current game table. \fBReturns:\fP
+.RS 4
+Current table copy 
+.RE
+.PP
+
+.SS "static \fBpiece_type\fP ChEngn::Engine::guessTypeByChar (const charcharacter)\fC [static]\fP"Tryes to guess piece's type by given character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcharacter\fP character to process 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+type != \fBChEngn::unknown\fP, \fBChEngn::unknown\fP other way 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeBishopPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes bishop's move. Tryes to make bishop's move) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if ply has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIply\fP - Ply to do 
+.br
+\fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeKingPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes kings's move. Tryes to make king's move) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if ply has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIply\fP - Ply to do 
+.br
+\fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeKnightPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes knight's move. Tryes to make knight's move) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if ply has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIply\fP - Ply to do 
+.br
+\fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeLongCastling (boolisWhite)\fC [protected]\fP"
+.PP
+Makes long castling move. Tryes to make long castling 
+.PP
+\fBReturns:\fP
+.RS 4
+true if castling has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP isWhite - True if castling owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeMove (pgn::Move &move)"
+.PP
+Make move. Tryes to make move. OK if white player's move did successefully AND black player's move did successefully. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImove\fP - Move which must to do 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if move has been succesefully done. else - otherway 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeNextHalfMove ()"
+.PP
+make next half-move. Try to make next half-move. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if move can was successefully did. Else - fale will be returned. False will be returned if no moves is aviable. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeNextMove ()"
+.PP
+make next move. Try to make next move. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if move can was successefully did. Else - fale will be returned. False will be returned if no moves is aviable. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makePawnPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes pawn's move. Tryes to make pawn's move) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if ply has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIply\fP - Ply to do 
+.br
+\fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makePly (const pgn::Ply *pl, boolisWhite)"Make simple ply move  ply's move 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpl\fP - Ply to do 
+.br
+\fIisWhite\fP - true if pl is white player's ply 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if successefully, false - otherway. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeQueenPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes queen's move. Tryes to make queen's move) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if ply has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIply\fP - Ply to do 
+.br
+\fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeRookPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes bishop's move. Tryes to make bishop's move) 
+.PP
+\fBReturns:\fP
+.RS 4
+true if ply has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIply\fP - Ply to do 
+.br
+\fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::makeShortCastling (boolisWhite)\fC [protected]\fP"
+.PP
+Makes short castling move. Tryes to make short castling 
+.PP
+\fBReturns:\fP
+.RS 4
+true if castling has been done successefully 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP isWhite - True if castling owner is white player. 
+.RE
+.PP
+
+.SS "pgn::MoveList* ChEngn::Engine::moves ()"
+.PP
+Get loaded moves. \fBReturns:\fP
+.RS 4
+moves in loaded game, if there are no loaded game will be returned empty pgn::MoveList 
+.RE
+.PP
+
+.SS "pgn::MoveList::iterator ChEngn::Engine::nextMove ()"
+.PP
+Iterarator to next move. Gets pgn::MoveList::iterator to current move. If there are no aviable moves return vaule will be equal to 
+.PP
+.nf
+ moves()->end()
+
+.fi
+.PP
+, also if there are no maked moves the return value will be equal to 
+.PP
+.nf
+ moves()->begin(); 
+
+.fi
+.PP
+ 
+.PP
+\fBReturns:\fP
+.RS 4
+Iterator to next move 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+Before using iterator chech is return value different from 
+.PP
+.nf
+ move()->end(); 
+
+.fi
+.PP
+ 
+.PP
+You should use the return vallue very careful. Everytime check is iterator valid. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

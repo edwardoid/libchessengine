@@ -1,0 +1,96 @@
+.TH "src/CEException.h" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/CEException.h \- 
+.PP
+Here are defined \fBChEngn::Exception\fP class.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <exception>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBChEngn::Exception\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBChEngn\fP"
+.br
+.PP
+
+.RI "\fIContains all typedefs, constants, classes defined in. \fP"
+.ti -1c
+.RI "namespace \fBErrorCodes\fP"
+.br
+.ti -1c
+.RI "namespace \fBErrorMessages\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef int \fBChEngn::ErrorCodes::ERROR_CODE\fP"
+.br
+.ti -1c
+.RI "typedef std::string \fBChEngn::ErrorMessages::ERROR_MSG\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const int \fBChEngn::ErrorCodes::OK\fP = 0"
+.br
+.RI "\fIUseless code, used as deafult value, for example in copy-constructor. \fP"
+.ti -1c
+.RI "const int \fBChEngn::ErrorCodes::CAN_T_FIND_SOURCE_PIECE\fP = -1"
+.br
+.ti -1c
+.RI "const int \fBChEngn::ErrorCodes::CAN_T_FIND_DESTINATION_PIECE\fP = -2"
+.br
+.ti -1c
+.RI "const int \fBChEngn::ErrorCodes::CAN_T_MAKE_CASTLING\fP = -3"
+.br
+.ti -1c
+.RI "const int \fBChEngn::ErrorCodes::PLY_S_POINTER_IS_NULL\fP = -4"
+.br
+.ti -1c
+.RI "const int \fBChEngn::ErrorCodes::OUT_OF_RANGE\fP = -5"
+.br
+.ti -1c
+.RI "const std::string \fBChEngn::ErrorMessages::OK\fP = 'Everything is ok'"
+.br
+.RI "\fIUseles message. \fP"
+.ti -1c
+.RI "const std::string \fBChEngn::ErrorMessages::CAN_T_FIND_SOURCE_PIECE\fP = 'Can't find source piece'"
+.br
+.ti -1c
+.RI "const std::string \fBChEngn::ErrorMessages::CAN_T_FIND_DESTINATION_PIECE\fP = 'Can't find destination piece'"
+.br
+.ti -1c
+.RI "const std::string \fBChEngn::ErrorMessages::PLY_S_POINTER_IS_NULL\fP = 'Given Ply's pointer is == 0'"
+.br
+.ti -1c
+.RI "const std::string \fBChEngn::ErrorMessages::OUT_OF_RANGE\fP = 'Trying to acces bad position in table'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Here are defined \fBChEngn::Exception\fP class. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

@@ -1,0 +1,89 @@
+\hypertarget{CEException_8h}{
+\section{src/CEException.h File Reference}
+\label{CEException_8h}\index{src/CEException.h@{src/CEException.h}}
+}
+
+
+Here are defined \hyperlink{classChEngn_1_1Exception}{ChEngn::Exception} class.  
+
+
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$exception$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classChEngn_1_1Exception}{ChEngn::Exception}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceChEngn}{ChEngn}
+
+
+\begin{DoxyCompactList}\small\item\em Contains all typedefs, constants, classes defined in. \item\end{DoxyCompactList}
+
+\item 
+namespace \hyperlink{namespaceErrorCodes}{ErrorCodes}
+\item 
+namespace \hyperlink{namespaceErrorMessages}{ErrorMessages}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorCodes_a0e12648653656f311347e50507ebb6ea}{
+typedef int {\bfseries ChEngn::ErrorCodes::ERROR\_\-CODE}}
+\label{namespaceChEngn_1_1ErrorCodes_a0e12648653656f311347e50507ebb6ea}
+
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorMessages_a5029169ddeec073098e1e56ad95adf35}{
+typedef std::string {\bfseries ChEngn::ErrorMessages::ERROR\_\-MSG}}
+\label{namespaceChEngn_1_1ErrorMessages_a5029169ddeec073098e1e56ad95adf35}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorCodes_a2939ce6cc73c9acc5ad6e8ecf556503d}{
+const int \hyperlink{namespaceChEngn_1_1ErrorCodes_a2939ce6cc73c9acc5ad6e8ecf556503d}{ChEngn::ErrorCodes::OK} = 0}
+\label{namespaceChEngn_1_1ErrorCodes_a2939ce6cc73c9acc5ad6e8ecf556503d}
+
+\begin{DoxyCompactList}\small\item\em Useless code, used as deafult value, for example in copy-\/constructor. \item\end{DoxyCompactList}\item 
+const int \hyperlink{namespaceChEngn_1_1ErrorCodes_aff3be68edfe1e8a33ea48b6225bc3ad7}{ChEngn::ErrorCodes::CAN\_\-T\_\-FIND\_\-SOURCE\_\-PIECE} = -\/1
+\item 
+const int \hyperlink{namespaceChEngn_1_1ErrorCodes_ab9bcc53496b9af6e43741b2d9549f6b6}{ChEngn::ErrorCodes::CAN\_\-T\_\-FIND\_\-DESTINATION\_\-PIECE} = -\/2
+\item 
+const int \hyperlink{namespaceChEngn_1_1ErrorCodes_ae506770dec37742b25550887a8fbc645}{ChEngn::ErrorCodes::CAN\_\-T\_\-MAKE\_\-CASTLING} = -\/3
+\item 
+const int \hyperlink{namespaceChEngn_1_1ErrorCodes_a1b1931f29f1c4620ff3b2d40d807fb2e}{ChEngn::ErrorCodes::PLY\_\-S\_\-POINTER\_\-IS\_\-NULL} = -\/4
+\item 
+const int \hyperlink{namespaceChEngn_1_1ErrorCodes_a09ba24f705865cb174d85a6a2155807a}{ChEngn::ErrorCodes::OUT\_\-OF\_\-RANGE} = -\/5
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorMessages_ae4708dd18557e55547df2b2a496370e1}{
+const std::string \hyperlink{namespaceChEngn_1_1ErrorMessages_ae4708dd18557e55547df2b2a496370e1}{ChEngn::ErrorMessages::OK} = \char`\"{}Everything is ok\char`\"{}}
+\label{namespaceChEngn_1_1ErrorMessages_ae4708dd18557e55547df2b2a496370e1}
+
+\begin{DoxyCompactList}\small\item\em Useles message. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_1_1ErrorMessages_a58985d5e5151cbe75916149a3f006bb9}{
+const std::string {\bfseries ChEngn::ErrorMessages::CAN\_\-T\_\-FIND\_\-SOURCE\_\-PIECE} = \char`\"{}Can't find source piece\char`\"{}}
+\label{namespaceChEngn_1_1ErrorMessages_a58985d5e5151cbe75916149a3f006bb9}
+
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorMessages_aa9a02f06b9b44138b7d5c130a44e38de}{
+const std::string {\bfseries ChEngn::ErrorMessages::CAN\_\-T\_\-FIND\_\-DESTINATION\_\-PIECE} = \char`\"{}Can't find destination piece\char`\"{}}
+\label{namespaceChEngn_1_1ErrorMessages_aa9a02f06b9b44138b7d5c130a44e38de}
+
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorMessages_afeabc1102c756f778a581fb58e215bbb}{
+const std::string {\bfseries ChEngn::ErrorMessages::PLY\_\-S\_\-POINTER\_\-IS\_\-NULL} = \char`\"{}Given Ply's pointer is == 0\char`\"{}}
+\label{namespaceChEngn_1_1ErrorMessages_afeabc1102c756f778a581fb58e215bbb}
+
+\item 
+\hypertarget{namespaceChEngn_1_1ErrorMessages_a1a082170d88826d79ba53b0c4ab5bea8}{
+const std::string {\bfseries ChEngn::ErrorMessages::OUT\_\-OF\_\-RANGE} = \char`\"{}Trying to acces bad position in table\char`\"{}}
+\label{namespaceChEngn_1_1ErrorMessages_a1a082170d88826d79ba53b0c4ab5bea8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Here are defined \hyperlink{classChEngn_1_1Exception}{ChEngn::Exception} class. 

@@ -1,0 +1,259 @@
+.TH "ChEngn::Piece" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn::Piece \- 
+.PP
+Chess piece.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CEPiece.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPiece\fP (\fBpiece_type\fP tpe=\fBunknown\fP, \fBpiece_color\fP col=\fBwhite\fP)"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "\fBPiece\fP (const \fBPiece\fP &other)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fB~Piece\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBtype\fP () const "
+.br
+.RI "\fIGet the piece's type. \fP"
+.ti -1c
+.RI "\fBpiece_color\fP \fBcolor\fP () const "
+.br
+.RI "\fIGet the piece's color ( white | black ) \fP"
+.ti -1c
+.RI "bool \fBisWhite\fP () const "
+.br
+.RI "\fICheck piece's color state. \fP"
+.ti -1c
+.RI "bool \fBisBlack\fP () const "
+.br
+.RI "\fICheck piece's color state. \fP"
+.ti -1c
+.RI "bool \fBisUnknown\fP () const "
+.br
+.RI "\fICheck piece's type. \fP"
+.ti -1c
+.RI "\fBpiece_movement_flag\fP \fBmoveFlag\fP () const "
+.br
+.RI "\fIGet piece movement flag. \fP"
+.ti -1c
+.RI "void \fBsetType\fP (\fBpiece_type\fP)"
+.br
+.RI "\fISet Piece's type. \fP"
+.ti -1c
+.RI "void \fBsetWhite\fP ()"
+.br
+.RI "\fIChanges piece's color to white. \fP"
+.ti -1c
+.RI "void \fBsetBlack\fP ()"
+.br
+.RI "\fIChanges piece's colot to black. \fP"
+.ti -1c
+.RI "void \fBsetMoved\fP ()"
+.br
+.RI "\fISets \fBPiece\fP as moved. \fP"
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBPiece\fP &other)"
+.br
+.RI "\fIOverloaded operator =. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPiece\fP &other) const "
+.br
+.RI "\fICompare pieces. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, const \fBPiece\fP &pce)"
+.br
+.RI "\fIOverloaded operator << () \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Chess piece. 
+
+Provides basic interface for init some chess piece, eg 'knight' 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChEngn::Piece::Piece (\fBpiece_type\fPtpe = \fC\fBunknown\fP\fP, \fBpiece_color\fPcol = \fC\fBwhite\fP\fP)"
+.PP
+Default constructor. After this piece is: 1. White piece 2. Of unknown type 3. Not moved yet 
+.SS "ChEngn::Piece::Piece (const \fBPiece\fP &other)"
+.PP
+Copy constructor. \fBParameters:\fP
+.RS 4
+\fIother\fP - source 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBpiece_color\fP ChEngn::Piece::color () const"
+.PP
+Get the piece's color ( white | black ) \fBReturns:\fP
+.RS 4
+Color 
+.RE
+.PP
+
+.SS "bool ChEngn::Piece::isBlack () const"
+.PP
+Check piece's color state. \fBReturns:\fP
+.RS 4
+true if piece is black 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as 
+.PP
+.nf
+ if ( piece.color() == ChEngn::black )
+ {
+        // routine
+ }
+
+.fi
+.PP
+ 
+.RE
+.PP
+
+.SS "bool ChEngn::Piece::isUnknown () const"
+.PP
+Check piece's type. \fBReturns:\fP
+.RS 4
+true if piece type is unknown 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as: 
+.PP
+.nf
+ if ( piece.type() == ChEngn::unknown )
+ {
+        // routine
+ }
+
+.fi
+.PP
+ 
+.PP
+\fBPiece\fP initialized by \fBChEngn::Piece::Piece()\fP will be unknown type 
+.RE
+.PP
+
+.SS "bool ChEngn::Piece::isWhite () const"
+.PP
+Check piece's color state. \fBReturns:\fP
+.RS 4
+true if piece is white 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Same as 
+.PP
+.nf
+ if ( piece.color() == ChEngn::white )
+ {
+    // routine
+ }
+
+.fi
+.PP
+ 
+.RE
+.PP
+
+.SS "\fBpiece_movement_flag\fP ChEngn::Piece::moveFlag () const"
+.PP
+Get piece movement flag. \fBReturns:\fP
+.RS 4
+flag's value 
+.RE
+.PP
+
+.SS "void ChEngn::Piece::operator= (const \fBPiece\fP &other)"
+.PP
+Overloaded operator =. Overloaded operation =. Will be copied type, color, moving flag 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP - Source 
+.RE
+.PP
+
+.SS "bool ChEngn::Piece::operator== (const \fBPiece\fP &other) const"
+.PP
+Compare pieces. Compare two pieces. Pieces are equal if their types, color, moving flag are same. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP - Source 
+.RE
+.PP
+
+.SS "void ChEngn::Piece::setMoved ()"
+.PP
+Sets \fBPiece\fP as moved. \fBNote:\fP
+.RS 4
+It's not requered to always set this flag. For example this flag doesn't make sense if piece's type is \fBChEngn::bishop\fP 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+You can only \fBset\fP this flag. You can't change this flag later 
+.RE
+.PP
+
+.SS "void ChEngn::Piece::setType (\fBpiece_type\fP)"
+.PP
+Set Piece's type. \fBParameters:\fP
+.RS 4
+\fItpe\fP - New piece's type 
+.RE
+.PP
+
+.SS "\fBpiece_type\fP ChEngn::Piece::type () const"
+.PP
+Get the piece's type. \fBReturns:\fP
+.RS 4
+Type 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &out, const \fBPiece\fP &pce)\fC [friend]\fP"
+.PP
+Overloaded operator << () 'Prints' piece in std::ostream 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIout\fP - Stream for printing 
+.br
+\fIpce\fP - \fBPiece\fP to print 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

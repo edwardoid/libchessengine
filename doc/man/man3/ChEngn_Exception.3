@@ -1,0 +1,89 @@
+.TH "ChEngn::Exception" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn::Exception \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBException\fP (const ErrorCodes::ERROR_CODE errCode=ErrorCodes::OK, const ErrorMessages::ERROR_MSG errMsg=ErrorMessages::OK)"
+.br
+.ti -1c
+.RI "\fBException\fP (const \fBException\fP &other)"
+.br
+.RI "\fICopy-constructor. \fP"
+.ti -1c
+.RI "\fB~Exception\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "int \fBcode\fP () const "
+.br
+.RI "\fIGet error code. \fP"
+.ti -1c
+.RI "std::string \fBwhat\fP () const "
+.br
+.RI "\fIGet exception message. \fP"
+.ti -1c
+.RI "void \fBsetCode\fP (const int code)"
+.br
+.RI "\fISets error code. \fP"
+.ti -1c
+.RI "void \fBsetMessage\fP (std::string mess)"
+.br
+.RI "\fISets error message. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChEngn::Exception::Exception (const ErrorCodes::ERROR_CODEerrCode = \fCErrorCodes::OK\fP, const ErrorMessages::ERROR_MSGerrMsg = \fCErrorMessages::OK\fP)"Default constructor: Creates \fBException\fP whith given error code and error message. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerrCode\fP Exception's error code. Default value: ChEngn::ErrorCodes::OK 
+.br
+\fIerrMsg\fP Exception's error message. Default value: ChEngn::ErrorMessages::OK 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int ChEngn::Exception::code () const\fC [inline]\fP"
+.PP
+Get error code. \fBReturns:\fP
+.RS 4
+Current error code 
+.RE
+.PP
+
+.SS "void ChEngn::Exception::setCode (const intcode)\fC [inline]\fP"
+.PP
+Sets error code. \fBParameters:\fP
+.RS 4
+\fIcode\fP Error code 
+.RE
+.PP
+
+.SS "void ChEngn::Exception::setMessage (std::stringmess)\fC [inline]\fP"
+.PP
+Sets error message. \fBParameters:\fP
+.RS 4
+\fImess\fP Error message 
+.RE
+.PP
+
+.SS "std::string ChEngn::Exception::what () const\fC [inline]\fP"
+.PP
+Get exception message. \fBReturns:\fP
+.RS 4
+Current error text 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

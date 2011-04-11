@@ -1,0 +1,123 @@
+\hypertarget{classChEngn_1_1Exception}{
+\section{ChEngn::Exception Class Reference}
+\label{classChEngn_1_1Exception}\index{ChEngn::Exception@{ChEngn::Exception}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classChEngn_1_1Exception_a3e97e5234f3f07bd4a5728c789fe5f65}{Exception} (const ErrorCodes::ERROR\_\-CODE errCode=ErrorCodes::OK, const ErrorMessages::ERROR\_\-MSG errMsg=ErrorMessages::OK)
+\item 
+\hypertarget{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}{
+\hyperlink{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}{Exception} (const \hyperlink{classChEngn_1_1Exception}{Exception} \&other)}
+\label{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}
+
+\begin{DoxyCompactList}\small\item\em Copy-\/constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}{
+\hyperlink{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}{$\sim$Exception} ()}
+\label{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int \hyperlink{classChEngn_1_1Exception_a49bdf86c61bc027c512f3c9c6e74a2ad}{code} () const 
+\begin{DoxyCompactList}\small\item\em Get error code. \item\end{DoxyCompactList}\item 
+std::string \hyperlink{classChEngn_1_1Exception_a10bfdb3b9a25cde9a5c09272d3258788}{what} () const 
+\begin{DoxyCompactList}\small\item\em Get exception message. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Exception_a80e1913344d7d230cbbbab621bad8d28}{setCode} (const int code)
+\begin{DoxyCompactList}\small\item\em Sets error code. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}{setMessage} (std::string mess)
+\begin{DoxyCompactList}\small\item\em Sets error message. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classChEngn_1_1Exception_a3e97e5234f3f07bd4a5728c789fe5f65}{
+\index{ChEngn::Exception@{ChEngn::Exception}!Exception@{Exception}}
+\index{Exception@{Exception}!ChEngn::Exception@{ChEngn::Exception}}
+\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Exception::Exception (
+\begin{DoxyParamCaption}
+\item[{const ErrorCodes::ERROR\_\-CODE}]{errCode = {\ttfamily ErrorCodes::OK}, }
+\item[{const ErrorMessages::ERROR\_\-MSG}]{errMsg = {\ttfamily ErrorMessages::OK}}
+\end{DoxyParamCaption}
+)}}
+\label{classChEngn_1_1Exception_a3e97e5234f3f07bd4a5728c789fe5f65}
+Default constructor: Creates \hyperlink{classChEngn_1_1Exception}{Exception} whith given error code and error message. 
+\begin{DoxyParams}{Parameters}
+{\em errCode} & Exception's error code. Default value: ChEngn::ErrorCodes::OK \\
+\hline
+{\em errMsg} & Exception's error message. Default value: ChEngn::ErrorMessages::OK \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Exception_a49bdf86c61bc027c512f3c9c6e74a2ad}{
+\index{ChEngn::Exception@{ChEngn::Exception}!code@{code}}
+\index{code@{code}!ChEngn::Exception@{ChEngn::Exception}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}int ChEngn::Exception::code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1Exception_a49bdf86c61bc027c512f3c9c6e74a2ad}
+
+
+Get error code. 
+
+\begin{DoxyReturn}{Returns}
+Current error code 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Exception_a80e1913344d7d230cbbbab621bad8d28}{
+\index{ChEngn::Exception@{ChEngn::Exception}!setCode@{setCode}}
+\index{setCode@{setCode}!ChEngn::Exception@{ChEngn::Exception}}
+\subsubsection[{setCode}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Exception::setCode (
+\begin{DoxyParamCaption}
+\item[{const int}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1Exception_a80e1913344d7d230cbbbab621bad8d28}
+
+
+Sets error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Error code \\
+\hline
+\end{DoxyParams}
+\hypertarget{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}{
+\index{ChEngn::Exception@{ChEngn::Exception}!setMessage@{setMessage}}
+\index{setMessage@{setMessage}!ChEngn::Exception@{ChEngn::Exception}}
+\subsubsection[{setMessage}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Exception::setMessage (
+\begin{DoxyParamCaption}
+\item[{std::string}]{mess}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}
+
+
+Sets error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mess} & Error message \\
+\hline
+\end{DoxyParams}
+\hypertarget{classChEngn_1_1Exception_a10bfdb3b9a25cde9a5c09272d3258788}{
+\index{ChEngn::Exception@{ChEngn::Exception}!what@{what}}
+\index{what@{what}!ChEngn::Exception@{ChEngn::Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}std::string ChEngn::Exception::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1Exception_a10bfdb3b9a25cde9a5c09272d3258788}
+
+
+Get exception message. 
+
+\begin{DoxyReturn}{Returns}
+Current error text 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CEException_8h}{CEException.h}\end{DoxyCompactItemize}

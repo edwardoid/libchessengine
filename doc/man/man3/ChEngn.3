@@ -1,0 +1,139 @@
+.TH "ChEngn" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn \- 
+.PP
+Contains all typedefs, constants, classes defined in.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBEngine\fP"
+.br
+.ti -1c
+.RI "class \fBEnumerator\fP"
+.br
+.RI "\fIEnumerate possibile moves. \fP"
+.ti -1c
+.RI "class \fBException\fP"
+.br
+.ti -1c
+.RI "class \fBPiece\fP"
+.br
+.RI "\fIChess piece. \fP"
+.ti -1c
+.RI "class \fBTable\fP"
+.br
+.RI "\fIChess board. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBChEngn::Table\fP \fBVirtualTable\fP"
+.br
+.ti -1c
+.RI "typedef const unsigned char \fBpiece_type\fP"
+.br
+.RI "\fI\fBPiece\fP type is just a unsigned char. \fP"
+.ti -1c
+.RI "typedef const unsigned char \fBpiece_color\fP"
+.br
+.RI "\fI\fBPiece\fP color is just a unsigned char. \fP"
+.ti -1c
+.RI "typedef const unsigned char \fBpiece_movement_flag\fP"
+.br
+.RI "\fI\fBPiece\fP movement flag is just a bit in unsigned char. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEnumerationSide\fP { \fBUndefinedSide\fP =  0, \fBWhiteSide\fP, \fBBlackSide\fP }"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBpiece_type\fP \fBunknown\fP = 63"
+.br
+.RI "\fIUses to present unknown type piece 63 = [00011111]. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBpawn\fP = 1 << 0"
+.br
+.RI "\fIUses to present pawns. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBknight\fP = 1 << 1"
+.br
+.RI "\fIUses to present knights. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBbishop\fP = 1 << 2"
+.br
+.RI "\fIUses to present bishops. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBrook\fP = 1 << 3"
+.br
+.RI "\fIUses to present rooks. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBqueen\fP = 1 << 4"
+.br
+.RI "\fIUses to present queens. \fP"
+.ti -1c
+.RI "\fBpiece_type\fP \fBking\fP = 1 << 5"
+.br
+.RI "\fIUses to present kings. \fP"
+.ti -1c
+.RI "\fBpiece_color\fP \fBwhite\fP = 1 << 6"
+.br
+.RI "\fIUses to set flag if piece is white ( else flag is not set) \fP"
+.ti -1c
+.RI "\fBpiece_color\fP \fBblack\fP = 0 << 6"
+.br
+.RI "\fIUses to unset flag if piece is black. \fP"
+.ti -1c
+.RI "\fBpiece_movement_flag\fP \fBmoved\fP = 1 << 7"
+.br
+.RI "\fIUses to set flag is piece has been moved. \fP"
+.ti -1c
+.RI "const unsigned int \fBdefault_table_height\fP = 8"
+.br
+.RI "\fIStandart table height. \fP"
+.ti -1c
+.RI "const unsigned int \fBdefault_table_width\fP = 8"
+.br
+.RI "\fIStandart table width. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains all typedefs, constants, classes defined in. 
+
+contains all classes, structs, constants to work whis library.
+.PP
+Contains all typedefs, constans, classes defined in libchessengine 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBChEngn::Table\fP \fBChEngn::VirtualTable\fP"Every library user will use 'Virtual tables'. E.g. you get current table state, and then you can make changes, but all your changes will not change real table. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBChEngn::EnumerationSide\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIUndefinedSide \fP\fP
+Default value. 
+.TP
+\fB\fIWhiteSide \fP\fP
+White player's side. 
+.TP
+\fB\fIBlackSide \fP\fP
+Black player's side. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

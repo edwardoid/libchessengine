@@ -1,0 +1,100 @@
+.TH "src/CEPiece.h" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/CEPiece.h \- 
+.PP
+Here are defined \fBChEngn::Piece\fP class. Most of constants and structs: \fBChEngn::piece_movement_flag\fP, \fBChEngn::piece_color\fP, \fBChEngn::piece_type\fP,.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBChEngn::Piece\fP"
+.br
+.RI "\fIChess piece. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBChEngn\fP"
+.br
+.PP
+
+.RI "\fIContains all typedefs, constants, classes defined in. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef const unsigned char \fBChEngn::piece_type\fP"
+.br
+.RI "\fI\fBPiece\fP type is just a unsigned char. \fP"
+.ti -1c
+.RI "typedef const unsigned char \fBChEngn::piece_color\fP"
+.br
+.RI "\fI\fBPiece\fP color is just a unsigned char. \fP"
+.ti -1c
+.RI "typedef const unsigned char \fBChEngn::piece_movement_flag\fP"
+.br
+.RI "\fI\fBPiece\fP movement flag is just a bit in unsigned char. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "piece_type \fBChEngn::unknown\fP = 63"
+.br
+.RI "\fIUses to present unknown type piece 63 = [00011111]. \fP"
+.ti -1c
+.RI "piece_type \fBChEngn::pawn\fP = 1 << 0"
+.br
+.RI "\fIUses to present pawns. \fP"
+.ti -1c
+.RI "piece_type \fBChEngn::knight\fP = 1 << 1"
+.br
+.RI "\fIUses to present knights. \fP"
+.ti -1c
+.RI "piece_type \fBChEngn::bishop\fP = 1 << 2"
+.br
+.RI "\fIUses to present bishops. \fP"
+.ti -1c
+.RI "piece_type \fBChEngn::rook\fP = 1 << 3"
+.br
+.RI "\fIUses to present rooks. \fP"
+.ti -1c
+.RI "piece_type \fBChEngn::queen\fP = 1 << 4"
+.br
+.RI "\fIUses to present queens. \fP"
+.ti -1c
+.RI "piece_type \fBChEngn::king\fP = 1 << 5"
+.br
+.RI "\fIUses to present kings. \fP"
+.ti -1c
+.RI "piece_color \fBChEngn::white\fP = 1 << 6"
+.br
+.RI "\fIUses to set flag if piece is white ( else flag is not set) \fP"
+.ti -1c
+.RI "piece_color \fBChEngn::black\fP = 0 << 6"
+.br
+.RI "\fIUses to unset flag if piece is black. \fP"
+.ti -1c
+.RI "piece_movement_flag \fBChEngn::moved\fP = 1 << 7"
+.br
+.RI "\fIUses to set flag is piece has been moved. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Here are defined \fBChEngn::Piece\fP class. Most of constants and structs: \fBChEngn::piece_movement_flag\fP, \fBChEngn::piece_color\fP, \fBChEngn::piece_type\fP,. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

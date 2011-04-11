@@ -1,0 +1,142 @@
+.TH "ChEngn::Enumerator" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn::Enumerator \- 
+.PP
+Enumerate possibile moves.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CEEnumerator.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnumerator\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fBEnumerator\fP (const \fBTable\fP &table, \fBEnumerationSide\fP enumSide=UndefinedSide, unsigned short deep=2)"
+.br
+.RI "\fICustom constructor. \fP"
+.ti -1c
+.RI "void \fBsetDeep\fP (unsigned short deep)"
+.br
+.RI "\fISets enumeration deepness. \fP"
+.ti -1c
+.RI "void \fBsetTable\fP (const \fBTable\fP &table)"
+.br
+.RI "\fIInitialize start position. \fP"
+.ti -1c
+.RI "void \fBsetSide\fP (\fBEnumerationSide\fP)"
+.br
+.RI "\fISets enumeration side. \fP"
+.ti -1c
+.RI "unsigned short \fBdeepness\fP () const "
+.br
+.ti -1c
+.RI "\fBTable\fP * \fBstartPosition\fP () const "
+.br
+.ti -1c
+.RI "\fBEnumerationSide\fP \fBside\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Enumerate possibile moves. 
+
+Enumerate possible moves in given deep 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChEngn::Enumerator::Enumerator ()"
+.PP
+Constructor. Default constructor creates \fBChEngn::Enumerator\fP whithout \fBChEngn::Table\fP 
+.PP
+.nf
+       ChEngn::Enumerator tmpEnumerator;
+        if ( tmpEnumerator.table() == 0 ) // <- will return true
+        ...
+
+.fi
+.PP
+.PP
+And enumeration deep will be set 0 And side will be
+.PP
+: Enumeration process is hard process, if it's possible use small values for deep 
+.SS "ChEngn::Enumerator::Enumerator (const \fBTable\fP &table, \fBEnumerationSide\fPenumSide = \fCUndefinedSide\fP, unsigned shortdeep = \fC2\fP)"
+.PP
+Custom constructor. Created \fBChEngn::Enumerator\fP whis given table, side, deepness 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItable\fP Start position for enumeration 
+.br
+\fIside\fP Enumeration side, default value \fBChEngn::UndefinedSide\fP 
+.br
+\fIdeep\fP Enumeration deep : Enumeration process is hard process, if it's possible use small values for deep 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned short ChEngn::Enumerator::deepness () const"Return Enumeration deepness 
+.PP
+\fBReturns:\fP
+.RS 4
+Enumeration depness 
+.RE
+.PP
+
+.SS "void ChEngn::Enumerator::setDeep (unsigned shortdeep)"
+.PP
+Sets enumeration deepness. Set enumeration deepness 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdeep\fP Enumeration depness 
+.RE
+.PP
+
+.SS "void ChEngn::Enumerator::setSide (\fBEnumerationSide\fP)"
+.PP
+Sets enumeration side. Sets enumeration side 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenumSide\fP Enumeration side 
+.RE
+.PP
+
+.SS "void ChEngn::Enumerator::setTable (const \fBTable\fP &table)"
+.PP
+Initialize start position. Set give table as start position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItable\fP Start position 
+.RE
+.PP
+
+.SS "\fBEnumerationSide\fP ChEngn::Enumerator::side () const"Get Enumeration side 
+.PP
+\fBReturns:\fP
+.RS 4
+Enumeration side 
+.RE
+.PP
+
+.SS "\fBTable\fP* ChEngn::Enumerator::startPosition () const"Get start position table 
+.PP
+\fBReturns:\fP
+.RS 4
+Start position 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

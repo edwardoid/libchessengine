@@ -1,0 +1,157 @@
+.TH "ChEngn::Table" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn::Table \- 
+.PP
+Chess board.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CETable.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTable\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "\fBTable\fP (const \fBTable\fP &other)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "virtual \fB~Table\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "\fBPiece\fP ** \fBtable\fP ()"
+.br
+.RI "\fIGet current table state. \fP"
+.ti -1c
+.RI "\fBPiece\fP * \fBpieceAt\fP (unsigned int column, unsigned int row) const "
+.br
+.RI "\fIReturn piece at given numeric position. \fP"
+.ti -1c
+.RI "\fBPiece\fP * \fBpieceAtC\fP (char column, char row) const "
+.br
+.RI "\fIReturn piece at given numeric position. \fP"
+.ti -1c
+.RI "void \fBresetComplect\fP ()"
+.br
+.RI "\fISet table for beginig gaming. \fP"
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBTable\fP &other)"
+.br
+.RI "\fIOverloaded operation =. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, const \fBTable\fP &tbl)"
+.br
+.RI "\fIOverloaded operator << () \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Chess board. 
+
+Provides basic manipulations whis chess table (no matter 'virtual' ot 'real'. Find \fBChEngn::Piece\fP, move them. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChEngn::Table::Table (const \fBTable\fP &other)"
+.PP
+Copy constructor. \fBParameters:\fP
+.RS 4
+\fIother\fP - Source. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ChEngn::Table::operator= (const \fBTable\fP &other)"
+.PP
+Overloaded operation =. Copies given table to current. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP - Source 
+.RE
+.PP
+
+.SS "\fBPiece\fP* ChEngn::Table::pieceAt (unsigned intcolumn, unsigned introw) const"
+.PP
+Return piece at given numeric position. Get piece from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrow\fP - Piece's position numeric row. 
+.br
+\fIcolumn\fP - Piece's position numeric column. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+- Pointer to piece, if row and/or column are invalid 0 will be returned. 
+.RE
+.PP
+
+.SS "\fBPiece\fP* ChEngn::Table::pieceAtC (charcolumn, charrow) const"
+.PP
+Return piece at given numeric position. Get piece from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcolumn\fP - Piece's position column as character, like 'd' 
+.br
+\fIrow\fP - Piece's position row as character, like '3'. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+- Pointer to piece, if row and/or column are invalid 0 will be returned. 
+.RE
+.PP
+
+.SS "void ChEngn::Table::resetComplect ()"
+.PP
+Set table for beginig gaming. \fBWarning:\fP
+.RS 4
+Function will do changes if table size is 8x8. In another case nothing will be done 
+.RE
+.PP
+
+.SS "\fBPiece\fP** ChEngn::Table::table ()"
+.PP
+Get current table state. \fBReturns:\fP
+.RS 4
+Current table state 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+If you don't gonna change the table use const-version 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &out, const \fBTable\fP &tbl)\fC [friend]\fP"
+.PP
+Overloaded operator << () 'Prints' table into std::ostream 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIout\fP - Stream for printing 
+.br
+\fItbl\fP - table to print 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.
