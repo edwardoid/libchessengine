@@ -1,7 +1,7 @@
 #include "CEException.h"
 
-ChEngn::Exception::Exception( const ChEngn::ErrorCodes::ERROR_CODE code,
-							  const ChEngn::ErrorMessages::ERROR_MSG mess )
+ChEngn::Exception::Exception( const ChEngn::ERROR_CODE code,
+							  const ChEngn::ERROR_MSG mess )
 {
 	setCode( code );
 	setMessage( mess );

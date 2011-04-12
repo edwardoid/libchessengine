@@ -1,4 +1,4 @@
-.TH "src/CEException.h" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.TH "src/CEException.h" 3 "Wed Apr 13 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,61 +30,61 @@ Here are defined \fBChEngn::Exception\fP class.
 .PP
 
 .RI "\fIContains all typedefs, constants, classes defined in. \fP"
-.ti -1c
-.RI "namespace \fBErrorCodes\fP"
-.br
-.ti -1c
-.RI "namespace \fBErrorMessages\fP"
-.br
 .in -1c
 .SS "Typedefs"
 
 .in +1c
 .ti -1c
-.RI "typedef int \fBChEngn::ErrorCodes::ERROR_CODE\fP"
+.RI "typedef int \fBChEngn::ERROR_CODE\fP"
 .br
 .ti -1c
-.RI "typedef std::string \fBChEngn::ErrorMessages::ERROR_MSG\fP"
+.RI "typedef std::string \fBChEngn::ERROR_MSG\fP"
 .br
+.RI "\fIERROR_MSG Empty typedef for nice code :) \fP"
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "const int \fBChEngn::ErrorCodes::OK\fP = 0"
+.RI "const int \fBChEngn::OK_I\fP = 0"
 .br
 .RI "\fIUseless code, used as deafult value, for example in copy-constructor. \fP"
 .ti -1c
-.RI "const int \fBChEngn::ErrorCodes::CAN_T_FIND_SOURCE_PIECE\fP = -1"
+.RI "const int \fBChEngn::CAN_T_FIND_SOURCE_PIECE_I\fP = -1"
 .br
+.RI "\fIUsed when \fBChEngn::Engine\fP tryes to make ply, but can't find piece which has been moved. \fP"
 .ti -1c
-.RI "const int \fBChEngn::ErrorCodes::CAN_T_FIND_DESTINATION_PIECE\fP = -2"
+.RI "const int \fBChEngn::CAN_T_FIND_DESTINATION_PIECE_I\fP = -2"
 .br
+.RI "\fIUsed when \fBChEngn::Engine\fP tryes to make ply, but can't find destination piece. \fP"
 .ti -1c
-.RI "const int \fBChEngn::ErrorCodes::CAN_T_MAKE_CASTLING\fP = -3"
+.RI "const int \fBChEngn::CAN_T_MAKE_CASTLING_I\fP = -3"
 .br
+.RI "\fIUsed when castling can't be do. Chech chess rules for cases when this exception can be used. \fP"
 .ti -1c
-.RI "const int \fBChEngn::ErrorCodes::PLY_S_POINTER_IS_NULL\fP = -4"
+.RI "const int \fBChEngn::PLY_S_POINTER_IS_NULL_I\fP = -4"
 .br
+.RI "\fIUsed when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0. \fP"
 .ti -1c
-.RI "const int \fBChEngn::ErrorCodes::OUT_OF_RANGE\fP = -5"
-.br
-.ti -1c
-.RI "const std::string \fBChEngn::ErrorMessages::OK\fP = 'Everything is ok'"
+.RI "const std::string \fBChEngn::OK_S\fP = 'Everything is ok'"
 .br
 .RI "\fIUseles message. \fP"
 .ti -1c
-.RI "const std::string \fBChEngn::ErrorMessages::CAN_T_FIND_SOURCE_PIECE\fP = 'Can't find source piece'"
+.RI "const std::string \fBChEngn::CAN_T_FIND_SOURCE_PIECE_S\fP = 'Can't find source piece'"
 .br
+.RI "\fIUses when \fBChEngn::Engine\fP can't find piece which can make give move. \fP"
 .ti -1c
-.RI "const std::string \fBChEngn::ErrorMessages::CAN_T_FIND_DESTINATION_PIECE\fP = 'Can't find destination piece'"
+.RI "const std::string \fBChEngn::CAN_T_FIND_DESTINATION_PIECE_S\fP = 'Can't find destination piece'"
 .br
+.RI "\fIUses when \fBChEngn::Engine\fP can't find piece where move destination. \fP"
 .ti -1c
-.RI "const std::string \fBChEngn::ErrorMessages::PLY_S_POINTER_IS_NULL\fP = 'Given Ply's pointer is == 0'"
+.RI "const std::string \fBChEngn::PLY_S_POINTER_IS_NULL_S\fP = 'Given Ply's pointer is == 0'"
 .br
+.RI "\fIUsed when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0. \fP"
 .ti -1c
-.RI "const std::string \fBChEngn::ErrorMessages::OUT_OF_RANGE\fP = 'Trying to acces bad position in table'"
+.RI "const std::string \fBChEngn::OUT_OF_RANGE_S\fP = 'Trying to acces bad position in table'"
 .br
+.RI "\fIUsed when uses tryes to get access to whong piece from \fBChEngn::Table\fP. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 

@@ -34,65 +34,43 @@
 //libchessengine
 namespace ChEngn
 {
-	/// @namespace ErrorCodes contains definition of all error codes
-	namespace ErrorCodes
-	{
-		/// Useless code, used as deafult value, for example in copy-constructor
-		const int OK = 0;
+	/// Useless code, used as deafult value, for example in copy-constructor
+	const int OK_I = 0; 
 
-		/**
-		 * Used when ChEngn::Engine tryes to make ply, but can't find piece
-		 * which has been moved
-		 */
-		const int CAN_T_FIND_SOURCE_PIECE = -1;
+	/// Used when ChEngn::Engine tryes to make ply, but can't find piece which has been moved
+	const int CAN_T_FIND_SOURCE_PIECE_I = -1;
 
-		/**
-		 * Used when ChEngn::Engine tryes to make ply, but can't find
-		 * destination piece
-		 */
-		const int CAN_T_FIND_DESTINATION_PIECE = -2;
+	/// Used when ChEngn::Engine tryes to make ply, but can't find destination piece
+	const int CAN_T_FIND_DESTINATION_PIECE_I = -2;
 
-		/**
-		 * Used when castling can't be do. Chech chess rules for cases
-		 * when this exception can be used
-		 */
-		const int CAN_T_MAKE_CASTLING = -3;
+	/// Used when castling can't be do. Chech chess rules for cases when this exception can be used
+	const int CAN_T_MAKE_CASTLING_I = -3;
 
-		/**
-		 * Used when ply pointer given to
-		 * ChEngn::Engine::make<PieceType>Ply is equal to 0
-		 */
-		const int PLY_S_POINTER_IS_NULL = -4;
+	/// Used when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0
+	const int PLY_S_POINTER_IS_NULL_I = -4;
 
-		/** 
-		 * Used when uses tryes to get access to whong piece from
-		 * ChEngn::Table
-		 */
-		const int OUT_OF_RANGE= -5;
-
-		/// @typedef ERROR_CODE Empty typedef for nice code :)
-		typedef int ERROR_CODE;
-	};
+	/// Used when uses tryes to get access to whong piece from ChEngn::Table		const int OUT_OF_RANGE= -5;
+	/// ERROR_CODE Empty typedef for nice code :)
+	typedef int ERROR_CODE;
 
 
-	/**
-	 * @namespace ErrorMessages contains all standart error's messages
-	 */
-	namespace ErrorMessages
-	{
+	/// Useles message
+	const std::string OK_S = "Everything is ok";
 
-		/// Useles message
-		const std::string OK = "Everything is ok";
+	/// Uses when ChEngn::Engine can't find piece which can make give move
+	const std::string CAN_T_FIND_SOURCE_PIECE_S = "Can't find source piece";
 
-		const std::string CAN_T_FIND_SOURCE_PIECE = "Can't find source piece";
-		const std::string CAN_T_FIND_DESTINATION_PIECE = "Can't find  destination piece";
-		const std::string PLY_S_POINTER_IS_NULL = "Given Ply's pointer is == 0"; 
-		const std::string OUT_OF_RANGE= "Trying to acces bad position in table"; 
+	/// Uses when ChEngn::Engine can't find piece where move destination
+	const std::string CAN_T_FIND_DESTINATION_PIECE_S = "Can't find  destination piece";
 
-		/// @typedef ERROR_MSG Empty typedef for nice code :)
-		typedef std::string ERROR_MSG;
-	};
+	/// Used when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0
+	const std::string PLY_S_POINTER_IS_NULL_S = "Given Ply's pointer is == 0"; 
 
+	/// Used when uses tryes to get access to whong piece from ChEngn::Table
+	const std::string OUT_OF_RANGE_S = "Trying to acces bad position in table"; 
+
+	/// ERROR_MSG Empty typedef for nice code :)
+	typedef std::string ERROR_MSG;
 
 	class Exception
 	{
@@ -100,12 +78,13 @@ namespace ChEngn
 			/**
 			 * Default constructor: Creates Exception whith given error code and
 			 * error message.
-			 * @param errCode Exception's error code. Default value: ChEngn::ErrorCodes::OK
+			 * @param errCode Exception's error code. Default value:
+			 * ChEngn::OK_I
 			 * @param errMsg Exception's error message. Default value:
-			 * ChEngn::ErrorMessages::OK
+			 * ChEngn::OK
 			 */
-			Exception( const ErrorCodes::ERROR_CODE errCode = ErrorCodes::OK,
-					   const ErrorMessages::ERROR_MSG errMsg = ErrorMessages::OK);
+			Exception( const ERROR_CODE errCode = OK_I,
+					   const ERROR_MSG errMsg = OK_S);
 
 			/// @brief Copy-constructor
 			Exception( const Exception& other );

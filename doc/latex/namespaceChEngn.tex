@@ -25,6 +25,13 @@ class \hyperlink{classChEngn_1_1Table}{Table}
 \item 
 typedef \hyperlink{classChEngn_1_1Table}{ChEngn::Table} \hyperlink{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}{VirtualTable}
 \item 
+typedef int \hyperlink{namespaceChEngn_a347ab4e4a29f725ed0253d8311c82233}{ERROR\_\-CODE}
+\item 
+\hypertarget{namespaceChEngn_a01b85c98a5b00144710f14c2e5c11656}{
+typedef std::string \hyperlink{namespaceChEngn_a01b85c98a5b00144710f14c2e5c11656}{ERROR\_\-MSG}}
+\label{namespaceChEngn_a01b85c98a5b00144710f14c2e5c11656}
+
+\begin{DoxyCompactList}\small\item\em ERROR\_\-MSG Empty typedef for nice code :) \item\end{DoxyCompactList}\item 
 \hypertarget{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{
 typedef const unsigned char \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type}}
 \label{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}
@@ -51,6 +58,56 @@ enum \hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSi
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{namespaceChEngn_a58f231c1008467b4b6cfb17b190293a5}{
+const int \hyperlink{namespaceChEngn_a58f231c1008467b4b6cfb17b190293a5}{OK\_\-I} = 0}
+\label{namespaceChEngn_a58f231c1008467b4b6cfb17b190293a5}
+
+\begin{DoxyCompactList}\small\item\em Useless code, used as deafult value, for example in copy-\/constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a36e55f6e51b01a42dd9f96ee00ea449f}{
+const int \hyperlink{namespaceChEngn_a36e55f6e51b01a42dd9f96ee00ea449f}{CAN\_\-T\_\-FIND\_\-SOURCE\_\-PIECE\_\-I} = -\/1}
+\label{namespaceChEngn_a36e55f6e51b01a42dd9f96ee00ea449f}
+
+\begin{DoxyCompactList}\small\item\em Used when \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} tryes to make ply, but can't find piece which has been moved. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_ac4cbfc0117c3f4f03371093971bd2a52}{
+const int \hyperlink{namespaceChEngn_ac4cbfc0117c3f4f03371093971bd2a52}{CAN\_\-T\_\-FIND\_\-DESTINATION\_\-PIECE\_\-I} = -\/2}
+\label{namespaceChEngn_ac4cbfc0117c3f4f03371093971bd2a52}
+
+\begin{DoxyCompactList}\small\item\em Used when \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} tryes to make ply, but can't find destination piece. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_afa7a66c1b6f627c2188c24575c8b07ac}{
+const int \hyperlink{namespaceChEngn_afa7a66c1b6f627c2188c24575c8b07ac}{CAN\_\-T\_\-MAKE\_\-CASTLING\_\-I} = -\/3}
+\label{namespaceChEngn_afa7a66c1b6f627c2188c24575c8b07ac}
+
+\begin{DoxyCompactList}\small\item\em Used when castling can't be do. Chech chess rules for cases when this exception can be used. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a6760a84e5ef9de4cb6c0e7158965d51c}{
+const int \hyperlink{namespaceChEngn_a6760a84e5ef9de4cb6c0e7158965d51c}{PLY\_\-S\_\-POINTER\_\-IS\_\-NULL\_\-I} = -\/4}
+\label{namespaceChEngn_a6760a84e5ef9de4cb6c0e7158965d51c}
+
+\begin{DoxyCompactList}\small\item\em Used when ply pointer given to ChEngn::Engine::make$<$PieceType$>$Ply is equal to 0. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a669b96f20597d4a0b00d4c9e4db68ee8}{
+const std::string \hyperlink{namespaceChEngn_a669b96f20597d4a0b00d4c9e4db68ee8}{OK\_\-S} = \char`\"{}Everything is ok\char`\"{}}
+\label{namespaceChEngn_a669b96f20597d4a0b00d4c9e4db68ee8}
+
+\begin{DoxyCompactList}\small\item\em Useles message. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_afcb9219c354a7e8e1374e15cd5be767f}{
+const std::string \hyperlink{namespaceChEngn_afcb9219c354a7e8e1374e15cd5be767f}{CAN\_\-T\_\-FIND\_\-SOURCE\_\-PIECE\_\-S} = \char`\"{}Can't find source piece\char`\"{}}
+\label{namespaceChEngn_afcb9219c354a7e8e1374e15cd5be767f}
+
+\begin{DoxyCompactList}\small\item\em Uses when \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} can't find piece which can make give move. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a8bc85688808005c9d9c49aa2474809d1}{
+const std::string \hyperlink{namespaceChEngn_a8bc85688808005c9d9c49aa2474809d1}{CAN\_\-T\_\-FIND\_\-DESTINATION\_\-PIECE\_\-S} = \char`\"{}Can't find destination piece\char`\"{}}
+\label{namespaceChEngn_a8bc85688808005c9d9c49aa2474809d1}
+
+\begin{DoxyCompactList}\small\item\em Uses when \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} can't find piece where move destination. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_afbdf882021d19396728801e116518dac}{
+const std::string \hyperlink{namespaceChEngn_afbdf882021d19396728801e116518dac}{PLY\_\-S\_\-POINTER\_\-IS\_\-NULL\_\-S} = \char`\"{}Given Ply's pointer is == 0\char`\"{}}
+\label{namespaceChEngn_afbdf882021d19396728801e116518dac}
+
+\begin{DoxyCompactList}\small\item\em Used when ply pointer given to ChEngn::Engine::make$<$PieceType$>$Ply is equal to 0. \item\end{DoxyCompactList}\item 
+\hypertarget{namespaceChEngn_a0c588cbbd7367bc19a844ea5966686f5}{
+const std::string \hyperlink{namespaceChEngn_a0c588cbbd7367bc19a844ea5966686f5}{OUT\_\-OF\_\-RANGE\_\-S} = \char`\"{}Trying to acces bad position in table\char`\"{}}
+\label{namespaceChEngn_a0c588cbbd7367bc19a844ea5966686f5}
+
+\begin{DoxyCompactList}\small\item\em Used when uses tryes to get access to whong piece from \hyperlink{classChEngn_1_1Table}{ChEngn::Table}. \item\end{DoxyCompactList}\item 
 \hypertarget{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{
 \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{unknown} = 63}
 \label{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}
@@ -119,7 +176,12 @@ Contains all typedefs, constants, classes defined in. contains all classes, stru
 Contains all typedefs, constans, classes defined in libchessengine 
 
 \subsection{Typedef Documentation}
-\hypertarget{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}{
+\hypertarget{namespaceChEngn_a347ab4e4a29f725ed0253d8311c82233}{
+\index{ChEngn@{ChEngn}!ERROR\_\-CODE@{ERROR\_\-CODE}}
+\index{ERROR\_\-CODE@{ERROR\_\-CODE}!ChEngn@{ChEngn}}
+\subsubsection[{ERROR\_\-CODE}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf ChEngn::ERROR\_\-CODE}}}
+\label{namespaceChEngn_a347ab4e4a29f725ed0253d8311c82233}
+Used when uses tryes to get access to whong piece from \hyperlink{classChEngn_1_1Table}{ChEngn::Table} const int OUT\_\-OF\_\-RANGE= -\/5; ERROR\_\-CODE Empty typedef for nice code :) \hypertarget{namespaceChEngn_a5ba229504d25ed1b2086f1df62f6db41}{
 \index{ChEngn@{ChEngn}!VirtualTable@{VirtualTable}}
 \index{VirtualTable@{VirtualTable}!ChEngn@{ChEngn}}
 \subsubsection[{VirtualTable}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ChEngn::Table} {\bf ChEngn::VirtualTable}}}

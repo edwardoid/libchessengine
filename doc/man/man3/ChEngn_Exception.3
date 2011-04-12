@@ -1,4 +1,4 @@
-.TH "ChEngn::Exception" 3 "Tue Apr 12 2011" "Version 0.0.1a" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Exception" 3 "Wed Apr 13 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,7 +10,7 @@ ChEngn::Exception \-
 
 .in +1c
 .ti -1c
-.RI "\fBException\fP (const ErrorCodes::ERROR_CODE errCode=ErrorCodes::OK, const ErrorMessages::ERROR_MSG errMsg=ErrorMessages::OK)"
+.RI "\fBException\fP (const \fBERROR_CODE\fP errCode=\fBOK_I\fP, const \fBERROR_MSG\fP errMsg=\fBOK_S\fP)"
 .br
 .ti -1c
 .RI "\fBException\fP (const \fBException\fP &other)"
@@ -39,13 +39,13 @@ ChEngn::Exception \-
 .in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "ChEngn::Exception::Exception (const ErrorCodes::ERROR_CODEerrCode = \fCErrorCodes::OK\fP, const ErrorMessages::ERROR_MSGerrMsg = \fCErrorMessages::OK\fP)"Default constructor: Creates \fBException\fP whith given error code and error message. 
+.SS "ChEngn::Exception::Exception (const \fBERROR_CODE\fPerrCode = \fC\fBOK_I\fP\fP, const \fBERROR_MSG\fPerrMsg = \fC\fBOK_S\fP\fP)"Default constructor: Creates \fBException\fP whith given error code and error message. 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIerrCode\fP Exception's error code. Default value: ChEngn::ErrorCodes::OK 
+\fIerrCode\fP Exception's error code. Default value: \fBChEngn::OK_I\fP 
 .br
-\fIerrMsg\fP Exception's error message. Default value: ChEngn::ErrorMessages::OK 
+\fIerrMsg\fP Exception's error message. Default value: ChEngn::OK 
 .RE
 .PP
 

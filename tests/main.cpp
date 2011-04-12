@@ -13,7 +13,7 @@ bool test_virtual_tables_copying( pgn::Game gm);
 int main()
 {
 	pgn::File file;
-	file.loadFile("tests/1966.pgn");
+	file.loadFile("tests/1963.pgn");
 	pgn::GameCollection *cG = file.games();
 
 	bool res = true;
