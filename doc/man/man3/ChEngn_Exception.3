@@ -10,36 +10,36 @@ ChEngn::Exception \-
 
 .in +1c
 .ti -1c
-.RI "\fBException\fP (const \fBERROR_CODE\fP errCode=\fBOK_I\fP, const \fBERROR_MSG\fP errMsg=\fBOK_S\fP)"
+.RI "\fBException\fP (const \fBERROR_CODE\fP errCode=\fBOK_I\fP, const \fBERROR_MSG\fP errMsg=\fBOK_S\fP)  throw ()"
 .br
 .ti -1c
-.RI "\fBException\fP (const \fBException\fP &other)"
+.RI "\fBException\fP (const \fBException\fP &other)  throw ()"
 .br
 .RI "\fICopy-constructor. \fP"
 .ti -1c
-.RI "\fB~Exception\fP ()"
+.RI "\fB~Exception\fP ()  throw ()"
 .br
 .RI "\fIDestructor. \fP"
 .ti -1c
-.RI "int \fBcode\fP () const "
+.RI "\fBERROR_CODE\fP \fBcode\fP () const   throw ()"
 .br
 .RI "\fIGet error code. \fP"
 .ti -1c
-.RI "std::string \fBwhat\fP () const "
+.RI "const char * \fBwhat\fP () const   throw ()"
 .br
 .RI "\fIGet exception message. \fP"
 .ti -1c
-.RI "void \fBsetCode\fP (const int code)"
+.RI "void \fBsetCode\fP (const int code)  throw ()"
 .br
 .RI "\fISets error code. \fP"
 .ti -1c
-.RI "void \fBsetMessage\fP (std::string mess)"
+.RI "void \fBsetMessage\fP (std::string mess)  throw ()"
 .br
 .RI "\fISets error message. \fP"
 .in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "ChEngn::Exception::Exception (const \fBERROR_CODE\fPerrCode = \fC\fBOK_I\fP\fP, const \fBERROR_MSG\fPerrMsg = \fC\fBOK_S\fP\fP)"Default constructor: Creates \fBException\fP whith given error code and error message. 
+.SS "ChEngn::Exception::Exception (const \fBERROR_CODE\fPerrCode = \fC\fBOK_I\fP\fP, const \fBERROR_MSG\fPerrMsg = \fC\fBOK_S\fP\fP)  throw ()"Default constructor: Creates \fBException\fP whith given error code and error message. 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -51,7 +51,7 @@ ChEngn::Exception \-
 
 .SH "Member Function Documentation"
 .PP 
-.SS "int ChEngn::Exception::code () const\fC [inline]\fP"
+.SS "\fBERROR_CODE\fP ChEngn::Exception::code () const  throw ()\fC [inline]\fP"
 .PP
 Get error code. \fBReturns:\fP
 .RS 4
@@ -59,7 +59,7 @@ Current error code
 .RE
 .PP
 
-.SS "void ChEngn::Exception::setCode (const intcode)\fC [inline]\fP"
+.SS "void ChEngn::Exception::setCode (const intcode)  throw ()\fC [inline]\fP"
 .PP
 Sets error code. \fBParameters:\fP
 .RS 4
@@ -67,7 +67,7 @@ Sets error code. \fBParameters:\fP
 .RE
 .PP
 
-.SS "void ChEngn::Exception::setMessage (std::stringmess)\fC [inline]\fP"
+.SS "void ChEngn::Exception::setMessage (std::stringmess)  throw ()\fC [inline]\fP"
 .PP
 Sets error message. \fBParameters:\fP
 .RS 4
@@ -75,7 +75,7 @@ Sets error message. \fBParameters:\fP
 .RE
 .PP
 
-.SS "std::string ChEngn::Exception::what () const\fC [inline]\fP"
+.SS "const char* ChEngn::Exception::what () const  throw ()\fC [inline]\fP"
 .PP
 Get exception message. \fBReturns:\fP
 .RS 4

@@ -5,25 +5,25 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classChEngn_1_1Exception_af59b66bd5a147479869c9df081f0c53f}{Exception} (const \hyperlink{namespaceChEngn_a347ab4e4a29f725ed0253d8311c82233}{ERROR\_\-CODE} errCode=\hyperlink{namespaceChEngn_a58f231c1008467b4b6cfb17b190293a5}{OK\_\-I}, const \hyperlink{namespaceChEngn_a01b85c98a5b00144710f14c2e5c11656}{ERROR\_\-MSG} errMsg=\hyperlink{namespaceChEngn_a669b96f20597d4a0b00d4c9e4db68ee8}{OK\_\-S})
+\hyperlink{classChEngn_1_1Exception_af59b66bd5a147479869c9df081f0c53f}{Exception} (const \hyperlink{namespaceChEngn_a347ab4e4a29f725ed0253d8311c82233}{ERROR\_\-CODE} errCode=\hyperlink{namespaceChEngn_a58f231c1008467b4b6cfb17b190293a5}{OK\_\-I}, const \hyperlink{namespaceChEngn_a01b85c98a5b00144710f14c2e5c11656}{ERROR\_\-MSG} errMsg=\hyperlink{namespaceChEngn_a669b96f20597d4a0b00d4c9e4db68ee8}{OK\_\-S})  throw ()
 \item 
 \hypertarget{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}{
-\hyperlink{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}{Exception} (const \hyperlink{classChEngn_1_1Exception}{Exception} \&other)}
+\hyperlink{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}{Exception} (const \hyperlink{classChEngn_1_1Exception}{Exception} \&other)  throw ()}
 \label{classChEngn_1_1Exception_a5f404e2a9925706a99d8796e65d2a1cc}
 
 \begin{DoxyCompactList}\small\item\em Copy-\/constructor. \item\end{DoxyCompactList}\item 
 \hypertarget{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}{
-\hyperlink{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}{$\sim$Exception} ()}
+\hyperlink{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}{$\sim$Exception} ()  throw ()}
 \label{classChEngn_1_1Exception_a6fc50135102ba663b36673ad855c483f}
 
 \begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
-int \hyperlink{classChEngn_1_1Exception_a49bdf86c61bc027c512f3c9c6e74a2ad}{code} () const 
+\hyperlink{namespaceChEngn_a347ab4e4a29f725ed0253d8311c82233}{ERROR\_\-CODE} \hyperlink{classChEngn_1_1Exception_aefcd64f7d56140d92c29bb2951da8e05}{code} () const   throw ()
 \begin{DoxyCompactList}\small\item\em Get error code. \item\end{DoxyCompactList}\item 
-std::string \hyperlink{classChEngn_1_1Exception_a10bfdb3b9a25cde9a5c09272d3258788}{what} () const 
+const char $\ast$ \hyperlink{classChEngn_1_1Exception_ad503beb2dfcf1db3d8b16128aa5f0bcd}{what} () const   throw ()
 \begin{DoxyCompactList}\small\item\em Get exception message. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Exception_a80e1913344d7d230cbbbab621bad8d28}{setCode} (const int code)
+void \hyperlink{classChEngn_1_1Exception_a80e1913344d7d230cbbbab621bad8d28}{setCode} (const int code)  throw ()
 \begin{DoxyCompactList}\small\item\em Sets error code. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}{setMessage} (std::string mess)
+void \hyperlink{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}{setMessage} (std::string mess)  throw ()
 \begin{DoxyCompactList}\small\item\em Sets error message. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -36,7 +36,7 @@ void \hyperlink{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}{setM
 \item[{const {\bf ERROR\_\-CODE}}]{errCode = {\ttfamily {\bf OK\_\-I}}, }
 \item[{const {\bf ERROR\_\-MSG}}]{errMsg = {\ttfamily {\bf OK\_\-S}}}
 \end{DoxyParamCaption}
-)}}
+)  throw ()}}
 \label{classChEngn_1_1Exception_af59b66bd5a147479869c9df081f0c53f}
 Default constructor: Creates \hyperlink{classChEngn_1_1Exception}{Exception} whith given error code and error message. 
 \begin{DoxyParams}{Parameters}
@@ -48,15 +48,15 @@ Default constructor: Creates \hyperlink{classChEngn_1_1Exception}{Exception} whi
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classChEngn_1_1Exception_a49bdf86c61bc027c512f3c9c6e74a2ad}{
+\hypertarget{classChEngn_1_1Exception_aefcd64f7d56140d92c29bb2951da8e05}{
 \index{ChEngn::Exception@{ChEngn::Exception}!code@{code}}
 \index{code@{code}!ChEngn::Exception@{ChEngn::Exception}}
-\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}int ChEngn::Exception::code (
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ERROR\_\-CODE} ChEngn::Exception::code (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{classChEngn_1_1Exception_a49bdf86c61bc027c512f3c9c6e74a2ad}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1Exception_aefcd64f7d56140d92c29bb2951da8e05}
 
 
 Get error code. 
@@ -71,7 +71,7 @@ Current error code
 \begin{DoxyParamCaption}
 \item[{const int}]{code}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
 \label{classChEngn_1_1Exception_a80e1913344d7d230cbbbab621bad8d28}
 
 
@@ -89,7 +89,7 @@ Sets error code.
 \begin{DoxyParamCaption}
 \item[{std::string}]{mess}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
 \label{classChEngn_1_1Exception_abb512c199834ae75a74e9674cce6090b}
 
 
@@ -100,15 +100,15 @@ Sets error message.
 {\em mess} & Error message \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Exception_a10bfdb3b9a25cde9a5c09272d3258788}{
+\hypertarget{classChEngn_1_1Exception_ad503beb2dfcf1db3d8b16128aa5f0bcd}{
 \index{ChEngn::Exception@{ChEngn::Exception}!what@{what}}
 \index{what@{what}!ChEngn::Exception@{ChEngn::Exception}}
-\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}std::string ChEngn::Exception::what (
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ChEngn::Exception::what (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{classChEngn_1_1Exception_a10bfdb3b9a25cde9a5c09272d3258788}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1Exception_ad503beb2dfcf1db3d8b16128aa5f0bcd}
 
 
 Get exception message. 

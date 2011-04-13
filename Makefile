@@ -4,6 +4,7 @@ BIN_DIR := ./bin/
 DEP_DIR := ./dep/
 LIB_DIR := ./lib/
 INC_DIR := ./src/
+DOC_DIR := ./doc/
 TST_DIR := ./tests/
 CC:= g++
 DEB_FLAGS:= -g3 -gdwarf-2
@@ -11,6 +12,7 @@ SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
 LIBRARY_TARGET := chessengine
+
 .PHONY: all
 all: library
 
@@ -56,6 +58,9 @@ test: all
 	./$(BIN_DIR)test
 
 .PHONY: install
-install: static shared
+install: static shared doc
 	cp $(LIB_DIR)* /usr/local/lib
 	cp $(SRC_DIR)*.h /usr/local/include
+	cp -rf $(DOC_DIR)man/man3 /usr/local/man
+	rm -rf /usr/local/man/man3/README*
+	rm -rf /usr/local/man/man3/.svn
