@@ -72,7 +72,7 @@ namespace ChEngn
 	/// ERROR_MSG Empty typedef for nice code :)
 	typedef std::string ERROR_MSG;
 
-	class Exception
+	class Exception: public std::exception
 	{
 		public:
 			/**
@@ -84,40 +84,40 @@ namespace ChEngn
 			 * ChEngn::OK
 			 */
 			Exception( const ERROR_CODE errCode = OK_I,
-					   const ERROR_MSG errMsg = OK_S);
+					   const ERROR_MSG errMsg = OK_S) throw();
 
 			/// @brief Copy-constructor
-			Exception( const Exception& other );
+			Exception( const Exception& other ) throw();
 
 			/// Destructor
-			~Exception() {};
+			~Exception() throw() {};
 
 			/**
 			 * @brief Get error code
 			 * @return Current error code
 			 */
-			int code() const { return m_code; };
+			ERROR_CODE code() const throw() { return m_code; };
 
 			/**
 			 * @brief Get exception message
 			 * @return Current error text
 			 */ 
-			std::string what() const{ return m_msg; };
+			const char* what() const throw() { return m_msg.c_str(); }
 
 			/**
 			 * @brief Sets error code
 			 * @param code Error code
 			 */
-			void setCode( const int code ) { m_code = code; };
+			void setCode( const int code ) throw() { m_code = code; };
 
 			/**
 			 * @brief Sets error message
 			 * @param mess Error message
 			 */
-			void setMessage( std::string mess ) { m_msg = mess; };
+			void setMessage( std::string mess ) throw() { m_msg = mess; };
 		private:
-			int m_code;
-			std::string m_msg;
+			ERROR_CODE m_code;
+			ERROR_MSG m_msg;
 	};
 };
 

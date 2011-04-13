@@ -2,6 +2,7 @@
 #include <CEPiece.h>
 #include <CETable.h>
 #include <CEEngine.h>
+#include <CEException.h>
 #include <PGNFile.h>
 
 const int copying_count = 100;
@@ -9,6 +10,7 @@ const int copying_count = 100;
 bool test_making_moves( pgn::Game gm );
 bool test_table_creating( pgn::Game gm );
 bool test_virtual_tables_copying( pgn::Game gm);
+bool test_exceptions();
 
 int main()
 {
@@ -41,6 +43,8 @@ int main()
 			std::cout<< " PASSED " << std::endl;
 		else
 			std::cout<< " FAILED " << std::endl;
+
+		std::cout << "Exception test:" << ( test_exceptions() ? "PASSED" : "FAILED" ) << std::endl;
 	}
 	else
 		std::cout << "File can't be opened or there are no games in the file" <<std::endl;
@@ -84,4 +88,21 @@ bool test_table_creating( pgn::Game gm )
 	ChEngn::Table tbl;
 	ChEngn::VirtualTable tbl1(tbl);
 	std::cout << tbl1 << std::endl;
+}
+
+bool test_exceptions()
+{
+	try
+	{
+		ChEngn::Exception ex;
+		ex.setCode( ChEngn::CAN_T_FIND_DESTINATION_PIECE_I );
+		ex.setMessage( ChEngn::CAN_T_FIND_SOURCE_PIECE_S );
+		throw ex;
+	}
+	catch( ChEngn::Exception e )
+	{
+		std::cerr << "Code: " << e.code() << " Message: " << e.what() << std::endl;
+		return true;
+	}
+	return false;
 }
