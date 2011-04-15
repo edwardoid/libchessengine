@@ -7,11 +7,16 @@ INC_DIR := ./src/
 DOC_DIR := ./doc/
 TST_DIR := ./tests/
 CC:= g++
+MAKE:= make
 DEB_FLAGS:= -g3 -gdwarf-2
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
 LIBRARY_TARGET := chessengine
+
+TST_SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
+TST_OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
+TST_DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
 
 .PHONY: all
 all: library
@@ -50,12 +55,11 @@ clean:
 	rm -rf $(LIB_DIR)*
 	rm -rf $(OBJ_DIR)*
 	rm -rf $(DEP_DIR)*
-	rm -rf $(TST_DIR)test
+	$(MAKE) --directory=$(TST_DIR) clean
 
 .PHONY: test
 test: all
-	g++ $(DEB_FLAGS) $(TST_DIR)main.cpp -static  -lpgnm -lchessengine -L$(LIB_DIR) -I$(INC_DIR) -o $(BIN_DIR)test
-	./$(BIN_DIR)test
+	$(MAKE) --directory=$(TST_DIR) run
 
 .PHONY: install
 install: static shared doc

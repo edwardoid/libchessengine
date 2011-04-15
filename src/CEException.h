@@ -49,6 +49,9 @@ namespace ChEngn
 	/// Used when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0
 	const int PLY_S_POINTER_IS_NULL_I = -4;
 
+	/// Used when uses tryes to get access to whong piece from ChEngn::Table
+	const int OUT_OF_RANGE_I = -5;
+
 	/// Used when uses tryes to get access to whong piece from ChEngn::Table		const int OUT_OF_RANGE= -5;
 	/// ERROR_CODE Empty typedef for nice code :)
 	typedef int ERROR_CODE;
