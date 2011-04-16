@@ -202,6 +202,14 @@ namespace ChEngn
 			bool operator == (const Piece& other) const;
 
 			/**
+			 * Compare two pieces. Pieces are equal if their types, color,
+			 * moving flag are same.
+			 * @brief Compare pieces
+			 * @param other - Source
+			 */
+			bool operator != (const Piece& other) const;
+
+			/**
 			 * "Prints" piece in std::ostream
 			 * @brief Overloaded operator << ()
 			 * @param out - Stream for printing

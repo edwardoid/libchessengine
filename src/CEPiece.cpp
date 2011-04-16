@@ -88,16 +88,21 @@ void ChEngn::Piece::setMoved()
 	m_piece = m_piece | moved;
 }
 
-void ChEngn::Piece::operator = (const ChEngn::Piece& other)
+void ChEngn::Piece::operator = ( const ChEngn::Piece& other )
 {
 	m_piece = other.type() | other.color() | other.moveFlag();
 }
 
-bool ChEngn::Piece::operator == (const ChEngn::Piece& other) const
+bool ChEngn::Piece::operator == ( const ChEngn::Piece& other ) const
 {
 	if( m_piece == ( other.type() | other.color() | other.moveFlag() ) )
 		return true;
 	return false;
+}
+
+bool ChEngn::Piece::operator != ( const ChEngn::Piece& other ) const
+{
+	return !(operator==(other));
 }
 
 namespace ChEngn

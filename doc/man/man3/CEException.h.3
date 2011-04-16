@@ -1,4 +1,4 @@
-.TH "src/CEException.h" 3 "Wed Apr 13 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "src/CEException.h" 3 "Sat Apr 16 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -65,6 +65,10 @@ Here are defined \fBChEngn::Exception\fP class.
 .RI "const int \fBChEngn::PLY_S_POINTER_IS_NULL_I\fP = -4"
 .br
 .RI "\fIUsed when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0. \fP"
+.ti -1c
+.RI "const int \fBChEngn::OUT_OF_RANGE_I\fP = -5"
+.br
+.RI "\fIUsed when uses tryes to get access to whong piece from \fBChEngn::Table\fP. \fP"
 .ti -1c
 .RI "const std::string \fBChEngn::OK_S\fP = 'Everything is ok'"
 .br
