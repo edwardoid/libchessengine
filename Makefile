@@ -68,3 +68,18 @@ install: static shared doc
 	cp -rf $(DOC_DIR)man/man3 /usr/local/man
 	rm -rf /usr/local/man/man3/README*
 	rm -rf /usr/local/man/man3/.svn
+
+.PHONY: check
+check:
+	@echo "Checking for $(MAKE)"
+	@whereis $(MAKE)
+	@echo "Checking for $(CC)"
+	@whereis $(CC)
+	@echo "Checking for Doxygen"
+	@whereis doxygen
+	@echo "Checking for cp"
+	@whereis cp
+	@echo "Checking for rm"
+	@whereis rm
+	@echo "Checking for mkdir"
+	@whereis mkdir
