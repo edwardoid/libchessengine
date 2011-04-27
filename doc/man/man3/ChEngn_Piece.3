@@ -1,4 +1,4 @@
-.TH "ChEngn::Piece" 3 "Wed Apr 13 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Piece" 3 "Wed Apr 27 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -72,6 +72,10 @@ Chess piece.
 .RI "\fIOverloaded operator =. \fP"
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBPiece\fP &other) const "
+.br
+.RI "\fICompare pieces. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPiece\fP &other) const "
 .br
 .RI "\fICompare pieces. \fP"
 .in -1c
@@ -187,6 +191,16 @@ Same as
 Get piece movement flag. \fBReturns:\fP
 .RS 4
 flag's value 
+.RE
+.PP
+
+.SS "bool ChEngn::Piece::operator!= (const \fBPiece\fP &other) const"
+.PP
+Compare pieces. Compare two pieces. Pieces are equal if their types, color, moving flag are same. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP - Source 
 .RE
 .PP
 

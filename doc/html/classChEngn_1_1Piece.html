@@ -116,6 +116,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded operator =.  <a href="#a8142dd8313cf7ea1ded23af47fc45532"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a6b6b6e455671ac4f3f9996ef31602a13">operator==</a> (const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;other) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare pieces.  <a href="#a6b6b6e455671ac4f3f9996ef31602a13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a05d046bcdb5a94a69ea0a7f335c1a7f6">operator!=</a> (const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;other) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare pieces.  <a href="#a05d046bcdb5a94a69ea0a7f335c1a7f6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Piece.html#a5e9692fde1be0ae7eda4e5cd3fc42f6d">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;pce)</td></tr>
@@ -293,6 +295,32 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a05d046bcdb5a94a69ea0a7f335c1a7f6"></a><!-- doxytag: member="ChEngn::Piece::operator!=" ref="a05d046bcdb5a94a69ea0a7f335c1a7f6" args="(const Piece &amp;other) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Piece::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classChEngn_1_1Piece.html">Piece</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare pieces. </p>
+<p>Compare two pieces. Pieces are equal if their types, color, moving flag are same. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>- Source </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a8142dd8313cf7ea1ded23af47fc45532"></a><!-- doxytag: member="ChEngn::Piece::operator=" ref="a8142dd8313cf7ea1ded23af47fc45532" args="(const Piece &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
@@ -465,7 +493,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Apr 13 2011 13:06:25 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Apr 27 2011 23:48:00 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

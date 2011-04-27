@@ -55,7 +55,7 @@ clean: check
 	rm -rf $(OBJ_DIR)*
 	rm -rf $(DEP_DIR)*
 	$(MAKE) --directory=$(TST_DIR) clean
-
+	$(MAKE) --directory=$(SRC_DIR)libpgnm clean
 .PHONY: test
 test: all
 	$(MAKE) --directory=$(TST_DIR) run

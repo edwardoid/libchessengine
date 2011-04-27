@@ -183,7 +183,7 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 			if( ply->promoted() != 0 )
 			{
 				piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
-				if ( ( tmpType != pawn ) || ( tmpType != king ) )
+				if ( ( tmpType != pawn ) && ( tmpType != king ) )
 					dest->setType( tmpType );				
 			}
 			return true;
@@ -219,7 +219,7 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 						if( ply->promoted() != 0 )
 						{
 							piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
-							if ( ( tmpType != pawn ) || ( tmpType != king ) )
+							if ( ( tmpType != pawn ) && ( tmpType != king ) )
 								dest->setType( tmpType );
 						}
 						return true;

@@ -52,6 +52,8 @@ void \hyperlink{classChEngn_1_1Piece_a49e68ef199415d60ea2a394501a52f5a}{setMoved
 void \hyperlink{classChEngn_1_1Piece_a8142dd8313cf7ea1ded23af47fc45532}{operator=} (const \hyperlink{classChEngn_1_1Piece}{Piece} \&other)
 \begin{DoxyCompactList}\small\item\em Overloaded operator =. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Piece_a6b6b6e455671ac4f3f9996ef31602a13}{operator==} (const \hyperlink{classChEngn_1_1Piece}{Piece} \&other) const 
+\begin{DoxyCompactList}\small\item\em Compare pieces. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classChEngn_1_1Piece_a05d046bcdb5a94a69ea0a7f335c1a7f6}{operator!=} (const \hyperlink{classChEngn_1_1Piece}{Piece} \&other) const 
 \begin{DoxyCompactList}\small\item\em Compare pieces. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -211,6 +213,24 @@ Get piece movement flag.
 \begin{DoxyReturn}{Returns}
 flag's value 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Piece_a05d046bcdb5a94a69ea0a7f335c1a7f6}{
+\index{ChEngn::Piece@{ChEngn::Piece}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!ChEngn::Piece@{ChEngn::Piece}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Piece::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Piece} \&}]{other}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Piece_a05d046bcdb5a94a69ea0a7f335c1a7f6}
+
+
+Compare pieces. 
+
+Compare two pieces. Pieces are equal if their types, color, moving flag are same. 
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ Source \\
+\hline
+\end{DoxyParams}
 \hypertarget{classChEngn_1_1Piece_a8142dd8313cf7ea1ded23af47fc45532}{
 \index{ChEngn::Piece@{ChEngn::Piece}!operator=@{operator=}}
 \index{operator=@{operator=}!ChEngn::Piece@{ChEngn::Piece}}
