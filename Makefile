@@ -13,23 +13,22 @@ SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
 LIBRARY_TARGET := chessengine
-
 TST_SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 TST_OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 TST_DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
 
 .PHONY: all
-all: library
+all: check library
 
 .PHONY: library
 library: static shared
 
 .PHONY: static
-static: $(OBJ_FILES)
+static: check $(OBJ_FILES)
 	ar -r $(LIB_DIR)lib$(LIBRARY_TARGET).a $(OBJ_FILES)
 
 .PHONY: shared
-shared: $(OBJ_FILES)
+shared: check $(OBJ_FILES)
 	$(CC) $(OBJ_FILES) -shared -o $(LIB_DIR)lib$(LIBRARY_TARGET).so
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	$(CC) -c $< -I$(INC_DIR) -o $@
@@ -39,18 +38,18 @@ $(DEP_DIR)%.dep: $(SRC_DIR)%.cpp
 -include $(DEP_FILES)
 
 .PHONY: prepare
-prepare:
+prepare: check
 	mkdir -p $(DEP_DIR)
 	mkdir -p $(OBJ_DIR)
 	mkdir -p $(BIN_DIR)
 	mkdir -p $(LIB_DIR)
 
 .PHONY: doc
-doc:
+doc: check
 	doxygen
 
 .PHONY: clean
-clean:
+clean: check
 	rm -rf $(BIN_DIR)*
 	rm -rf $(LIB_DIR)*
 	rm -rf $(OBJ_DIR)*

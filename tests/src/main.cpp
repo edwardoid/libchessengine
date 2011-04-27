@@ -1,13 +1,15 @@
 #include <iostream>
-#include "ut_piece.h"
+#include <cppunit/ui/text/TextTestRunner.h>
+#include "piece_test.h"
+
+CPPUNIT_TEST_SUITE_REGISTRATION( TestPiece );
 
 int main()
 {
-	bool res = false;
-	std::cout << "Testing ChEngn::Piece class... " << std::endl;
-	res = unit_test_piece();
+	CppUnit::TextTestRunner runner;
+	CppUnit::TestFactoryRegistry &registry = CppUnit::TestFactoryRegistry::getRegistry();
 
-	std::cout << "ChEngn::Piece tests : " << ( res ? "PASSED" : "FAILED"  ) << std::endl;
-
+	runner.addTest( registry.makeTest() );
+	runner.run();
 	return 0;
 }
