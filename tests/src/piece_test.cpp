@@ -1,9 +1,17 @@
 #include "piece_test.h"
+#include <iostream>
 
 TestPiece::TestPiece()
 {
 	m_a = 0;
 	m_b = 0;
+}
+
+void TestPiece::setUp()
+{
+	if( m_a != 0 )
+		delete m_a;
+
 }
 
 void TestPiece::default_constructor()

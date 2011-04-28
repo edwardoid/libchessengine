@@ -4,7 +4,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <string>
 
-class TestPiece: public CppUnit::TestFixture
+class TestPiece: public CppUnit::TestCase
 {
 	CPPUNIT_TEST_SUITE( TestPiece );
 	CPPUNIT_TEST( default_constructor );
@@ -13,6 +13,8 @@ class TestPiece: public CppUnit::TestFixture
 	CPPUNIT_TEST( set_get_functions );
 	CPPUNIT_TEST( operators );
 	CPPUNIT_TEST_SUITE_END();
+	public:
+		void setUp();
 	public:
 		TestPiece();
 		static std::string name(){ return "Testing ChEngn::Piece class"; }

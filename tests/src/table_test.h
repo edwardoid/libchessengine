@@ -1,5 +1,5 @@
-#ifndef TEST_CE_PIECE
-#define TEST_CE_PIECE
+#ifndef TEST_CE_TABLE
+#define TEST_CE_TABLE
 #include <CETable.h>
 #include <cppunit/extensions/HelperMacros.h>
 #include <string>
@@ -16,4 +16,4 @@ class TestTable: public CppUnit::TestFixture
 	private:
 };
 
-#endif // TEST_CE_PIECE
+#endif // TEST_CE_TABLE

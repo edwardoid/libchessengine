@@ -39,7 +39,7 @@ ChEngn::Table::Table(const Table &other)
 		{
 			Piece* tmp = other.pieceAt( i, j );
 			if ( 0 != tmp )
-				m_table[i][j] = *tmp;
+				m_table[j][i] = *tmp;
 			else
 				std::cerr << "Got invalid pointer to piece in copy-constructor" << std::endl;
 		}
@@ -141,7 +141,7 @@ namespace ChEngn
 		{
 			out<<std::endl<< i + 1<< " ";
 			for (unsigned int  j = 0; j < default_table_width; j++ )
-				out<< (*tbl.pieceAt(i, j));
+				out<< *tbl.pieceAt(j,i);
 		}
 		out<<std::endl<<"  ";
 		for ( unsigned int i = 0; i < default_table_width; i++)

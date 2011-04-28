@@ -1,10 +1,10 @@
-#ifndef TEST_CE_PIECE
-#define TEST_CE_PIECE
+#ifndef TEST_CE_ENGINE
+#define TEST_CE_ENGINE
 #include <CEEngine.h>
 #include <cppunit/extensions/HelperMacros.h>
 #include <string>
 
-class TestEngine: public CppUnit::TestFixture
+class TestEngine: public CppUnit::TestCase
 {
 	CPPUNIT_TEST_SUITE( TestEngine );
 	CPPUNIT_TEST( test );
@@ -16,4 +16,4 @@ class TestEngine: public CppUnit::TestFixture
 	private:
 };
 
-#endif // TEST_CE_PIECE
+#endif // TEST_CE_ENGINE

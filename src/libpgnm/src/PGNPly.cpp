@@ -90,7 +90,7 @@ pgn::Ply::Ply(const std::string& ply_text)
 			case 'B':
 			case 'N':
 				if (*(pitr-1) == '=')
-					promoted_piece == *pitr;
+					promoted_piece = *pitr;
 				else
 					piece_char = *pitr;
 				break;
