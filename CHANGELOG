@@ -1,0 +1,6 @@
+
+CHANGELOG:
+
+
+	1. FIXED bug with promoted piece parsing in libpgnm
+	2. FIXED bug with ChEngn::Table constructor/copy-constructor/ostream_printing

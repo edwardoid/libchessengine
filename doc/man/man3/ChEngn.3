@@ -1,4 +1,4 @@
-.TH "ChEngn" 3 "Wed Apr 27 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn" 3 "Thu Apr 28 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,7 +20,7 @@ Contains all typedefs, constants, classes defined in.
 .br
 .RI "\fIEnumerate possibile moves. \fP"
 .ti -1c
-.RI "class \fBException\fP"
+.RI "class \fBBadMove\fP"
 .br
 .ti -1c
 .RI "class \fBPiece\fP"
@@ -37,13 +37,6 @@ Contains all typedefs, constants, classes defined in.
 .ti -1c
 .RI "typedef \fBChEngn::Table\fP \fBVirtualTable\fP"
 .br
-.ti -1c
-.RI "typedef int \fBERROR_CODE\fP"
-.br
-.ti -1c
-.RI "typedef std::string \fBERROR_MSG\fP"
-.br
-.RI "\fIERROR_MSG Empty typedef for nice code :) \fP"
 .ti -1c
 .RI "typedef const unsigned char \fBpiece_type\fP"
 .br
@@ -64,53 +57,21 @@ Contains all typedefs, constants, classes defined in.
 .RI "enum \fBEnumerationSide\fP { \fBUndefinedSide\fP =  0, \fBWhiteSide\fP, \fBBlackSide\fP }"
 .br
 .in -1c
-.SS "Variables"
+.SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "const int \fBOK_I\fP = 0"
+.RI "std::string \fBitostr\fP (int num)"
 .br
-.RI "\fIUseless code, used as deafult value, for example in copy-constructor. \fP"
+.RI "\fIConverts given number to std::string. \fP"
 .ti -1c
-.RI "const int \fBCAN_T_FIND_SOURCE_PIECE_I\fP = -1"
+.RI "const char * \fBitoa\fP (int num)"
 .br
-.RI "\fIUsed when \fBChEngn::Engine\fP tryes to make ply, but can't find piece which has been moved. \fP"
-.ti -1c
-.RI "const int \fBCAN_T_FIND_DESTINATION_PIECE_I\fP = -2"
-.br
-.RI "\fIUsed when \fBChEngn::Engine\fP tryes to make ply, but can't find destination piece. \fP"
-.ti -1c
-.RI "const int \fBCAN_T_MAKE_CASTLING_I\fP = -3"
-.br
-.RI "\fIUsed when castling can't be do. Chech chess rules for cases when this exception can be used. \fP"
-.ti -1c
-.RI "const int \fBPLY_S_POINTER_IS_NULL_I\fP = -4"
-.br
-.RI "\fIUsed when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0. \fP"
-.ti -1c
-.RI "const int \fBOUT_OF_RANGE_I\fP = -5"
-.br
-.RI "\fIUsed when uses tryes to get access to whong piece from \fBChEngn::Table\fP. \fP"
-.ti -1c
-.RI "const std::string \fBOK_S\fP = 'Everything is ok'"
-.br
-.RI "\fIUseles message. \fP"
-.ti -1c
-.RI "const std::string \fBCAN_T_FIND_SOURCE_PIECE_S\fP = 'Can't find source piece'"
-.br
-.RI "\fIUses when \fBChEngn::Engine\fP can't find piece which can make give move. \fP"
-.ti -1c
-.RI "const std::string \fBCAN_T_FIND_DESTINATION_PIECE_S\fP = 'Can't find destination piece'"
-.br
-.RI "\fIUses when \fBChEngn::Engine\fP can't find piece where move destination. \fP"
-.ti -1c
-.RI "const std::string \fBPLY_S_POINTER_IS_NULL_S\fP = 'Given Ply's pointer is == 0'"
-.br
-.RI "\fIUsed when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0. \fP"
-.ti -1c
-.RI "const std::string \fBOUT_OF_RANGE_S\fP = 'Trying to acces bad position in table'"
-.br
-.RI "\fIUsed when uses tryes to get access to whong piece from \fBChEngn::Table\fP. \fP"
+.RI "\fIConverts given number to std::string. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
 .ti -1c
 .RI "\fBpiece_type\fP \fBunknown\fP = 63"
 .br
@@ -169,7 +130,6 @@ contains all classes, structs, constants to work whis library.
 Contains all typedefs, constans, classes defined in libchessengine 
 .SH "Typedef Documentation"
 .PP 
-.SS "typedef int \fBChEngn::ERROR_CODE\fP"Used when uses tryes to get access to whong piece from \fBChEngn::Table\fP const int OUT_OF_RANGE= -5; ERROR_CODE Empty typedef for nice code :) 
 .SS "typedef \fBChEngn::Table\fP \fBChEngn::VirtualTable\fP"Every library user will use 'Virtual tables'. E.g. you get current table state, and then you can make changes, but all your changes will not change real table. 
 .SH "Enumeration Type Documentation"
 .PP 
@@ -186,6 +146,24 @@ White player's side.
 .TP
 \fB\fIBlackSide \fP\fP
 Black player's side. 
+.SH "Function Documentation"
+.PP 
+.SS "const char* ChEngn::itoa (intnum)"
+.PP
+Converts given number to std::string. \fBParameters:\fP
+.RS 4
+\fInum\fP Number to convert 
+.RE
+.PP
+
+.SS "std::string ChEngn::itostr (intnum)"
+.PP
+Converts given number to std::string. \fBParameters:\fP
+.RS 4
+\fInum\fP Number to convert 
+.RE
+.PP
+
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for libchessengine from the source code.

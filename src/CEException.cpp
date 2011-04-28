@@ -1,16 +1,13 @@
 #include "CEException.h"
+#include "CEUtils.h"
+#include <string>
 
-ChEngn::Exception::Exception( const ChEngn::ERROR_CODE code,
-							  const ChEngn::ERROR_MSG mess )
-							  throw()
+const char* ChEngn::BadMove::what() throw()
 {
-	setCode( code );
-	setMessage( mess );
+	std::string mess = "Cant make move: ";
+	mess +=  itostr( m_num );
+	mess += " : ";
+	mess += m_ply.toStdString();
+	return mess.c_str();
 }
 
-ChEngn::Exception::Exception( const ChEngn::Exception& other )
-							  throw()
-{
-	setCode( other.code() );
-	setMessage( other.what() );
-}

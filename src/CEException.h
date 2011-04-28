@@ -24,6 +24,7 @@
 
 #include <string>
 #include <exception>
+#include <PGNPly.h>
 /**
  * @file CEException.h
  * @brief Here are defined ChEngn::Exception class.
@@ -34,93 +35,70 @@
 //libchessengine
 namespace ChEngn
 {
-	/// Useless code, used as deafult value, for example in copy-constructor
-	const int OK_I = 0; 
 
-	/// Used when ChEngn::Engine tryes to make ply, but can't find piece which has been moved
-	const int CAN_T_FIND_SOURCE_PIECE_I = -1;
+	/// Represents unknown exception's additional information
+	static const char* UNKNOWN_ERROR = "Unknown error";
 
-	/// Used when ChEngn::Engine tryes to make ply, but can't find destination piece
-	const int CAN_T_FIND_DESTINATION_PIECE_I = -2;
+	/**
+	 * Represents exception's additional information if ChEngn::Engine tryes to
+	 * get access square which isn't exist
+	 */
+	static const char* DEST_OUT_OF_RANGE = "Destination square is out of range";
 
-	/// Used when castling can't be do. Chech chess rules for cases when this exception can be used
-	const int CAN_T_MAKE_CASTLING_I = -3;
-
-	/// Used when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0
-	const int PLY_S_POINTER_IS_NULL_I = -4;
-
-	/// Used when uses tryes to get access to whong piece from ChEngn::Table
-	const int OUT_OF_RANGE_I = -5;
-
-	/// Used when uses tryes to get access to whong piece from ChEngn::Table		const int OUT_OF_RANGE= -5;
-	/// ERROR_CODE Empty typedef for nice code :)
-	typedef int ERROR_CODE;
+	/**
+	 * Represents exception's additional information if Ply's piece
+	 * tryes to capture piece whith same color
+	 */
+	static const char* SAME_COLOR = "Ply's and destination square's piece are same color";
 
 
-	/// Useles message
-	const std::string OK_S = "Everything is ok";
+	/**
+	 */
+	static const char* UNKNOWN_CAPTURE = "Cat't capture \"unknown\" piece";
 
-	/// Uses when ChEngn::Engine can't find piece which can make give move
-	const std::string CAN_T_FIND_SOURCE_PIECE_S = "Can't find source piece";
 
-	/// Uses when ChEngn::Engine can't find piece where move destination
-	const std::string CAN_T_FIND_DESTINATION_PIECE_S = "Can't find  destination piece";
-
-	/// Used when ply pointer given to ChEngn::Engine::make<PieceType>Ply is equal to 0
-	const std::string PLY_S_POINTER_IS_NULL_S = "Given Ply's pointer is == 0"; 
-
-	/// Used when uses tryes to get access to whong piece from ChEngn::Table
-	const std::string OUT_OF_RANGE_S = "Trying to acces bad position in table"; 
-
-	/// ERROR_MSG Empty typedef for nice code :)
-	typedef std::string ERROR_MSG;
-
-	class Exception: public std::exception
+	/**
+	 * @brief Implements all exception which will be generated ty ChEngn::Engine
+	 * while trying to make move which i sincorrect.
+	 */
+	class BadMove: std::exception
 	{
 		public:
+			
 			/**
-			 * Default constructor: Creates Exception whith given error code and
-			 * error message.
-			 * @param errCode Exception's error code. Default value:
-			 * ChEngn::OK_I
-			 * @param errMsg Exception's error message. Default value:
-			 * ChEngn::OK
+			 * @brief constructor
+			 * @param p pgn::Ply which can be done a.t.m.
+			 * @param comm Addiotional comment
+			 * @param moveNum Move number which can't be completly done
 			 */
-			Exception( const ERROR_CODE errCode = OK_I,
-					   const ERROR_MSG errMsg = OK_S) throw();
-
-			/// @brief Copy-constructor
-			Exception( const Exception& other ) throw();
-
-			/// Destructor
-			~Exception() throw() {};
-
+			BadMove( pgn::Ply p, std::string comm,  int moveNum = 0 ) throw():m_ply( p ),
+																			  m_comm( comm ),
+																		  m_num( moveNum ) {} ;
 			/**
-			 * @brief Get error code
-			 * @return Current error code
+			 * @brief Destructor
 			 */
-			ERROR_CODE code() const throw() { return m_code; };
+			~BadMove()throw(){};
 
 			/**
-			 * @brief Get exception message
-			 * @return Current error text
-			 */ 
-			const char* what() const throw() { return m_msg.c_str(); }
-
-			/**
-			 * @brief Sets error code
-			 * @param code Error code
+			 * @brief Bind addiotional information to exception;
+			 * @param comm Additional comment
 			 */
-			void setCode( const int code ) throw() { m_code = code; };
+			void bindComment( std::string comm )throw() { m_comm = comm; };
 
 			/**
-			 * @brief Sets error message
-			 * @param mess Error message
+			 * @brief Get binded information
 			 */
-			void setMessage( std::string mess ) throw() { m_msg = mess; };
+			std::string comment() throw() { return m_comm; };
+
+			/**
+			 * @brief Basic information about given exception
+			 */
+			virtual const char* what() throw();
 		private:
-			ERROR_CODE m_code;
-			ERROR_MSG m_msg;
+			pgn::Ply m_ply;
+			int m_num;
+			std::string m_comm;
+			
 	};
 };
 

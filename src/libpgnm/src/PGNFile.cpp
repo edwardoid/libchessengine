@@ -1,6 +1,9 @@
-#include <PGNFile.h>
+#include "PGNFile.h"
+#include "PGNException.h"
 #include <fstream>
 #include <iostream>
+#include <errno.h>
+#include <string.h>
 
 pgn::File::File()
 {
@@ -40,9 +43,12 @@ void pgn::File::loadFile(const char* fileName)
 		inp.open(fileName, std::fstream::in);
 		inp >> hdata;
 	}
-	catch (...)
+	catch ( std::fstream::failure e )
 	{
-		std::cerr<<"Error while reading from file"<<std::endl;
+		std::string errText = fileName;
+		errText.append(" : ");
+		errText.append( strerror( errno ) );
+		throw pgn::bad_pgn_file( errText );
 	}
 }
 

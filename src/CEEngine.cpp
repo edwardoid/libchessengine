@@ -20,6 +20,7 @@
 //
 
 #include "CEEngine.h"
+#include "CEException.h"
 #include <PGNPly.h>
 #include <stdlib.h>
 #include <iostream>
@@ -105,34 +106,34 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 		return false;
 	}
 	
-	if( pl->isShortCastle() )
-		return makeShortCastling(isWhite);
+	if ( pl->isShortCastle() )
+		makeShortCastling(isWhite);
 	
 	if ( pl->isLongCastle() )
-		return makeLongCastling(isWhite);
+		makeLongCastling(isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Pawn() )
-		return makePawnPly(pl, isWhite);
+		makePawnPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Knight() )
-		return makeKnightPly(pl, isWhite);
+		makeKnightPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Bishop() )
-		return makeBishopPly(pl, isWhite);
+		makeBishopPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Rook() )
-		return makeRookPly(pl, isWhite);
+		makeRookPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::Queen() )
-		return makeQueenPly(pl, isWhite);
+		makeQueenPly(pl, isWhite);
 
 	if ( (pl->piece()) == pgn::Piece::King() )
-		return makeKingPly(pl, isWhite);
+		makeKingPly(pl, isWhite);
 
-	return false;
+	return true;
 }
 
-bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
+void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 {
 	short coef = (isWhite? 1 : -1);
 	pgn::Square newPos = ply->toSquare();
@@ -142,16 +143,17 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 		Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 
 		if ( ( dest == 0 ) )
-				return false;
+			throw BadMove( *ply, DEST_OUT_OF_RANGE );
 
 		char specifiedCol = ply->fromSquare();
 		if ( specifiedCol != '-')
 		{
 			pgn::Square oldPos(specifiedCol, newPos.row() - coef);
 			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
-			if ( ( movedPiece->type() != pawn ) || 
-				 ( movedPiece->isWhite() != isWhite ) )
-				return false;
+			if ( movedPiece->type() != pawn )
+				throw BadMove( *ply, "Specified piece is not pawn");
+			if ( movedPiece->isWhite() != isWhite )
+				throw BadMove( *ply, "Specified piece's color and movind piece's color are not same");
 		}
 		else
 		{
@@ -164,7 +166,6 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 				tmp = m_table.pieceAtC ( newPos.col() + 1, newPos.row() - coef );
 				if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
 					movedPiece == tmp;
-
 			}
 		}
 
@@ -186,7 +187,7 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 				if ( ( tmpType != pawn ) && ( tmpType != king ) )
 					dest->setType( tmpType );				
 			}
-			return true;
+			return;
 		}
 	}
 	else 
@@ -222,15 +223,17 @@ bool ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 							if ( ( tmpType != pawn ) && ( tmpType != king ) )
 								dest->setType( tmpType );
 						}
-						return true;
+						return;
 					}
+				else
+					throw BadMove( *ply, DEST_OUT_OF_RANGE );
 			}
 		}
 	}
-	return false;
+	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
-bool ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
+void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 {
 	
 	pgn::Square newPos = ply->toSquare();
@@ -447,13 +450,13 @@ bool ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 			else
 				dest->setBlack();
 			movedPiece->setType( unknown );
-			return true;
+			return;
 		}
 	}
-	return false;
+	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
-bool ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
+void ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 {
 	pgn::Square newPos = ply->toSquare();
 	Piece *movedPiece = 0;
@@ -481,8 +484,15 @@ bool ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 	Piece* tmp = m_table.pieceAtC( newPos.col() , newPos.row() );
 
 	if ( ply->isCapture() )
-		if( (tmp == 0) || (tmp->isWhite() == isWhite) || (tmp->type() == unknown) )
-			return false;
+	{
+		if ( tmp == 0 ) 
+			throw BadMove( *ply, DEST_OUT_OF_RANGE );
+		if ( tmp->isWhite() == isWhite );
+			throw BadMove( *ply, SAME_COLOR );
+		if ( tmp->type() == unknown )
+			throw BadMove( *ply, UNKNOWN_CAPTURE );
+	}
+
 	if ( ( movedPiece != 0 ) && (tmp != 0 ) )
 	{
 		tmp->setType ( bishop );
@@ -491,13 +501,13 @@ bool ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 		else
 			tmp->setBlack();
 		movedPiece->setType( unknown );
-		return true;
+		return;
 	}
-	return false;
+	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
 
-bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
+void ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 {
 	pgn::Square newPos = ply->toSquare();
 	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
@@ -549,28 +559,28 @@ bool ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 	if ( ( movedPiece != 0 ) && (dest != 0 ) )
 	{
 		if ( ply->isCapture() && ( dest->type() == unknown ) )
-			return false;
+			throw BadMove( *ply, UNKNOWN_CAPTURE );
 		(*dest) = (*movedPiece);
 		dest->setMoved();
 		movedPiece->setType(unknown);
-		return true;
+		return;
 		
 	}
-	return false;
+	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
-bool ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
+void ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 {
 	pgn::Square newPos = ply->toSquare();
 
 	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 
 	if(dest == 0 )
-		return false;
+		throw BadMove( *ply, DEST_OUT_OF_RANGE );
 
 	if ( ply->isCapture())
 		if ( dest->type() == unknown)
-			return false;
+			throw BadMove( *ply, UNKNOWN_CAPTURE );
 	Piece *movedPiece = 0;
 
 
@@ -589,12 +599,12 @@ bool ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 		{
 			(*dest) = (*movedPiece);
 			movedPiece->setType( unknown );
-			return true;
+			return;
 		}
-	return false;
+	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
-bool ChEngn::Engine::makeLongCastling( bool isWhite)
+void ChEngn::Engine::makeLongCastling( bool isWhite)
 {
 	char kingCol = 'e';
 	char row = (isWhite? '1': '8');
@@ -603,31 +613,24 @@ bool ChEngn::Engine::makeLongCastling( bool isWhite)
 	Piece *kingPiece = m_table.pieceAtC( kingCol, row);
 	Piece *rookPiece = m_table.pieceAtC( rookCol, row);
 	
-/*	
-	if ( ( kingPiece != 0 ) && ( rookPiece != 0 ) &&
-		 ( kingPiece->type() == king ) && ( rookPiece->type() == rook ) &&
-		 ( kingPiece->moveFlag() != moved ) && (rookPiece->moveFlag() != moved) &&
-		   checkForEmptynessH('e', row,'h', &m_table) )
-	{*/
-		Piece *newKingPiece = m_table.pieceAtC('c', row);
-		Piece *newRookPiece = m_table.pieceAtC('d', row);
+	Piece *newKingPiece = m_table.pieceAtC('c', row);
+	Piece *newRookPiece = m_table.pieceAtC('d', row);
 
-		if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
-		{
-			(*newKingPiece) = (*kingPiece);
-			(*newRookPiece) = (*rookPiece);
-			newKingPiece->setMoved();
-			newRookPiece->setMoved();
-			kingPiece->setType( unknown );
-			rookPiece->setType( unknown );
-			return true;
-		}
-//	}
-	return false;
+	if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
+	{
+		(*newKingPiece) = (*kingPiece);
+		(*newRookPiece) = (*rookPiece);
+		newKingPiece->setMoved();
+		newRookPiece->setMoved();
+		kingPiece->setType( unknown );
+		rookPiece->setType( unknown );
+		return;
+	}
+	throw BadMove( pgn::Ply("O-O-O") , UNKNOWN_ERROR );
 		 
 }
 
-bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
+void ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
 {
 	pgn::Square newPos = ply->toSquare();
 	char beginR = newPos.row() - 1;
@@ -637,8 +640,11 @@ bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
 
 	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 	
-	if ( ( dest == 0 ) || ( dest->type() == king ) )
-		return false;
+	if ( dest == 0 )
+		throw BadMove( *ply, DEST_OUT_OF_RANGE );
+	if ( dest->type() == king )
+		throw BadMove( *ply, "King can't make move to other king" );
+		
 
 	for ( char c = beginC; c <= endC; c++) 
 		for ( char r = beginR; r<= endR; r++ )
@@ -651,13 +657,13 @@ bool ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
 			{
 				( *dest ) = ( *movedPiece );
 				movedPiece->setType( unknown );
-				return true;
+				return;
 			}
 		}
-	return false;
+	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
-bool ChEngn::Engine::makeShortCastling( bool isWhite)
+void ChEngn::Engine::makeShortCastling( bool isWhite)
 {
 	char kingCol = 'e';
 	char row = (isWhite? '1': '8');
@@ -665,29 +671,20 @@ bool ChEngn::Engine::makeShortCastling( bool isWhite)
 
 	Piece *kingPiece = m_table.pieceAtC( kingCol, row);
 	Piece *rookPiece = m_table.pieceAtC( rookCol, row);
-	
-/*	
-	if ( ( kingPiece != 0 ) && ( rookPiece != 0 ) &&
-		 ( kingPiece->type() == king ) && ( rookPiece->type() == rook ) &&
-		 ( kingPiece->moveFlag() != moved ) && (rookPiece->moveFlag() != moved) &&
-		   checkForEmptynessH('e', row,'h', &m_table) )
-	{*/
-		Piece *newKingPiece = m_table.pieceAtC('g', row);
-		Piece *newRookPiece = m_table.pieceAtC('f', row);
+	Piece *newKingPiece = m_table.pieceAtC('g', row);
+	Piece *newRookPiece = m_table.pieceAtC('f', row);
 
-		if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
-		{
-			(*newKingPiece) = (*kingPiece);
-			(*newRookPiece) = (*rookPiece);
-			newKingPiece->setMoved();
-			newRookPiece->setMoved();
-			kingPiece->setType( unknown );
-			rookPiece->setType( unknown );
-			return true;
-		}
-//	}
-	return false;
-		 
+	if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
+	{
+		(*newKingPiece) = (*kingPiece);
+		(*newRookPiece) = (*rookPiece);
+		newKingPiece->setMoved();
+		newRookPiece->setMoved();
+		kingPiece->setType( unknown );
+		rookPiece->setType( unknown );
+		return;
+	}
+	throw BadMove( pgn::Ply("O-O"), UNKNOWN_ERROR );
 }
 
 namespace ChEngn

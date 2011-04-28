@@ -1,8 +1,8 @@
-.TH "src/CEException.h" 3 "Thu Apr 28 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "src/CEUtils.h" 3 "Thu Apr 28 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-src/CEException.h \- 
+src/CEUtils.h \- 
 .PP
 Here are defined ChEngn::Exception class.  
 
@@ -11,18 +11,7 @@ Here are defined ChEngn::Exception class.
 .PP
 \fC#include <string>\fP
 .br
-\fC#include <exception>\fP
-.br
-\fC#include <PGNPly.h>\fP
-.br
 
-.SS "Classes"
-
-.in +1c
-.ti -1c
-.RI "class \fBChEngn::BadMove\fP"
-.br
-.in -1c
 .SS "Namespaces"
 
 .in +1c
@@ -32,6 +21,18 @@ Here are defined ChEngn::Exception class.
 .PP
 
 .RI "\fIContains all typedefs, constants, classes defined in. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBChEngn::itostr\fP (int num)"
+.br
+.RI "\fIConverts given number to std::string. \fP"
+.ti -1c
+.RI "const char * \fBChEngn::itoa\fP (int num)"
+.br
+.RI "\fIConverts given number to std::string. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 

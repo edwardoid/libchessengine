@@ -22,7 +22,7 @@
 #ifndef CHESS_ENGINE_ENGINE
 #define CHESS_ENGINE_ENGINE
 
-#include <CETable.h>
+#include "CETable.h"
 #include <PGNGame.h>
 #include <PGNMoveList.h>
 #include <PGNPly.h>
@@ -203,7 +203,7 @@ namespace ChEngn
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
 			 */
-			bool makePawnPly( const pgn::Ply* ply, bool isWhite);
+			void makePawnPly( const pgn::Ply* ply, bool isWhite);
 	
 			/** Tryes to make knight's move)
 			 * @brief Makes knight's move
@@ -211,7 +211,7 @@ namespace ChEngn
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
 			 */	
-			bool makeKnightPly( const pgn::Ply* ply, bool isWhite);
+			void makeKnightPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make bishop's move)
 			 * @brief Makes bishop's move
@@ -219,7 +219,7 @@ namespace ChEngn
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
 			 */	
-			bool makeBishopPly( const pgn::Ply* ply, bool isWhite);
+			void makeBishopPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make bishop's move)
 			 * @brief Makes bishop's move
@@ -227,7 +227,7 @@ namespace ChEngn
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
 			 */	
-			bool makeRookPly( const pgn::Ply* ply, bool isWhite);
+			void makeRookPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make queen's move)
 			 * @brief Makes queen's move
@@ -235,7 +235,7 @@ namespace ChEngn
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
 			 */	
-			bool makeQueenPly( const pgn::Ply* ply, bool isWhite);
+			void makeQueenPly( const pgn::Ply* ply, bool isWhite);
 		
 			/** Tryes to make king's move)
 			 * @brief Makes kings's move
@@ -243,14 +243,14 @@ namespace ChEngn
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
 			 */	
-			bool makeKingPly( const pgn::Ply* ply, bool isWhite);
+			void makeKingPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make short castling
 			 * @brief Makes short castling move
 			 * @return true if castling has been done successefully
 			 * @param is isWhite - True if castling  owner is white player.
 			 */	
-			bool makeShortCastling( bool isWhite);
+			void makeShortCastling( bool isWhite);
 
 
 			/** Tryes to make long castling
@@ -258,7 +258,7 @@ namespace ChEngn
 			 * @return true if castling has been done successefully
 			 * @param is isWhite - True if castling  owner is white player.
 			 */	
-			bool makeLongCastling( bool isWhite);
+			void makeLongCastling( bool isWhite);
 
 		private: // functions
 		private: // variables

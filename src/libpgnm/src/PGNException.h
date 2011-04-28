@@ -101,8 +101,16 @@ namespace pgn
 			unsupported_glyphs() throw();
 	};
 
+	class bad_pgn_file: public std::exception
+	{
+		public:
+			~bad_pgn_file() throw(){};
+			bad_pgn_file( const std::string message ) throw():message_( message ) {}
+   		 	virtual const char *what() const throw() { return message_.c_str(); }
+   		private:
+   			std::string message_;
+	};
 }
 
 
 #endif 
-
