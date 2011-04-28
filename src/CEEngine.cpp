@@ -242,7 +242,7 @@ void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 	pgn::Square newPos = ply->toSquare();
 	char row = 0;
 	char column = 0;
-	if ( ply->fromSquare() != '-');
+	if ( ply->fromSquare() == '-');
 	else if ( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') )
 		column = ply->fromSquare();
 	else if ( (ply->fromSquare() >= '1') && (ply->fromSquare() <= '8') )

@@ -11,10 +11,10 @@ void TestEngine::test()
 	if( file.games()->size() > 0 )
 	{
 		ChEngn::Engine engn( (*file.games())[0] );
-		int i = 0;
+		int i = 1;
 		try{
 		
-			while( engn.makeNextHalfMove() )
+			while( engn.makeNextMove() )
 			{
 				std::cout << * engn.nextMove() << std::endl;
 				++i;
