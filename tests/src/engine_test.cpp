@@ -15,8 +15,11 @@ void TestEngine::test()
 		try{
 		
 			while( engn.makeNextHalfMove() )
+			{
+				std::cout << * engn.nextMove() << std::endl;
 				++i;
 			}
+		}
 		catch( ChEngn::BadMove e )
 		{
 			std::cerr << e.what() << "Comment: " << e.comment() << std::endl;
@@ -32,7 +35,7 @@ void TestEngine::test()
 
 void TestEngine::brute_test()
 {
-
+/*
 	try
 	{
 		pgn::File file("1963.pgn");
@@ -73,4 +76,5 @@ void TestEngine::brute_test()
 	{
 		std::cerr << "Unknown exception!" << std::endl;
 	}
+*/
 }

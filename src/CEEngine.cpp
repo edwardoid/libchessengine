@@ -198,13 +198,12 @@ void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 		    (movedPiece->type() != pawn) || 
 		    (movedPiece->isWhite() != isWhite) )
 		{
-			oldPos = pgn::Square(newPos.col(), newPos.row() - 2*coef);
+			oldPos = pgn::Square(newPos.col(), newPos.row() - 2 * coef);
 			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
 		}
 		if( movedPiece != 0 )
 		{
 			if( (movedPiece->type() == pawn ) && 
-				(movedPiece->isWhite() == isWhite) && 
 				(movedPiece->isWhite() == isWhite) )
 			{
 				Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
@@ -225,12 +224,16 @@ void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 						}
 						return;
 					}
+					else
+						throw BadMove( *ply, DEST_OUT_OF_RANGE );
 				else
 					throw BadMove( *ply, DEST_OUT_OF_RANGE );
+
 			}
+			else
+				throw BadMove( *ply, UNKNOWN_ERROR );
 		}
 	}
-	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
 void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
@@ -487,8 +490,10 @@ void ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 	{
 		if ( tmp == 0 ) 
 			throw BadMove( *ply, DEST_OUT_OF_RANGE );
-		if ( tmp->isWhite() == isWhite );
+
+		if ( tmp->isWhite() == isWhite )
 			throw BadMove( *ply, SAME_COLOR );
+
 		if ( tmp->type() == unknown )
 			throw BadMove( *ply, UNKNOWN_CAPTURE );
 	}
