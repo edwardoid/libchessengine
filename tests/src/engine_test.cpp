@@ -35,12 +35,11 @@ void TestEngine::test()
 
 void TestEngine::brute_test()
 {
-/*
+
 	try
 	{
-		pgn::File file("1963.pgn");
+		pgn::File file("tests/1966.pgn");
 		pgn::GameCollection *cG = file.games();
-    
 		CPPUNIT_ASSERT( 0 != cG );
 		for( int i = 0; i < cG->size(); i++ )
 			{
@@ -76,5 +75,5 @@ void TestEngine::brute_test()
 	{
 		std::cerr << "Unknown exception!" << std::endl;
 	}
-*/
+
 }

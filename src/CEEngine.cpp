@@ -64,12 +64,11 @@ pgn::MoveList::iterator ChEngn::Engine::nextMove()
 bool ChEngn::Engine::makeNextMove()
 {
 	if( m_currentMoveIt != m_moves.end() )
-			if( makePly( m_currentMoveIt->white(), true) && makePly( m_currentMoveIt->black(), false) )
-			{
-				m_currentMoveIt++;
+		if( makePly( m_currentMoveIt->white(), true) && makePly( m_currentMoveIt->black(), false) )
+		{
+			m_currentMoveIt++;
 				return true;
-			}
-	bool eql = (m_currentMoveIt == m_moves.end() );
+		}
 	return false;
 }
 
