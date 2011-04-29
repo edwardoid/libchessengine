@@ -85,6 +85,8 @@ namespace ChEngn
 			 */
 			void bindComment( std::string comm )throw() { m_comm = comm; };
 
+			void bindNumber( int num ) throw() { m_num = num; };
+
 			/**
 			 * @brief Get binded information
 			 */

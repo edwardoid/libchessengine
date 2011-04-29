@@ -54,11 +54,7 @@ pgn::CommentText::~CommentText()
 
 pgn::CommentText& pgn::CommentText::operator = (const pgn::CommentText& src) 
 {
-	if (&src == this)
-		return(*this);
-
 	hdata->comment = src.hdata->comment;
-
 	return *this;
 }
 

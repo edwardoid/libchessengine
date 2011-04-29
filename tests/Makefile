@@ -18,7 +18,7 @@ all: binary
 .PHONY: binary
 binary: $(OBJ_FILES)
 	$(MAKE) --directory=.. static
-	$(CC) $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
+	$(CC) $(DEB_FLAGS) $(OBJ_FILES) $(LINK_LIBS) -o $(BIN_DIR)$(BINARY_TARGET)
 
 .PHONY: run
 run: binary

@@ -47,6 +47,7 @@ ChEngn::Table::Table(const Table &other)
 
 ChEngn::Table::~Table()
 {
+	cleanMemory();
 }
 
 ChEngn::Piece** ChEngn::Table::table()
@@ -87,10 +88,12 @@ void ChEngn::Table::fillDefault()
 
 void ChEngn::Table::cleanMemory()
 {
-	assert( 0 != m_table );
+	if ( 0 == m_table )
+		return;
 	for ( unsigned int i = 0; i < default_table_height; i++ )
-		delete m_table[i];
+		delete []m_table[i];
 	delete []m_table;
+	m_table = 0;
 }
 
 void ChEngn::Table::resetComplect()

@@ -1,21 +1,70 @@
-.TH "ChEngn::BadMove" 3 "Thu Apr 28 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::BadMove" 3 "Sat Apr 30 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 ChEngn::BadMove \- 
+.PP
+Implements all exception which will be generated ty \fBChEngn::Engine\fP while trying to make move which i sincorrect.  
+
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <CEException.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBBadMove\fP (pgn::Ply p, int moveNum=0)  throw ()"
+.RI "\fBBadMove\fP (pgn::Ply p, std::string comm, int moveNum=0)  throw ()"
 .br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "\fB~BadMove\fP ()  throw ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fBbindComment\fP (std::string comm)  throw ()"
+.br
+.RI "\fIBind addiotional information to exception;. \fP"
+.ti -1c
+.RI "void \fBbindNumber\fP (int num)  throw ()"
+.br
+.ti -1c
+.RI "std::string \fBcomment\fP ()  throw ()"
+.br
+.RI "\fIGet binded information. \fP"
 .ti -1c
 .RI "virtual const char * \fBwhat\fP ()  throw ()"
 .br
+.RI "\fIBasic information about given exception. \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+Implements all exception which will be generated ty \fBChEngn::Engine\fP while trying to make move which i sincorrect. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChEngn::BadMove::BadMove (pgn::Plyp, std::stringcomm, intmoveNum = \fC0\fP)  throw ()\fC [inline]\fP"
+.PP
+constructor \fBParameters:\fP
+.RS 4
+\fIp\fP pgn::Ply which can be done a.t.m. 
+.br
+\fIcomm\fP Addiotional comment 
+.br
+\fImoveNum\fP Move number which can't be completly done 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ChEngn::BadMove::bindComment (std::stringcomm)  throw ()\fC [inline]\fP"
+.PP
+Bind addiotional information to exception;. \fBParameters:\fP
+.RS 4
+\fIcomm\fP Additional comment 
+.RE
+.PP
+
 
 .SH "Author"
 .PP 

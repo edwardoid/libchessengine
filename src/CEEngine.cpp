@@ -63,30 +63,40 @@ pgn::MoveList::iterator ChEngn::Engine::nextMove()
 
 bool ChEngn::Engine::makeNextMove()
 {
-	if( m_currentMoveIt != m_moves.end() )
-		if( makePly( m_currentMoveIt->white(), true) && makePly( m_currentMoveIt->black(), false) )
-		{
-			m_currentMoveIt++;
-				return true;
-		}
+	try
+	{
+		bool whitePlyRes = makeNextHalfMove();
+		bool blackPlyRes = makeNextHalfMove();
+		return ( whitePlyRes && blackPlyRes );
+	}
+	catch( BadMove e )
+	{
+		if( ( m_currentMoveIt == m_moves.end() ) && m_halfMove )
+			return false;
+		else
+			throw e;
+	}
+	
 	return false;
 }
 
 bool ChEngn::Engine::makeNextHalfMove()
 {
 	if ( m_currentMoveIt != m_moves.end() )
-	if ( m_halfMove)
-	{
-		m_halfMove = false;
-		bool res = makePly( m_currentMoveIt->black() , false);
-		m_currentMoveIt++;
-		return res;
-	}
-	else
-	{	
-		m_halfMove = true;
-		return makePly( m_currentMoveIt->white() , true);
-	}
+		if ( m_halfMove)
+		{
+			m_halfMove = false;
+			if( 0 ==  m_currentMoveIt->black() )
+				return false;
+			bool res = makePly( m_currentMoveIt->black() , false);
+			m_currentMoveIt++;
+			return ( res && ( m_currentMoveIt != m_moves.end() ) );
+		}
+		else
+		{	
+			m_halfMove = true;
+			return makePly( m_currentMoveIt->white() , true);
+		}
 	return false;
 }
 
@@ -180,7 +190,7 @@ void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 			}
 			(*dest) = (*movedPiece);
 			movedPiece->setType(unknown);
-			if( ply->promoted() != 0 )
+			if( 0 != ply->promoted() )
 			{
 				piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
 				if ( ( tmpType != pawn ) && ( tmpType != king ) )
@@ -215,7 +225,7 @@ void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 						else
 							dest->setBlack();
 						movedPiece->setType ( unknown );
-						if( ply->promoted() != 0 )
+						if( 0 != ply->promoted() )
 						{
 							piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
 							if ( ( tmpType != pawn ) && ( tmpType != king ) )

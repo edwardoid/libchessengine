@@ -17,8 +17,8 @@ namespace pgn
 			virtual ~File();
 			void loadFile(std::string fileName);
 			void loadFile(const char* fileName);
-			GameCollection* games();
-			GameCollection games() const;
+			GameCollection& games();
+			GameCollection gamesC() const;
 		private:
 			GameCollection hdata;
 	};

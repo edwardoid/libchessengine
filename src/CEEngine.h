@@ -79,7 +79,7 @@ namespace ChEngn
 			/**
 			 * @brief Destructor
 			 */
-			virtual ~Engine();
+			~Engine();
 
 			/**
 			 * @brief Get an <b>copy</b> of current game table
@@ -264,8 +264,8 @@ namespace ChEngn
 		private: // variables
 			bool m_halfMove;
 			VirtualTable m_table;
-			pgn::MoveList m_moves;
 			pgn::MoveList::iterator m_currentMoveIt;
+			pgn::MoveList m_moves;
 	};
 };
 

@@ -14,9 +14,9 @@
 \begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}{Engine} (const pgn::Game \&gm)
 \begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
-\hypertarget{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}{
-virtual \hyperlink{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}{$\sim$Engine} ()}
-\label{classChEngn_1_1Engine_a83fcd852ca53c24a7af0e3dd689fe0f7}
+\hypertarget{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}{
+\hyperlink{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}{$\sim$Engine} ()}
+\label{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}
 
 \begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Table}{VirtualTable} \hyperlink{classChEngn_1_1Engine_a26f8db48e99d547fbc41eaa9dca8e6cf}{getVirtualTable} () const 
@@ -47,21 +47,21 @@ static \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-ty
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{makePawnPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_af414502f81e9abda2d41bd16e3e18ef0}{makePawnPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes pawn's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{makeKnightPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a9b7fdcf2cf7718e5e602ce6e3be3d4c8}{makeKnightPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes knight's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{makeBishopPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_ae090fc9d1724d63d8af41e5a7c4f1d3d}{makeBishopPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{makeRookPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a6ed93f939bbf1cc780a1b2f364068eaa}{makeRookPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}{makeQueenPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a472c2c8efd42dc93027b395df64a71d2}{makeQueenPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes queen's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a44d51599b5d1f4a8938938b0d6231e34}{makeKingPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a6512882396e670361c5b2289e0c85517}{makeKingPly} (const pgn::Ply $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes kings's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a04d2b1d6bbc5a8de80fb7363ba335a62}{makeShortCastling} (bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a4d6deb7c26002fd2a39367a0fcc9b75e}{makeShortCastling} (bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes short castling move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}{makeLongCastling} (bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_ac054d7b903d1b353dcfc80a6cbd32aba}{makeLongCastling} (bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes long castling move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -245,16 +245,16 @@ Tryes to guess piece's type by given character
 \begin{DoxyReturn}{Returns}
 type != \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown}, \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown} other way 
 \end{DoxyReturn}
-\hypertarget{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}{
+\hypertarget{classChEngn_1_1Engine_ae090fc9d1724d63d8af41e5a7c4f1d3d}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeBishopPly@{makeBishopPly}}
 \index{makeBishopPly@{makeBishopPly}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeBishopPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeBishopPly (
+\subsubsection[{makeBishopPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeBishopPly (
 \begin{DoxyParamCaption}
 \item[{const pgn::Ply $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a066d78b55f68fe6dbcd6581f64ae512a}
+\label{classChEngn_1_1Engine_ae090fc9d1724d63d8af41e5a7c4f1d3d}
 
 
 Makes bishop's move. 
@@ -269,16 +269,16 @@ true if ply has been done successefully
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Engine_a44d51599b5d1f4a8938938b0d6231e34}{
+\hypertarget{classChEngn_1_1Engine_a6512882396e670361c5b2289e0c85517}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKingPly@{makeKingPly}}
 \index{makeKingPly@{makeKingPly}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeKingPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeKingPly (
+\subsubsection[{makeKingPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeKingPly (
 \begin{DoxyParamCaption}
 \item[{const pgn::Ply $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a44d51599b5d1f4a8938938b0d6231e34}
+\label{classChEngn_1_1Engine_a6512882396e670361c5b2289e0c85517}
 
 
 Makes kings's move. 
@@ -293,16 +293,16 @@ true if ply has been done successefully
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}{
+\hypertarget{classChEngn_1_1Engine_a9b7fdcf2cf7718e5e602ce6e3be3d4c8}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKnightPly@{makeKnightPly}}
 \index{makeKnightPly@{makeKnightPly}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeKnightPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeKnightPly (
+\subsubsection[{makeKnightPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeKnightPly (
 \begin{DoxyParamCaption}
 \item[{const pgn::Ply $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a1dc6130dd986b0b0b8960a3c1e99f87c}
+\label{classChEngn_1_1Engine_a9b7fdcf2cf7718e5e602ce6e3be3d4c8}
 
 
 Makes knight's move. 
@@ -317,15 +317,15 @@ true if ply has been done successefully
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}{
+\hypertarget{classChEngn_1_1Engine_ac054d7b903d1b353dcfc80a6cbd32aba}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeLongCastling@{makeLongCastling}}
 \index{makeLongCastling@{makeLongCastling}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeLongCastling}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeLongCastling (
+\subsubsection[{makeLongCastling}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeLongCastling (
 \begin{DoxyParamCaption}
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a23f8ac32bc551e617310dccd84ac6579}
+\label{classChEngn_1_1Engine_ac054d7b903d1b353dcfc80a6cbd32aba}
 
 
 Makes long castling move. 
@@ -391,16 +391,16 @@ make next move.
 Try to make next move. \begin{DoxyReturn}{Returns}
 true if move can was successefully did. Else -\/ fale will be returned. False will be returned if no moves is aviable. 
 \end{DoxyReturn}
-\hypertarget{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}{
+\hypertarget{classChEngn_1_1Engine_af414502f81e9abda2d41bd16e3e18ef0}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makePawnPly@{makePawnPly}}
 \index{makePawnPly@{makePawnPly}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makePawnPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makePawnPly (
+\subsubsection[{makePawnPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makePawnPly (
 \begin{DoxyParamCaption}
 \item[{const pgn::Ply $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a5ee94d0b489d05ef5e643cb9cfe5ac1a}
+\label{classChEngn_1_1Engine_af414502f81e9abda2d41bd16e3e18ef0}
 
 
 Makes pawn's move. 
@@ -435,16 +435,16 @@ Make simple ply move  ply's move
 \begin{DoxyReturn}{Returns}
 true if successefully, false -\/ otherway. 
 \end{DoxyReturn}
-\hypertarget{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}{
+\hypertarget{classChEngn_1_1Engine_a472c2c8efd42dc93027b395df64a71d2}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeQueenPly@{makeQueenPly}}
 \index{makeQueenPly@{makeQueenPly}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeQueenPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeQueenPly (
+\subsubsection[{makeQueenPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeQueenPly (
 \begin{DoxyParamCaption}
 \item[{const pgn::Ply $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a647b1fb60e06af87b271789c11fe9b8f}
+\label{classChEngn_1_1Engine_a472c2c8efd42dc93027b395df64a71d2}
 
 
 Makes queen's move. 
@@ -459,16 +459,16 @@ true if ply has been done successefully
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}{
+\hypertarget{classChEngn_1_1Engine_a6ed93f939bbf1cc780a1b2f364068eaa}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeRookPly@{makeRookPly}}
 \index{makeRookPly@{makeRookPly}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeRookPly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeRookPly (
+\subsubsection[{makeRookPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeRookPly (
 \begin{DoxyParamCaption}
 \item[{const pgn::Ply $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_aaf471f4ff06fbb4302e214a3c447bf1b}
+\label{classChEngn_1_1Engine_a6ed93f939bbf1cc780a1b2f364068eaa}
 
 
 Makes bishop's move. 
@@ -483,15 +483,15 @@ true if ply has been done successefully
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Engine_a04d2b1d6bbc5a8de80fb7363ba335a62}{
+\hypertarget{classChEngn_1_1Engine_a4d6deb7c26002fd2a39367a0fcc9b75e}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeShortCastling@{makeShortCastling}}
 \index{makeShortCastling@{makeShortCastling}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{makeShortCastling}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeShortCastling (
+\subsubsection[{makeShortCastling}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeShortCastling (
 \begin{DoxyParamCaption}
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{classChEngn_1_1Engine_a04d2b1d6bbc5a8de80fb7363ba335a62}
+\label{classChEngn_1_1Engine_a4d6deb7c26002fd2a39367a0fcc9b75e}
 
 
 Makes short castling move. 

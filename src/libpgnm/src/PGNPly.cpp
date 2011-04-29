@@ -54,11 +54,11 @@ pgn::Ply::Ply(const pgn::Ply& src)
 	hdata->fromSquare = src.hdata->fromSquare;
 	hdata->toSquare = src.hdata->toSquare;
 	hdata->flags = src.hdata->flags;
-	if (src.hdata->promoted)
+	if ( 0 != src.hdata->promoted)
 		hdata->promoted = new pgn::Piece(*(src.hdata->promoted));
 	else
 		hdata->promoted = 0;
-	if (src.hdata->comment)
+	if ( 0 != src.hdata->comment)
 		hdata->comment = new pgn::CommentText(*(src.hdata->comment));
 	else
 		hdata->comment = 0;
@@ -178,16 +178,16 @@ pgn::Ply::Ply(const std::string& ply_text)
 
 pgn::Ply::~Ply() 
 {
-	delete hdata->comment;
-	delete hdata->promoted;
+//	if( hdata->comment != 0 )
+		delete hdata->comment;
+
+	if( hdata->promoted != 0 )
+		delete hdata->promoted;
 	delete hdata;
 }
 
 pgn::Ply& pgn::Ply::operator = (const pgn::Ply& src) 
 {
-	if (&src == this)
-		return(*this);
-
 	hdata->piece = src.hdata->piece;
 	hdata->fromSquare = src.hdata->fromSquare;
 	hdata->toSquare = src.hdata->toSquare;
@@ -195,17 +195,18 @@ pgn::Ply& pgn::Ply::operator = (const pgn::Ply& src)
 
 	if (src.hdata->promoted)
 	{
-		delete hdata->promoted;
+		if ( 0 != hdata->promoted )
+			delete hdata->promoted;
 		hdata->promoted = new pgn::Piece(*(src.hdata->promoted));
 	}
 	else
 		hdata->promoted = 0;
 
-	if (src.hdata->comment)
-	{
-		delete hdata->comment;
+	if ( 0 != hdata->comment )
+			delete hdata->comment;
+
+	if ( 0  != src.hdata->comment)
 		hdata->comment = new pgn::CommentText(*(src.hdata->comment));
-	}
 	else
 		hdata->comment = 0;
 

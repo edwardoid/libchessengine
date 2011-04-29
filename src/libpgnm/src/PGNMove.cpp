@@ -100,8 +100,12 @@ pgn::Move::Move(const pgn::Ply *white, const pgn::Ply *black, int number)
 pgn::Move::~Move() 
 {
 //	std::cout << "deleting MoveData " << sizeof(*hdata) << std::endl; 
-	delete hdata->white;
-	delete hdata->black;
+	
+	if( 0 != hdata->white )
+		delete hdata->white;
+	if( 0 != hdata->black )
+		delete hdata->black;
+	
 	delete hdata;
 }
 

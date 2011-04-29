@@ -11,7 +11,7 @@ pgn::File::File()
 
 pgn::File::File(const File& other)
 {
-	hdata= other.games();
+	hdata= other.gamesC();
 }
 
 pgn::File::File(const std::string fileName)
@@ -52,15 +52,13 @@ void pgn::File::loadFile(const char* fileName)
 	}
 }
 
-pgn::GameCollection* pgn::File::games()
+pgn::GameCollection& pgn::File::games()
 {
-	if(hdata.size() > 0)
-		return &hdata;
-	return 0;
+	return hdata;
 }
 
 
-pgn::GameCollection pgn::File::games() const
+pgn::GameCollection pgn::File::gamesC() const
 {
 	return hdata;
 }

@@ -73,15 +73,103 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="ChEngn::BadMove" -->
+<p>Implements all exception which will be generated ty <a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a> while trying to make move which i sincorrect.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CEException_8h_source.html">CEException.h</a>&gt;</code></p>
+
 <p><a href="classChEngn_1_1BadMove-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea2cd3f26b069b801fc4b970b9a984ec"></a><!-- doxytag: member="ChEngn::BadMove::BadMove" ref="aea2cd3f26b069b801fc4b970b9a984ec" args="(pgn::Ply p, int moveNum=0)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>BadMove</b> (pgn::Ply p, int moveNum=0)  throw ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a581052f5203836b164bf25ce6e3e6b7a">BadMove</a> (pgn::Ply p, std::string comm, int moveNum=0)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="#a581052f5203836b164bf25ce6e3e6b7a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6efb8ca7c4af455b042eddf7ebbf2837"></a><!-- doxytag: member="ChEngn::BadMove::~BadMove" ref="a6efb8ca7c4af455b042eddf7ebbf2837" args="()" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a6efb8ca7c4af455b042eddf7ebbf2837">~BadMove</a> ()  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a0006497750a3d96218b1dad586f5f8f1">bindComment</a> (std::string comm)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind addiotional information to exception;.  <a href="#a0006497750a3d96218b1dad586f5f8f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1de119e2f1144a0e6906940df02bdaf8"></a><!-- doxytag: member="ChEngn::BadMove::bindNumber" ref="a1de119e2f1144a0e6906940df02bdaf8" args="(int num)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>bindNumber</b> (int num)  throw ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89df0bcb37e85792fd07e253503b4038"></a><!-- doxytag: member="ChEngn::BadMove::comment" ref="a89df0bcb37e85792fd07e253503b4038" args="()" -->
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038">comment</a> ()  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get binded information. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7c3114036a9917a5aef4458a8f567d3"></a><!-- doxytag: member="ChEngn::BadMove::what" ref="ae7c3114036a9917a5aef4458a8f567d3" args="()" -->
-virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> ()  throw ()</td></tr>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#ae7c3114036a9917a5aef4458a8f567d3">what</a> ()  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic information about given exception. <br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Implements all exception which will be generated ty <a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a> while trying to make move which i sincorrect. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a581052f5203836b164bf25ce6e3e6b7a"></a><!-- doxytag: member="ChEngn::BadMove::BadMove" ref="a581052f5203836b164bf25ce6e3e6b7a" args="(pgn::Ply p, std::string comm, int moveNum=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChEngn::BadMove::BadMove </td>
+          <td>(</td>
+          <td class="paramtype">pgn::Ply&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>comm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>moveNum</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw ()<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>constructor </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>pgn::Ply which can be done a.t.m. </td></tr>
+    <tr><td class="paramname">comm</td><td>Addiotional comment </td></tr>
+    <tr><td class="paramname">moveNum</td><td>Move number which can't be completly done </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0006497750a3d96218b1dad586f5f8f1"></a><!-- doxytag: member="ChEngn::BadMove::bindComment" ref="a0006497750a3d96218b1dad586f5f8f1" args="(std::string comm)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChEngn::BadMove::bindComment </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>comm</em></td><td>)</td>
+          <td>  throw ()<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Bind addiotional information to exception;. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comm</td><td>Additional comment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="CEException_8h_source.html">CEException.h</a></li>
 </ul>
@@ -100,7 +188,7 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what<
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Apr 28 2011 18:33:28 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Apr 30 2011 00:33:31 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

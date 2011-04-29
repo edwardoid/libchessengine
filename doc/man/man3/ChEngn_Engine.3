@@ -1,4 +1,4 @@
-.TH "ChEngn::Engine" 3 "Thu Apr 28 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Engine" 3 "Sat Apr 30 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,7 +22,7 @@ ChEngn::Engine \-
 .br
 .RI "\fIConstructor. \fP"
 .ti -1c
-.RI "virtual \fB~Engine\fP ()"
+.RI "\fB~Engine\fP ()"
 .br
 .RI "\fIDestructor. \fP"
 .ti -1c
@@ -76,35 +76,35 @@ ChEngn::Engine \-
 
 .in +1c
 .ti -1c
-.RI "bool \fBmakePawnPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakePawnPly\fP (const pgn::Ply *ply, bool isWhite)"
 .br
 .RI "\fIMakes pawn's move. \fP"
 .ti -1c
-.RI "bool \fBmakeKnightPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeKnightPly\fP (const pgn::Ply *ply, bool isWhite)"
 .br
 .RI "\fIMakes knight's move. \fP"
 .ti -1c
-.RI "bool \fBmakeBishopPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeBishopPly\fP (const pgn::Ply *ply, bool isWhite)"
 .br
 .RI "\fIMakes bishop's move. \fP"
 .ti -1c
-.RI "bool \fBmakeRookPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeRookPly\fP (const pgn::Ply *ply, bool isWhite)"
 .br
 .RI "\fIMakes bishop's move. \fP"
 .ti -1c
-.RI "bool \fBmakeQueenPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeQueenPly\fP (const pgn::Ply *ply, bool isWhite)"
 .br
 .RI "\fIMakes queen's move. \fP"
 .ti -1c
-.RI "bool \fBmakeKingPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeKingPly\fP (const pgn::Ply *ply, bool isWhite)"
 .br
 .RI "\fIMakes kings's move. \fP"
 .ti -1c
-.RI "bool \fBmakeShortCastling\fP (bool isWhite)"
+.RI "void \fBmakeShortCastling\fP (bool isWhite)"
 .br
 .RI "\fIMakes short castling move. \fP"
 .ti -1c
-.RI "bool \fBmakeLongCastling\fP (bool isWhite)"
+.RI "void \fBmakeLongCastling\fP (bool isWhite)"
 .br
 .RI "\fIMakes long castling move. \fP"
 .in -1c
@@ -234,7 +234,7 @@ type != \fBChEngn::unknown\fP, \fBChEngn::unknown\fP other way
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeBishopPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeBishopPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes bishop's move. Tryes to make bishop's move) 
 .PP
@@ -251,7 +251,7 @@ true if ply has been done successefully
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeKingPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeKingPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes kings's move. Tryes to make king's move) 
 .PP
@@ -268,7 +268,7 @@ true if ply has been done successefully
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeKnightPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeKnightPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes knight's move. Tryes to make knight's move) 
 .PP
@@ -285,7 +285,7 @@ true if ply has been done successefully
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeLongCastling (boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeLongCastling (boolisWhite)\fC [protected]\fP"
 .PP
 Makes long castling move. Tryes to make long castling 
 .PP
@@ -335,7 +335,7 @@ true if move can was successefully did. Else - fale will be returned. False will
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makePawnPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makePawnPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes pawn's move. Tryes to make pawn's move) 
 .PP
@@ -367,7 +367,7 @@ true if successefully, false - otherway.
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeQueenPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeQueenPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes queen's move. Tryes to make queen's move) 
 .PP
@@ -384,7 +384,7 @@ true if ply has been done successefully
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeRookPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeRookPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes bishop's move. Tryes to make bishop's move) 
 .PP
@@ -401,7 +401,7 @@ true if ply has been done successefully
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeShortCastling (boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeShortCastling (boolisWhite)\fC [protected]\fP"
 .PP
 Makes short castling move. Tryes to make short castling 
 .PP

@@ -8,15 +8,15 @@ void TestEngine::test()
 {
 	pgn::File file("tests/good_pawn.pgn");
 	
-	if( file.games()->size() > 0 )
+	if( file.gamesC().size() > 0 )
 	{
-		ChEngn::Engine engn( (*file.games())[0] );
+		ChEngn::Engine engn( file.gamesC()[6] );
 		int i = 1;
 		try{
 		
 			while( engn.makeNextMove() )
 			{
-				std::cout << * engn.nextMove() << std::endl;
+				//std::cout << *engn.nextMove() << std::endl;
 				++i;
 			}
 		}
@@ -24,7 +24,7 @@ void TestEngine::test()
 		{
 			std::cerr << e.what() << "Comment: " << e.comment() << std::endl;
 		}
-		std::cout << "From " << engn.moves()->size() << "moves " << i << "moves done!" << std::endl;
+		//std::cout << "From " << engn.moves()->size() << "moves " << i << "moves done!" << std::endl;
 		std::cout << engn << std::endl;
 	}
 	else
@@ -38,29 +38,41 @@ void TestEngine::brute_test()
 
 	try
 	{
-		pgn::File file("tests/1966.pgn");
-		pgn::GameCollection *cG = file.games();
-		CPPUNIT_ASSERT( 0 != cG );
-		for( int i = 0; i < cG->size(); i++ )
+		pgn::File file("tests/collection.pgn");
+		pgn::GameCollection cG = file.gamesC();
+		for( int i = 0; i < cG.size(); i++ )
 			{
-				std::cout << "Making game: " << i + 1 << std::endl;
-				ChEngn::Engine en( (*cG)[i] );
-				int movesDone = 0;
-				int movesCount = en.moves()->size();
-				for( int i = 0; i < movesCount; i++ )
-					if( en.makeNextHalfMove() )
-						movesDone++;
-					else
+				std::cout << "Making game: " << i << std::endl;
+				ChEngn::Engine  en( cG[i] );
+				int movesDone = 1;
+				const int movesCount = en.moves()->size();
+
+				try
+				{
+					while( en.makeNextMove() )
 					{
-						std::cerr << "Can't make move " << i+1 << std::endl;
-						std::cerr << "Current table status: \n";
-						std::cerr << "Move: " << (*(en.nextMove()) ) << std::endl;
-						std::cerr << en.getVirtualTable() << std::endl; 
-						break;
+						std::cout << * en.nextMove() << std::endl;
+						movesDone++;
 					}
+
+					std::cout << en << std::endl;
+				}
+				catch ( ChEngn::BadMove e )
+				{
+					std::cerr << e.what() << " " << e.comment() << " Game #" << i << std::endl;
+				}
+				
+				if ( movesCount > movesDone )
+				{
+					std::cerr << "Can't make move " << i+1 << std::endl;
+					std::cerr << "Current table status: \n";
+					std::cerr << "Move: " << (*(en.nextMove()) ) << std::endl;
+					std::cerr << en.getVirtualTable() << std::endl; 
+					break;
+				}
             
 				std::cout<< " Moves done: "<< movesDone <<"/"<< movesCount << std::endl
-						 << "Last state: \n" << en << std::endl;
+						;// << "Last state: \n" << en << std::endl;
 			}
 	}
 	catch( pgn::bad_pgn_file e )

@@ -54,9 +54,6 @@ pgn::MoveList::~MoveList()
 
 pgn::MoveList& pgn::MoveList::operator = (const pgn::MoveList& src) 
 {
-	if (&src == this)
-		return(*this);
-
 	hdata->mosse = src.hdata->mosse;
 
 	return *this;

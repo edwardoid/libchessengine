@@ -2,19 +2,93 @@
 \section{ChEngn::BadMove Class Reference}
 \label{classChEngn_1_1BadMove}\index{ChEngn::BadMove@{ChEngn::BadMove}}
 }
+
+
+Implements all exception which will be generated ty \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} while trying to make move which i sincorrect.  
+
+
+
+
+{\ttfamily \#include $<$CEException.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classChEngn_1_1BadMove_aea2cd3f26b069b801fc4b970b9a984ec}{
-{\bfseries BadMove} (pgn::Ply p, int moveNum=0)  throw ()}
-\label{classChEngn_1_1BadMove_aea2cd3f26b069b801fc4b970b9a984ec}
+\hyperlink{classChEngn_1_1BadMove_a581052f5203836b164bf25ce6e3e6b7a}{BadMove} (pgn::Ply p, std::string comm, int moveNum=0)  throw ()
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1BadMove_a6efb8ca7c4af455b042eddf7ebbf2837}{
+\hyperlink{classChEngn_1_1BadMove_a6efb8ca7c4af455b042eddf7ebbf2837}{$\sim$BadMove} ()  throw ()}
+\label{classChEngn_1_1BadMove_a6efb8ca7c4af455b042eddf7ebbf2837}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{classChEngn_1_1BadMove_a0006497750a3d96218b1dad586f5f8f1}{bindComment} (std::string comm)  throw ()
+\begin{DoxyCompactList}\small\item\em Bind addiotional information to exception;. \item\end{DoxyCompactList}\item 
+\hypertarget{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}{
+void {\bfseries bindNumber} (int num)  throw ()}
+\label{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}
 
 \item 
+\hypertarget{classChEngn_1_1BadMove_a89df0bcb37e85792fd07e253503b4038}{
+std::string \hyperlink{classChEngn_1_1BadMove_a89df0bcb37e85792fd07e253503b4038}{comment} ()  throw ()}
+\label{classChEngn_1_1BadMove_a89df0bcb37e85792fd07e253503b4038}
+
+\begin{DoxyCompactList}\small\item\em Get binded information. \item\end{DoxyCompactList}\item 
 \hypertarget{classChEngn_1_1BadMove_ae7c3114036a9917a5aef4458a8f567d3}{
-virtual const char $\ast$ {\bfseries what} ()  throw ()}
+virtual const char $\ast$ \hyperlink{classChEngn_1_1BadMove_ae7c3114036a9917a5aef4458a8f567d3}{what} ()  throw ()}
 \label{classChEngn_1_1BadMove_ae7c3114036a9917a5aef4458a8f567d3}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Basic information about given exception. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements all exception which will be generated ty \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} while trying to make move which i sincorrect. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classChEngn_1_1BadMove_a581052f5203836b164bf25ce6e3e6b7a}{
+\index{ChEngn::BadMove@{ChEngn::BadMove}!BadMove@{BadMove}}
+\index{BadMove@{BadMove}!ChEngn::BadMove@{ChEngn::BadMove}}
+\subsubsection[{BadMove}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::BadMove::BadMove (
+\begin{DoxyParamCaption}
+\item[{pgn::Ply}]{p, }
+\item[{std::string}]{comm, }
+\item[{int}]{moveNum = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1BadMove_a581052f5203836b164bf25ce6e3e6b7a}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pgn::Ply which can be done a.t.m. \\
+\hline
+{\em comm} & Addiotional comment \\
+\hline
+{\em moveNum} & Move number which can't be completly done \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1BadMove_a0006497750a3d96218b1dad586f5f8f1}{
+\index{ChEngn::BadMove@{ChEngn::BadMove}!bindComment@{bindComment}}
+\index{bindComment@{bindComment}!ChEngn::BadMove@{ChEngn::BadMove}}
+\subsubsection[{bindComment}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::BadMove::bindComment (
+\begin{DoxyParamCaption}
+\item[{std::string}]{comm}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1BadMove_a0006497750a3d96218b1dad586f5f8f1}
+
+
+Bind addiotional information to exception;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm} & Additional comment \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

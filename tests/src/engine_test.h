@@ -7,7 +7,7 @@
 class TestEngine: public CppUnit::TestCase
 {
 	CPPUNIT_TEST_SUITE( TestEngine );
-	CPPUNIT_TEST( test );
+	//CPPUNIT_TEST( test );
 	CPPUNIT_TEST( brute_test );
 	CPPUNIT_TEST_SUITE_END();
 	public:

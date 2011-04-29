@@ -87,8 +87,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#ab92c015fc819dc2b7c51cccbc7878002"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a1184e133eae1f7e23bf405302fa9f53c">Engine</a> (const pgn::Game &amp;gm)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a1184e133eae1f7e23bf405302fa9f53c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83fcd852ca53c24a7af0e3dd689fe0f7"></a><!-- doxytag: member="ChEngn::Engine::~Engine" ref="a83fcd852ca53c24a7af0e3dd689fe0f7" args="()" -->
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a83fcd852ca53c24a7af0e3dd689fe0f7">~Engine</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c4cadb1d68d9f3f9ad5ca03d3353a34"></a><!-- doxytag: member="ChEngn::Engine::~Engine" ref="a8c4cadb1d68d9f3f9ad5ca03d3353a34" args="()" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a8c4cadb1d68d9f3f9ad5ca03d3353a34">~Engine</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a26f8db48e99d547fbc41eaa9dca8e6cf">getVirtualTable</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <b>copy</b> of current game table.  <a href="#a26f8db48e99d547fbc41eaa9dca8e6cf"></a><br/></td></tr>
@@ -114,22 +114,22 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a57cb976b2427ba1da47365424de049e2">guessTypeByChar</a> (const char character)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a5ee94d0b489d05ef5e643cb9cfe5ac1a">makePawnPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes pawn's move.  <a href="#a5ee94d0b489d05ef5e643cb9cfe5ac1a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a1dc6130dd986b0b0b8960a3c1e99f87c">makeKnightPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes knight's move.  <a href="#a1dc6130dd986b0b0b8960a3c1e99f87c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a066d78b55f68fe6dbcd6581f64ae512a">makeBishopPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes bishop's move.  <a href="#a066d78b55f68fe6dbcd6581f64ae512a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aaf471f4ff06fbb4302e214a3c447bf1b">makeRookPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes bishop's move.  <a href="#aaf471f4ff06fbb4302e214a3c447bf1b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a647b1fb60e06af87b271789c11fe9b8f">makeQueenPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes queen's move.  <a href="#a647b1fb60e06af87b271789c11fe9b8f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a44d51599b5d1f4a8938938b0d6231e34">makeKingPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes kings's move.  <a href="#a44d51599b5d1f4a8938938b0d6231e34"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a04d2b1d6bbc5a8de80fb7363ba335a62">makeShortCastling</a> (bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes short castling move.  <a href="#a04d2b1d6bbc5a8de80fb7363ba335a62"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a23f8ac32bc551e617310dccd84ac6579">makeLongCastling</a> (bool isWhite)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes long castling move.  <a href="#a23f8ac32bc551e617310dccd84ac6579"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#af414502f81e9abda2d41bd16e3e18ef0">makePawnPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes pawn's move.  <a href="#af414502f81e9abda2d41bd16e3e18ef0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a9b7fdcf2cf7718e5e602ce6e3be3d4c8">makeKnightPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes knight's move.  <a href="#a9b7fdcf2cf7718e5e602ce6e3be3d4c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ae090fc9d1724d63d8af41e5a7c4f1d3d">makeBishopPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes bishop's move.  <a href="#ae090fc9d1724d63d8af41e5a7c4f1d3d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a6ed93f939bbf1cc780a1b2f364068eaa">makeRookPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes bishop's move.  <a href="#a6ed93f939bbf1cc780a1b2f364068eaa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a472c2c8efd42dc93027b395df64a71d2">makeQueenPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes queen's move.  <a href="#a472c2c8efd42dc93027b395df64a71d2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a6512882396e670361c5b2289e0c85517">makeKingPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes kings's move.  <a href="#a6512882396e670361c5b2289e0c85517"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a4d6deb7c26002fd2a39367a0fcc9b75e">makeShortCastling</a> (bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes short castling move.  <a href="#a4d6deb7c26002fd2a39367a0fcc9b75e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#ac054d7b903d1b353dcfc80a6cbd32aba">makeLongCastling</a> (bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes long castling move.  <a href="#ac054d7b903d1b353dcfc80a6cbd32aba"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a886da6512b271d26a1fee49a317d2308"></a><!-- doxytag: member="ChEngn::Engine::operator&lt;&lt;" ref="a886da6512b271d26a1fee49a317d2308" args="(std::ostream &amp;out, const Engine &amp;engn)" -->
@@ -399,12 +399,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a066d78b55f68fe6dbcd6581f64ae512a"></a><!-- doxytag: member="ChEngn::Engine::makeBishopPly" ref="a066d78b55f68fe6dbcd6581f64ae512a" args="(const pgn::Ply *ply, bool isWhite)" -->
+<a class="anchor" id="ae090fc9d1724d63d8af41e5a7c4f1d3d"></a><!-- doxytag: member="ChEngn::Engine::makeBishopPly" ref="ae090fc9d1724d63d8af41e5a7c4f1d3d" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeBishopPly </td>
+          <td class="memname">void ChEngn::Engine::makeBishopPly </td>
           <td>(</td>
           <td class="paramtype">const pgn::Ply *&#160;</td>
           <td class="paramname"><em>ply</em>, </td>
@@ -437,12 +437,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a44d51599b5d1f4a8938938b0d6231e34"></a><!-- doxytag: member="ChEngn::Engine::makeKingPly" ref="a44d51599b5d1f4a8938938b0d6231e34" args="(const pgn::Ply *ply, bool isWhite)" -->
+<a class="anchor" id="a6512882396e670361c5b2289e0c85517"></a><!-- doxytag: member="ChEngn::Engine::makeKingPly" ref="a6512882396e670361c5b2289e0c85517" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeKingPly </td>
+          <td class="memname">void ChEngn::Engine::makeKingPly </td>
           <td>(</td>
           <td class="paramtype">const pgn::Ply *&#160;</td>
           <td class="paramname"><em>ply</em>, </td>
@@ -475,12 +475,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a1dc6130dd986b0b0b8960a3c1e99f87c"></a><!-- doxytag: member="ChEngn::Engine::makeKnightPly" ref="a1dc6130dd986b0b0b8960a3c1e99f87c" args="(const pgn::Ply *ply, bool isWhite)" -->
+<a class="anchor" id="a9b7fdcf2cf7718e5e602ce6e3be3d4c8"></a><!-- doxytag: member="ChEngn::Engine::makeKnightPly" ref="a9b7fdcf2cf7718e5e602ce6e3be3d4c8" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeKnightPly </td>
+          <td class="memname">void ChEngn::Engine::makeKnightPly </td>
           <td>(</td>
           <td class="paramtype">const pgn::Ply *&#160;</td>
           <td class="paramname"><em>ply</em>, </td>
@@ -513,12 +513,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a23f8ac32bc551e617310dccd84ac6579"></a><!-- doxytag: member="ChEngn::Engine::makeLongCastling" ref="a23f8ac32bc551e617310dccd84ac6579" args="(bool isWhite)" -->
+<a class="anchor" id="ac054d7b903d1b353dcfc80a6cbd32aba"></a><!-- doxytag: member="ChEngn::Engine::makeLongCastling" ref="ac054d7b903d1b353dcfc80a6cbd32aba" args="(bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeLongCastling </td>
+          <td class="memname">void ChEngn::Engine::makeLongCastling </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isWhite</em></td><td>)</td>
@@ -607,12 +607,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a5ee94d0b489d05ef5e643cb9cfe5ac1a"></a><!-- doxytag: member="ChEngn::Engine::makePawnPly" ref="a5ee94d0b489d05ef5e643cb9cfe5ac1a" args="(const pgn::Ply *ply, bool isWhite)" -->
+<a class="anchor" id="af414502f81e9abda2d41bd16e3e18ef0"></a><!-- doxytag: member="ChEngn::Engine::makePawnPly" ref="af414502f81e9abda2d41bd16e3e18ef0" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makePawnPly </td>
+          <td class="memname">void ChEngn::Engine::makePawnPly </td>
           <td>(</td>
           <td class="paramtype">const pgn::Ply *&#160;</td>
           <td class="paramname"><em>ply</em>, </td>
@@ -681,12 +681,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a647b1fb60e06af87b271789c11fe9b8f"></a><!-- doxytag: member="ChEngn::Engine::makeQueenPly" ref="a647b1fb60e06af87b271789c11fe9b8f" args="(const pgn::Ply *ply, bool isWhite)" -->
+<a class="anchor" id="a472c2c8efd42dc93027b395df64a71d2"></a><!-- doxytag: member="ChEngn::Engine::makeQueenPly" ref="a472c2c8efd42dc93027b395df64a71d2" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeQueenPly </td>
+          <td class="memname">void ChEngn::Engine::makeQueenPly </td>
           <td>(</td>
           <td class="paramtype">const pgn::Ply *&#160;</td>
           <td class="paramname"><em>ply</em>, </td>
@@ -719,12 +719,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="aaf471f4ff06fbb4302e214a3c447bf1b"></a><!-- doxytag: member="ChEngn::Engine::makeRookPly" ref="aaf471f4ff06fbb4302e214a3c447bf1b" args="(const pgn::Ply *ply, bool isWhite)" -->
+<a class="anchor" id="a6ed93f939bbf1cc780a1b2f364068eaa"></a><!-- doxytag: member="ChEngn::Engine::makeRookPly" ref="a6ed93f939bbf1cc780a1b2f364068eaa" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeRookPly </td>
+          <td class="memname">void ChEngn::Engine::makeRookPly </td>
           <td>(</td>
           <td class="paramtype">const pgn::Ply *&#160;</td>
           <td class="paramname"><em>ply</em>, </td>
@@ -757,12 +757,12 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a class="anchor" id="a04d2b1d6bbc5a8de80fb7363ba335a62"></a><!-- doxytag: member="ChEngn::Engine::makeShortCastling" ref="a04d2b1d6bbc5a8de80fb7363ba335a62" args="(bool isWhite)" -->
+<a class="anchor" id="a4d6deb7c26002fd2a39367a0fcc9b75e"></a><!-- doxytag: member="ChEngn::Engine::makeShortCastling" ref="a4d6deb7c26002fd2a39367a0fcc9b75e" args="(bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ChEngn::Engine::makeShortCastling </td>
+          <td class="memname">void ChEngn::Engine::makeShortCastling </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isWhite</em></td><td>)</td>
@@ -848,7 +848,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Apr 28 2011 18:33:28 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Apr 30 2011 00:33:31 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

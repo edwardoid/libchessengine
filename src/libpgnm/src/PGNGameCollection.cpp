@@ -35,13 +35,13 @@ namespace pgn
 	};
 };
 
-pgn::GameCollection::GameCollection() 
+pgn::GameCollection::GameCollection(): hdata( 0 ) 
 {
 	hdata = new pgn::GameCollectionData;
 //	std::cout << "new GameCollectionData " << sizeof(*hdata) << std::endl; 
 }
 
-pgn::GameCollection::GameCollection(const pgn::GameCollection& src) 
+pgn::GameCollection::GameCollection(const pgn::GameCollection& src): hdata( 0 )
 {
 	hdata = new pgn::GameCollectionData;
 	hdata->games = src.hdata->games;
@@ -51,7 +51,8 @@ pgn::GameCollection::GameCollection(const pgn::GameCollection& src)
 pgn::GameCollection::~GameCollection() 
 {
 //	std::cout << "delete GameCollectionData " << sizeof(*hdata) << std::endl; 
-	delete hdata;
+	if ( 0 != hdata )
+		delete hdata;
 }
 
 // TODO: ottimizzare algoritmo di sort

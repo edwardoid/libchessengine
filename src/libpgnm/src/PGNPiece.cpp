@@ -39,9 +39,6 @@ pgn::Piece::Piece(const pgn::Piece &src)
 
 pgn::Piece& pgn::Piece::operator = (const pgn::Piece& src) 
 {
-	if (&src == this)
-		return(*this);
-
 	id_ = src.id_;
 
 	return *this;
