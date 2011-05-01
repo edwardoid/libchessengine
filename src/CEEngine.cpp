@@ -527,48 +527,49 @@ void ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 	Piece *movedPiece = 0;
 
-	char end='h';
+	char specPos = newPos.col();
+	if( ( 'a' <= ply->fromSquare() ) && ( 'h' >= ply->fromSquare() ) )
+		specPos = ply->fromSquare();
 
-	if ( ( ply->fromSquare() >= 'a') && ( ply->fromSquare() <= 'h') )
-		end = ply->fromSquare();
-
-	char tmpRow = newPos.row();
-	for (char i = 'a'; i<= end ; i++)
+	for( char row = '1'; row <= '8'; row++ )
 	{
-		Piece* tmp = m_table.pieceAtC(i, newPos.row() );
-		if( ( tmp != 0 ) &&
-			( tmp->type() == rook ) &&
-			( tmp->isWhite() == isWhite )  &&
-			checkForEmptynessH( i,
-								newPos.col(),
-								newPos.row() ,
-								&m_table) )
+//		std::cout<<"Looking in: " << specPos << " " << row << std::endl;
+		Piece* tmp = m_table.pieceAtC( specPos, row );
+        if ( ( tmp != 0 ) &&
+                ( tmp->type() == rook ) &&
+                ( tmp->isWhite() == isWhite ) &&
+                ( movedPiece == 0 ) &&
+                checkForEmptynessV( row,
+                                    newPos.row() ,
+                                    specPos,
+                                    &m_table) )
 		{
-			movedPiece = tmp;
-		}
+//			std::cout << "Founf on " << specPos << row << std::endl;
+            movedPiece = tmp;
+        }
 	}
 
-	end='8';
+	specPos = newPos.row();
 
-	char tmpCol = newPos.col();
-	if ( ( ply->fromSquare() >= '1') && ( ply->fromSquare() <= '8') )
-		end = ply->fromSquare();
-	
-	for (char i = '1'; i<= end ; i++)
-	{
-		Piece* tmp = m_table.pieceAtC(newPos.col(), i );
-		if( ( tmp != 0 ) &&
-			( tmp->type() == rook ) && 
-			( tmp->isWhite() == isWhite ) &&
-			( movedPiece == 0 ) &&
-			checkForEmptynessV( i,
-								newPos.row() ,
-		  						newPos.col(),
-								&m_table) ) 
+	if( ( '1' <= ply->fromSquare() ) && ( '8' >= ply->fromSquare() ) )
+		specPos = ply->fromSquare();
+
+	if ( 0 == movedPiece )
+		for( char col = 'a'; col <= 'h'; col++ )
 		{
-			movedPiece = tmp;
+//			std::cout<<"Looking in: " << col << " " << specPos << std::endl;
+			Piece* tmp = m_table.pieceAtC( col, specPos );
+            if ( ( tmp != 0 ) &&
+                    ( tmp->type() == rook ) &&
+                    ( tmp->isWhite() == isWhite )  &&
+                    checkForEmptynessH( col,
+                                        newPos.col(),
+                                        specPos ,
+                                        &m_table) )
+            {
+                movedPiece = tmp;
+            }	
 		}
-	}
 
 	if ( ( movedPiece != 0 ) && (dest != 0 ) )
 	{
@@ -609,12 +610,13 @@ void ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 			}
 		}
 
-		if ( movedPiece != 0 )
-		{
-			(*dest) = (*movedPiece);
-			movedPiece->setType( unknown );
-			return;
-		}
+	if ( movedPiece != 0 )
+	{
+		(*dest) = (*movedPiece);
+		movedPiece->setType( unknown );
+		return;
+	}
+	
 	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 

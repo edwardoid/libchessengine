@@ -38,7 +38,8 @@ void TestEngine::brute_test()
 
 	try
 	{
-		pgn::File file("tests/collection.pgn");
+		//pgn::File file("tests/collection.pgn");
+		pgn::File file("tests/petrosyan_spassky_botvinnik.pgn");
 		pgn::GameCollection cG = file.gamesC();
 		for( int i = 0; i < cG.size(); i++ )
 			{
@@ -51,7 +52,7 @@ void TestEngine::brute_test()
 				{
 					while( en.makeNextMove() )
 					{
-						std::cout << * en.nextMove() << std::endl;
+						std::cout  << en << std::endl << * en.nextMove() << std::endl;
 						movesDone++;
 					}
 
