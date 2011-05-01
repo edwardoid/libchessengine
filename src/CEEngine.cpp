@@ -251,219 +251,158 @@ void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 	pgn::Square newPos = ply->toSquare();
 	char row = 0;
 	char column = 0;
-	if ( ply->fromSquare() == '-');
-	else if ( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') )
+
+	if ( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') )
 		column = ply->fromSquare();
 	else if ( (ply->fromSquare() >= '1') && (ply->fromSquare() <= '8') )
 		row = ply->fromSquare();
+
+
+
+	Piece* movedPiece = 0;
+	Piece* tmp = 0;
+
 	pgn::Square oldPos;
 	
-	oldPos = pgn::Square(newPos.col() - 1, newPos.row() -2);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() -2);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() -1 , row);
+	oldPos = pgn::Square(newPos.col() - 1, newPos.row() - 2);
 
-	pgn::Square oldPosS, oldPosT;
-
-	Piece *movedPieceS, *movedPieceT;
-	Piece *tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
+	tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+	if ( ( 0 != tmp ) &&
+		 ( tmp->isWhite() == isWhite ) &&
+		 ( knight == tmp->type() ) )
+		 {
+		 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+		 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+		 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+		 		 	movedPiece = tmp;
+		 }
+		 
+	if ( movedPiece == 0 )
 	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}
+		oldPos = pgn::Square(newPos.col() - 1, newPos.row() + 2);
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
 
-	oldPos = pgn::Square(newPos.col() - 1, newPos.row() +2);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() +2);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() -1 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
+		 
+	if ( movedPiece == 0 )
 	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}	
+		oldPos = pgn::Square(newPos.col() + 1, newPos.row() - 2 );
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
 
-
-	oldPos = pgn::Square(newPos.col() + 1, newPos.row() -2);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() -2);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() +1 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
+	if ( movedPiece == 0 )
 	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}
-			
-	}
-
-	oldPos = pgn::Square(newPos.col() + 1, newPos.row() +2);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() +2);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() +1 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
-	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}
-			
-	}	
-
-	oldPos = pgn::Square(newPos.col() - 2, newPos.row() -1);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() -1);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() -2 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
-	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}
-	}
-
-	oldPos = pgn::Square(newPos.col() - 2, newPos.row() +1);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() +1);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() -2 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
-	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}	
+		oldPos = pgn::Square(newPos.col() + 1, newPos.row() + 2 );
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
 
 
-	oldPos = pgn::Square(newPos.col() + 2, newPos.row() -1);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() -1);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() +2 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
+	if ( movedPiece == 0 )
 	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}
-			
+		oldPos = pgn::Square(newPos.col() + 2, newPos.row() - 1 );
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
 
-	oldPos = pgn::Square(newPos.col() + 2, newPos.row() +1);
-	if ( column != 0 )
-		oldPos = pgn::Square(column, newPos.row() +1);
-	else if ( row != 0 )
-		oldPos = pgn::Square( newPos.col() +2 , row);
-
-	tmp = m_table.pieceAtC( oldPos.col(), oldPos.row());
-	if( ( tmp != 0 ) && ( tmp->type() == knight ) && ( tmp->isWhite() == isWhite ) )
+	if ( movedPiece == 0 )
 	{
-		if ( ( column == oldPos.col() ) || ( row = oldPos.row() ) )
-		{
-			movedPieceS = tmp;
-			oldPosS = oldPos;
-		}
-		else
-		{
-			movedPieceT = tmp;
-			oldPosT = oldPos;
-		}
-			
+		oldPos = pgn::Square(newPos.col() + 2, newPos.row() + 1 );
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
 
-	
-	Piece* movedPiece;
-	if ( ( column != 0 ) || ( row != 0 ) )
+	if ( movedPiece == 0 )
 	{
-		movedPiece = movedPieceS;
-		oldPos = oldPosS;
+		oldPos = pgn::Square(newPos.col() - 2, newPos.row() - 1 );
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
-	else
+
+	if ( movedPiece == 0 )
 	{
-		movedPiece = movedPieceT;
-		oldPos = oldPosT;
+		oldPos = pgn::Square(newPos.col() - 2, newPos.row() + 1 );
+    
+		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
+		if ( ( 0 != tmp ) &&
+			 ( tmp->isWhite() == isWhite ) &&
+			 ( knight == tmp->type() ) )
+			 {
+			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
+			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
+			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
+			 		 	movedPiece = tmp;
+			 }
 	}
 
 	Piece *dest = m_table.pieceAtC( newPos.col(), newPos.row() );
 
 	if ( ( movedPiece != 0) && ( dest != 0 ) )
 	{
-		if ( ( (ply->isCapture()) && (dest->type() != unknown) )
-			|| 
-		 ( (dest->type() == unknown) && (! ply->isCapture() )  ) )
-		 {
-			dest->setType ( knight );
-			if( isWhite )
-				dest->setWhite();
-			else
-				dest->setBlack();
-			movedPiece->setType( unknown );
-			return;
-		}
+		if( ply->isCapture() )
+			if ( ( dest->isWhite() != isWhite ) ^
+				 ( dest->type() != unknown ) )
+				 	throw BadMove( *ply, "MakeKnightPly: Captured piece must be other color AND not unknown type!");
+		( *dest ) = ( *movedPiece );
+		movedPiece->setType( unknown );
+		return;
+
 	}
 	throw BadMove( *ply, UNKNOWN_ERROR );
 }
