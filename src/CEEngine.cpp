@@ -466,44 +466,54 @@ void ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
 	Piece *movedPiece = 0;
 
-	char specPos = newPos.col();
+	char specCol = newPos.col();
+	char specRow = newPos.row();
+	
+	bool isFromColSpecified = false;
+	bool isFromRowSpecified = false;
+	
 	if( ( 'a' <= ply->fromSquare() ) && ( 'h' >= ply->fromSquare() ) )
-		specPos = ply->fromSquare();
-
-	for( char row = '1'; row <= '8'; row++ )
 	{
-//		std::cout<<"Looking in: " << specPos << " " << row << std::endl;
-		Piece* tmp = m_table.pieceAtC( specPos, row );
+		specCol = ply->fromSquare();
+		isFromColSpecified = true;
+	}
+	if( ( '1' <= ply->fromSquare() ) && ( '8' >= ply->fromSquare() ) )
+	{
+		specRow = ply->fromSquare();
+		isFromRowSpecified = true;
+	}
+
+
+
+	for( char row = '1'; ( ( row <= '8') && ( !isFromRowSpecified ) ); row++ )
+	{
+//		std::cout<<"Looking in: " << specCol << " " << row << std::endl;
+		Piece* tmp = m_table.pieceAtC( specCol, row );
         if ( ( tmp != 0 ) &&
                 ( tmp->type() == rook ) &&
                 ( tmp->isWhite() == isWhite ) &&
                 ( movedPiece == 0 ) &&
                 checkForEmptynessV( row,
                                     newPos.row() ,
-                                    specPos,
+                                    specCol ,
                                     &m_table) )
 		{
-//			std::cout << "Founf on " << specPos << row << std::endl;
+//			std::cout << "Founf on " << specCol << row << std::endl;
             movedPiece = tmp;
         }
 	}
 
-	specPos = newPos.row();
-
-	if( ( '1' <= ply->fromSquare() ) && ( '8' >= ply->fromSquare() ) )
-		specPos = ply->fromSquare();
-
 	if ( 0 == movedPiece )
-		for( char col = 'a'; col <= 'h'; col++ )
+		for( char col = 'a'; ( ( col <= 'h' ) && ( !isFromColSpecified ) ) ; col++ )
 		{
-//			std::cout<<"Looking in: " << col << " " << specPos << std::endl;
-			Piece* tmp = m_table.pieceAtC( col, specPos );
+//			std::cout<<"Looking in: " << col << " " << specRow << std::endl;
+			Piece* tmp = m_table.pieceAtC( col, specRow );
             if ( ( tmp != 0 ) &&
                     ( tmp->type() == rook ) &&
                     ( tmp->isWhite() == isWhite )  &&
                     checkForEmptynessH( col,
                                         newPos.col(),
-                                        specPos ,
+                                        specRow ,
                                         &m_table) )
             {
                 movedPiece = tmp;
