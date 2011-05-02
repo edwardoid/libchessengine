@@ -110,6 +110,10 @@ namespace ChEngn
 			 */
 			void operator = (const Table& other);
 
+			/** @brief Clean table ( set all pieces to ChEngn::unknown );
+			 */
+			void cleanTable();
+
 			/**
 			 * "Prints" table into std::ostream
 			 * @brief Overloaded operator << ()

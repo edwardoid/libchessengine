@@ -103,6 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d">makeMove</a> (pgn::Move &amp;move)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Make move.  <a href="#a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a> (const pgn::Ply *pl, bool isWhite)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a743f59a5351f46d39888ca50b7329920">moveAndCheckForCheck</a> (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no <a class="el" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea" title="Uses to present kings.">ChEngn::king</a> and checks is new position check position for given player.  <a href="#a743f59a5351f46d39888ca50b7329920"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#aebba3d5fac90f1e829fc122b31f26064">checkForEmptynessH</a> (char from, char to, char row, <a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> *table)</td></tr>
@@ -112,6 +114,8 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#afa008c74a0a46fc1dacd41ad2d8210e2">checkForEmptynessDiagonal</a> (char fromC, char fromR, char toC, char toR, <a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> *table)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check horisontal for emptyness.  <a href="#afa008c74a0a46fc1dacd41ad2d8210e2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceChEngn.html#a2a35c185f259757a78e937575b8ed483">piece_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a57cb976b2427ba1da47365424de049e2">guessTypeByChar</a> (const char character)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#adbbcab59c2baf952d0364a6c36a05a16">isCheck</a> (<a class="el" href="classChEngn_1_1Table.html">VirtualTable</a> tbl, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for check on table.  <a href="#adbbcab59c2baf952d0364a6c36a05a16"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#af414502f81e9abda2d41bd16e3e18ef0">makePawnPly</a> (const pgn::Ply *ply, bool isWhite)</td></tr>
@@ -399,6 +403,44 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<a class="anchor" id="adbbcab59c2baf952d0364a6c36a05a16"></a><!-- doxytag: member="ChEngn::Engine::isCheck" ref="adbbcab59c2baf952d0364a6c36a05a16" args="(VirtualTable tbl, bool isWhite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ChEngn::Engine::isCheck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classChEngn_1_1Table.html">VirtualTable</a>&#160;</td>
+          <td class="paramname"><em>tbl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isWhite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks for check on table. </p>
+<p>Tryes to found check in given table for given color's player. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl</td><td>- Source table </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- Player color. True if player's colro white, false in other case. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if check position found. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ae090fc9d1724d63d8af41e5a7c4f1d3d"></a><!-- doxytag: member="ChEngn::Engine::makeBishopPly" ref="ae090fc9d1724d63d8af41e5a7c4f1d3d" args="(const pgn::Ply *ply, bool isWhite)" -->
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +468,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes bishop's move. </p>
 <p>Tryes to make bishop's move) </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
@@ -434,6 +475,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -464,7 +506,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes kings's move. </p>
 <p>Tryes to make king's move) </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
@@ -472,6 +513,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -502,7 +544,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes knight's move. </p>
 <p>Tryes to make knight's move) </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
@@ -510,6 +551,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -530,13 +572,13 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes long castling move. </p>
 <p>Tryes to make long castling </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if castling has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">is</td><td>isWhite - True if castling owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -634,7 +676,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes pawn's move. </p>
 <p>Tryes to make pawn's move) </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
@@ -642,6 +683,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -708,7 +750,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes queen's move. </p>
 <p>Tryes to make queen's move) </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
@@ -716,6 +757,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -746,7 +788,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes bishop's move. </p>
 <p>Tryes to make bishop's move) </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if ply has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
@@ -754,6 +795,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
 
 </div>
 </div>
@@ -774,13 +816,58 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 <p>Makes short castling move. </p>
 <p>Tryes to make short castling </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if castling has been done successefully </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">is</td><td>isWhite - True if castling owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>throws <a class="el" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">ChEngn::BadMove</a> if something went wrong, or move can't be done </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a743f59a5351f46d39888ca50b7329920"></a><!-- doxytag: member="ChEngn::Engine::moveAndCheckForCheck" ref="a743f59a5351f46d39888ca50b7329920" args="(const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ChEngn::Engine::moveAndCheckForCheck </td>
+          <td>(</td>
+          <td class="paramtype">const pgn::Square&#160;</td>
+          <td class="paramname"><em>oldPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const pgn::Square&#160;</td>
+          <td class="paramname"><em>newPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>isWhite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no <a class="el" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea" title="Uses to present kings.">ChEngn::king</a> and checks is new position check position for given player. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldPos</td><td>- Position from piece will be moved </td></tr>
+    <tr><td class="paramname">newPos</td><td>- Position where piece will be moved </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- Player color. True if player's color is white, false in other case. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if new check found </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>only <a class="el" href="namespaceChEngn.html#a97924767720e8ba4e595ad9f161d73e8" title="Uses to present queens.">ChEngn::queen</a>, <a class="el" href="namespaceChEngn.html#a485787ab76caf7a61a77118fcdfd113d" title="Uses to present rooks.">ChEngn::rook</a> and <a class="el" href="namespaceChEngn.html#ad9410a19494f941d06ea404edf4900b0" title="Uses to present bishops.">ChEngn::bishop</a> will be checked! </dd></dl>
 
 </div>
 </div>
@@ -823,10 +910,10 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </pre></div><p>, also if there are no maked moves the return value will be equal to </p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516" title="Get loaded moves.">moves</a>()-&gt;begin(); 
 </pre></div> <dl class="return"><dt><b>Returns:</b></dt><dd>Iterator to next move </dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>Before using iterator chech is return value different from <div class="fragment"><pre class="fragment"> move()-&gt;end(); 
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Before using iterator, check is return value different from <div class="fragment"><pre class="fragment"> move()-&gt;end(); 
 </pre></div> </dd>
 <dd>
-You should use the return vallue very careful. Everytime check is iterator valid. </dd></dl>
+You should use the return value very careful. Everytime check is iterator valid. </dd></dl>
 
 </div>
 </div>
@@ -848,7 +935,7 @@ You should use the return vallue very careful. Everytime check is iterator valid
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun May 1 2011 19:48:43 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 2 2011 23:45:48 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

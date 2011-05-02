@@ -55,6 +55,17 @@ ChEngn::Piece** ChEngn::Table::table()
 	return m_table;
 }
 
+void ChEngn::Table::cleanTable()
+{
+	if( 0 == m_table )
+		getMemoryForTable();
+	assert( 0 != m_table );
+
+	for( int i = 0; i < default_table_height; i++ )
+		for( int j = 0; j < default_table_width; j++ )
+			m_table[i][j].setType( unknown );
+}
+
 ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int column, unsigned int row) const
 {
 	assert( 0 != m_table );

@@ -32,7 +32,9 @@ bool \hyperlink{classChEngn_1_1Engine_ab9f6f3cbf3e7866887b049f61f9ce46b}{makeNex
 bool \hyperlink{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{makeMove} (pgn::Move \&move)
 \begin{DoxyCompactList}\small\item\em Make move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly} (const pgn::Ply $\ast$pl, bool isWhite)
-\end{DoxyCompactItemize}
+\item 
+bool \hyperlink{classChEngn_1_1Engine_a743f59a5351f46d39888ca50b7329920}{moveAndCheckForCheck} (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const 
+\begin{DoxyCompactList}\small\item\em Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{ChEngn::king} and checks is new position check position for given player. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,7 +45,9 @@ static bool \hyperlink{classChEngn_1_1Engine_ab812e459beb68c21e02370d0f7767299}{
 static bool \hyperlink{classChEngn_1_1Engine_afa008c74a0a46fc1dacd41ad2d8210e2}{checkForEmptynessDiagonal} (char fromC, char fromR, char toC, char toR, \hyperlink{classChEngn_1_1Table}{VirtualTable} $\ast$table)
 \begin{DoxyCompactList}\small\item\em Check horisontal for emptyness. \item\end{DoxyCompactList}\item 
 static \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} \hyperlink{classChEngn_1_1Engine_a57cb976b2427ba1da47365424de049e2}{guessTypeByChar} (const char character)
-\end{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classChEngn_1_1Engine_adbbcab59c2baf952d0364a6c36a05a16}{isCheck} (\hyperlink{classChEngn_1_1Table}{VirtualTable} tbl, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Checks for check on table. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -245,6 +249,30 @@ Tryes to guess piece's type by given character
 \begin{DoxyReturn}{Returns}
 type != \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown}, \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::unknown} other way 
 \end{DoxyReturn}
+\hypertarget{classChEngn_1_1Engine_adbbcab59c2baf952d0364a6c36a05a16}{
+\index{ChEngn::Engine@{ChEngn::Engine}!isCheck@{isCheck}}
+\index{isCheck@{isCheck}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{isCheck}]{\setlength{\rightskip}{0pt plus 5cm}static bool ChEngn::Engine::isCheck (
+\begin{DoxyParamCaption}
+\item[{{\bf VirtualTable}}]{tbl, }
+\item[{bool}]{isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classChEngn_1_1Engine_adbbcab59c2baf952d0364a6c36a05a16}
+
+
+Checks for check on table. 
+
+Tryes to found check in given table for given color's player. 
+\begin{DoxyParams}{Parameters}
+{\em tbl} & -\/ Source table \\
+\hline
+{\em isWhite} & -\/ Player color. True if player's colro white, false in other case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if check position found. 
+\end{DoxyReturn}
 \hypertarget{classChEngn_1_1Engine_ae090fc9d1724d63d8af41e5a7c4f1d3d}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeBishopPly@{makeBishopPly}}
 \index{makeBishopPly@{makeBishopPly}!ChEngn::Engine@{ChEngn::Engine}}
@@ -259,16 +287,16 @@ type != \hyperlink{namespaceChEngn_a538ef441c024a7e5d4c1dedb5e03fc21}{ChEngn::un
 
 Makes bishop's move. 
 
-Tryes to make bishop's move) \begin{DoxyReturn}{Returns}
-true if ply has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make bishop's move) 
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_a6512882396e670361c5b2289e0c85517}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKingPly@{makeKingPly}}
 \index{makeKingPly@{makeKingPly}!ChEngn::Engine@{ChEngn::Engine}}
@@ -283,16 +311,16 @@ true if ply has been done successefully
 
 Makes kings's move. 
 
-Tryes to make king's move) \begin{DoxyReturn}{Returns}
-true if ply has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make king's move) 
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_a9b7fdcf2cf7718e5e602ce6e3be3d4c8}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeKnightPly@{makeKnightPly}}
 \index{makeKnightPly@{makeKnightPly}!ChEngn::Engine@{ChEngn::Engine}}
@@ -307,16 +335,16 @@ true if ply has been done successefully
 
 Makes knight's move. 
 
-Tryes to make knight's move) \begin{DoxyReturn}{Returns}
-true if ply has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make knight's move) 
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_ac054d7b903d1b353dcfc80a6cbd32aba}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeLongCastling@{makeLongCastling}}
 \index{makeLongCastling@{makeLongCastling}!ChEngn::Engine@{ChEngn::Engine}}
@@ -330,14 +358,14 @@ true if ply has been done successefully
 
 Makes long castling move. 
 
-Tryes to make long castling \begin{DoxyReturn}{Returns}
-true if castling has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make long castling 
 \begin{DoxyParams}{Parameters}
 {\em is} & isWhite -\/ True if castling owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeMove@{makeMove}}
 \index{makeMove@{makeMove}!ChEngn::Engine@{ChEngn::Engine}}
@@ -405,16 +433,16 @@ true if move can was successefully did. Else -\/ fale will be returned. False wi
 
 Makes pawn's move. 
 
-Tryes to make pawn's move) \begin{DoxyReturn}{Returns}
-true if ply has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make pawn's move) 
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makePly@{makePly}}
 \index{makePly@{makePly}!ChEngn::Engine@{ChEngn::Engine}}
@@ -449,16 +477,16 @@ true if successefully, false -\/ otherway.
 
 Makes queen's move. 
 
-Tryes to make queen's move) \begin{DoxyReturn}{Returns}
-true if ply has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make queen's move) 
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_a6ed93f939bbf1cc780a1b2f364068eaa}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeRookPly@{makeRookPly}}
 \index{makeRookPly@{makeRookPly}!ChEngn::Engine@{ChEngn::Engine}}
@@ -473,16 +501,16 @@ true if ply has been done successefully
 
 Makes bishop's move. 
 
-Tryes to make bishop's move) \begin{DoxyReturn}{Returns}
-true if ply has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make bishop's move) 
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
 {\em is} & isWhite -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_a4d6deb7c26002fd2a39367a0fcc9b75e}{
 \index{ChEngn::Engine@{ChEngn::Engine}!makeShortCastling@{makeShortCastling}}
 \index{makeShortCastling@{makeShortCastling}!ChEngn::Engine@{ChEngn::Engine}}
@@ -496,14 +524,44 @@ true if ply has been done successefully
 
 Makes short castling move. 
 
-Tryes to make short castling \begin{DoxyReturn}{Returns}
-true if castling has been done successefully 
-\end{DoxyReturn}
-
+Tryes to make short castling 
 \begin{DoxyParams}{Parameters}
 {\em is} & isWhite -\/ True if castling owner is white player. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wrong, or move can't be done 
+\end{DoxyWarning}
+\hypertarget{classChEngn_1_1Engine_a743f59a5351f46d39888ca50b7329920}{
+\index{ChEngn::Engine@{ChEngn::Engine}!moveAndCheckForCheck@{moveAndCheckForCheck}}
+\index{moveAndCheckForCheck@{moveAndCheckForCheck}!ChEngn::Engine@{ChEngn::Engine}}
+\subsubsection[{moveAndCheckForCheck}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::moveAndCheckForCheck (
+\begin{DoxyParamCaption}
+\item[{const pgn::Square}]{oldPos, }
+\item[{const pgn::Square}]{newPos, }
+\item[{const bool}]{isWhite}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Engine_a743f59a5351f46d39888ca50b7329920}
+
+
+Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{ChEngn::king} and checks is new position check position for given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldPos} & -\/ Position from piece will be moved \\
+\hline
+{\em newPos} & -\/ Position where piece will be moved \\
+\hline
+{\em isWhite} & -\/ Player color. True if player's color is white, false in other case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if new check found 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+only \hyperlink{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}{ChEngn::queen}, \hyperlink{namespaceChEngn_a485787ab76caf7a61a77118fcdfd113d}{ChEngn::rook} and \hyperlink{namespaceChEngn_ad9410a19494f941d06ea404edf4900b0}{ChEngn::bishop} will be checked! 
+\end{DoxyWarning}
 \hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
 \index{ChEngn::Engine@{ChEngn::Engine}!moves@{moves}}
 \index{moves@{moves}!ChEngn::Engine@{ChEngn::Engine}}
@@ -545,13 +603,13 @@ Gets pgn::MoveList::iterator to current move. If there are no aviable moves retu
 Iterator to next move 
 \end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
-Before using iterator chech is return value different from 
+Before using iterator, check is return value different from 
 \begin{DoxyCode}
  move()->end(); 
 \end{DoxyCode}
  
 
-You should use the return vallue very careful. Everytime check is iterator valid. 
+You should use the return value very careful. Everytime check is iterator valid. 
 \end{DoxyWarning}
 
 

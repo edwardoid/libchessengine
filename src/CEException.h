@@ -51,6 +51,10 @@ namespace ChEngn
 	 */
 	static const char* SAME_COLOR = "Ply's and destination square's piece are same color";
 
+	/**
+	 * Represents exception text, when no suitable piece can make given move;
+	 */
+	static const char* NO_SUITABLE_PIECE = "No suitable piece for move.";
 
 	/**
 	 */

@@ -4,3 +4,7 @@ CHANGELOG:
 
 	1. FIXED bug with promoted piece parsing in libpgnm
 	2. FIXED bug with ChEngn::Table constructor/copy-constructor/ostream_printing
+	3. ADDED checking for bad move ( in case if PGN don't specify piece which must be moved,
+	   		 but after moving wrong piece check is opening
+	4. ADDED some tests
+	5. ADDED Static member, which reports if position contains check

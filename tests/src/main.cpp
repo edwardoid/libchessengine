@@ -19,8 +19,8 @@ int main()
 	runner.addTest( TestPiece::suite() );
 	runner.addTest( TestTable::suite() );
 	runner.addTest( TestEngine::suite() );
-	runner.addTest( TestPGNM::suite() );
-	runner.addTest( TestGameCollection::suite() );
+//	runner.addTest( TestPGNM::suite() );
+//	runner.addTest( TestGameCollection::suite() );
 	runner.run();
 	return 0;
 }

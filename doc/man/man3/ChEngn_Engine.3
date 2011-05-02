@@ -1,4 +1,4 @@
-.TH "ChEngn::Engine" 3 "Sun May 1 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Engine" 3 "Mon May 2 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,6 +52,10 @@ ChEngn::Engine \-
 .ti -1c
 .RI "bool \fBmakePly\fP (const pgn::Ply *pl, bool isWhite)"
 .br
+.ti -1c
+.RI "bool \fBmoveAndCheckForCheck\fP (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const "
+.br
+.RI "\fIMoves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \fBChEngn::king\fP and checks is new position check position for given player. \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -71,6 +75,10 @@ ChEngn::Engine \-
 .ti -1c
 .RI "static \fBpiece_type\fP \fBguessTypeByChar\fP (const char character)"
 .br
+.ti -1c
+.RI "static bool \fBisCheck\fP (\fBVirtualTable\fP tbl, bool isWhite)"
+.br
+.RI "\fIChecks for check on table. \fP"
 .in -1c
 .SS "Protected Member Functions"
 
@@ -234,20 +242,37 @@ type != \fBChEngn::unknown\fP, \fBChEngn::unknown\fP other way
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makeBishopPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "static bool ChEngn::Engine::isCheck (\fBVirtualTable\fPtbl, boolisWhite)\fC [static]\fP"
 .PP
-Makes bishop's move. Tryes to make bishop's move) 
+Checks for check on table. Tryes to found check in given table for given color's player. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItbl\fP - Source table 
+.br
+\fIisWhite\fP - Player color. True if player's colro white, false in other case. 
+.RE
 .PP
 \fBReturns:\fP
 .RS 4
-true if ply has been done successefully 
+true if check position found. 
 .RE
+.PP
+
+.SS "void ChEngn::Engine::makeBishopPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.PP
+Makes bishop's move. Tryes to make bishop's move) 
 .PP
 \fBParameters:\fP
 .RS 4
 \fIply\fP - Ply to do 
 .br
 \fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
 .RE
 .PP
 
@@ -255,16 +280,16 @@ true if ply has been done successefully
 .PP
 Makes kings's move. Tryes to make king's move) 
 .PP
-\fBReturns:\fP
-.RS 4
-true if ply has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIply\fP - Ply to do 
 .br
 \fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
 .RE
 .PP
 
@@ -272,11 +297,6 @@ true if ply has been done successefully
 .PP
 Makes knight's move. Tryes to make knight's move) 
 .PP
-\fBReturns:\fP
-.RS 4
-true if ply has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIply\fP - Ply to do 
@@ -284,19 +304,24 @@ true if ply has been done successefully
 \fIis\fP isWhite - True if ply's owner is white player. 
 .RE
 .PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
+.RE
+.PP
 
 .SS "void ChEngn::Engine::makeLongCastling (boolisWhite)\fC [protected]\fP"
 .PP
 Makes long castling move. Tryes to make long castling 
 .PP
-\fBReturns:\fP
-.RS 4
-true if castling has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIis\fP isWhite - True if castling owner is white player. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
 .RE
 .PP
 
@@ -339,16 +364,16 @@ true if move can was successefully did. Else - fale will be returned. False will
 .PP
 Makes pawn's move. Tryes to make pawn's move) 
 .PP
-\fBReturns:\fP
-.RS 4
-true if ply has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIply\fP - Ply to do 
 .br
 \fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
 .RE
 .PP
 
@@ -371,16 +396,16 @@ true if successefully, false - otherway.
 .PP
 Makes queen's move. Tryes to make queen's move) 
 .PP
-\fBReturns:\fP
-.RS 4
-true if ply has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIply\fP - Ply to do 
 .br
 \fIis\fP isWhite - True if ply's owner is white player. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
 .RE
 .PP
 
@@ -388,11 +413,6 @@ true if ply has been done successefully
 .PP
 Makes bishop's move. Tryes to make bishop's move) 
 .PP
-\fBReturns:\fP
-.RS 4
-true if ply has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIply\fP - Ply to do 
@@ -400,19 +420,46 @@ true if ply has been done successefully
 \fIis\fP isWhite - True if ply's owner is white player. 
 .RE
 .PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
+.RE
+.PP
 
 .SS "void ChEngn::Engine::makeShortCastling (boolisWhite)\fC [protected]\fP"
 .PP
 Makes short castling move. Tryes to make short castling 
 .PP
-\fBReturns:\fP
-.RS 4
-true if castling has been done successefully 
-.RE
-.PP
 \fBParameters:\fP
 .RS 4
 \fIis\fP isWhite - True if castling owner is white player. 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done 
+.RE
+.PP
+
+.SS "bool ChEngn::Engine::moveAndCheckForCheck (const pgn::SquareoldPos, const pgn::SquarenewPos, const boolisWhite) const"
+.PP
+Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \fBChEngn::king\fP and checks is new position check position for given player. \fBParameters:\fP
+.RS 4
+\fIoldPos\fP - Position from piece will be moved 
+.br
+\fInewPos\fP - Position where piece will be moved 
+.br
+\fIisWhite\fP - Player color. True if player's color is white, false in other case. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if new check found 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+only \fBChEngn::queen\fP, \fBChEngn::rook\fP and \fBChEngn::bishop\fP will be checked! 
 .RE
 .PP
 
@@ -449,7 +496,7 @@ Iterator to next move
 .PP
 \fBWarning:\fP
 .RS 4
-Before using iterator chech is return value different from 
+Before using iterator, check is return value different from 
 .PP
 .nf
  move()->end(); 
@@ -458,7 +505,7 @@ Before using iterator chech is return value different from
 .PP
  
 .PP
-You should use the return vallue very careful. Everytime check is iterator valid. 
+You should use the return value very careful. Everytime check is iterator valid. 
 .RE
 .PP
 

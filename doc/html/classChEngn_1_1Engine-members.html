@@ -79,6 +79,7 @@ This is the complete list of members for <a class="el" href="classChEngn_1_1Engi
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a1184e133eae1f7e23bf405302fa9f53c">Engine</a>(const pgn::Game &amp;gm)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a26f8db48e99d547fbc41eaa9dca8e6cf">getVirtualTable</a>() const </td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a57cb976b2427ba1da47365424de049e2">guessTypeByChar</a>(const char character)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [static]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#adbbcab59c2baf952d0364a6c36a05a16">isCheck</a>(VirtualTable tbl, bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#ae090fc9d1724d63d8af41e5a7c4f1d3d">makeBishopPly</a>(const pgn::Ply *ply, bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a6512882396e670361c5b2289e0c85517">makeKingPly</a>(const pgn::Ply *ply, bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a9b7fdcf2cf7718e5e602ce6e3be3d4c8">makeKnightPly</a>(const pgn::Ply *ply, bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [protected]</code></td></tr>
@@ -91,6 +92,7 @@ This is the complete list of members for <a class="el" href="classChEngn_1_1Engi
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a472c2c8efd42dc93027b395df64a71d2">makeQueenPly</a>(const pgn::Ply *ply, bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a6ed93f939bbf1cc780a1b2f364068eaa">makeRookPly</a>(const pgn::Ply *ply, bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a4d6deb7c26002fd2a39367a0fcc9b75e">makeShortCastling</a>(bool isWhite)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a743f59a5351f46d39888ca50b7329920">moveAndCheckForCheck</a>(const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const </td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#aad1f51b4eed22bb6eab999ffb7fa2516">moves</a>()</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#ad35252a7c6a7e84a34d12a688360a75f">nextMove</a>()</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classChEngn_1_1Engine.html#a886da6512b271d26a1fee49a317d2308">operator&lt;&lt;</a>(std::ostream &amp;out, const Engine &amp;engn)</td><td><a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a></td><td><code> [friend]</code></td></tr>
@@ -110,7 +112,7 @@ This is the complete list of members for <a class="el" href="classChEngn_1_1Engi
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun May 1 2011 19:48:43 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 2 2011 23:45:48 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -102,9 +102,9 @@ namespace ChEngn
 			 * @code moves()->begin(); @endcode
 			 * @brief Iterarator to next move
 			 * @return Iterator to next move
-			 * @warning Before using iterator chech is return value different
+			 * @warning Before using iterator, check is return value different
 			 * from @code move()->end(); @endcode
-			 * @warning You should use the return vallue very careful. Everytime
+			 * @warning You should use the return value very careful. Everytime
 			 * check is iterator valid.
 			 */
 			pgn::MoveList::iterator nextMove();
@@ -193,70 +193,91 @@ namespace ChEngn
 			 */
 			static piece_type guessTypeByChar( const char character );
 
+			/** @brief Moves piece for current table, and check for check.
+			 * Tyres to move piece form current table, is piece on given
+			 * square is no ChEngn::king and checks is new position check
+			 * position for given player
+			 * @param oldPos - Position from piece will be moved
+			 * @param newPos - Position where piece will be moved
+			 * @param isWhite - Player color. True if player's color is white,
+			 * false in other case.
+			 * @return true if new check found
+			 * @warning only ChEngn::queen, ChEngn::rook and ChEngn::bishop will
+			 * be checked!
+			 */
+			bool moveAndCheckForCheck( const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite ) const;
 
+			/** Tryes to found check in given table for given color's player.
+			 * @brief Checks for check on table.
+			 * @param tbl - Source table
+			 * @param isWhite - Player color. True if player's colro white,
+			 * false in other case.
+			 * @return true if check position found.
+			 */
+			static bool isCheck( VirtualTable tbl, bool isWhite );
 
 		protected: //protected functions
 
 			/** Tryes to make pawn's move)
 			 * @brief Makes pawn's move
-			 * @return true if ply has been done successefully
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */
 			void makePawnPly( const pgn::Ply* ply, bool isWhite);
 	
 			/** Tryes to make knight's move)
 			 * @brief Makes knight's move
-			 * @return true if ply has been done successefully
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeKnightPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make bishop's move)
 			 * @brief Makes bishop's move
-			 * @return true if ply has been done successefully
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeBishopPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make bishop's move)
 			 * @brief Makes bishop's move
-			 * @return true if ply has been done successefully
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeRookPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make queen's move)
 			 * @brief Makes queen's move
-			 * @return true if ply has been done successefully
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeQueenPly( const pgn::Ply* ply, bool isWhite);
 		
 			/** Tryes to make king's move)
 			 * @brief Makes kings's move
-			 * @return true if ply has been done successefully
 			 * @param ply - Ply to do
 			 * @param is isWhite - True if ply's owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeKingPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make short castling
 			 * @brief Makes short castling move
-			 * @return true if castling has been done successefully
 			 * @param is isWhite - True if castling  owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeShortCastling( bool isWhite);
 
 
 			/** Tryes to make long castling
 			 * @brief Makes long castling move
-			 * @return true if castling has been done successefully
 			 * @param is isWhite - True if castling  owner is white player.
+			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeLongCastling( bool isWhite);
 

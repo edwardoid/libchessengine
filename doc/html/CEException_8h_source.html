@@ -99,36 +99,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00047"></a>00047 
 <a name="l00052"></a>00052     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* SAME_COLOR = <span class="stringliteral">&quot;Ply&#39;s and destination square&#39;s piece are same color&quot;</span>;
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 
-<a name="l00057"></a>00057     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* UNKNOWN_CAPTURE = <span class="stringliteral">&quot;Cat&#39;t capture \&quot;unknown\&quot; piece&quot;</span>;
+<a name="l00057"></a>00057     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* NO_SUITABLE_PIECE = <span class="stringliteral">&quot;No suitable piece for move.&quot;</span>;
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 
-<a name="l00064"></a><a class="code" href="classChEngn_1_1BadMove.html">00064</a>     <span class="keyword">class </span><a class="code" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">BadMove</a>: std::exception
-<a name="l00065"></a>00065     {
-<a name="l00066"></a>00066         <span class="keyword">public</span>:
-<a name="l00067"></a>00067             
-<a name="l00074"></a><a class="code" href="classChEngn_1_1BadMove.html#a581052f5203836b164bf25ce6e3e6b7a">00074</a>             <a class="code" href="classChEngn_1_1BadMove.html#a581052f5203836b164bf25ce6e3e6b7a" title="constructor">BadMove</a>( pgn::Ply p, std::string comm,  <span class="keywordtype">int</span> moveNum = 0 ) throw():m_ply( p ),
-<a name="l00075"></a>00075                                                                               m_comm( comm ),
-<a name="l00076"></a>00076                                                                           m_num( moveNum ) {} ;
-<a name="l00080"></a><a class="code" href="classChEngn_1_1BadMove.html#a6efb8ca7c4af455b042eddf7ebbf2837">00080</a>             <a class="code" href="classChEngn_1_1BadMove.html#a6efb8ca7c4af455b042eddf7ebbf2837" title="Destructor.">~BadMove</a>()throw(){};
-<a name="l00081"></a>00081 
-<a name="l00086"></a><a class="code" href="classChEngn_1_1BadMove.html#a0006497750a3d96218b1dad586f5f8f1">00086</a>             <span class="keywordtype">void</span> <a class="code" href="classChEngn_1_1BadMove.html#a0006497750a3d96218b1dad586f5f8f1" title="Bind addiotional information to exception;.">bindComment</a>( std::string comm )<span class="keywordflow">throw</span>() { m_comm = comm; };
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088             <span class="keywordtype">void</span> bindNumber( <span class="keywordtype">int</span> num ) <span class="keywordflow">throw</span>() { m_num = num; };
-<a name="l00089"></a>00089 
-<a name="l00093"></a><a class="code" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038">00093</a>             std::string <a class="code" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038" title="Get binded information.">comment</a>() throw() { <span class="keywordflow">return</span> m_comm; };
-<a name="l00094"></a>00094 
-<a name="l00098"></a>00098             <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classChEngn_1_1BadMove.html#ae7c3114036a9917a5aef4458a8f567d3" title="Basic information about given exception.">what</a>() throw();
-<a name="l00099"></a>00099         private:
-<a name="l00100"></a>00100             pgn::Ply m_ply;
-<a name="l00101"></a>00101             <span class="keywordtype">int</span> m_num;
-<a name="l00102"></a>00102             std::<span class="keywordtype">string</span> m_comm;
-<a name="l00103"></a>00103             
-<a name="l00104"></a>00104     };
-<a name="l00105"></a>00105 };
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108 <span class="preprocessor">#endif // CHESS_ENGINE_EXCEPTION</span>
+<a name="l00061"></a>00061     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* UNKNOWN_CAPTURE = <span class="stringliteral">&quot;Cat&#39;t capture \&quot;unknown\&quot; piece&quot;</span>;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 
+<a name="l00068"></a><a class="code" href="classChEngn_1_1BadMove.html">00068</a>     <span class="keyword">class </span><a class="code" href="classChEngn_1_1BadMove.html" title="Implements all exception which will be generated ty ChEngn::Engine while trying to make move which i ...">BadMove</a>: std::exception
+<a name="l00069"></a>00069     {
+<a name="l00070"></a>00070         <span class="keyword">public</span>:
+<a name="l00071"></a>00071             
+<a name="l00078"></a><a class="code" href="classChEngn_1_1BadMove.html#a581052f5203836b164bf25ce6e3e6b7a">00078</a>             <a class="code" href="classChEngn_1_1BadMove.html#a581052f5203836b164bf25ce6e3e6b7a" title="constructor">BadMove</a>( pgn::Ply p, std::string comm,  <span class="keywordtype">int</span> moveNum = 0 ) throw():m_ply( p ),
+<a name="l00079"></a>00079                                                                               m_comm( comm ),
+<a name="l00080"></a>00080                                                                           m_num( moveNum ) {} ;
+<a name="l00084"></a><a class="code" href="classChEngn_1_1BadMove.html#a6efb8ca7c4af455b042eddf7ebbf2837">00084</a>             <a class="code" href="classChEngn_1_1BadMove.html#a6efb8ca7c4af455b042eddf7ebbf2837" title="Destructor.">~BadMove</a>()throw(){};
+<a name="l00085"></a>00085 
+<a name="l00090"></a><a class="code" href="classChEngn_1_1BadMove.html#a0006497750a3d96218b1dad586f5f8f1">00090</a>             <span class="keywordtype">void</span> <a class="code" href="classChEngn_1_1BadMove.html#a0006497750a3d96218b1dad586f5f8f1" title="Bind addiotional information to exception;.">bindComment</a>( std::string comm )<span class="keywordflow">throw</span>() { m_comm = comm; };
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092             <span class="keywordtype">void</span> bindNumber( <span class="keywordtype">int</span> num ) <span class="keywordflow">throw</span>() { m_num = num; };
+<a name="l00093"></a>00093 
+<a name="l00097"></a><a class="code" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038">00097</a>             std::string <a class="code" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038" title="Get binded information.">comment</a>() throw() { <span class="keywordflow">return</span> m_comm; };
+<a name="l00098"></a>00098 
+<a name="l00102"></a>00102             <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classChEngn_1_1BadMove.html#ae7c3114036a9917a5aef4458a8f567d3" title="Basic information about given exception.">what</a>() throw();
+<a name="l00103"></a>00103         private:
+<a name="l00104"></a>00104             pgn::Ply m_ply;
+<a name="l00105"></a>00105             <span class="keywordtype">int</span> m_num;
+<a name="l00106"></a>00106             std::<span class="keywordtype">string</span> m_comm;
+<a name="l00107"></a>00107             
+<a name="l00108"></a>00108     };
+<a name="l00109"></a>00109 };
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="preprocessor">#endif // CHESS_ENGINE_EXCEPTION</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -145,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun May 1 2011 19:48:43 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 2 2011 23:45:48 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
