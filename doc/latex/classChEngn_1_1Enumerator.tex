@@ -22,7 +22,7 @@ void \hyperlink{classChEngn_1_1Enumerator_ad863ed7a8a9d3bf4c2f6515b822127b9}{set
 \begin{DoxyCompactList}\small\item\em Sets enumeration deepness. \item\end{DoxyCompactList}\item 
 void \hyperlink{classChEngn_1_1Enumerator_aece55d1e95762d5a36c1bf43f72936a1}{setTable} (const \hyperlink{classChEngn_1_1Table}{Table} \&table)
 \begin{DoxyCompactList}\small\item\em Initialize start position. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Enumerator_a844e2aa677c8e7cf24ca4a646ddffbb6}{setSide} (\hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSide})
+void \hyperlink{classChEngn_1_1Enumerator_a6df713c8198fdeaea4e554ad7c8c93ca}{setSide} (\hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3}{EnumerationSide} enumSide)
 \begin{DoxyCompactList}\small\item\em Sets enumeration side. \item\end{DoxyCompactList}\item 
 unsigned short \hyperlink{classChEngn_1_1Enumerator_a6961fa1ffbbbcf77a2e4e12deef1a803}{deepness} () const 
 \item 
@@ -59,7 +59,10 @@ Default constructor creates \hyperlink{classChEngn_1_1Enumerator}{ChEngn::Enumer
 
 And enumeration deep will be set 0 And side will be
 
-: Enumeration process is hard process, if it's possible use small values for deep \hypertarget{classChEngn_1_1Enumerator_a3f3a7d688b6753ff1b6118c43745ed79}{
+\begin{DoxyWarning}{Warning}
+: Enumeration process is hard process, if it's possible use small values for deep 
+\end{DoxyWarning}
+\hypertarget{classChEngn_1_1Enumerator_a3f3a7d688b6753ff1b6118c43745ed79}{
 \index{ChEngn::Enumerator@{ChEngn::Enumerator}!Enumerator@{Enumerator}}
 \index{Enumerator@{Enumerator}!ChEngn::Enumerator@{ChEngn::Enumerator}}
 \subsubsection[{Enumerator}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Enumerator::Enumerator (
@@ -78,11 +81,14 @@ Created \hyperlink{classChEngn_1_1Enumerator}{ChEngn::Enumerator} whis given tab
 \begin{DoxyParams}{Parameters}
 {\em table} & Start position for enumeration \\
 \hline
-{\em side} & Enumeration side, default value \hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a21eec37f5afa6d7b64df3cb2c2098625}{ChEngn::UndefinedSide} \\
+{\em enumSide} & Enumeration side, default value \hyperlink{namespaceChEngn_a680bcca190861d8cee0f8627ce8f9de3a21eec37f5afa6d7b64df3cb2c2098625}{ChEngn::UndefinedSide} \\
 \hline
-{\em deep} & Enumeration deep : Enumeration process is hard process, if it's possible use small values for deep \\
+{\em deep} & Enumeration deep \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+: Enumeration process is hard process, if it's possible use small values for deep 
+\end{DoxyWarning}
 
 
 \subsection{Member Function Documentation}
@@ -116,15 +122,15 @@ Set enumeration deepness
 {\em deep} & Enumeration depness \\
 \hline
 \end{DoxyParams}
-\hypertarget{classChEngn_1_1Enumerator_a844e2aa677c8e7cf24ca4a646ddffbb6}{
+\hypertarget{classChEngn_1_1Enumerator_a6df713c8198fdeaea4e554ad7c8c93ca}{
 \index{ChEngn::Enumerator@{ChEngn::Enumerator}!setSide@{setSide}}
 \index{setSide@{setSide}!ChEngn::Enumerator@{ChEngn::Enumerator}}
 \subsubsection[{setSide}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Enumerator::setSide (
 \begin{DoxyParamCaption}
-\item[{{\bf EnumerationSide}}]{}
+\item[{{\bf EnumerationSide}}]{enumSide}
 \end{DoxyParamCaption}
 )}}
-\label{classChEngn_1_1Enumerator_a844e2aa677c8e7cf24ca4a646ddffbb6}
+\label{classChEngn_1_1Enumerator_a6df713c8198fdeaea4e554ad7c8c93ca}
 
 
 Sets enumeration side. 

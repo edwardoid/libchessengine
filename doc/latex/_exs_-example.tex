@@ -1,29 +1,15 @@
 \hypertarget{_exs_-example}{
 \section{\_\-exs\_\-}
 }
-First example libchessengine
+First example examples/main.cpp
 
+This example shows howto open pgn file and make all moves for each game from file.
 
-\begin{DoxyCode}
- main.cpp
+Compile and run:
 
-#include<iostream>
-#include<CEEngine.h>
-int main()
-{
-    ChEngine::Engine engine;
-    engine.open("games.pgn");
-    std::cout<<engine<<std::endl;
-    return 0;
-}
-\end{DoxyCode}
+\$ make 
 
-
-g++ main.cpp -\/lchessengine -\/o myapp
-
-or
-
-g++ main.cpp -\/lchessengine -\/static -\/o myapp
+\$ make run
 
 
 \begin{DoxyCodeInclude}

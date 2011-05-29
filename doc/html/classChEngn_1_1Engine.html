@@ -19,7 +19,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">libchessengine&#160;<span id="projectnumber">0.0.1</span></div>
+   <div id="projectname">libchessengine&#160;<span id="projectnumber">0.2.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -76,6 +76,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="ChEngn::Engine" -->
+<p>Make moves.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CEEngine_8h_source.html">CEEngine.h</a>&gt;</code></p>
+
 <p><a href="classChEngn_1_1Engine-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
@@ -103,6 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a3bfc7cfe7e147e4d5d7f645d0cb72c8d">makeMove</a> (pgn::Move &amp;move)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Make move.  <a href="#a3bfc7cfe7e147e4d5d7f645d0cb72c8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a66f202e6cd42b2eeff43c8d58fe9ce38">makePly</a> (const pgn::Ply *pl, bool isWhite)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Make ply's move.  <a href="#a66f202e6cd42b2eeff43c8d58fe9ce38"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1Engine.html#a743f59a5351f46d39888ca50b7329920">moveAndCheckForCheck</a> (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no <a class="el" href="namespaceChEngn.html#a40c2dbaf0963b46704f08ffb28364cea" title="Uses to present kings.">ChEngn::king</a> and checks is new position check position for given player.  <a href="#a743f59a5351f46d39888ca50b7329920"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
@@ -141,9 +147,13 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">"Print" current table <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>functionality Provides access to current game. Can make moves, get table current state (Virtual <a class="el" href="classChEngn_1_1Table.html" title="Chess board.">Table</a>) </p>
+<div class="textblock"><p>Make moves. </p>
+<p>Provides access to current game. Can make moves, get table current state (Virtual <a class="el" href="classChEngn_1_1Table.html" title="Chess board.">Table</a>).</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This class <b>does not</b> manipulate pgn files. </dd></dl>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd>
+<p><a class="el" href="examples_2main_8cpp-example.html#_a0">examples/main.cpp</a>.</p>
+</dd>
+</dl></div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab92c015fc819dc2b7c51cccbc7878002"></a><!-- doxytag: member="ChEngn::Engine::Engine" ref="ab92c015fc819dc2b7c51cccbc7878002" args="(const Engine &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
@@ -185,7 +195,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <div class="memdoc">
 
 <p>Constructor. </p>
-<p>Creates <a class="el" href="classChEngn_1_1Engine.html">Engine</a> from pgn::Game </p>
+<p>Creates <a class="el" href="classChEngn_1_1Engine.html" title="Make moves.">Engine</a> from pgn::Game </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">gm</td><td>Game from an opened *.pgn file </td></tr>
@@ -246,7 +256,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
     <tr><td class="paramname">fromC</td><td>- source column </td></tr>
     <tr><td class="paramname">fromR</td><td>- source row </td></tr>
     <tr><td class="paramname">toC</td><td>- destination column </td></tr>
-    <tr><td class="paramname">roR</td><td>- destination row </td></tr>
+    <tr><td class="paramname">toR</td><td>- destination row </td></tr>
     <tr><td class="paramname">table</td><td>- table to searching </td></tr>
   </table>
   </dd>
@@ -350,7 +360,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   <table class="params">
     <tr><td class="paramname">from</td><td>- source row </td></tr>
     <tr><td class="paramname">to</td><td>- destination row </td></tr>
-    <tr><td class="paramname">row</td><td>- checking column </td></tr>
+    <tr><td class="paramname">column</td><td>- checking column </td></tr>
     <tr><td class="paramname">table</td><td>- table to searching </td></tr>
   </table>
   </dd>
@@ -471,7 +481,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
-    <tr><td class="paramname">is</td><td>isWhite - True if ply's owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if ply's owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -509,7 +519,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
-    <tr><td class="paramname">is</td><td>isWhite - True if ply's owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if ply's owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -547,7 +557,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
-    <tr><td class="paramname">is</td><td>isWhite - True if ply's owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if ply's owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -574,7 +584,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <p>Tryes to make long castling </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">is</td><td>isWhite - True if castling owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if castling owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -679,7 +689,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
-    <tr><td class="paramname">is</td><td>isWhite - True if ply's owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if ply's owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -711,7 +721,9 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
       </table>
 </div>
 <div class="memdoc">
-<p>Make simple ply move  ply's move </p>
+
+<p>Make ply's move. </p>
+<p>Make simple ply move </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pl</td><td>- Ply to do </td></tr>
@@ -753,7 +765,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
-    <tr><td class="paramname">is</td><td>isWhite - True if ply's owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if ply's owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -791,7 +803,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ply</td><td>- Ply to do </td></tr>
-    <tr><td class="paramname">is</td><td>isWhite - True if ply's owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if ply's owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -818,7 +830,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <p>Tryes to make short castling </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">is</td><td>isWhite - True if castling owner is white player. </td></tr>
+    <tr><td class="paramname">isWhite</td><td>- True if castling owner is white player. </td></tr>
   </table>
   </dd>
 </dl>
@@ -935,7 +947,7 @@ You should use the return value very careful. Everytime check is iterator valid.
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 2 2011 23:45:48 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 30 2011 02:06:01 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

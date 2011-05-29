@@ -1,4 +1,4 @@
-.TH "ChEngn::Piece" 3 "Mon May 2 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Piece" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -51,7 +51,7 @@ Chess piece.
 .br
 .RI "\fIGet piece movement flag. \fP"
 .ti -1c
-.RI "void \fBsetType\fP (\fBpiece_type\fP)"
+.RI "void \fBsetType\fP (\fBpiece_type\fP tpe)"
 .br
 .RI "\fISet Piece's type. \fP"
 .ti -1c
@@ -237,7 +237,7 @@ You can only \fBset\fP this flag. You can't change this flag later
 .RE
 .PP
 
-.SS "void ChEngn::Piece::setType (\fBpiece_type\fP)"
+.SS "void ChEngn::Piece::setType (\fBpiece_type\fPtpe)"
 .PP
 Set Piece's type. \fBParameters:\fP
 .RS 4

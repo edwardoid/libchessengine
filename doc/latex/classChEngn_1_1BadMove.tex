@@ -23,11 +23,8 @@ Implements all exception which will be generated ty \hyperlink{classChEngn_1_1En
 \begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
 void \hyperlink{classChEngn_1_1BadMove_a0006497750a3d96218b1dad586f5f8f1}{bindComment} (std::string comm)  throw ()
 \begin{DoxyCompactList}\small\item\em Bind addiotional information to exception;. \item\end{DoxyCompactList}\item 
-\hypertarget{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}{
-void {\bfseries bindNumber} (int num)  throw ()}
-\label{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}
-
-\item 
+void \hyperlink{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}{bindNumber} (int num)  throw ()
+\begin{DoxyCompactList}\small\item\em Bind move number to exception. \item\end{DoxyCompactList}\item 
 \hypertarget{classChEngn_1_1BadMove_a89df0bcb37e85792fd07e253503b4038}{
 std::string \hyperlink{classChEngn_1_1BadMove_a89df0bcb37e85792fd07e253503b4038}{comment} ()  throw ()}
 \label{classChEngn_1_1BadMove_a89df0bcb37e85792fd07e253503b4038}
@@ -41,7 +38,14 @@ virtual const char $\ast$ \hyperlink{classChEngn_1_1BadMove_ae7c3114036a9917a5ae
 
 
 \subsection{Detailed Description}
-Implements all exception which will be generated ty \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} while trying to make move which i sincorrect. 
+Implements all exception which will be generated ty \hyperlink{classChEngn_1_1Engine}{ChEngn::Engine} while trying to make move which i sincorrect. \begin{Desc}
+\item[Examples: ]\par
+
+
+\hyperlink{examples_2main_8cpp-example}{examples/main.cpp}.
+
+\end{Desc}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classChEngn_1_1BadMove_a581052f5203836b164bf25ce6e3e6b7a}{
@@ -87,6 +91,24 @@ Bind addiotional information to exception;.
 
 \begin{DoxyParams}{Parameters}
 {\em comm} & Additional comment \\
+\hline
+\end{DoxyParams}
+\hypertarget{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}{
+\index{ChEngn::BadMove@{ChEngn::BadMove}!bindNumber@{bindNumber}}
+\index{bindNumber@{bindNumber}!ChEngn::BadMove@{ChEngn::BadMove}}
+\subsubsection[{bindNumber}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::BadMove::bindNumber (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classChEngn_1_1BadMove_a1de119e2f1144a0e6906940df02bdaf8}
+
+
+Bind move number to exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Move number \\
 \hline
 \end{DoxyParams}
 

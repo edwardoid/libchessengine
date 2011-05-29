@@ -6,44 +6,35 @@
 	libchessengine - Parse PGN files, make moves from an game in input PGN file, print game, move, table to stream like std::ostream ( for example std::cout )
 					 Uses modified pgnlib for parse PGN files
 
-@section pgnlib Library
+@section _pgnmlib_ Library
 	Compile, decompile chess games from/to *.pgn files.
-	@ref http://en.wikipedia.com/PGN_Notation
+	@see http://en.wikipedia.com/PGN_Notation
 	Uses GNU GPL library. Original source: http://sourceforge.net/projects/pgnlib
 
 @section _inst_ Installation Chess engine
-	@note Install libpgn first (@ref _lpgninst_), then instal libchessengine
-	make <p/>
+	@note Install libpgn first ( @ref _lpgnminst_ ), then install libchessengine:
+	make </p>
 	sudo make install
-	@subsection _lpgninst_ libpgn Installation
+	@subsection _lpgnminst_ libpgnm Installation
 		./configure
 		make
 		sudo make install
 @section Using
 		First @ref _inst_
 		This library can be build as static library and/or shared object
-		@see examples
 
-@example _exs_ libchessengine
+		See examples for more information.
+
+@example examples/main.cpp
 
 @brief First example
 
-@code main.cpp
 
-#include<iostream>
-#include<CEEngine.h>
-int main()
-{
-	ChEngine::Engine engine;
-	engine.open("games.pgn");
-	std::cout<<engine<<std::endl;
-	return 0;
-}
-@endcode
+This example shows howto open pgn file and make all moves for each game from file.
 
-g++ main.cpp -lchessengine -o myapp
+Compile and run:
 
-	or 
+$ make <p>
+$ make run
 
-g++ main.cpp -lchessengine -static -o myapp
 */

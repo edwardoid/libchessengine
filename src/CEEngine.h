@@ -29,7 +29,7 @@
 #include <iostream>
 
 /**
- * @file Provides access to current game. Can make moves, get table state ( Virtual
+ * @file CEEngine.h  Provides access to current game. Can make moves, get table state ( Virtual
  * Table)
  * 
  * @note This class <b>does not</b> manipulate pgn files.
@@ -41,12 +41,6 @@
  */
 namespace ChEngn
 {
-	/**
-	 * @class ChEngn::Engine provides most functionality
-	 * Provides access to current game. Can make moves, get table current state
-	 * (Virtual Table)
-	 * @note This class <b>does not</b> manipulate pgn files.
-	 **/
 
 	 /**
 	  * Every library user will use "Virtual tables". E.g. you get current table
@@ -55,6 +49,14 @@ namespace ChEngn
 	  */
 	typedef ChEngn::Table VirtualTable;
 
+
+	/**
+	 * Provides access to current game. Can make moves, get table current state
+	 * (Virtual Table).
+	 * @class ChEngn::Engine
+	 * @brief Make moves.
+	 * @note This class <b>does not</b> manipulate pgn files.
+	 **/
 	class Engine
 	{
 		public:
@@ -136,7 +138,7 @@ namespace ChEngn
 
 			/**
 			 * Make simple ply move
-			 * @make ply's move
+			 * @brief Make ply's move
 			 * @param pl - Ply to do
 			 * @param isWhite - true if pl is white player's ply
 			 * @return true if successefully, false - otherway.
@@ -165,7 +167,7 @@ namespace ChEngn
 			 * @brief Check horisontal for emptyness
 			 * @param from - source row
 			 * @param to - destination row
-			 * @param row - checking column
+			 * @param column - checking column
 			 * @param table - table to searching
 			 * @return true if vertical is empty, false if there're some figure or
 			 * table is invalid
@@ -178,7 +180,7 @@ namespace ChEngn
 			 * @param fromC - source column
 			 * @param fromR - source row
 			 * @param toC - destination column
-			 * @param roR - destination row
+			 * @param toR - destination row
 			 * @param table - table to searching
 			 * @return true if diagonal is empty, false if there're some figure or
 			 * table is invalid
@@ -221,7 +223,7 @@ namespace ChEngn
 			/** Tryes to make pawn's move)
 			 * @brief Makes pawn's move
 			 * @param ply - Ply to do
-			 * @param is isWhite - True if ply's owner is white player.
+			 * @param isWhite - True if ply's owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */
 			void makePawnPly( const pgn::Ply* ply, bool isWhite);
@@ -229,7 +231,7 @@ namespace ChEngn
 			/** Tryes to make knight's move)
 			 * @brief Makes knight's move
 			 * @param ply - Ply to do
-			 * @param is isWhite - True if ply's owner is white player.
+			 * @param isWhite - True if ply's owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeKnightPly( const pgn::Ply* ply, bool isWhite);
@@ -237,7 +239,7 @@ namespace ChEngn
 			/** Tryes to make bishop's move)
 			 * @brief Makes bishop's move
 			 * @param ply - Ply to do
-			 * @param is isWhite - True if ply's owner is white player.
+			 * @param isWhite - True if ply's owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeBishopPly( const pgn::Ply* ply, bool isWhite);
@@ -245,7 +247,7 @@ namespace ChEngn
 			/** Tryes to make bishop's move)
 			 * @brief Makes bishop's move
 			 * @param ply - Ply to do
-			 * @param is isWhite - True if ply's owner is white player.
+			 * @param isWhite - True if ply's owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeRookPly( const pgn::Ply* ply, bool isWhite);
@@ -253,7 +255,7 @@ namespace ChEngn
 			/** Tryes to make queen's move)
 			 * @brief Makes queen's move
 			 * @param ply - Ply to do
-			 * @param is isWhite - True if ply's owner is white player.
+			 * @param isWhite - True if ply's owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeQueenPly( const pgn::Ply* ply, bool isWhite);
@@ -261,14 +263,14 @@ namespace ChEngn
 			/** Tryes to make king's move)
 			 * @brief Makes kings's move
 			 * @param ply - Ply to do
-			 * @param is isWhite - True if ply's owner is white player.
+			 * @param isWhite - True if ply's owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeKingPly( const pgn::Ply* ply, bool isWhite);
 
 			/** Tryes to make short castling
 			 * @brief Makes short castling move
-			 * @param is isWhite - True if castling  owner is white player.
+			 * @param isWhite - True if castling  owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeShortCastling( bool isWhite);
@@ -276,7 +278,7 @@ namespace ChEngn
 
 			/** Tryes to make long castling
 			 * @brief Makes long castling move
-			 * @param is isWhite - True if castling  owner is white player.
+			 * @param isWhite - True if castling  owner is white player.
 			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
 			 */	
 			void makeLongCastling( bool isWhite);

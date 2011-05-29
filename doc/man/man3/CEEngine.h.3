@@ -1,0 +1,57 @@
+.TH "src/CEEngine.h" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/CEEngine.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'CETable.h'\fP
+.br
+\fC#include <PGNGame.h>\fP
+.br
+\fC#include <PGNMoveList.h>\fP
+.br
+\fC#include <PGNPly.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBChEngn::Engine\fP"
+.br
+.RI "\fIMake moves. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBChEngn\fP"
+.br
+.PP
+
+.RI "\fIContains all typedefs, constants, classes defined in. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBChEngn::Table\fP \fBChEngn::VirtualTable\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides access to current game. Can make moves, get table state ( Virtual Table)
+.PP
+\fBNote:\fP
+.RS 4
+This class \fBdoes not\fP manipulate pgn files. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

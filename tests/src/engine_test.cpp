@@ -7,30 +7,20 @@ double CALC_IN_PERCENTAGE ( double val, double max ) {
 	return ( double )( ( ( val ) * 100 ) / ( max ) );
 };
 
-void TestEngine::test()
+void TestEngine::test_copy_constructor()
 {
 	pgn::File file("tests/collection.pgn");
 	
 	if( file.gamesC().size() > 0 )
 	{
 		ChEngn::Engine engn( file.gamesC()[27] );
-		int i = 1;
-		try{
+		std::cout << engn.moves()->size() << std::endl;
 		
-			while( engn.makeNextMove() )
-			{
-				std::cout << engn << std::endl << * engn.nextMove() << std::endl;
-				++i;
-			}
-		}
-		catch( ChEngn::BadMove e )
+		for( int i = 0; i < 100; i++ )
 		{
-			std::cerr << engn << std::endl;
-			std::cerr << e.what() << "Comment: " << e.comment() << std::endl;
+			ChEngn::Engine copy_engine( engn );
+			std::cout << copy_engine.moves()->size() << std::endl;
 		}
-		std::cout << "From " << engn.moves()->size() << "moves " << i << "moves done! ( "
-				  << CALC_IN_PERCENTAGE( i, engn.moves()->size() ) << "% )\n";
-		std::cout << engn << std::endl;
 	}
 	else
 	{

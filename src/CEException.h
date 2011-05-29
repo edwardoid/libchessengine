@@ -89,6 +89,9 @@ namespace ChEngn
 			 */
 			void bindComment( std::string comm )throw() { m_comm = comm; };
 
+			/** @brief Bind move number to exception
+			 *  @param num Move number
+			 */
 			void bindNumber( int num ) throw() { m_num = num; };
 
 			/**

@@ -43,7 +43,7 @@ namespace ChEngn
 	const unsigned int default_table_width = 8;
 
 	/**
-	 * Provides basic manipulations whis chess table (no matter "virtual" ot
+	 * Provides basic manipulations whis chess table (no matter "virtual" or
 	 * "real". Find ChEngn::Piece, move them.
 	 * @class ChEngn::Table
 	 * @brief Chess board

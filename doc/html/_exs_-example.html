@@ -19,7 +19,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">libchessengine&#160;<span id="projectnumber">0.0.1</span></div>
+   <div id="projectname">libchessengine&#160;<span id="projectnumber">0.2.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -57,21 +57,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>_exs_</h1>  </div>
 </div>
 <div class="contents">
-<p>First example libchessengine</p>
-<div class="fragment"><pre class="fragment"> main.cpp
-
-<span class="preprocessor">#include&lt;iostream&gt;</span>
-<span class="preprocessor">#include&lt;CEEngine.h&gt;</span>
-<span class="keywordtype">int</span> main()
-{
-    ChEngine::Engine engine;
-    engine.open(<span class="stringliteral">&quot;games.pgn&quot;</span>);
-    std::cout&lt;&lt;engine&lt;&lt;std::endl;
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div><p>g++ main.cpp -lchessengine -o myapp</p>
-<p>or</p>
-<p>g++ main.cpp -lchessengine -static -o myapp</p>
+<p>First example examples/main.cpp</p>
+<p>This example shows howto open pgn file and make all moves for each game from file.</p>
+<p>Compile and run:</p>
+<p>$ make </p>
+<p>$ make run</p>
 <div class="fragment"><pre class="fragment"></pre></div> </div>
 </div>
 <!--- window showing the filter options -->
@@ -88,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 2 2011 23:45:48 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 30 2011 01:53:51 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -39,22 +39,21 @@ namespace ChEngn
 {
 
 	/**
-	 * @typedef EnumerationSide
-	 * @enum Defines Enumeration "side", e.g. is Enumeration for white player,
+	 * Defines Enumeration "side", e.g. is Enumeration for white player,
 	 * or not
 	 */
 	enum EnumerationSide
-		{
+	{
 
-			/// Default value
-			UndefinedSide = 0,
+		/// Default value
+		UndefinedSide = 0,
 
-			/// White player's side
-			WhiteSide,
+		/// White player's side
+		WhiteSide,
 
-			/// Black player's side
-			BlackSide 
-		};
+		/// Black player's side
+		BlackSide 
+	};
 
 
 	/**
@@ -78,7 +77,7 @@ namespace ChEngn
 			 * And enumeration deep will be set 0
 			 * And side will be
 			 *
-			 * @Warning:
+			 * @warning:
 			 * 		Enumeration process is hard process, if it's possible use
 			 * 		small values for deep
 			 * @brief Constructor
@@ -88,9 +87,9 @@ namespace ChEngn
 			/**
 			 * Created ChEngn::Enumerator whis given table, side, deepness
 			 * @param table Start position for enumeration
-			 * @param side Enumeration side, default value ChEngn::UndefinedSide
+			 * @param enumSide Enumeration side, default value ChEngn::UndefinedSide
 			 * @param deep Enumeration deep
-			 * @Warning:
+			 * @warning:
 			 * 		Enumeration process is hard process, if it's possible use
 			 * 		small values for deep
 			 *
@@ -115,7 +114,7 @@ namespace ChEngn
 			 * @brief Sets enumeration side
 			 * @param enumSide Enumeration side
 			 */
-			void setSide( EnumerationSide);
+			void setSide( EnumerationSide enumSide );
 	
 			/**
 			 * Return Enumeration deepness

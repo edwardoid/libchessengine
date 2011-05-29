@@ -1,4 +1,4 @@
-.TH "ChEngn::BadMove" 3 "Mon May 2 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::BadMove" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,6 +29,7 @@ Implements all exception which will be generated ty \fBChEngn::Engine\fP while t
 .ti -1c
 .RI "void \fBbindNumber\fP (int num)  throw ()"
 .br
+.RI "\fIBind move number to exception. \fP"
 .ti -1c
 .RI "std::string \fBcomment\fP ()  throw ()"
 .br
@@ -41,6 +42,11 @@ Implements all exception which will be generated ty \fBChEngn::Engine\fP while t
 .SH "Detailed Description"
 .PP 
 Implements all exception which will be generated ty \fBChEngn::Engine\fP while trying to make move which i sincorrect. 
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBexamples/main.cpp\fP.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "ChEngn::BadMove::BadMove (pgn::Plyp, std::stringcomm, intmoveNum = \fC0\fP)  throw ()\fC [inline]\fP"
@@ -62,6 +68,14 @@ constructor \fBParameters:\fP
 Bind addiotional information to exception;. \fBParameters:\fP
 .RS 4
 \fIcomm\fP Additional comment 
+.RE
+.PP
+
+.SS "void ChEngn::BadMove::bindNumber (intnum)  throw ()\fC [inline]\fP"
+.PP
+Bind move number to exception. \fBParameters:\fP
+.RS 4
+\fInum\fP Move number 
 .RE
 .PP
 

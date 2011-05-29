@@ -1,0 +1,45 @@
+\hypertarget{examples_2main_8cpp-example}{
+\section{examples/main.cpp}
+}
+First exampleThis example shows howto open pgn file and make all moves for each game from file.
+
+Compile and run:
+
+\$ make 
+
+\$ make run
+
+
+\begin{DoxyCodeInclude}
+#include <iostream>
+#include <PGNFile.h>
+#include <CEEngine.h>
+#include <CEException.h>
+
+int main()
+{
+    pgn::File file( "myfile.pgn" );
+    
+    for ( int i = 0; i < file.games().size(); i ++ )
+    {
+        ChEngn::Engine engine( file.games()[ i ] );
+        try {
+            while( engine.makeNextHalfMove() )
+            {
+                ;
+            }
+        }
+        catch ( ChEngn::BadMove e )
+        {
+            std::cerr << e.what() << std::endl;
+        }
+        catch( ... )
+        {
+            std::cerr << "Unknown error..." << std::endl;
+        }
+    }
+
+    return 0;
+}
+\end{DoxyCodeInclude}
+ 

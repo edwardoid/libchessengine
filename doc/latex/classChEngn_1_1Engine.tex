@@ -2,6 +2,15 @@
 \section{ChEngn::Engine Class Reference}
 \label{classChEngn_1_1Engine}\index{ChEngn::Engine@{ChEngn::Engine}}
 }
+
+
+Make moves.  
+
+
+
+
+{\ttfamily \#include $<$CEEngine.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +41,7 @@ bool \hyperlink{classChEngn_1_1Engine_ab9f6f3cbf3e7866887b049f61f9ce46b}{makeNex
 bool \hyperlink{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{makeMove} (pgn::Move \&move)
 \begin{DoxyCompactList}\small\item\em Make move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly} (const pgn::Ply $\ast$pl, bool isWhite)
-\item 
+\begin{DoxyCompactList}\small\item\em Make ply's move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a743f59a5351f46d39888ca50b7329920}{moveAndCheckForCheck} (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const 
 \begin{DoxyCompactList}\small\item\em Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{ChEngn::king} and checks is new position check position for given player. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -78,9 +87,18 @@ std::ostream \& \hyperlink{classChEngn_1_1Engine_a886da6512b271d26a1fee49a317d23
 
 
 \subsection{Detailed Description}
-functionality Provides access to current game. Can make moves, get table current state (Virtual \hyperlink{classChEngn_1_1Table}{Table}) \begin{DoxyNote}{Note}
+Make moves. Provides access to current game. Can make moves, get table current state (Virtual \hyperlink{classChEngn_1_1Table}{Table}).
+
+\begin{DoxyNote}{Note}
 This class {\bfseries does not} manipulate pgn files. 
 \end{DoxyNote}
+\begin{Desc}
+\item[Examples: ]\par
+
+
+\hyperlink{examples_2main_8cpp-example}{examples/main.cpp}.
+
+\end{Desc}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -148,7 +166,7 @@ Checks for emptyness given diagonal. (from .... to)
 \hline
 {\em toC} & -\/ destination column \\
 \hline
-{\em roR} & -\/ destination row \\
+{\em toR} & -\/ destination row \\
 \hline
 {\em table} & -\/ table to searching \\
 \hline
@@ -208,7 +226,7 @@ Checks for emptyness given vertical. (from .... to)
 \hline
 {\em to} & -\/ destination row \\
 \hline
-{\em row} & -\/ checking column \\
+{\em column} & -\/ checking column \\
 \hline
 {\em table} & -\/ table to searching \\
 \hline
@@ -291,7 +309,7 @@ Tryes to make bishop's move)
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
-{\em is} & isWhite -\/ True if ply's owner is white player. \\
+{\em isWhite} & -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -315,7 +333,7 @@ Tryes to make king's move)
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
-{\em is} & isWhite -\/ True if ply's owner is white player. \\
+{\em isWhite} & -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -339,7 +357,7 @@ Tryes to make knight's move)
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
-{\em is} & isWhite -\/ True if ply's owner is white player. \\
+{\em isWhite} & -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -360,7 +378,7 @@ Makes long castling move.
 
 Tryes to make long castling 
 \begin{DoxyParams}{Parameters}
-{\em is} & isWhite -\/ True if castling owner is white player. \\
+{\em isWhite} & -\/ True if castling owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -437,7 +455,7 @@ Tryes to make pawn's move)
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
-{\em is} & isWhite -\/ True if ply's owner is white player. \\
+{\em isWhite} & -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -453,7 +471,11 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}
-Make simple ply move  ply's move 
+
+
+Make ply's move. 
+
+Make simple ply move 
 \begin{DoxyParams}{Parameters}
 {\em pl} & -\/ Ply to do \\
 \hline
@@ -481,7 +503,7 @@ Tryes to make queen's move)
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
-{\em is} & isWhite -\/ True if ply's owner is white player. \\
+{\em isWhite} & -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -505,7 +527,7 @@ Tryes to make bishop's move)
 \begin{DoxyParams}{Parameters}
 {\em ply} & -\/ Ply to do \\
 \hline
-{\em is} & isWhite -\/ True if ply's owner is white player. \\
+{\em isWhite} & -\/ True if ply's owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -526,7 +548,7 @@ Makes short castling move.
 
 Tryes to make short castling 
 \begin{DoxyParams}{Parameters}
-{\em is} & isWhite -\/ True if castling owner is white player. \\
+{\em isWhite} & -\/ True if castling owner is white player. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
@@ -615,4 +637,4 @@ You should use the return value very careful. Everytime check is iterator valid.
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-src/CEEngine.h\end{DoxyCompactItemize}
+src/\hyperlink{CEEngine_8h}{CEEngine.h}\end{DoxyCompactItemize}

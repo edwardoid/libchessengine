@@ -1,4 +1,4 @@
-.TH "ChEngn::Enumerator" 3 "Mon May 2 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Enumerator" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,7 +31,7 @@ Enumerate possibile moves.
 .br
 .RI "\fIInitialize start position. \fP"
 .ti -1c
-.RI "void \fBsetSide\fP (\fBEnumerationSide\fP)"
+.RI "void \fBsetSide\fP (\fBEnumerationSide\fP enumSide)"
 .br
 .RI "\fISets enumeration side. \fP"
 .ti -1c
@@ -65,7 +65,12 @@ Constructor. Default constructor creates \fBChEngn::Enumerator\fP whithout \fBCh
 .PP
 And enumeration deep will be set 0 And side will be
 .PP
+\fBWarning:\fP
+.RS 4
 : Enumeration process is hard process, if it's possible use small values for deep 
+.RE
+.PP
+
 .SS "ChEngn::Enumerator::Enumerator (const \fBTable\fP &table, \fBEnumerationSide\fPenumSide = \fCUndefinedSide\fP, unsigned shortdeep = \fC2\fP)"
 .PP
 Custom constructor. Created \fBChEngn::Enumerator\fP whis given table, side, deepness 
@@ -74,9 +79,14 @@ Custom constructor. Created \fBChEngn::Enumerator\fP whis given table, side, dee
 .RS 4
 \fItable\fP Start position for enumeration 
 .br
-\fIside\fP Enumeration side, default value \fBChEngn::UndefinedSide\fP 
+\fIenumSide\fP Enumeration side, default value \fBChEngn::UndefinedSide\fP 
 .br
-\fIdeep\fP Enumeration deep : Enumeration process is hard process, if it's possible use small values for deep 
+\fIdeep\fP Enumeration deep 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+: Enumeration process is hard process, if it's possible use small values for deep 
 .RE
 .PP
 
@@ -100,7 +110,7 @@ Sets enumeration deepness. Set enumeration deepness
 .RE
 .PP
 
-.SS "void ChEngn::Enumerator::setSide (\fBEnumerationSide\fP)"
+.SS "void ChEngn::Enumerator::setSide (\fBEnumerationSide\fPenumSide)"
 .PP
 Sets enumeration side. Sets enumeration side 
 .PP

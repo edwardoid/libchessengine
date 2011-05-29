@@ -19,7 +19,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">libchessengine&#160;<span id="projectnumber">0.0.1</span></div>
+   <div id="projectname">libchessengine&#160;<span id="projectnumber">0.2.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="ChEngn::BadMove" -->
-<p>Implements all exception which will be generated ty <a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a> while trying to make move which i sincorrect.  
+<p>Implements all exception which will be generated ty <a class="el" href="classChEngn_1_1Engine.html" title="Make moves.">ChEngn::Engine</a> while trying to make move which i sincorrect.  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CEException_8h_source.html">CEException.h</a>&gt;</code></p>
@@ -89,8 +89,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a0006497750a3d96218b1dad586f5f8f1">bindComment</a> (std::string comm)  throw ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind addiotional information to exception;.  <a href="#a0006497750a3d96218b1dad586f5f8f1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1de119e2f1144a0e6906940df02bdaf8"></a><!-- doxytag: member="ChEngn::BadMove::bindNumber" ref="a1de119e2f1144a0e6906940df02bdaf8" args="(int num)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>bindNumber</b> (int num)  throw ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a1de119e2f1144a0e6906940df02bdaf8">bindNumber</a> (int num)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind move number to exception.  <a href="#a1de119e2f1144a0e6906940df02bdaf8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89df0bcb37e85792fd07e253503b4038"></a><!-- doxytag: member="ChEngn::BadMove::comment" ref="a89df0bcb37e85792fd07e253503b4038" args="()" -->
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038">comment</a> ()  throw ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get binded information. <br/></td></tr>
@@ -99,8 +99,11 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic information about given exception. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implements all exception which will be generated ty <a class="el" href="classChEngn_1_1Engine.html">ChEngn::Engine</a> while trying to make move which i sincorrect. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Implements all exception which will be generated ty <a class="el" href="classChEngn_1_1Engine.html" title="Make moves.">ChEngn::Engine</a> while trying to make move which i sincorrect. </p>
+<dl><dt><b>Examples: </b></dt><dd>
+<p><a class="el" href="examples_2main_8cpp-example.html#_a1">examples/main.cpp</a>.</p>
+</dd>
+</dl></div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a581052f5203836b164bf25ce6e3e6b7a"></a><!-- doxytag: member="ChEngn::BadMove::BadMove" ref="a581052f5203836b164bf25ce6e3e6b7a" args="(pgn::Ply p, std::string comm, int moveNum=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -170,6 +173,31 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
+<a class="anchor" id="a1de119e2f1144a0e6906940df02bdaf8"></a><!-- doxytag: member="ChEngn::BadMove::bindNumber" ref="a1de119e2f1144a0e6906940df02bdaf8" args="(int num)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChEngn::BadMove::bindNumber </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td>  throw ()<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Bind move number to exception. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>Move number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="CEException_8h_source.html">CEException.h</a></li>
 </ul>
@@ -188,7 +216,7 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 2 2011 23:45:48 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 30 2011 02:06:01 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

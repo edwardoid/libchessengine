@@ -164,7 +164,7 @@ namespace ChEngn
 			 * @brief Set Piece's type
 			 * @param tpe - New piece's type
 			 */
-			void setType(piece_type);
+			void setType(piece_type tpe);
 			
 			/**
 			 * @brief Changes piece's color to white

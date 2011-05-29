@@ -1,4 +1,4 @@
-.TH "ChEngn" 3 "Mon May 2 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,6 +15,7 @@ Contains all typedefs, constants, classes defined in.
 .ti -1c
 .RI "class \fBEngine\fP"
 .br
+.RI "\fIMake moves. \fP"
 .ti -1c
 .RI "class \fBEnumerator\fP"
 .br
@@ -134,7 +135,7 @@ Contains all typedefs, constans, classes defined in libchessengine
 .SS "typedef \fBChEngn::Table\fP \fBChEngn::VirtualTable\fP"Every library user will use 'Virtual tables'. E.g. you get current table state, and then you can make changes, but all your changes will not change real table. 
 .SH "Enumeration Type Documentation"
 .PP 
-.SS "enum \fBChEngn::EnumerationSide\fP"
+.SS "enum \fBChEngn::EnumerationSide\fP"Defines Enumeration 'side', e.g. is Enumeration for white player, or not 
 .PP
 \fBEnumerator: \fP
 .in +1c

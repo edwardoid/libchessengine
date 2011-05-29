@@ -1,11 +1,16 @@
-.TH "ChEngn::Engine" 3 "Mon May 2 2011" "Version 0.0.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Engine" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 ChEngn::Engine \- 
+.PP
+Make moves.  
+
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <CEEngine.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
@@ -52,6 +57,7 @@ ChEngn::Engine \-
 .ti -1c
 .RI "bool \fBmakePly\fP (const pgn::Ply *pl, bool isWhite)"
 .br
+.RI "\fIMake ply's move. \fP"
 .ti -1c
 .RI "bool \fBmoveAndCheckForCheck\fP (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const "
 .br
@@ -126,7 +132,9 @@ ChEngn::Engine \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-functionality Provides access to current game. Can make moves, get table current state (Virtual \fBTable\fP) 
+Make moves. 
+
+Provides access to current game. Can make moves, get table current state (Virtual \fBTable\fP).
 .PP
 \fBNote:\fP
 .RS 4
@@ -134,6 +142,11 @@ This class \fBdoes not\fP manipulate pgn files.
 .RE
 .PP
 
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBexamples/main.cpp\fP.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "ChEngn::Engine::Engine (const \fBEngine\fP &other)"
@@ -168,7 +181,7 @@ Check horisontal for emptyness. Checks for emptyness given diagonal. (from .... 
 .br
 \fItoC\fP - destination column 
 .br
-\fIroR\fP - destination row 
+\fItoR\fP - destination row 
 .br
 \fItable\fP - table to searching 
 .RE
@@ -210,7 +223,7 @@ Check horisontal for emptyness. Checks for emptyness given vertical. (from .... 
 .br
 \fIto\fP - destination row 
 .br
-\fIrow\fP - checking column 
+\fIcolumn\fP - checking column 
 .br
 \fItable\fP - table to searching 
 .RE
@@ -267,7 +280,7 @@ Makes bishop's move. Tryes to make bishop's move)
 .RS 4
 \fIply\fP - Ply to do 
 .br
-\fIis\fP isWhite - True if ply's owner is white player. 
+\fIisWhite\fP - True if ply's owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -284,7 +297,7 @@ Makes kings's move. Tryes to make king's move)
 .RS 4
 \fIply\fP - Ply to do 
 .br
-\fIis\fP isWhite - True if ply's owner is white player. 
+\fIisWhite\fP - True if ply's owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -301,7 +314,7 @@ Makes knight's move. Tryes to make knight's move)
 .RS 4
 \fIply\fP - Ply to do 
 .br
-\fIis\fP isWhite - True if ply's owner is white player. 
+\fIisWhite\fP - True if ply's owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -316,7 +329,7 @@ Makes long castling move. Tryes to make long castling
 .PP
 \fBParameters:\fP
 .RS 4
-\fIis\fP isWhite - True if castling owner is white player. 
+\fIisWhite\fP - True if castling owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -368,7 +381,7 @@ Makes pawn's move. Tryes to make pawn's move)
 .RS 4
 \fIply\fP - Ply to do 
 .br
-\fIis\fP isWhite - True if ply's owner is white player. 
+\fIisWhite\fP - True if ply's owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -377,7 +390,9 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makePly (const pgn::Ply *pl, boolisWhite)"Make simple ply move  ply's move 
+.SS "bool ChEngn::Engine::makePly (const pgn::Ply *pl, boolisWhite)"
+.PP
+Make ply's move. Make simple ply move 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -400,7 +415,7 @@ Makes queen's move. Tryes to make queen's move)
 .RS 4
 \fIply\fP - Ply to do 
 .br
-\fIis\fP isWhite - True if ply's owner is white player. 
+\fIisWhite\fP - True if ply's owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -417,7 +432,7 @@ Makes bishop's move. Tryes to make bishop's move)
 .RS 4
 \fIply\fP - Ply to do 
 .br
-\fIis\fP isWhite - True if ply's owner is white player. 
+\fIisWhite\fP - True if ply's owner is white player. 
 .RE
 .PP
 \fBWarning:\fP
@@ -432,7 +447,7 @@ Makes short castling move. Tryes to make short castling
 .PP
 \fBParameters:\fP
 .RS 4
-\fIis\fP isWhite - True if castling owner is white player. 
+\fIisWhite\fP - True if castling owner is white player. 
 .RE
 .PP
 \fBWarning:\fP

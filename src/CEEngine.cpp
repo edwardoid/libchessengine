@@ -31,9 +31,11 @@ ChEngn::Engine::Engine()
 	m_currentMoveIt = m_moves.begin();
 }
 
-ChEngn::Engine::Engine(const Engine &other)
+ChEngn::Engine::Engine(const ChEngn::Engine &other)
 {
 	m_halfMove = false;
+	(other.moves());
+	m_currentMoveIt = m_moves.begin();
 }
 
 ChEngn::Engine::Engine(const pgn::Game &gm)
