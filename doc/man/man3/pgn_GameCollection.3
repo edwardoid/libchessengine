@@ -1,0 +1,208 @@
+.TH "pgn::GameCollection" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::GameCollection \- 
+.PP
+Stores a collection of \fBpgn::Game\fP.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PGNGameCollection.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.RI "\fIInstrument for safe iteration in \fBpgn::GameCollection\fP. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGameCollection\fP ()"
+.br
+.RI "\fICostructs empty collection. \fP"
+.ti -1c
+.RI "\fBGameCollection\fP (const \fBGameCollection\fP &src)"
+.br
+.RI "\fIConstructs copy of given collection. \fP"
+.ti -1c
+.RI "virtual \fB~GameCollection\fP ()"
+.br
+.RI "\fIClears collection. \fP"
+.ti -1c
+.RI "\fBGameCollection\fP & \fBoperator=\fP (const \fBGameCollection\fP &src)"
+.br
+.RI "\fICopies to given collection to current collection. Works like copy constructor. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBGameCollection\fP &src) const "
+.br
+.RI "\fICompares 2 collections. Collections are equal if each game from source at position \fIi\fP is equal to currect golelctions game at same position. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBGameCollection\fP &src) const "
+.br
+.RI "\fINegative variant of pgn::GameCollection::operator==. \fP"
+.ti -1c
+.RI "virtual \fBGame\fP \fBoperator[]\fP (const int idx) const "
+.br
+.RI "\fIReturns game at given position. \fP"
+.ti -1c
+.RI "void \fBinsert\fP (const \fBTag\fP &src)"
+.br
+.ti -1c
+.RI "void \fBerase\fP (const \fBTag\fP &src)"
+.br
+.ti -1c
+.RI "void \fBsort\fP (const \fBTag\fP &key)"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (const \fBGame\fP &src)"
+.br
+.RI "\fIInserts game to collection. \fP"
+.ti -1c
+.RI "void \fBerase\fP (const \fBGame\fP &src)"
+.br
+.RI "\fIRemoves all games from list which are equal with given. \fP"
+.ti -1c
+.RI "int \fBsize\fP () const "
+.br
+.RI "\fIGet list's size. \fP"
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIremoves all games from list. \fP"
+.ti -1c
+.RI "\fBiterator\fP \fBbegin\fP ()"
+.br
+.RI "\fIGet iterator to first game in list. \fP"
+.ti -1c
+.RI "\fBiterator\fP \fBend\fP ()"
+.br
+.RI "\fIGet iterator positioned \fBafter\fB last game in list. \fP\fP\fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.RI "\fISimple iterator. See more \fBpgn::GameCollection::iterator\fP. \fP"
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBGameCollection\fP &src)"
+.br
+.RI "\fIPrints all games from list to given stream. \fP"
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, \fBGameCollection\fP &src)"
+.br
+.RI "\fIRead text from given stream and tryes to parse and extract game from it. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Stores a collection of \fBpgn::Game\fP. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::GameCollection::GameCollection (const \fBGameCollection\fP &src)"
+.PP
+Constructs copy of given collection. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source collection 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void pgn::GameCollection::erase (const \fBGame\fP &src)"
+.PP
+Removes all games from list which are equal with given. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Remove game. 
+.RE
+.PP
+
+.SS "void pgn::GameCollection::insert (const \fBGame\fP &src)"
+.PP
+Inserts game to collection. \fBParameters:\fP
+.RS 4
+\fIsrc\fP \fBGame\fP for insertion. 
+.RE
+.PP
+
+.SS "bool pgn::GameCollection::operator!= (const \fBGameCollection\fP &src) const"
+.PP
+Negative variant of pgn::GameCollection::operator==. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Collection with which must be compaired current collection. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+(! operator==( const GameCollection &src ) ); 
+.RE
+.PP
+
+.SS "bool pgn::GameCollection::operator== (const \fBGameCollection\fP &src) const"
+.PP
+Compares 2 collections. Collections are equal if each game from source at position \fIi\fP is equal to currect golelctions game at same position. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Collection with which must be compaired current collection. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+pgn::Game::operator==( const Game& ). 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if collections are equal, false — otherway. 
+.RE
+.PP
+
+.SS "virtual \fBGame\fP pgn::GameCollection::operator[] (const intidx) const\fC [virtual]\fP"
+.PP
+Returns game at given position. \fBParameters:\fP
+.RS 4
+\fIinx\fP Position of game. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBGame\fP at potion \fIinx\fP. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBGameCollection\fP &src)\fC [friend]\fP"
+.PP
+Prints all games from list to given stream. \fBSee also:\fP
+.RS 4
+pgn::Game::operator<<( std::ostream, const Game ). 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIos\fP Stream-printer. 
+.br
+\fIsrc\fP Games list to print. 
+.RE
+.PP
+
+.SS "std::istream& operator>> (std::istream &is, \fBGameCollection\fP &src)\fC [friend]\fP"
+.PP
+Read text from given stream and tryes to parse and extract game from it. \fBParameters:\fP
+.RS 4
+\fIis\fP Input stream. 
+.br
+\fIsrc\fP Games Container. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

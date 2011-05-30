@@ -1,0 +1,112 @@
+\hypertarget{classpgn_1_1parse__exception}{
+\section{pgn::parse\_\-exception Class Reference}
+\label{classpgn_1_1parse__exception}\index{pgn::parse\_\-exception@{pgn::parse\_\-exception}}
+}
+
+
+Represents exceptions which must be throwed on parsing.  
+
+
+
+
+{\ttfamily \#include $<$PGNException.h$>$}
+
+Inheritance diagram for pgn::parse\_\-exception:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.893855cm]{classpgn_1_1parse__exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpgn_1_1parse__exception_a7bae04deaf606dd6988cfefa933b7101}{parse\_\-exception} (const std::string \&message)  throw ()
+\begin{DoxyCompactList}\small\item\em Represents parse exception with given message. \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1parse__exception_aaf1aa4e8c2a2eaf549ba766b94b13fb2}{bindParsingText} (const std::string \&parsingtext)  throw ()
+\begin{DoxyCompactList}\small\item\em Sets text which is wrong. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classpgn_1_1parse__exception_abfdb03d89f8b9f5460cbdc83c82f177a}{parsing\_\-text} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Gets text which is wrong. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classpgn_1_1parse__exception_a6b9a11cd8e08364f76d073891407ea41}{what} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Gets additional information about exception. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents exceptions which must be throwed on parsing. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1parse__exception_a7bae04deaf606dd6988cfefa933b7101}{
+\index{pgn::parse\_\-exception@{pgn::parse\_\-exception}!parse\_\-exception@{parse\_\-exception}}
+\index{parse\_\-exception@{parse\_\-exception}!pgn::parse_exception@{pgn::parse\_\-exception}}
+\subsubsection[{parse\_\-exception}]{\setlength{\rightskip}{0pt plus 5cm}pgn::parse\_\-exception::parse\_\-exception (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{message}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classpgn_1_1parse__exception_a7bae04deaf606dd6988cfefa933b7101}
+
+
+Represents parse exception with given message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Text message, description of error. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1parse__exception_aaf1aa4e8c2a2eaf549ba766b94b13fb2}{
+\index{pgn::parse\_\-exception@{pgn::parse\_\-exception}!bindParsingText@{bindParsingText}}
+\index{bindParsingText@{bindParsingText}!pgn::parse_exception@{pgn::parse\_\-exception}}
+\subsubsection[{bindParsingText}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::parse\_\-exception::bindParsingText (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{parsingtext}
+\end{DoxyParamCaption}
+)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classpgn_1_1parse__exception_aaf1aa4e8c2a2eaf549ba766b94b13fb2}
+
+
+Sets text which is wrong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsingtext} & Wrong text from PGN file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1parse__exception_abfdb03d89f8b9f5460cbdc83c82f177a}{
+\index{pgn::parse\_\-exception@{pgn::parse\_\-exception}!parsing\_\-text@{parsing\_\-text}}
+\index{parsing\_\-text@{parsing\_\-text}!pgn::parse_exception@{pgn::parse\_\-exception}}
+\subsubsection[{parsing\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ pgn::parse\_\-exception::parsing\_\-text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classpgn_1_1parse__exception_abfdb03d89f8b9f5460cbdc83c82f177a}
+
+
+Gets text which is wrong. 
+
+\begin{DoxyReturn}{Returns}
+Wrong text fomr PGN file. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1parse__exception_a6b9a11cd8e08364f76d073891407ea41}{
+\index{pgn::parse\_\-exception@{pgn::parse\_\-exception}!what@{what}}
+\index{what@{what}!pgn::parse_exception@{pgn::parse\_\-exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ pgn::parse\_\-exception::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classpgn_1_1parse__exception_a6b9a11cd8e08364f76d073891407ea41}
+
+
+Gets additional information about exception. 
+
+\begin{DoxyReturn}{Returns}
+Additional information. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libpgnm/src/PGNException.h\end{DoxyCompactItemize}

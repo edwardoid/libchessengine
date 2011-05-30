@@ -1,0 +1,78 @@
+.TH "pgn::parse_exception" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::parse_exception \- 
+.PP
+Represents exceptions which must be throwed on parsing.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PGNException.h>\fP
+.PP
+Inherited by \fBpgn::invalid_castle_string\fP, \fBpgn::invalid_ply_text\fP, \fBpgn::invalid_result\fP, \fBpgn::invalid_tag\fP, \fBpgn::missing_result\fP, \fBpgn::unsupported_glyphs\fP, and \fBpgn::unsupported_variations\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse_exception\fP (const std::string &message)  throw ()"
+.br
+.RI "\fIRepresents parse exception with given message. \fP"
+.ti -1c
+.RI "void \fBbindParsingText\fP (const std::string &parsingtext)  throw ()"
+.br
+.RI "\fISets text which is wrong. \fP"
+.ti -1c
+.RI "const char * \fBparsing_text\fP () const   throw ()"
+.br
+.RI "\fIGets text which is wrong. \fP"
+.ti -1c
+.RI "virtual const char * \fBwhat\fP () const   throw ()"
+.br
+.RI "\fIGets additional information about exception. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents exceptions which must be throwed on parsing. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::parse_exception::parse_exception (const std::string &message)  throw ()\fC [inline]\fP"
+.PP
+Represents parse exception with given message. \fBParameters:\fP
+.RS 4
+\fImessage\fP Text message, description of error. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void pgn::parse_exception::bindParsingText (const std::string &parsingtext)  throw ()\fC [inline]\fP"
+.PP
+Sets text which is wrong. \fBParameters:\fP
+.RS 4
+\fIparsingtext\fP Wrong text from PGN file. 
+.RE
+.PP
+
+.SS "const char* pgn::parse_exception::parsing_text () const  throw ()\fC [inline]\fP"
+.PP
+Gets text which is wrong. \fBReturns:\fP
+.RS 4
+Wrong text fomr PGN file. 
+.RE
+.PP
+
+.SS "virtual const char* pgn::parse_exception::what () const  throw ()\fC [inline, virtual]\fP"
+.PP
+Gets additional information about exception. \fBReturns:\fP
+.RS 4
+Additional information. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

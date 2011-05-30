@@ -1,0 +1,61 @@
+.TH "pgn::Parser" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::Parser \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBgetGameCollection\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, \fBpgn::GameCollection\fP &out)"
+.br
+.ti -1c
+.RI "\fBpgn::Game\fP * \fBgetGame\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2)"
+.br
+.ti -1c
+.RI "bool \fBgetMoveList\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, \fBpgn::MoveList\fP &out)"
+.br
+.ti -1c
+.RI "\fBpgn::Move\fP * \fBgetMove\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2)"
+.br
+.ti -1c
+.RI "\fBpgn::Ply\fP * \fBgetPly\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2)"
+.br
+.ti -1c
+.RI "bool \fBgetTagList\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, \fBpgn::TagList\fP &out)"
+.br
+.ti -1c
+.RI "bool \fBgetTag\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, \fBpgn::Tag\fP &out)"
+.br
+.ti -1c
+.RI "bool \fBgetGameResult\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, \fBpgn::GameResult\fP &out)"
+.br
+.ti -1c
+.RI "bool \fBgetComment\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, \fBpgn::CommentText\fP &out)"
+.br
+.ti -1c
+.RI "bool \fBgetMoveNumber\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2, std::string &out, int &dotsCount)"
+.br
+.ti -1c
+.RI "void \fBcheckForVariations\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2)"
+.br
+.ti -1c
+.RI "void \fBcheckForGlyphs\fP (std::string::const_iterator &itr1, const std::string::const_iterator &itr2)"
+.br
+.ti -1c
+.RI "unsigned long \fBplyCount\fP () const "
+.br
+.ti -1c
+.RI "unsigned long \fBmoveCount\fP () const "
+.br
+.ti -1c
+.RI "unsigned long \fBgameCount\fP () const "
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

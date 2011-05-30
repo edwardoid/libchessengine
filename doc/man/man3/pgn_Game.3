@@ -1,0 +1,62 @@
+.TH "pgn::Game" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::Game \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGame\fP (const \fBTagList\fP &tl, const \fBMoveList\fP &ml, const \fBGameResult\fP &gr)"
+.br
+.ti -1c
+.RI "\fBGame\fP (const \fBGame\fP &src)"
+.br
+.ti -1c
+.RI "\fBGame\fP & \fBoperator=\fP (const \fBGame\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBGame\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBGame\fP &src) const "
+.br
+.ti -1c
+.RI "\fBTagList\fP & \fBtags\fP () const "
+.br
+.ti -1c
+.RI "\fBMoveList\fP & \fBmoves\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBdate\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBwhite\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBblack\fP () const "
+.br
+.ti -1c
+.RI "\fBGameResult\fP \fBresult\fP () const "
+.br
+.ti -1c
+.RI "void \fBbindBeforeGameComment\fP (const \fBCommentText\fP &ct)"
+.br
+.ti -1c
+.RI "void \fBbindAfterGameComment\fP (const \fBCommentText\fP &ct)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBGame\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

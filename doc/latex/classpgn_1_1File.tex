@@ -1,0 +1,171 @@
+\hypertarget{classpgn_1_1File}{
+\section{pgn::File Class Reference}
+\label{classpgn_1_1File}\index{pgn::File@{pgn::File}}
+}
+
+
+Opens and extract games from PGN file and/or compile \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection} fo file.  
+
+
+
+
+{\ttfamily \#include $<$PGNFile.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgn_1_1File_ae1c405e1012bb88a57368e0568b35848}{
+\hyperlink{classpgn_1_1File_ae1c405e1012bb88a57368e0568b35848}{File} ()}
+\label{classpgn_1_1File_ae1c405e1012bb88a57368e0568b35848}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1File_ae56a13f22bd4a526e2fa01021822b90f}{
+\hyperlink{classpgn_1_1File_ae56a13f22bd4a526e2fa01021822b90f}{File} (const \hyperlink{classpgn_1_1File}{File} \&other)}
+\label{classpgn_1_1File_ae56a13f22bd4a526e2fa01021822b90f}
+
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1File_a1eb1b99828881fa94d69ddae6c3bbc41}{File} (const std::string fileName)
+\begin{DoxyCompactList}\small\item\em tryes to open given file and extract games from it. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1File_a7bc1d544b41893f46bed8a3d027b8328}{File} (const char $\ast$fileName)
+\begin{DoxyCompactList}\small\item\em tryes to open given file and extract games from it. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1File_a69fd6e6d95f8bcff3ead7347232e347b}{
+\hyperlink{classpgn_1_1File_a69fd6e6d95f8bcff3ead7347232e347b}{File} (const \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection} \&otherGameCollection)}
+\label{classpgn_1_1File_a69fd6e6d95f8bcff3ead7347232e347b}
+
+\begin{DoxyCompactList}\small\item\em Constructs object to compile givens games to file. \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1File_a65640d8264639b0dc36f9def9f70857c}{loadFile} (std::string fileName)
+\begin{DoxyCompactList}\small\item\em Tryes to load given file, and extract games from it. \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1File_a1258aa5503f4c1fc9f7f4cbea089d441}{loadFile} (const char $\ast$fileName)
+\begin{DoxyCompactList}\small\item\em Tryes to load given file, and extract games from it. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection}{GameCollection} \& \hyperlink{classpgn_1_1File_ae81effcddf6d9cc6693aff0c26d846fe}{games} ()
+\begin{DoxyCompactList}\small\item\em Get extracted games. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection}{GameCollection} \hyperlink{classpgn_1_1File_a754d1e7edb38225f8c154c1de10de61f}{gamesC} () const 
+\begin{DoxyCompactList}\small\item\em Get extracted games. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Opens and extract games from PGN file and/or compile \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection} fo file. \begin{Desc}
+\item[Examples: ]\par
+
+
+\hyperlink{examples_2main_8cpp-example}{examples/main.cpp}.
+
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1File_a1eb1b99828881fa94d69ddae6c3bbc41}{
+\index{pgn::File@{pgn::File}!File@{File}}
+\index{File@{File}!pgn::File@{pgn::File}}
+\subsubsection[{File}]{\setlength{\rightskip}{0pt plus 5cm}pgn::File::File (
+\begin{DoxyParamCaption}
+\item[{const std::string}]{fileName}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1File_a1eb1b99828881fa94d69ddae6c3bbc41}
+
+
+tryes to open given file and extract games from it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fileName} & Path to opening file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1File_a7bc1d544b41893f46bed8a3d027b8328}{
+\index{pgn::File@{pgn::File}!File@{File}}
+\index{File@{File}!pgn::File@{pgn::File}}
+\subsubsection[{File}]{\setlength{\rightskip}{0pt plus 5cm}pgn::File::File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fileName}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1File_a7bc1d544b41893f46bed8a3d027b8328}
+
+
+tryes to open given file and extract games from it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fileName} & Path to opening file. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1File_ae81effcddf6d9cc6693aff0c26d846fe}{
+\index{pgn::File@{pgn::File}!games@{games}}
+\index{games@{games}!pgn::File@{pgn::File}}
+\subsubsection[{games}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GameCollection}\& pgn::File::games (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1File_ae81effcddf6d9cc6693aff0c26d846fe}
+
+
+Get extracted games. 
+
+\begin{DoxyReturn}{Returns}
+Extracted games. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples: ]\par
+\hyperlink{examples_2main_8cpp-example}{examples/main.cpp}.\end{Desc}
+\hypertarget{classpgn_1_1File_a754d1e7edb38225f8c154c1de10de61f}{
+\index{pgn::File@{pgn::File}!gamesC@{gamesC}}
+\index{gamesC@{gamesC}!pgn::File@{pgn::File}}
+\subsubsection[{gamesC}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GameCollection} pgn::File::gamesC (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1File_a754d1e7edb38225f8c154c1de10de61f}
+
+
+Get extracted games. 
+
+Same as \hyperlink{classpgn_1_1File_ae81effcddf6d9cc6693aff0c26d846fe}{pgn::File::games()} \begin{DoxyReturn}{Returns}
+Extracted games. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1File_a65640d8264639b0dc36f9def9f70857c}{
+\index{pgn::File@{pgn::File}!loadFile@{loadFile}}
+\index{loadFile@{loadFile}!pgn::File@{pgn::File}}
+\subsubsection[{loadFile}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::File::loadFile (
+\begin{DoxyParamCaption}
+\item[{std::string}]{fileName}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1File_a65640d8264639b0dc36f9def9f70857c}
+
+
+Tryes to load given file, and extract games from it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fileName} & Path to opening file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1File_a1258aa5503f4c1fc9f7f4cbea089d441}{
+\index{pgn::File@{pgn::File}!loadFile@{loadFile}}
+\index{loadFile@{loadFile}!pgn::File@{pgn::File}}
+\subsubsection[{loadFile}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::File::loadFile (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fileName}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1File_a1258aa5503f4c1fc9f7f4cbea089d441}
+
+
+Tryes to load given file, and extract games from it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fileName} & Path to opening file. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libpgnm/src/PGNFile.h\end{DoxyCompactItemize}

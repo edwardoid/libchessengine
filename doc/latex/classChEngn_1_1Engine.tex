@@ -21,7 +21,7 @@ Make moves.
 \begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Engine_ab92c015fc819dc2b7c51cccbc7878002}{Engine} (const \hyperlink{classChEngn_1_1Engine}{Engine} \&other)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
-\hyperlink{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}{Engine} (const pgn::Game \&gm)
+\hyperlink{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}{Engine} (const \hyperlink{classpgn_1_1Game}{pgn::Game} \&gm)
 \begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
 \hypertarget{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}{
 \hyperlink{classChEngn_1_1Engine_a8c4cadb1d68d9f3f9ad5ca03d3353a34}{$\sim$Engine} ()}
@@ -30,19 +30,19 @@ Make moves.
 \begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
 \hyperlink{classChEngn_1_1Table}{VirtualTable} \hyperlink{classChEngn_1_1Engine_a26f8db48e99d547fbc41eaa9dca8e6cf}{getVirtualTable} () const 
 \begin{DoxyCompactList}\small\item\em Get an {\bfseries copy} of current game table. \item\end{DoxyCompactList}\item 
-pgn::MoveList $\ast$ \hyperlink{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{moves} ()
+\hyperlink{classpgn_1_1MoveList}{pgn::MoveList} $\ast$ \hyperlink{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{moves} ()
 \begin{DoxyCompactList}\small\item\em Get loaded moves. \item\end{DoxyCompactList}\item 
-pgn::MoveList::iterator \hyperlink{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{nextMove} ()
+\hyperlink{classpgn_1_1MoveList_1_1iterator}{pgn::MoveList::iterator} \hyperlink{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{nextMove} ()
 \begin{DoxyCompactList}\small\item\em Iterarator to next move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_a16b3f2bb7787bccf321f8a03935947c2}{makeNextMove} ()
 \begin{DoxyCompactList}\small\item\em make next move. \item\end{DoxyCompactList}\item 
 bool \hyperlink{classChEngn_1_1Engine_ab9f6f3cbf3e7866887b049f61f9ce46b}{makeNextHalfMove} ()
 \begin{DoxyCompactList}\small\item\em make next half-\/move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{makeMove} (pgn::Move \&move)
+bool \hyperlink{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}{makeMove} (\hyperlink{classpgn_1_1Move}{pgn::Move} \&move)
 \begin{DoxyCompactList}\small\item\em Make move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly} (const pgn::Ply $\ast$pl, bool isWhite)
+bool \hyperlink{classChEngn_1_1Engine_a66f202e6cd42b2eeff43c8d58fe9ce38}{makePly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$pl, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Make ply's move. \item\end{DoxyCompactList}\item 
-bool \hyperlink{classChEngn_1_1Engine_a743f59a5351f46d39888ca50b7329920}{moveAndCheckForCheck} (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const 
+bool \hyperlink{classChEngn_1_1Engine_a743f59a5351f46d39888ca50b7329920}{moveAndCheckForCheck} (const \hyperlink{classpgn_1_1Square}{pgn::Square} oldPos, const \hyperlink{classpgn_1_1Square}{pgn::Square} newPos, const bool isWhite) const 
 \begin{DoxyCompactList}\small\item\em Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{ChEngn::king} and checks is new position check position for given player. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -60,17 +60,17 @@ static bool \hyperlink{classChEngn_1_1Engine_adbbcab59c2baf952d0364a6c36a05a16}{
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classChEngn_1_1Engine_af414502f81e9abda2d41bd16e3e18ef0}{makePawnPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_af414502f81e9abda2d41bd16e3e18ef0}{makePawnPly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes pawn's move. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Engine_a9b7fdcf2cf7718e5e602ce6e3be3d4c8}{makeKnightPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a9b7fdcf2cf7718e5e602ce6e3be3d4c8}{makeKnightPly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes knight's move. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Engine_ae090fc9d1724d63d8af41e5a7c4f1d3d}{makeBishopPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_ae090fc9d1724d63d8af41e5a7c4f1d3d}{makeBishopPly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Engine_a6ed93f939bbf1cc780a1b2f364068eaa}{makeRookPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a6ed93f939bbf1cc780a1b2f364068eaa}{makeRookPly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes bishop's move. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Engine_a472c2c8efd42dc93027b395df64a71d2}{makeQueenPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a472c2c8efd42dc93027b395df64a71d2}{makeQueenPly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes queen's move. \item\end{DoxyCompactList}\item 
-void \hyperlink{classChEngn_1_1Engine_a6512882396e670361c5b2289e0c85517}{makeKingPly} (const pgn::Ply $\ast$ply, bool isWhite)
+void \hyperlink{classChEngn_1_1Engine_a6512882396e670361c5b2289e0c85517}{makeKingPly} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ply, bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes kings's move. \item\end{DoxyCompactList}\item 
 void \hyperlink{classChEngn_1_1Engine_a4d6deb7c26002fd2a39367a0fcc9b75e}{makeShortCastling} (bool isWhite)
 \begin{DoxyCompactList}\small\item\em Makes short castling move. \item\end{DoxyCompactList}\item 
@@ -125,7 +125,7 @@ Copy constructor.
 \index{Engine@{Engine}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{Engine}]{\setlength{\rightskip}{0pt plus 5cm}ChEngn::Engine::Engine (
 \begin{DoxyParamCaption}
-\item[{const pgn::Game \&}]{gm}
+\item[{const {\bf pgn::Game} \&}]{gm}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_a1184e133eae1f7e23bf405302fa9f53c}
@@ -133,7 +133,7 @@ Copy constructor.
 
 Constructor. 
 
-Creates \hyperlink{classChEngn_1_1Engine}{Engine} from pgn::Game 
+Creates \hyperlink{classChEngn_1_1Engine}{Engine} from \hyperlink{classpgn_1_1Game}{pgn::Game} 
 \begin{DoxyParams}{Parameters}
 {\em gm} & Game from an opened $\ast$.pgn file \\
 \hline
@@ -296,7 +296,7 @@ true if check position found.
 \index{makeBishopPly@{makeBishopPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeBishopPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeBishopPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{const {\bf pgn::Ply} $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
@@ -320,7 +320,7 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \index{makeKingPly@{makeKingPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeKingPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeKingPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{const {\bf pgn::Ply} $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
@@ -344,7 +344,7 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \index{makeKnightPly@{makeKnightPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeKnightPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeKnightPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{const {\bf pgn::Ply} $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
@@ -389,7 +389,7 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \index{makeMove@{makeMove}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeMove}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makeMove (
 \begin{DoxyParamCaption}
-\item[{pgn::Move \&}]{move}
+\item[{{\bf pgn::Move} \&}]{move}
 \end{DoxyParamCaption}
 )}}
 \label{classChEngn_1_1Engine_a3bfc7cfe7e147e4d5d7f645d0cb72c8d}
@@ -442,7 +442,7 @@ true if move can was successefully did. Else -\/ fale will be returned. False wi
 \index{makePawnPly@{makePawnPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makePawnPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makePawnPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{const {\bf pgn::Ply} $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
@@ -466,7 +466,7 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \index{makePly@{makePly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makePly}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::makePly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{pl, }
+\item[{const {\bf pgn::Ply} $\ast$}]{pl, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )}}
@@ -490,7 +490,7 @@ true if successefully, false -\/ otherway.
 \index{makeQueenPly@{makeQueenPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeQueenPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeQueenPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{const {\bf pgn::Ply} $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
@@ -514,7 +514,7 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \index{makeRookPly@{makeRookPly}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{makeRookPly}]{\setlength{\rightskip}{0pt plus 5cm}void ChEngn::Engine::makeRookPly (
 \begin{DoxyParamCaption}
-\item[{const pgn::Ply $\ast$}]{ply, }
+\item[{const {\bf pgn::Ply} $\ast$}]{ply, }
 \item[{bool}]{isWhite}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
@@ -559,8 +559,8 @@ throws \hyperlink{classChEngn_1_1BadMove}{ChEngn::BadMove} if something went wro
 \index{moveAndCheckForCheck@{moveAndCheckForCheck}!ChEngn::Engine@{ChEngn::Engine}}
 \subsubsection[{moveAndCheckForCheck}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Engine::moveAndCheckForCheck (
 \begin{DoxyParamCaption}
-\item[{const pgn::Square}]{oldPos, }
-\item[{const pgn::Square}]{newPos, }
+\item[{const {\bf pgn::Square}}]{oldPos, }
+\item[{const {\bf pgn::Square}}]{newPos, }
 \item[{const bool}]{isWhite}
 \end{DoxyParamCaption}
 ) const}}
@@ -587,7 +587,7 @@ only \hyperlink{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}{ChEngn::queen
 \hypertarget{classChEngn_1_1Engine_aad1f51b4eed22bb6eab999ffb7fa2516}{
 \index{ChEngn::Engine@{ChEngn::Engine}!moves@{moves}}
 \index{moves@{moves}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{moves}]{\setlength{\rightskip}{0pt plus 5cm}pgn::MoveList$\ast$ ChEngn::Engine::moves (
+\subsubsection[{moves}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pgn::MoveList}$\ast$ ChEngn::Engine::moves (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -598,12 +598,12 @@ only \hyperlink{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}{ChEngn::queen
 Get loaded moves. 
 
 \begin{DoxyReturn}{Returns}
-moves in loaded game, if there are no loaded game will be returned empty pgn::MoveList 
+moves in loaded game, if there are no loaded game will be returned empty \hyperlink{classpgn_1_1MoveList}{pgn::MoveList} 
 \end{DoxyReturn}
 \hypertarget{classChEngn_1_1Engine_ad35252a7c6a7e84a34d12a688360a75f}{
 \index{ChEngn::Engine@{ChEngn::Engine}!nextMove@{nextMove}}
 \index{nextMove@{nextMove}!ChEngn::Engine@{ChEngn::Engine}}
-\subsubsection[{nextMove}]{\setlength{\rightskip}{0pt plus 5cm}pgn::MoveList::iterator ChEngn::Engine::nextMove (
+\subsubsection[{nextMove}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pgn::MoveList::iterator} ChEngn::Engine::nextMove (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -613,7 +613,7 @@ moves in loaded game, if there are no loaded game will be returned empty pgn::Mo
 
 Iterarator to next move. 
 
-Gets pgn::MoveList::iterator to current move. If there are no aviable moves return vaule will be equal to 
+Gets \hyperlink{classpgn_1_1MoveList_1_1iterator}{pgn::MoveList::iterator} to current move. If there are no aviable moves return vaule will be equal to 
 \begin{DoxyCode}
  moves()->end()
 \end{DoxyCode}

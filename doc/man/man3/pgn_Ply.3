@@ -1,0 +1,74 @@
+.TH "pgn::Ply" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::Ply \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPly\fP (const \fBPly\fP &src)"
+.br
+.ti -1c
+.RI "\fBPly\fP (const std::string &ply_text)"
+.br
+.ti -1c
+.RI "\fBPly\fP & \fBoperator=\fP (const \fBPly\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPly\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPly\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBisLongCastle\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisShortCastle\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisCapture\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisCheck\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisCheckMate\fP () const "
+.br
+.ti -1c
+.RI "void \fBbindComment\fP (const \fBCommentText\fP &comment)"
+.br
+.ti -1c
+.RI "void \fBunbindComment\fP ()"
+.br
+.ti -1c
+.RI "char \fBfromSquare\fP () const "
+.br
+.ti -1c
+.RI "\fBSquare\fP \fBtoSquare\fP () const "
+.br
+.ti -1c
+.RI "\fBPiece\fP \fBpiece\fP () const "
+.br
+.ti -1c
+.RI "\fBPiece\fP * \fBpromoted\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoStdString\fP () const "
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBpgn::Ply\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

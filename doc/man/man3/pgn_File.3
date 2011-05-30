@@ -1,0 +1,123 @@
+.TH "pgn::File" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::File \- 
+.PP
+Opens and extract games from PGN file and/or compile \fBpgn::GameCollection\fP fo file.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PGNFile.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFile\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "\fBFile\fP (const \fBFile\fP &other)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fBFile\fP (const std::string fileName)"
+.br
+.RI "\fItryes to open given file and extract games from it. \fP"
+.ti -1c
+.RI "\fBFile\fP (const char *fileName)"
+.br
+.RI "\fItryes to open given file and extract games from it. \fP"
+.ti -1c
+.RI "\fBFile\fP (const \fBpgn::GameCollection\fP &otherGameCollection)"
+.br
+.RI "\fIConstructs object to compile givens games to file. \fP"
+.ti -1c
+.RI "void \fBloadFile\fP (std::string fileName)"
+.br
+.RI "\fITryes to load given file, and extract games from it. \fP"
+.ti -1c
+.RI "void \fBloadFile\fP (const char *fileName)"
+.br
+.RI "\fITryes to load given file, and extract games from it. \fP"
+.ti -1c
+.RI "\fBGameCollection\fP & \fBgames\fP ()"
+.br
+.RI "\fIGet extracted games. \fP"
+.ti -1c
+.RI "\fBGameCollection\fP \fBgamesC\fP () const "
+.br
+.RI "\fIGet extracted games. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Opens and extract games from PGN file and/or compile \fBpgn::GameCollection\fP fo file. 
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBexamples/main.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::File::File (const std::stringfileName)"
+.PP
+tryes to open given file and extract games from it. \fBParameters:\fP
+.RS 4
+\fIfileName\fP Path to opening file. 
+.RE
+.PP
+
+.SS "pgn::File::File (const char *fileName)"
+.PP
+tryes to open given file and extract games from it. \fBParameters:\fP
+.RS 4
+\fIfileName\fP Path to opening file. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBGameCollection\fP& pgn::File::games ()"
+.PP
+Get extracted games. \fBReturns:\fP
+.RS 4
+Extracted games. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBexamples/main.cpp\fP.
+.SS "\fBGameCollection\fP pgn::File::gamesC () const"
+.PP
+Get extracted games. Same as \fBpgn::File::games()\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+Extracted games. 
+.RE
+.PP
+
+.SS "void pgn::File::loadFile (std::stringfileName)"
+.PP
+Tryes to load given file, and extract games from it. \fBParameters:\fP
+.RS 4
+\fIfileName\fP Path to opening file. 
+.RE
+.PP
+
+.SS "void pgn::File::loadFile (const char *fileName)"
+.PP
+Tryes to load given file, and extract games from it. \fBParameters:\fP
+.RS 4
+\fIfileName\fP Path to opening file. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

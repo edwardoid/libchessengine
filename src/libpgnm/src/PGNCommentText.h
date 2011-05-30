@@ -25,23 +25,68 @@
 #include <fstream>
 #include <string>
 
+/**
+ * @brief global namespace for libpgnm
+ * @namespace pgn
+ */
 namespace pgn
 {
+	/**
+	 * @class CommentText
+	 * @brief Provides comment to move.
+	 */
 	class CommentText 
 	{
 		public:
-			
+		
+			/**
+			 * @brief Default constructor.
+			 */
 			CommentText();
+
+			/**
+			 * @brief Constructs comment by given text.
+			 * @param s Comment text.
+			 */
 			CommentText(const std::string &s);
+
+			/**
+			 * @brief Creates object as copy of given one.
+			 * @param src Object which copy will be constructed.
+			 */
 			CommentText(const CommentText& src);
 
 			virtual ~CommentText();
 
+			/**
+			 * @param src Copies given comment to current object.
+			 * @param src Source object.
+			 */
 			CommentText& operator = (const CommentText& src);
+
+			/**
+			 * @brief Checks are comments equal.
+			 * @param src Comment with which will be compaired.
+			 * @return true if comments are equal, false in onther case
+			 */
 			bool operator == (const CommentText& src) const;
+
+			/**
+			 * @brief Negative variant of pgn::CommentText::operator=(const
+			 * CommentText).
+			 */
 			bool operator != (const CommentText& src) const;
-			
+		
+			/**
+			 * @brief Represents comment as std::string.
+			 */
 			std::string toStdString();
+
+			/**
+			 * @brief Prints comment to stream.
+			 * @param os Stream to print.
+			 * @param src Comment which must be printed.
+			 */
 			friend std::ostream& operator << ( std::ostream& os, const CommentText& src);
 
 		private:

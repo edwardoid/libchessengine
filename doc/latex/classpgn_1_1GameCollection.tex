@@ -1,0 +1,277 @@
+\hypertarget{classpgn_1_1GameCollection}{
+\section{pgn::GameCollection Class Reference}
+\label{classpgn_1_1GameCollection}\index{pgn::GameCollection@{pgn::GameCollection}}
+}
+
+
+Stores a collection of \hyperlink{classpgn_1_1Game}{pgn::Game}.  
+
+
+
+
+{\ttfamily \#include $<$PGNGameCollection.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator}
+\begin{DoxyCompactList}\small\item\em Instrument for safe iteration in \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgn_1_1GameCollection_a0e78c2029793a3a2397dc39b75d4149a}{
+\hyperlink{classpgn_1_1GameCollection_a0e78c2029793a3a2397dc39b75d4149a}{GameCollection} ()}
+\label{classpgn_1_1GameCollection_a0e78c2029793a3a2397dc39b75d4149a}
+
+\begin{DoxyCompactList}\small\item\em Costructs empty collection. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection_abb270a0866bc52137748790264bfa17e}{GameCollection} (const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&src)
+\begin{DoxyCompactList}\small\item\em Constructs copy of given collection. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_a8119c3a8672c0bc2dbd9785f895e9136}{
+virtual \hyperlink{classpgn_1_1GameCollection_a8119c3a8672c0bc2dbd9785f895e9136}{$\sim$GameCollection} ()}
+\label{classpgn_1_1GameCollection_a8119c3a8672c0bc2dbd9785f895e9136}
+
+\begin{DoxyCompactList}\small\item\em Clears collection. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_ae5dc562b0cd630124cc598a31ef1df39}{
+\hyperlink{classpgn_1_1GameCollection}{GameCollection} \& \hyperlink{classpgn_1_1GameCollection_ae5dc562b0cd630124cc598a31ef1df39}{operator=} (const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&src)}
+\label{classpgn_1_1GameCollection_ae5dc562b0cd630124cc598a31ef1df39}
+
+\begin{DoxyCompactList}\small\item\em Copies to given collection to current collection. Works like copy constructor. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameCollection_ac44836abf6657d7dd6197f0dfd588f13}{operator==} (const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&src) const 
+\begin{DoxyCompactList}\small\item\em Compares 2 collections. Collections are equal if each game from source at position {\itshape i\/} is equal to currect golelctions game at same position. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameCollection_a0e1e33d95047e969cfc9eef2aec648ad}{operator!=} (const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&src) const 
+\begin{DoxyCompactList}\small\item\em Negative variant of pgn::GameCollection::operator==. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{classpgn_1_1Game}{Game} \hyperlink{classpgn_1_1GameCollection_a378ad3a7d49fc600d9ba7693e58f4787}{operator\mbox{[}$\,$\mbox{]}} (const int idx) const 
+\begin{DoxyCompactList}\small\item\em Returns game at given position. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_a064236d0087a8cb284991904185abdb0}{
+void {\bfseries insert} (const \hyperlink{classpgn_1_1Tag}{Tag} \&src)}
+\label{classpgn_1_1GameCollection_a064236d0087a8cb284991904185abdb0}
+
+\item 
+\hypertarget{classpgn_1_1GameCollection_a1186e0c841693731f0d327dab4592c40}{
+void {\bfseries erase} (const \hyperlink{classpgn_1_1Tag}{Tag} \&src)}
+\label{classpgn_1_1GameCollection_a1186e0c841693731f0d327dab4592c40}
+
+\item 
+\hypertarget{classpgn_1_1GameCollection_a1499892a12a4fe8a6eec302317cd3717}{
+void {\bfseries sort} (const \hyperlink{classpgn_1_1Tag}{Tag} \&key)}
+\label{classpgn_1_1GameCollection_a1499892a12a4fe8a6eec302317cd3717}
+
+\item 
+void \hyperlink{classpgn_1_1GameCollection_a9b2413202a318ac4c3a6cfc15de6bc80}{insert} (const \hyperlink{classpgn_1_1Game}{Game} \&src)
+\begin{DoxyCompactList}\small\item\em Inserts game to collection. \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1GameCollection_ad67e7d44f86a1418dc49bb7b70cf2b27}{erase} (const \hyperlink{classpgn_1_1Game}{Game} \&src)
+\begin{DoxyCompactList}\small\item\em Removes all games from list which are equal with given. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_ab757128add0a1eea0552c717b192b855}{
+int \hyperlink{classpgn_1_1GameCollection_ab757128add0a1eea0552c717b192b855}{size} () const }
+\label{classpgn_1_1GameCollection_ab757128add0a1eea0552c717b192b855}
+
+\begin{DoxyCompactList}\small\item\em Get list's size. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_a33422209359d7130e3b3a95128308e47}{
+void \hyperlink{classpgn_1_1GameCollection_a33422209359d7130e3b3a95128308e47}{clear} ()}
+\label{classpgn_1_1GameCollection_a33422209359d7130e3b3a95128308e47}
+
+\begin{DoxyCompactList}\small\item\em removes all games from list. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_aa996049df90b5f0a3749e756c4517456}{
+\hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \hyperlink{classpgn_1_1GameCollection_aa996049df90b5f0a3749e756c4517456}{begin} ()}
+\label{classpgn_1_1GameCollection_aa996049df90b5f0a3749e756c4517456}
+
+\begin{DoxyCompactList}\small\item\em Get iterator to first game in list. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_aa72ad755b92ce65787447720dfcfe293}{
+\hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \hyperlink{classpgn_1_1GameCollection_aa72ad755b92ce65787447720dfcfe293}{end} ()}
+\label{classpgn_1_1GameCollection_aa72ad755b92ce65787447720dfcfe293}
+
+\begin{DoxyCompactList}\small\item\em Get iterator positioned {\bfseries after{\bfseries  last game in list. }}\item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgn_1_1GameCollection_a67171474c4da6cc8efe0c7fafefd2b2d}{
+class \hyperlink{classpgn_1_1GameCollection_a67171474c4da6cc8efe0c7fafefd2b2d}{iterator}}
+\label{classpgn_1_1GameCollection_a67171474c4da6cc8efe0c7fafefd2b2d}
+
+\begin{DoxyCompactList}\small\item\em Simple iterator. See more \hyperlink{classpgn_1_1GameCollection_1_1iterator}{pgn::GameCollection::iterator}. \item\end{DoxyCompactList}\item 
+std::ostream \& \hyperlink{classpgn_1_1GameCollection_ac258d4cb6213285224df408f9f83e2d5}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&src)
+\begin{DoxyCompactList}\small\item\em Prints all games from list to given stream. \item\end{DoxyCompactList}\item 
+std::istream \& \hyperlink{classpgn_1_1GameCollection_a7e46f87a4a75517b499310e60526ea04}{operator$>$$>$} (std::istream \&is, \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&src)
+\begin{DoxyCompactList}\small\item\em Read text from given stream and tryes to parse and extract game from it. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores a collection of \hyperlink{classpgn_1_1Game}{pgn::Game}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1GameCollection_abb270a0866bc52137748790264bfa17e}{
+\index{pgn::GameCollection@{pgn::GameCollection}!GameCollection@{GameCollection}}
+\index{GameCollection@{GameCollection}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{GameCollection}]{\setlength{\rightskip}{0pt plus 5cm}pgn::GameCollection::GameCollection (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameCollection} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_abb270a0866bc52137748790264bfa17e}
+
+
+Constructs copy of given collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source collection \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1GameCollection_ad67e7d44f86a1418dc49bb7b70cf2b27}{
+\index{pgn::GameCollection@{pgn::GameCollection}!erase@{erase}}
+\index{erase@{erase}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::GameCollection::erase (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_ad67e7d44f86a1418dc49bb7b70cf2b27}
+
+
+Removes all games from list which are equal with given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Remove game. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameCollection_a9b2413202a318ac4c3a6cfc15de6bc80}{
+\index{pgn::GameCollection@{pgn::GameCollection}!insert@{insert}}
+\index{insert@{insert}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::GameCollection::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_a9b2413202a318ac4c3a6cfc15de6bc80}
+
+
+Inserts game to collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \hyperlink{classpgn_1_1Game}{Game} for insertion. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameCollection_a0e1e33d95047e969cfc9eef2aec648ad}{
+\index{pgn::GameCollection@{pgn::GameCollection}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameCollection::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameCollection} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameCollection_a0e1e33d95047e969cfc9eef2aec648ad}
+
+
+Negative variant of pgn::GameCollection::operator==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Collection with which must be compaired current collection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(! operator==( const GameCollection \&src ) ); 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameCollection_ac44836abf6657d7dd6197f0dfd588f13}{
+\index{pgn::GameCollection@{pgn::GameCollection}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameCollection::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameCollection} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameCollection_ac44836abf6657d7dd6197f0dfd588f13}
+
+
+Compares 2 collections. Collections are equal if each game from source at position {\itshape i\/} is equal to currect golelctions game at same position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Collection with which must be compaired current collection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+pgn::Game::operator==( const Game\& ). 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if collections are equal, false — otherway. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameCollection_a378ad3a7d49fc600d9ba7693e58f4787}{
+\index{pgn::GameCollection@{pgn::GameCollection}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Game} pgn::GameCollection::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classpgn_1_1GameCollection_a378ad3a7d49fc600d9ba7693e58f4787}
+
+
+Returns game at given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inx} & Position of game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classpgn_1_1Game}{Game} at potion {\itshape inx\/}. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classpgn_1_1GameCollection_ac258d4cb6213285224df408f9f83e2d5}{
+\index{pgn::GameCollection@{pgn::GameCollection}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{os, }
+\item[{const {\bf GameCollection} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classpgn_1_1GameCollection_ac258d4cb6213285224df408f9f83e2d5}
+
+
+Prints all games from list to given stream. 
+
+\begin{DoxySeeAlso}{See also}
+pgn::Game::operator$<$$<$( std::ostream, const Game ). 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream-\/printer. \\
+\hline
+{\em src} & Games list to print. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameCollection_a7e46f87a4a75517b499310e60526ea04}{
+\index{pgn::GameCollection@{pgn::GameCollection}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!pgn::GameCollection@{pgn::GameCollection}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std::istream \&}]{is, }
+\item[{{\bf GameCollection} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classpgn_1_1GameCollection_a7e46f87a4a75517b499310e60526ea04}
+
+
+Read text from given stream and tryes to parse and extract game from it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream. \\
+\hline
+{\em src} & Games Container. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libpgnm/src/PGNGameCollection.h\end{DoxyCompactItemize}

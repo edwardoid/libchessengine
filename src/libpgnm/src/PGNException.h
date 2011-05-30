@@ -25,16 +25,42 @@
 #include <exception>
 #include <string>
 
+/**
+ * @brief global namespace for libpgnm
+ * @namespace pgn
+ */
 namespace pgn
 {
+	/**
+	 * @brief Represents exceptions which must be throwed on parsing
+	 */
 	class parse_exception : public std::exception 
 	{
 		public:
-    
+   			
+   			/**
+   			 * @brief Represents parse exception with given message.
+   			 * @param message Text message, description of error.
+   			 */
 			parse_exception(const std::string &message) throw():message_(message) {}
 			~parse_exception() throw() {}
+
+			/**
+			 * @brief Sets text which is wrong.
+			 * @param parsingtext Wrong text from PGN file.
+			 */
 			void bindParsingText(const std::string &parsingtext) throw() { parsing_text_ = parsingtext; }
+
+			/**
+			 * @brief Gets text which is wrong.
+			 * @return Wrong text fomr PGN file.
+			 */
 			const char *parsing_text() const throw() { return parsing_text_.c_str(); }
+
+			/**
+			 * @brief Gets additional information about exception.
+			 * @return Additional information.
+			 */
     		virtual const char *what() const throw() { return message_.c_str(); }
 
 		private:
@@ -43,6 +69,9 @@ namespace pgn
 			std::string parsing_text_;
 	};
 
+	/**
+	 * @brief Throws when castle in pgnfile is incorrect format.
+	 */
 	class invalid_castle_string : public parse_exception
 	{
 		public:
@@ -51,6 +80,9 @@ namespace pgn
 			~invalid_castle_string() throw() {};
 	};
 
+	/**
+	 * @brief Throws when ply is in incorrect format.
+	 */
 	class invalid_ply_text : public parse_exception
 	{
 		public:
@@ -59,6 +91,9 @@ namespace pgn
 			invalid_ply_text(const std::string &ply) throw();
 	};
 
+	/**
+	 * @brief Throws when file contains tag with wrong format.
+	 */
 	class invalid_tag : public parse_exception
 	{
 		public:
@@ -67,6 +102,9 @@ namespace pgn
 			invalid_tag() throw();
 	};
 
+	/**
+	 * @brief Throws when file contains result string in incorrect format.
+	 */
 	class invalid_result : public parse_exception
 	{
 		public:
@@ -75,6 +113,10 @@ namespace pgn
 			invalid_result() throw();
 	};
 
+	/**
+	 * @brief Throws when game/file does not contain information about game
+	 * result
+	 */
 	class missing_result : public parse_exception
 	{
 		public:
@@ -100,7 +142,10 @@ namespace pgn
 			~unsupported_glyphs() throw() {};
 			unsupported_glyphs() throw();
 	};
-
+	
+	/**
+	 * @brief Throws when file in incorrect/invalid
+	 */
 	class bad_pgn_file: public std::exception
 	{
 		public:

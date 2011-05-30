@@ -1,4 +1,4 @@
-.TH "ChEngn::BadMove" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::BadMove" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ Implements all exception which will be generated ty \fBChEngn::Engine\fP while t
 
 .in +1c
 .ti -1c
-.RI "\fBBadMove\fP (pgn::Ply p, std::string comm, int moveNum=0)  throw ()"
+.RI "\fBBadMove\fP (\fBpgn::Ply\fP p, std::string comm, int moveNum=0)  throw ()"
 .br
 .RI "\fIconstructor \fP"
 .ti -1c
@@ -49,11 +49,11 @@ Implements all exception which will be generated ty \fBChEngn::Engine\fP while t
 \fBexamples/main.cpp\fP.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "ChEngn::BadMove::BadMove (pgn::Plyp, std::stringcomm, intmoveNum = \fC0\fP)  throw ()\fC [inline]\fP"
+.SS "ChEngn::BadMove::BadMove (\fBpgn::Ply\fPp, std::stringcomm, intmoveNum = \fC0\fP)  throw ()\fC [inline]\fP"
 .PP
 constructor \fBParameters:\fP
 .RS 4
-\fIp\fP pgn::Ply which can be done a.t.m. 
+\fIp\fP \fBpgn::Ply\fP which can be done a.t.m. 
 .br
 \fIcomm\fP Addiotional comment 
 .br

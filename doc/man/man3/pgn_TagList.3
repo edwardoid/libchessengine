@@ -1,0 +1,63 @@
+.TH "pgn::TagList" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::TagList \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTagList\fP (const \fBTagList\fP &src)"
+.br
+.ti -1c
+.RI "\fBTagList\fP & \fBoperator=\fP (const \fBTagList\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBTagList\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBTagList\fP &src) const "
+.br
+.ti -1c
+.RI "\fBTag\fP \fBoperator[]\fP (const std::string &tagName) const "
+.br
+.ti -1c
+.RI "bool \fBfind\fP (std::string tagName) const "
+.br
+.ti -1c
+.RI "void \fBinsert\fP (const \fBTag\fP &src)"
+.br
+.ti -1c
+.RI "void \fBerase\fP (const \fBTag\fP &src)"
+.br
+.ti -1c
+.RI "int \fBsize\fP () const "
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBTagList\fP &src)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, \fBTagList\fP &target)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

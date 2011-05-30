@@ -1,0 +1,66 @@
+.TH "pgn::MoveList" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::MoveList \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMoveList\fP (const \fBMoveList\fP &src)"
+.br
+.ti -1c
+.RI "\fBMoveList\fP & \fBoperator=\fP (const \fBMoveList\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMoveList\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBMoveList\fP &src) const "
+.br
+.ti -1c
+.RI "\fBMove\fP \fBoperator[]\fP (int idx)"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (const \fBMove\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBfind\fP (const \fBMove\fP &src) const "
+.br
+.ti -1c
+.RI "int \fBsize\fP () const "
+.br
+.ti -1c
+.RI "\fBiterator\fP \fBbegin\fP () const "
+.br
+.ti -1c
+.RI "\fBiterator\fP \fBend\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoStdString\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBMoveList\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

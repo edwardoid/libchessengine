@@ -1,0 +1,97 @@
+.TH "pgn" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn \- 
+.PP
+global namespace for libpgnm  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCommentText\fP"
+.br
+.RI "\fIProvides comment to move. \fP"
+.ti -1c
+.RI "class \fBparse_exception\fP"
+.br
+.RI "\fIRepresents exceptions which must be throwed on parsing. \fP"
+.ti -1c
+.RI "class \fBinvalid_castle_string\fP"
+.br
+.RI "\fIThrows when castle in pgnfile is incorrect format. \fP"
+.ti -1c
+.RI "class \fBinvalid_ply_text\fP"
+.br
+.RI "\fIThrows when ply is in incorrect format. \fP"
+.ti -1c
+.RI "class \fBinvalid_tag\fP"
+.br
+.RI "\fIThrows when file contains tag with wrong format. \fP"
+.ti -1c
+.RI "class \fBinvalid_result\fP"
+.br
+.RI "\fIThrows when file contains result string in incorrect format. \fP"
+.ti -1c
+.RI "class \fBmissing_result\fP"
+.br
+.RI "\fIThrows when game/file does not contain information about game result. \fP"
+.ti -1c
+.RI "class \fBunsupported_variations\fP"
+.br
+.ti -1c
+.RI "class \fBunsupported_glyphs\fP"
+.br
+.ti -1c
+.RI "class \fBbad_pgn_file\fP"
+.br
+.RI "\fIThrows when file in incorrect/invalid. \fP"
+.ti -1c
+.RI "class \fBFile\fP"
+.br
+.RI "\fIOpens and extract games from PGN file and/or compile \fBpgn::GameCollection\fP fo file. \fP"
+.ti -1c
+.RI "class \fBGame\fP"
+.br
+.ti -1c
+.RI "class \fBGameCollection\fP"
+.br
+.RI "\fIStores a collection of \fBpgn::Game\fP. \fP"
+.ti -1c
+.RI "class \fBGameResult\fP"
+.br
+.ti -1c
+.RI "class \fBMove\fP"
+.br
+.ti -1c
+.RI "class \fBMoveList\fP"
+.br
+.ti -1c
+.RI "class \fBParser\fP"
+.br
+.ti -1c
+.RI "class \fBPiece\fP"
+.br
+.ti -1c
+.RI "class \fBPly\fP"
+.br
+.ti -1c
+.RI "class \fBSquare\fP"
+.br
+.ti -1c
+.RI "class \fBTag\fP"
+.br
+.ti -1c
+.RI "class \fBTagList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+global namespace for libpgnm 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

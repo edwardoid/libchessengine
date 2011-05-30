@@ -1,0 +1,192 @@
+\hypertarget{classpgn_1_1GameCollection_1_1iterator}{
+\section{pgn::GameCollection::iterator Class Reference}
+\label{classpgn_1_1GameCollection_1_1iterator}\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+}
+
+
+Instrument for safe iteration in \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection}.  
+
+
+
+
+{\ttfamily \#include $<$PGNGameCollection.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_a3b829c9fb4ca641aa3b972bff1a8e886}{
+\hyperlink{classpgn_1_1GameCollection_1_1iterator_a3b829c9fb4ca641aa3b972bff1a8e886}{iterator} ()}
+\label{classpgn_1_1GameCollection_1_1iterator_a3b829c9fb4ca641aa3b972bff1a8e886}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection_1_1iterator_a954bdfa9e2ea94b55bae8aae2f805887}{iterator} (const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&ml)
+\begin{DoxyCompactList}\small\item\em Constructs iterator pointing to first game in given list. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection_1_1iterator_a41ba111b559fdfe85a970c98c8ed7093}{iterator} (const \hyperlink{classpgn_1_1GameCollection}{GameCollection} \&ml, int idx)
+\begin{DoxyCompactList}\small\item\em Costructs iterator poinitng to game at idx. If at index idx is no game ml::end() will be returned. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_a4414c98751c5d952c8ae79ea46c44bcb}{
+\hyperlink{classpgn_1_1GameCollection_1_1iterator_a4414c98751c5d952c8ae79ea46c44bcb}{iterator} (const \hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \&)}
+\label{classpgn_1_1GameCollection_1_1iterator_a4414c98751c5d952c8ae79ea46c44bcb}
+
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_a6662899f24368d80f69645c4e3c417df}{
+\hyperlink{classpgn_1_1GameCollection_1_1iterator_a6662899f24368d80f69645c4e3c417df}{$\sim$iterator} ()}
+\label{classpgn_1_1GameCollection_1_1iterator_a6662899f24368d80f69645c4e3c417df}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \& \hyperlink{classpgn_1_1GameCollection_1_1iterator_af2b22a067e26861e9616d43cd6deea39}{operator=} (const \hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \&src)
+\begin{DoxyCompactList}\small\item\em Sets current iterator pointing as given. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_af5677cb98e09007563f052b7b01bb14d}{
+\hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \& \hyperlink{classpgn_1_1GameCollection_1_1iterator_af5677cb98e09007563f052b7b01bb14d}{operator++} ()}
+\label{classpgn_1_1GameCollection_1_1iterator_af5677cb98e09007563f052b7b01bb14d}
+
+\begin{DoxyCompactList}\small\item\em Sets iterator point to next game. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \& \hyperlink{classpgn_1_1GameCollection_1_1iterator_ab728b4cdfc18844ee564b74443b09bdf}{operator++} (int i)
+\begin{DoxyCompactList}\small\item\em Moves iterator to {\itshape  positions forward. \/}\item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Game}{Game} $\ast$ \hyperlink{classpgn_1_1GameCollection_1_1iterator_a245601d25335e1ba67874d3d70382bb0}{operator-\/$>$} () const 
+\begin{DoxyCompactList}\small\item\em Get game iterator is pointing to. \item\end{DoxyCompactList}\item 
+const \hyperlink{classpgn_1_1Game}{Game} \& \hyperlink{classpgn_1_1GameCollection_1_1iterator_ae1c72b3ca9c338ccc117315f7551eea2}{operator$\ast$} () const 
+\begin{DoxyCompactList}\small\item\em Get game iterator is pointing to. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameCollection_1_1iterator_ad5b3ab7c17b8bcd6dcc1122256abda56}{operator==} (const \hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \&) const 
+\begin{DoxyCompactList}\small\item\em Checks are two iterator pointing to same game. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_ab93ed70b78aa6461dc5ea515a3a0592e}{
+bool \hyperlink{classpgn_1_1GameCollection_1_1iterator_ab93ed70b78aa6461dc5ea515a3a0592e}{operator!=} (const \hyperlink{classpgn_1_1GameCollection_1_1iterator}{iterator} \&) const }
+\label{classpgn_1_1GameCollection_1_1iterator_ab93ed70b78aa6461dc5ea515a3a0592e}
+
+\begin{DoxyCompactList}\small\item\em Negative variant of operator==. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Instrument for safe iteration in \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_a954bdfa9e2ea94b55bae8aae2f805887}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}pgn::GameCollection::iterator::iterator (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameCollection} \&}]{ml}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_1_1iterator_a954bdfa9e2ea94b55bae8aae2f805887}
+
+
+Constructs iterator pointing to first game in given list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ml} & Collection to iteration. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_a41ba111b559fdfe85a970c98c8ed7093}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}pgn::GameCollection::iterator::iterator (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameCollection} \&}]{ml, }
+\item[{int}]{idx}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_1_1iterator_a41ba111b559fdfe85a970c98c8ed7093}
+
+
+Costructs iterator poinitng to game at idx. If at index idx is no game ml::end() will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ml} & Collection to iteration. \\
+\hline
+{\em idx} & Iterator position. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_ae1c72b3ca9c338ccc117315f7551eea2}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Game}\& pgn::GameCollection::iterator::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameCollection_1_1iterator_ae1c72b3ca9c338ccc117315f7551eea2}
+
+
+Get game iterator is pointing to. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classpgn_1_1Game}{Game} iterator is pointing to. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_ab728b4cdfc18844ee564b74443b09bdf}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator}\& pgn::GameCollection::iterator::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_1_1iterator_ab728b4cdfc18844ee564b74443b09bdf}
+
+
+Moves iterator to {\itshape  positions forward. \/}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Positions count to be forwarded. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_a245601d25335e1ba67874d3d70382bb0}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}$\ast$ pgn::GameCollection::iterator::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameCollection_1_1iterator_a245601d25335e1ba67874d3d70382bb0}
+
+
+Get game iterator is pointing to. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classpgn_1_1Game}{Game} iterator is pointing to. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_af2b22a067e26861e9616d43cd6deea39}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator}\& pgn::GameCollection::iterator::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameCollection_1_1iterator_af2b22a067e26861e9616d43cd6deea39}
+
+
+Sets current iterator pointing as given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source iterator. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameCollection_1_1iterator_ad5b3ab7c17b8bcd6dcc1122256abda56}{
+\index{pgn::GameCollection::iterator@{pgn::GameCollection::iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::GameCollection::iterator@{pgn::GameCollection::iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameCollection::iterator::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator} \&}]{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameCollection_1_1iterator_ad5b3ab7c17b8bcd6dcc1122256abda56}
+
+
+Checks are two iterator pointing to same game. 
+
+\begin{DoxyReturn}{Returns}
+true if iterators are equal. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libpgnm/src/PGNGameCollection.h\end{DoxyCompactItemize}

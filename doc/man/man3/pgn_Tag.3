@@ -1,0 +1,50 @@
+.TH "pgn::Tag" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::Tag \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTag\fP (const \fBTag\fP &src)"
+.br
+.ti -1c
+.RI "\fBTag\fP (const std::string name, const std::string value)"
+.br
+.ti -1c
+.RI "\fBTag\fP & \fBoperator=\fP (const \fBTag\fP &other)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBTag\fP &other) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBTag\fP &other) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const std::string &tagName) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const std::string &tagName) const "
+.br
+.ti -1c
+.RI "std::string \fBname\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBvalue\fP () const "
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBTag\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

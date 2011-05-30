@@ -1,0 +1,87 @@
+\hypertarget{classpgn_1_1Parser}{
+\section{pgn::Parser Class Reference}
+\label{classpgn_1_1Parser}\index{pgn::Parser@{pgn::Parser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgn_1_1Parser_a9feaee2ae6fc57fdfa7de8e405291082}{
+bool {\bfseries getGameCollection} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, \hyperlink{classpgn_1_1GameCollection}{pgn::GameCollection} \&out)}
+\label{classpgn_1_1Parser_a9feaee2ae6fc57fdfa7de8e405291082}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a75fb06094fc412eb3197cda813ec7e5e}{
+\hyperlink{classpgn_1_1Game}{pgn::Game} $\ast$ {\bfseries getGame} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2)}
+\label{classpgn_1_1Parser_a75fb06094fc412eb3197cda813ec7e5e}
+
+\item 
+\hypertarget{classpgn_1_1Parser_afbb1aee64b477bafca8ab2486b3e669f}{
+bool {\bfseries getMoveList} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, \hyperlink{classpgn_1_1MoveList}{pgn::MoveList} \&out)}
+\label{classpgn_1_1Parser_afbb1aee64b477bafca8ab2486b3e669f}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a38ccb9809b26c90cebe525e342ffd6cc}{
+\hyperlink{classpgn_1_1Move}{pgn::Move} $\ast$ {\bfseries getMove} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2)}
+\label{classpgn_1_1Parser_a38ccb9809b26c90cebe525e342ffd6cc}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a4efc9cafd449f453b498691625137acd}{
+\hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$ {\bfseries getPly} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2)}
+\label{classpgn_1_1Parser_a4efc9cafd449f453b498691625137acd}
+
+\item 
+\hypertarget{classpgn_1_1Parser_aa75b1285609ed972cf7032b4c89d5a04}{
+bool {\bfseries getTagList} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, \hyperlink{classpgn_1_1TagList}{pgn::TagList} \&out)}
+\label{classpgn_1_1Parser_aa75b1285609ed972cf7032b4c89d5a04}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a23827a2f017d8e43224ee54e1a34c80a}{
+bool {\bfseries getTag} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, \hyperlink{classpgn_1_1Tag}{pgn::Tag} \&out)}
+\label{classpgn_1_1Parser_a23827a2f017d8e43224ee54e1a34c80a}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a238aecf9549d399e87fb493cbd75c287}{
+bool {\bfseries getGameResult} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, \hyperlink{classpgn_1_1GameResult}{pgn::GameResult} \&out)}
+\label{classpgn_1_1Parser_a238aecf9549d399e87fb493cbd75c287}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a44908441a9a67bd63c600d229bfa25ed}{
+bool {\bfseries getComment} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, \hyperlink{classpgn_1_1CommentText}{pgn::CommentText} \&out)}
+\label{classpgn_1_1Parser_a44908441a9a67bd63c600d229bfa25ed}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a30c8b1a37f599a4bd4bdc68e88f6434d}{
+bool {\bfseries getMoveNumber} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2, std::string \&out, int \&dotsCount)}
+\label{classpgn_1_1Parser_a30c8b1a37f599a4bd4bdc68e88f6434d}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a4ca0f53a4c04ecd358829c3c34bd23a9}{
+void {\bfseries checkForVariations} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2)}
+\label{classpgn_1_1Parser_a4ca0f53a4c04ecd358829c3c34bd23a9}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a8fcac145c61f86f50195408ad1d2444b}{
+void {\bfseries checkForGlyphs} (std::string::const\_\-iterator \&itr1, const std::string::const\_\-iterator \&itr2)}
+\label{classpgn_1_1Parser_a8fcac145c61f86f50195408ad1d2444b}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a8ee3a4afd1a21ce8d55e9c371771d140}{
+unsigned long {\bfseries plyCount} () const }
+\label{classpgn_1_1Parser_a8ee3a4afd1a21ce8d55e9c371771d140}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a1bab37b921a1ed91a90e0fe88f4e5ca7}{
+unsigned long {\bfseries moveCount} () const }
+\label{classpgn_1_1Parser_a1bab37b921a1ed91a90e0fe88f4e5ca7}
+
+\item 
+\hypertarget{classpgn_1_1Parser_a3492dcc7dd6462f3b3779dd1276d0c31}{
+unsigned long {\bfseries gameCount} () const }
+\label{classpgn_1_1Parser_a3492dcc7dd6462f3b3779dd1276d0c31}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libpgnm/src/PGNParser.h\end{DoxyCompactItemize}

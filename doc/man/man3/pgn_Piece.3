@@ -1,0 +1,66 @@
+.TH "pgn::Piece" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::Piece \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPiece\fP (const \fBPiece\fP &src)"
+.br
+.ti -1c
+.RI "\fBPiece\fP (const char id)"
+.br
+.ti -1c
+.RI "\fBPiece\fP & \fBoperator=\fP (const \fBPiece\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPiece\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPiece\fP &src) const "
+.br
+.ti -1c
+.RI "char \fBid\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoStdString\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const \fBPiece\fP \fBPawn\fP ()"
+.br
+.ti -1c
+.RI "static const \fBPiece\fP \fBKnight\fP ()"
+.br
+.ti -1c
+.RI "static const \fBPiece\fP \fBBishop\fP ()"
+.br
+.ti -1c
+.RI "static const \fBPiece\fP \fBRook\fP ()"
+.br
+.ti -1c
+.RI "static const \fBPiece\fP \fBQueen\fP ()"
+.br
+.ti -1c
+.RI "static const \fBPiece\fP \fBKing\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBpgn::Piece\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

@@ -1,0 +1,155 @@
+\hypertarget{classpgn_1_1CommentText}{
+\section{pgn::CommentText Class Reference}
+\label{classpgn_1_1CommentText}\index{pgn::CommentText@{pgn::CommentText}}
+}
+
+
+Provides comment to move.  
+
+
+
+
+{\ttfamily \#include $<$PGNCommentText.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgn_1_1CommentText_a8f1a46577b31547ef030208fd2c84be4}{
+\hyperlink{classpgn_1_1CommentText_a8f1a46577b31547ef030208fd2c84be4}{CommentText} ()}
+\label{classpgn_1_1CommentText_a8f1a46577b31547ef030208fd2c84be4}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1CommentText_a53d4b5bac4f38b967d8b69837a43eca8}{CommentText} (const std::string \&s)
+\begin{DoxyCompactList}\small\item\em Constructs comment by given text. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1CommentText_aff77d46da40a2e120ba1c0dd0ad5d1aa}{CommentText} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&src)
+\begin{DoxyCompactList}\small\item\em Creates object as copy of given one. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1CommentText}{CommentText} \& \hyperlink{classpgn_1_1CommentText_ae6958b17db6837b177d32df85d6b0544}{operator=} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&src)
+\item 
+bool \hyperlink{classpgn_1_1CommentText_abb2ec8a7df892d89b673411b70950eb4}{operator==} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&src) const 
+\begin{DoxyCompactList}\small\item\em Checks are comments equal. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1CommentText_a8095c335ece11aa0cb4aadd3e7028f6e}{
+bool \hyperlink{classpgn_1_1CommentText_a8095c335ece11aa0cb4aadd3e7028f6e}{operator!=} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&src) const }
+\label{classpgn_1_1CommentText_a8095c335ece11aa0cb4aadd3e7028f6e}
+
+\begin{DoxyCompactList}\small\item\em Negative variant of pgn::CommentText::operator=(const \hyperlink{classpgn_1_1CommentText}{CommentText}). \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1CommentText_a4d1123548178a5aee589d31d3ee4a567}{
+std::string \hyperlink{classpgn_1_1CommentText_a4d1123548178a5aee589d31d3ee4a567}{toStdString} ()}
+\label{classpgn_1_1CommentText_a4d1123548178a5aee589d31d3ee4a567}
+
+\begin{DoxyCompactList}\small\item\em Represents comment as std::string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& \hyperlink{classpgn_1_1CommentText_a193d5d2f19f524d71ec71f1efa286440}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1CommentText}{CommentText} \&src)
+\begin{DoxyCompactList}\small\item\em Prints comment to stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides comment to move. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1CommentText_a53d4b5bac4f38b967d8b69837a43eca8}{
+\index{pgn::CommentText@{pgn::CommentText}!CommentText@{CommentText}}
+\index{CommentText@{CommentText}!pgn::CommentText@{pgn::CommentText}}
+\subsubsection[{CommentText}]{\setlength{\rightskip}{0pt plus 5cm}pgn::CommentText::CommentText (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1CommentText_a53d4b5bac4f38b967d8b69837a43eca8}
+
+
+Constructs comment by given text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Comment text. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1CommentText_aff77d46da40a2e120ba1c0dd0ad5d1aa}{
+\index{pgn::CommentText@{pgn::CommentText}!CommentText@{CommentText}}
+\index{CommentText@{CommentText}!pgn::CommentText@{pgn::CommentText}}
+\subsubsection[{CommentText}]{\setlength{\rightskip}{0pt plus 5cm}pgn::CommentText::CommentText (
+\begin{DoxyParamCaption}
+\item[{const {\bf CommentText} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1CommentText_aff77d46da40a2e120ba1c0dd0ad5d1aa}
+
+
+Creates object as copy of given one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Object which copy will be constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1CommentText_ae6958b17db6837b177d32df85d6b0544}{
+\index{pgn::CommentText@{pgn::CommentText}!operator=@{operator=}}
+\index{operator=@{operator=}!pgn::CommentText@{pgn::CommentText}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CommentText}\& pgn::CommentText::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf CommentText} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1CommentText_ae6958b17db6837b177d32df85d6b0544}
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Copies given comment to current object. \\
+\hline
+{\em src} & Source object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1CommentText_abb2ec8a7df892d89b673411b70950eb4}{
+\index{pgn::CommentText@{pgn::CommentText}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::CommentText@{pgn::CommentText}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::CommentText::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf CommentText} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1CommentText_abb2ec8a7df892d89b673411b70950eb4}
+
+
+Checks are comments equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Comment with which will be compaired. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if comments are equal, false in onther case 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classpgn_1_1CommentText_a193d5d2f19f524d71ec71f1efa286440}{
+\index{pgn::CommentText@{pgn::CommentText}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pgn::CommentText@{pgn::CommentText}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{os, }
+\item[{const {\bf CommentText} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classpgn_1_1CommentText_a193d5d2f19f524d71ec71f1efa286440}
+
+
+Prints comment to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to print. \\
+\hline
+{\em src} & Comment which must be printed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libpgnm/src/PGNCommentText.h\end{DoxyCompactItemize}

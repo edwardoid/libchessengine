@@ -1,0 +1,50 @@
+.TH "pgn::GameResult" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::GameResult \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGameResult\fP (std::string s)"
+.br
+.ti -1c
+.RI "\fBGameResult\fP (const \fBGameResult\fP &src)"
+.br
+.ti -1c
+.RI "\fBGameResult\fP & \fBoperator=\fP (const \fBGameResult\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBGameResult\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBGameResult\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBisWhiteWin\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisBlackWin\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisDrawn\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisUnknown\fP () const "
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBGameResult\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

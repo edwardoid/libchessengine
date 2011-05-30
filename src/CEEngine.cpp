@@ -34,7 +34,6 @@ ChEngn::Engine::Engine()
 ChEngn::Engine::Engine(const ChEngn::Engine &other)
 {
 	m_halfMove = false;
-	(other.moves());
 	m_currentMoveIt = m_moves.begin();
 }
 

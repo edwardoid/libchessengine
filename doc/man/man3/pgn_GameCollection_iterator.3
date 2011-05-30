@@ -1,0 +1,134 @@
+.TH "pgn::GameCollection::iterator" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::GameCollection::iterator \- 
+.PP
+Instrument for safe iteration in \fBpgn::GameCollection\fP.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PGNGameCollection.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBiterator\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "\fBiterator\fP (const \fBGameCollection\fP &ml)"
+.br
+.RI "\fIConstructs iterator pointing to first game in given list. \fP"
+.ti -1c
+.RI "\fBiterator\fP (const \fBGameCollection\fP &ml, int idx)"
+.br
+.RI "\fICostructs iterator poinitng to game at idx. If at index idx is no game ml::end() will be returned. \fP"
+.ti -1c
+.RI "\fBiterator\fP (const \fBiterator\fP &)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fB~iterator\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "\fBiterator\fP & \fBoperator=\fP (const \fBiterator\fP &src)"
+.br
+.RI "\fISets current iterator pointing as given. \fP"
+.ti -1c
+.RI "\fBiterator\fP & \fBoperator++\fP ()"
+.br
+.RI "\fISets iterator point to next game. \fP"
+.ti -1c
+.RI "\fBiterator\fP & \fBoperator++\fP (int i)"
+.br
+.RI "\fIMoves iterator to \fI positions forward. \fP\fP"
+.ti -1c
+.RI "\fBGame\fP * \fBoperator->\fP () const "
+.br
+.RI "\fIGet game iterator is pointing to. \fP"
+.ti -1c
+.RI "const \fBGame\fP & \fBoperator*\fP () const "
+.br
+.RI "\fIGet game iterator is pointing to. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBiterator\fP &) const "
+.br
+.RI "\fIChecks are two iterator pointing to same game. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBiterator\fP &) const "
+.br
+.RI "\fINegative variant of operator==. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Instrument for safe iteration in \fBpgn::GameCollection\fP. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::GameCollection::iterator::iterator (const \fBGameCollection\fP &ml)"
+.PP
+Constructs iterator pointing to first game in given list. \fBParameters:\fP
+.RS 4
+\fIml\fP Collection to iteration. 
+.RE
+.PP
+
+.SS "pgn::GameCollection::iterator::iterator (const \fBGameCollection\fP &ml, intidx)"
+.PP
+Costructs iterator poinitng to game at idx. If at index idx is no game ml::end() will be returned. \fBParameters:\fP
+.RS 4
+\fIml\fP Collection to iteration. 
+.br
+\fIidx\fP Iterator position. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBGame\fP& pgn::GameCollection::iterator::operator* () const"
+.PP
+Get game iterator is pointing to. \fBReturns:\fP
+.RS 4
+\fBGame\fP iterator is pointing to. 
+.RE
+.PP
+
+.SS "\fBiterator\fP& pgn::GameCollection::iterator::operator++ (inti)"
+.PP
+Moves iterator to \fI positions forward. \fP\fBParameters:\fP
+.RS 4
+\fIi\fP Positions count to be forwarded. 
+.RE
+.PP
+
+.SS "\fBGame\fP* pgn::GameCollection::iterator::operator-> () const"
+.PP
+Get game iterator is pointing to. \fBReturns:\fP
+.RS 4
+\fBGame\fP iterator is pointing to. 
+.RE
+.PP
+
+.SS "\fBiterator\fP& pgn::GameCollection::iterator::operator= (const \fBiterator\fP &src)"
+.PP
+Sets current iterator pointing as given. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source iterator. 
+.RE
+.PP
+
+.SS "bool pgn::GameCollection::iterator::operator== (const \fBiterator\fP &) const"
+.PP
+Checks are two iterator pointing to same game. \fBReturns:\fP
+.RS 4
+true if iterators are equal. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.

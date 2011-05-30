@@ -1,4 +1,4 @@
-.TH "ChEngn::Engine" 3 "Mon May 30 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::Engine" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,7 +23,7 @@ Make moves.
 .br
 .RI "\fICopy constructor. \fP"
 .ti -1c
-.RI "\fBEngine\fP (const pgn::Game &gm)"
+.RI "\fBEngine\fP (const \fBpgn::Game\fP &gm)"
 .br
 .RI "\fIConstructor. \fP"
 .ti -1c
@@ -35,11 +35,11 @@ Make moves.
 .br
 .RI "\fIGet an \fBcopy\fP of current game table. \fP"
 .ti -1c
-.RI "pgn::MoveList * \fBmoves\fP ()"
+.RI "\fBpgn::MoveList\fP * \fBmoves\fP ()"
 .br
 .RI "\fIGet loaded moves. \fP"
 .ti -1c
-.RI "pgn::MoveList::iterator \fBnextMove\fP ()"
+.RI "\fBpgn::MoveList::iterator\fP \fBnextMove\fP ()"
 .br
 .RI "\fIIterarator to next move. \fP"
 .ti -1c
@@ -51,15 +51,15 @@ Make moves.
 .br
 .RI "\fImake next half-move. \fP"
 .ti -1c
-.RI "bool \fBmakeMove\fP (pgn::Move &move)"
+.RI "bool \fBmakeMove\fP (\fBpgn::Move\fP &move)"
 .br
 .RI "\fIMake move. \fP"
 .ti -1c
-.RI "bool \fBmakePly\fP (const pgn::Ply *pl, bool isWhite)"
+.RI "bool \fBmakePly\fP (const \fBpgn::Ply\fP *pl, bool isWhite)"
 .br
 .RI "\fIMake ply's move. \fP"
 .ti -1c
-.RI "bool \fBmoveAndCheckForCheck\fP (const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite) const "
+.RI "bool \fBmoveAndCheckForCheck\fP (const \fBpgn::Square\fP oldPos, const \fBpgn::Square\fP newPos, const bool isWhite) const "
 .br
 .RI "\fIMoves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \fBChEngn::king\fP and checks is new position check position for given player. \fP"
 .in -1c
@@ -90,27 +90,27 @@ Make moves.
 
 .in +1c
 .ti -1c
-.RI "void \fBmakePawnPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakePawnPly\fP (const \fBpgn::Ply\fP *ply, bool isWhite)"
 .br
 .RI "\fIMakes pawn's move. \fP"
 .ti -1c
-.RI "void \fBmakeKnightPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeKnightPly\fP (const \fBpgn::Ply\fP *ply, bool isWhite)"
 .br
 .RI "\fIMakes knight's move. \fP"
 .ti -1c
-.RI "void \fBmakeBishopPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeBishopPly\fP (const \fBpgn::Ply\fP *ply, bool isWhite)"
 .br
 .RI "\fIMakes bishop's move. \fP"
 .ti -1c
-.RI "void \fBmakeRookPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeRookPly\fP (const \fBpgn::Ply\fP *ply, bool isWhite)"
 .br
 .RI "\fIMakes bishop's move. \fP"
 .ti -1c
-.RI "void \fBmakeQueenPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeQueenPly\fP (const \fBpgn::Ply\fP *ply, bool isWhite)"
 .br
 .RI "\fIMakes queen's move. \fP"
 .ti -1c
-.RI "void \fBmakeKingPly\fP (const pgn::Ply *ply, bool isWhite)"
+.RI "void \fBmakeKingPly\fP (const \fBpgn::Ply\fP *ply, bool isWhite)"
 .br
 .RI "\fIMakes kings's move. \fP"
 .ti -1c
@@ -157,9 +157,9 @@ Copy constructor. \fBParameters:\fP
 .RE
 .PP
 
-.SS "ChEngn::Engine::Engine (const pgn::Game &gm)"
+.SS "ChEngn::Engine::Engine (const \fBpgn::Game\fP &gm)"
 .PP
-Constructor. Creates \fBEngine\fP from pgn::Game 
+Constructor. Creates \fBEngine\fP from \fBpgn::Game\fP 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -272,7 +272,7 @@ true if check position found.
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makeBishopPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeBishopPly (const \fBpgn::Ply\fP *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes bishop's move. Tryes to make bishop's move) 
 .PP
@@ -289,7 +289,7 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makeKingPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeKingPly (const \fBpgn::Ply\fP *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes kings's move. Tryes to make king's move) 
 .PP
@@ -306,7 +306,7 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makeKnightPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeKnightPly (const \fBpgn::Ply\fP *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes knight's move. Tryes to make knight's move) 
 .PP
@@ -338,7 +338,7 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makeMove (pgn::Move &move)"
+.SS "bool ChEngn::Engine::makeMove (\fBpgn::Move\fP &move)"
 .PP
 Make move. Tryes to make move. OK if white player's move did successefully AND black player's move did successefully. 
 .PP
@@ -373,7 +373,7 @@ true if move can was successefully did. Else - fale will be returned. False will
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makePawnPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makePawnPly (const \fBpgn::Ply\fP *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes pawn's move. Tryes to make pawn's move) 
 .PP
@@ -390,7 +390,7 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::makePly (const pgn::Ply *pl, boolisWhite)"
+.SS "bool ChEngn::Engine::makePly (const \fBpgn::Ply\fP *pl, boolisWhite)"
 .PP
 Make ply's move. Make simple ply move 
 .PP
@@ -407,7 +407,7 @@ true if successefully, false - otherway.
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makeQueenPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeQueenPly (const \fBpgn::Ply\fP *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes queen's move. Tryes to make queen's move) 
 .PP
@@ -424,7 +424,7 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "void ChEngn::Engine::makeRookPly (const pgn::Ply *ply, boolisWhite)\fC [protected]\fP"
+.SS "void ChEngn::Engine::makeRookPly (const \fBpgn::Ply\fP *ply, boolisWhite)\fC [protected]\fP"
 .PP
 Makes bishop's move. Tryes to make bishop's move) 
 .PP
@@ -456,7 +456,7 @@ throws \fBChEngn::BadMove\fP if something went wrong, or move can't be done
 .RE
 .PP
 
-.SS "bool ChEngn::Engine::moveAndCheckForCheck (const pgn::SquareoldPos, const pgn::SquarenewPos, const boolisWhite) const"
+.SS "bool ChEngn::Engine::moveAndCheckForCheck (const \fBpgn::Square\fPoldPos, const \fBpgn::Square\fPnewPos, const boolisWhite) const"
 .PP
 Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \fBChEngn::king\fP and checks is new position check position for given player. \fBParameters:\fP
 .RS 4
@@ -478,17 +478,17 @@ only \fBChEngn::queen\fP, \fBChEngn::rook\fP and \fBChEngn::bishop\fP will be ch
 .RE
 .PP
 
-.SS "pgn::MoveList* ChEngn::Engine::moves ()"
+.SS "\fBpgn::MoveList\fP* ChEngn::Engine::moves ()"
 .PP
 Get loaded moves. \fBReturns:\fP
 .RS 4
-moves in loaded game, if there are no loaded game will be returned empty pgn::MoveList 
+moves in loaded game, if there are no loaded game will be returned empty \fBpgn::MoveList\fP 
 .RE
 .PP
 
-.SS "pgn::MoveList::iterator ChEngn::Engine::nextMove ()"
+.SS "\fBpgn::MoveList::iterator\fP ChEngn::Engine::nextMove ()"
 .PP
-Iterarator to next move. Gets pgn::MoveList::iterator to current move. If there are no aviable moves return vaule will be equal to 
+Iterarator to next move. Gets \fBpgn::MoveList::iterator\fP to current move. If there are no aviable moves return vaule will be equal to 
 .PP
 .nf
  moves()->end()

@@ -1,0 +1,57 @@
+.TH "pgn::Move" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pgn::Move \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMove\fP (const \fBMove\fP &src)"
+.br
+.ti -1c
+.RI "\fBMove\fP (const \fBPly\fP *white, const \fBPly\fP *black, int number)"
+.br
+.ti -1c
+.RI "\fBMove\fP & \fBoperator=\fP (const \fBMove\fP &src)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMove\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBMove\fP &src) const "
+.br
+.ti -1c
+.RI "bool \fBisCheckMate\fP () const "
+.br
+.ti -1c
+.RI "\fBPly\fP * \fBwhite\fP () const "
+.br
+.ti -1c
+.RI "\fBPly\fP * \fBblack\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoStdString\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBitoa\fP (int n)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBMove\fP &src)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.
