@@ -2,83 +2,307 @@
 \section{pgn::Game Class Reference}
 \label{classpgn_1_1Game}\index{pgn::Game@{pgn::Game}}
 }
+
+
+Represents information about game.  
+
+
+
+
+{\ttfamily \#include $<$PGNGame.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classpgn_1_1Game_af70cf1dfd509c2e8ec14905222ad02c4}{
-{\bfseries Game} (const \hyperlink{classpgn_1_1TagList}{TagList} \&tl, const \hyperlink{classpgn_1_1MoveList}{MoveList} \&ml, const \hyperlink{classpgn_1_1GameResult}{GameResult} \&gr)}
-\label{classpgn_1_1Game_af70cf1dfd509c2e8ec14905222ad02c4}
+\hyperlink{classpgn_1_1Game_af70cf1dfd509c2e8ec14905222ad02c4}{Game} (const \hyperlink{classpgn_1_1TagList}{TagList} \&tl, const \hyperlink{classpgn_1_1MoveList}{MoveList} \&ml, const \hyperlink{classpgn_1_1GameResult}{GameResult} \&gr)
+\begin{DoxyCompactList}\small\item\em Constructs game with given tags, moves and result. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Game_ac7301876d9b4e3b49af18b0fcdd67e96}{Game} (const \hyperlink{classpgn_1_1Game}{Game} \&src)
+\begin{DoxyCompactList}\small\item\em Copy-\/constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1Game_a06895c2c9d8aceb6112dbaf08e9d52c5}{
+virtual \hyperlink{classpgn_1_1Game_a06895c2c9d8aceb6112dbaf08e9d52c5}{$\sim$Game} ()}
+\label{classpgn_1_1Game_a06895c2c9d8aceb6112dbaf08e9d52c5}
 
-\item 
-\hypertarget{classpgn_1_1Game_ac7301876d9b4e3b49af18b0fcdd67e96}{
-{\bfseries Game} (const \hyperlink{classpgn_1_1Game}{Game} \&src)}
-\label{classpgn_1_1Game_ac7301876d9b4e3b49af18b0fcdd67e96}
-
-\item 
-\hypertarget{classpgn_1_1Game_a0269e03dd3ec64fc52422e37a3eb5fc8}{
-\hyperlink{classpgn_1_1Game}{Game} \& {\bfseries operator=} (const \hyperlink{classpgn_1_1Game}{Game} \&src)}
-\label{classpgn_1_1Game_a0269e03dd3ec64fc52422e37a3eb5fc8}
-
-\item 
-\hypertarget{classpgn_1_1Game_a77fc6ee1f9df2cfe681cd3f5349ea406}{
-bool {\bfseries operator==} (const \hyperlink{classpgn_1_1Game}{Game} \&src) const }
-\label{classpgn_1_1Game_a77fc6ee1f9df2cfe681cd3f5349ea406}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Game}{Game} \& \hyperlink{classpgn_1_1Game_a0269e03dd3ec64fc52422e37a3eb5fc8}{operator=} (const \hyperlink{classpgn_1_1Game}{Game} \&src)
+\begin{DoxyCompactList}\small\item\em Copy given game to current. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Game_a77fc6ee1f9df2cfe681cd3f5349ea406}{operator==} (const \hyperlink{classpgn_1_1Game}{Game} \&src) const 
+\begin{DoxyCompactList}\small\item\em Compares 2 games. \item\end{DoxyCompactList}\item 
 \hypertarget{classpgn_1_1Game_aa37c1fd209b5c52c715b9b741eb008bf}{
-bool {\bfseries operator!=} (const \hyperlink{classpgn_1_1Game}{Game} \&src) const }
+bool \hyperlink{classpgn_1_1Game_aa37c1fd209b5c52c715b9b741eb008bf}{operator!=} (const \hyperlink{classpgn_1_1Game}{Game} \&src) const }
 \label{classpgn_1_1Game_aa37c1fd209b5c52c715b9b741eb008bf}
 
-\item 
-\hypertarget{classpgn_1_1Game_a2f6db558f0ad800a8550dc140d9b593b}{
-\hyperlink{classpgn_1_1TagList}{TagList} \& {\bfseries tags} () const }
-\label{classpgn_1_1Game_a2f6db558f0ad800a8550dc140d9b593b}
-
-\item 
-\hypertarget{classpgn_1_1Game_a0a5ba73b2f7a9b02fbc43369942ea26f}{
-\hyperlink{classpgn_1_1MoveList}{MoveList} \& {\bfseries moves} () const }
-\label{classpgn_1_1Game_a0a5ba73b2f7a9b02fbc43369942ea26f}
-
-\item 
-\hypertarget{classpgn_1_1Game_ad1da6be6fcaa426c8e2232680b4c0a97}{
-std::string {\bfseries date} () const }
-\label{classpgn_1_1Game_ad1da6be6fcaa426c8e2232680b4c0a97}
-
-\item 
-\hypertarget{classpgn_1_1Game_a20dd691b942f9d6869c7d538936475e2}{
-std::string {\bfseries white} () const }
-\label{classpgn_1_1Game_a20dd691b942f9d6869c7d538936475e2}
-
-\item 
-\hypertarget{classpgn_1_1Game_a06e6c7feadcac154ee59bcde7deb01f8}{
-std::string {\bfseries black} () const }
-\label{classpgn_1_1Game_a06e6c7feadcac154ee59bcde7deb01f8}
-
-\item 
-\hypertarget{classpgn_1_1Game_ad46a700f9803ed86e10f29d5e910301d}{
-\hyperlink{classpgn_1_1GameResult}{GameResult} {\bfseries result} () const }
-\label{classpgn_1_1Game_ad46a700f9803ed86e10f29d5e910301d}
-
-\item 
-\hypertarget{classpgn_1_1Game_a8da886b2b21bc51540a1205a311e04a8}{
-void {\bfseries bindBeforeGameComment} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&ct)}
-\label{classpgn_1_1Game_a8da886b2b21bc51540a1205a311e04a8}
-
-\item 
-\hypertarget{classpgn_1_1Game_a9251eab770f481daa1fcfc7c5cf35a6c}{
-void {\bfseries bindAfterGameComment} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&ct)}
-\label{classpgn_1_1Game_a9251eab770f481daa1fcfc7c5cf35a6c}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Negotive version of \hyperlink{classpgn_1_1Game_a77fc6ee1f9df2cfe681cd3f5349ea406}{operator==()}. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1TagList}{TagList} \& \hyperlink{classpgn_1_1Game_a2f6db558f0ad800a8550dc140d9b593b}{tags} () const 
+\begin{DoxyCompactList}\small\item\em Returns tags and values. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1MoveList}{MoveList} \& \hyperlink{classpgn_1_1Game_a0a5ba73b2f7a9b02fbc43369942ea26f}{moves} () const 
+\begin{DoxyCompactList}\small\item\em Returns game's move list. \item\end{DoxyCompactList}\item 
+std::string \hyperlink{classpgn_1_1Game_ad1da6be6fcaa426c8e2232680b4c0a97}{date} () const 
+\begin{DoxyCompactList}\small\item\em Get time when game was/is finished/going. \item\end{DoxyCompactList}\item 
+std::string \hyperlink{classpgn_1_1Game_a20dd691b942f9d6869c7d538936475e2}{white} () const 
+\begin{DoxyCompactList}\small\item\em Get white player's name. \item\end{DoxyCompactList}\item 
+std::string \hyperlink{classpgn_1_1Game_a06e6c7feadcac154ee59bcde7deb01f8}{black} () const 
+\begin{DoxyCompactList}\small\item\em Get black player's name. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameResult}{GameResult} \hyperlink{classpgn_1_1Game_ad46a700f9803ed86e10f29d5e910301d}{result} () const 
+\begin{DoxyCompactList}\small\item\em Get game's result. \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1Game_a8da886b2b21bc51540a1205a311e04a8}{bindBeforeGameComment} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&ct)
+\begin{DoxyCompactList}\small\item\em Sets pre-\/game comment. \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1Game_a9251eab770f481daa1fcfc7c5cf35a6c}{bindAfterGameComment} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&ct)
+\begin{DoxyCompactList}\small\item\em Sets post-\/game comment. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
+std::ostream \& \hyperlink{classpgn_1_1Game_af78a70a5edc650cf984497f54bc63590}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1Game}{Game} \&src)
+\begin{DoxyCompactList}\small\item\em Prints game to stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents information about game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1Game_af70cf1dfd509c2e8ec14905222ad02c4}{
+\index{pgn::Game@{pgn::Game}!Game@{Game}}
+\index{Game@{Game}!pgn::Game@{pgn::Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}pgn::Game::Game (
+\begin{DoxyParamCaption}
+\item[{const {\bf TagList} \&}]{tl, }
+\item[{const {\bf MoveList} \&}]{ml, }
+\item[{const {\bf GameResult} \&}]{gr}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Game_af70cf1dfd509c2e8ec14905222ad02c4}
+
+
+Constructs game with given tags, moves and result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tl} & A Set of tags and values for current game. \\
+\hline
+{\em ml} & list of moves for game. \\
+\hline
+{\em gr} & Result of a game. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1Game_ac7301876d9b4e3b49af18b0fcdd67e96}{
+\index{pgn::Game@{pgn::Game}!Game@{Game}}
+\index{Game@{Game}!pgn::Game@{pgn::Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}pgn::Game::Game (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Game_ac7301876d9b4e3b49af18b0fcdd67e96}
+
+
+Copy-\/constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source game. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1Game_a9251eab770f481daa1fcfc7c5cf35a6c}{
+\index{pgn::Game@{pgn::Game}!bindAfterGameComment@{bindAfterGameComment}}
+\index{bindAfterGameComment@{bindAfterGameComment}!pgn::Game@{pgn::Game}}
+\subsubsection[{bindAfterGameComment}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::Game::bindAfterGameComment (
+\begin{DoxyParamCaption}
+\item[{const {\bf CommentText} \&}]{ct}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Game_a9251eab770f481daa1fcfc7c5cf35a6c}
+
+
+Sets post-\/game comment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ct} & Comment. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1Game_a8da886b2b21bc51540a1205a311e04a8}{
+\index{pgn::Game@{pgn::Game}!bindBeforeGameComment@{bindBeforeGameComment}}
+\index{bindBeforeGameComment@{bindBeforeGameComment}!pgn::Game@{pgn::Game}}
+\subsubsection[{bindBeforeGameComment}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::Game::bindBeforeGameComment (
+\begin{DoxyParamCaption}
+\item[{const {\bf CommentText} \&}]{ct}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Game_a8da886b2b21bc51540a1205a311e04a8}
+
+
+Sets pre-\/game comment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ct} & Comment. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1Game_a06e6c7feadcac154ee59bcde7deb01f8}{
+\index{pgn::Game@{pgn::Game}!black@{black}}
+\index{black@{black}!pgn::Game@{pgn::Game}}
+\subsubsection[{black}]{\setlength{\rightskip}{0pt plus 5cm}std::string pgn::Game::black (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_a06e6c7feadcac154ee59bcde7deb01f8}
+
+
+Get black player's name. 
+
+\begin{DoxyReturn}{Returns}
+Value of tag \char`\"{}Black\char`\"{}. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_ad1da6be6fcaa426c8e2232680b4c0a97}{
+\index{pgn::Game@{pgn::Game}!date@{date}}
+\index{date@{date}!pgn::Game@{pgn::Game}}
+\subsubsection[{date}]{\setlength{\rightskip}{0pt plus 5cm}std::string pgn::Game::date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_ad1da6be6fcaa426c8e2232680b4c0a97}
+
+
+Get time when game was/is finished/going. 
+
+\begin{DoxyReturn}{Returns}
+Value of tag \char`\"{}Date\char`\"{}. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_a0a5ba73b2f7a9b02fbc43369942ea26f}{
+\index{pgn::Game@{pgn::Game}!moves@{moves}}
+\index{moves@{moves}!pgn::Game@{pgn::Game}}
+\subsubsection[{moves}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MoveList}\& pgn::Game::moves (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_a0a5ba73b2f7a9b02fbc43369942ea26f}
+
+
+Returns game's move list. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classpgn_1_1Game}{Game} moves. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_a0269e03dd3ec64fc52422e37a3eb5fc8}{
+\index{pgn::Game@{pgn::Game}!operator=@{operator=}}
+\index{operator=@{operator=}!pgn::Game@{pgn::Game}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}\& pgn::Game::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Game_a0269e03dd3ec64fc52422e37a3eb5fc8}
+
+
+Copy given game to current. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to changed game. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_a77fc6ee1f9df2cfe681cd3f5349ea406}{
+\index{pgn::Game@{pgn::Game}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::Game@{pgn::Game}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Game::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_a77fc6ee1f9df2cfe681cd3f5349ea406}
+
+
+Compares 2 games. 
+
+2 games are equal if is equal their tags, moves, and result. 
+\begin{DoxyParams}{Parameters}
+{\em src} & Source game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if games are equal. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_ad46a700f9803ed86e10f29d5e910301d}{
+\index{pgn::Game@{pgn::Game}!result@{result}}
+\index{result@{result}!pgn::Game@{pgn::Game}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GameResult} pgn::Game::result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_ad46a700f9803ed86e10f29d5e910301d}
+
+
+Get game's result. 
+
+\begin{DoxyReturn}{Returns}
+Value of tag \char`\"{}Result\char`\"{}. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_a2f6db558f0ad800a8550dc140d9b593b}{
+\index{pgn::Game@{pgn::Game}!tags@{tags}}
+\index{tags@{tags}!pgn::Game@{pgn::Game}}
+\subsubsection[{tags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TagList}\& pgn::Game::tags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_a2f6db558f0ad800a8550dc140d9b593b}
+
+
+Returns tags and values. 
+
+Returns tags with values associated to the game. \begin{DoxyReturn}{Returns}
+Set of tags. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Game_a20dd691b942f9d6869c7d538936475e2}{
+\index{pgn::Game@{pgn::Game}!white@{white}}
+\index{white@{white}!pgn::Game@{pgn::Game}}
+\subsubsection[{white}]{\setlength{\rightskip}{0pt plus 5cm}std::string pgn::Game::white (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Game_a20dd691b942f9d6869c7d538936475e2}
+
+
+Get white player's name. 
+
+\begin{DoxyReturn}{Returns}
+Value of tag \char`\"{}White\char`\"{}. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
 \hypertarget{classpgn_1_1Game_af78a70a5edc650cf984497f54bc63590}{
-std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1Game}{Game} \&src)}
+\index{pgn::Game@{pgn::Game}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pgn::Game@{pgn::Game}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{os, }
+\item[{const {\bf Game} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{classpgn_1_1Game_af78a70a5edc650cf984497f54bc63590}
 
-\end{DoxyCompactItemize}
 
+Prints game to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to print. \\
+\hline
+{\em src} & \hyperlink{classpgn_1_1Game}{Game} to print.\\
+\hline
+\end{DoxyParams}
+Prints tags by one to line, then prints moves, and then game result. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

@@ -1,53 +1,75 @@
-.TH "pgn::Game" 3 "Tue May 31 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "pgn::Game" 3 "Wed Jun 1 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 pgn::Game \- 
+.PP
+Represents information about game.  
+
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <PGNGame.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBGame\fP (const \fBTagList\fP &tl, const \fBMoveList\fP &ml, const \fBGameResult\fP &gr)"
 .br
+.RI "\fIConstructs game with given tags, moves and result. \fP"
 .ti -1c
 .RI "\fBGame\fP (const \fBGame\fP &src)"
 .br
+.RI "\fICopy-constructor. \fP"
+.ti -1c
+.RI "virtual \fB~Game\fP ()"
+.br
+.RI "\fIDestructor. \fP"
 .ti -1c
 .RI "\fBGame\fP & \fBoperator=\fP (const \fBGame\fP &src)"
 .br
+.RI "\fICopy given game to current. \fP"
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBGame\fP &src) const "
 .br
+.RI "\fICompares 2 games. \fP"
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBGame\fP &src) const "
 .br
+.RI "\fINegotive version of \fBoperator==()\fP. \fP"
 .ti -1c
 .RI "\fBTagList\fP & \fBtags\fP () const "
 .br
+.RI "\fIReturns tags and values. \fP"
 .ti -1c
 .RI "\fBMoveList\fP & \fBmoves\fP () const "
 .br
+.RI "\fIReturns game's move list. \fP"
 .ti -1c
 .RI "std::string \fBdate\fP () const "
 .br
+.RI "\fIGet time when game was/is finished/going. \fP"
 .ti -1c
 .RI "std::string \fBwhite\fP () const "
 .br
+.RI "\fIGet white player's name. \fP"
 .ti -1c
 .RI "std::string \fBblack\fP () const "
 .br
+.RI "\fIGet black player's name. \fP"
 .ti -1c
 .RI "\fBGameResult\fP \fBresult\fP () const "
 .br
+.RI "\fIGet game's result. \fP"
 .ti -1c
 .RI "void \fBbindBeforeGameComment\fP (const \fBCommentText\fP &ct)"
 .br
+.RI "\fISets pre-game comment. \fP"
 .ti -1c
 .RI "void \fBbindAfterGameComment\fP (const \fBCommentText\fP &ct)"
 .br
+.RI "\fISets post-game comment. \fP"
 .in -1c
 .SS "Friends"
 
@@ -55,7 +77,141 @@ pgn::Game \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBGame\fP &src)"
 .br
+.RI "\fIPrints game to stream. \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+Represents information about game. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::Game::Game (const \fBTagList\fP &tl, const \fBMoveList\fP &ml, const \fBGameResult\fP &gr)"
+.PP
+Constructs game with given tags, moves and result. \fBParameters:\fP
+.RS 4
+\fItl\fP A Set of tags and values for current game. 
+.br
+\fIml\fP list of moves for game. 
+.br
+\fIgr\fP Result of a game. 
+.RE
+.PP
+
+.SS "pgn::Game::Game (const \fBGame\fP &src)"
+.PP
+Copy-constructor. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source game. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void pgn::Game::bindAfterGameComment (const \fBCommentText\fP &ct)"
+.PP
+Sets post-game comment. \fBParameters:\fP
+.RS 4
+\fIct\fP Comment. 
+.RE
+.PP
+
+.SS "void pgn::Game::bindBeforeGameComment (const \fBCommentText\fP &ct)"
+.PP
+Sets pre-game comment. \fBParameters:\fP
+.RS 4
+\fIct\fP Comment. 
+.RE
+.PP
+
+.SS "std::string pgn::Game::black () const"
+.PP
+Get black player's name. \fBReturns:\fP
+.RS 4
+Value of tag 'Black'. 
+.RE
+.PP
+
+.SS "std::string pgn::Game::date () const"
+.PP
+Get time when game was/is finished/going. \fBReturns:\fP
+.RS 4
+Value of tag 'Date'. 
+.RE
+.PP
+
+.SS "\fBMoveList\fP& pgn::Game::moves () const"
+.PP
+Returns game's move list. \fBReturns:\fP
+.RS 4
+\fBGame\fP moves. 
+.RE
+.PP
+
+.SS "\fBGame\fP& pgn::Game::operator= (const \fBGame\fP &src)"
+.PP
+Copy given game to current. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source game. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to changed game. 
+.RE
+.PP
+
+.SS "bool pgn::Game::operator== (const \fBGame\fP &src) const"
+.PP
+Compares 2 games. 2 games are equal if is equal their tags, moves, and result. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrc\fP Source game. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if games are equal. 
+.RE
+.PP
+
+.SS "\fBGameResult\fP pgn::Game::result () const"
+.PP
+Get game's result. \fBReturns:\fP
+.RS 4
+Value of tag 'Result'. 
+.RE
+.PP
+
+.SS "\fBTagList\fP& pgn::Game::tags () const"
+.PP
+Returns tags and values. Returns tags with values associated to the game. 
+.PP
+\fBReturns:\fP
+.RS 4
+Set of tags. 
+.RE
+.PP
+
+.SS "std::string pgn::Game::white () const"
+.PP
+Get white player's name. \fBReturns:\fP
+.RS 4
+Value of tag 'White'. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBGame\fP &src)\fC [friend]\fP"
+.PP
+Prints game to stream. \fBParameters:\fP
+.RS 4
+\fIos\fP Stream to print. 
+.br
+\fIsrc\fP \fBGame\fP to print.
+.RE
+.PP
+Prints tags by one to line, then prints moves, and then game result. 
 
 .SH "Author"
 .PP 

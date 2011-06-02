@@ -90,40 +90,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 <span class="preprocessor">#include &lt;PGNTagList.h&gt;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;PGNMoveList.h&gt;</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">namespace </span>pgn
-<a name="l00031"></a>00031 {
-<a name="l00032"></a><a class="code" href="classpgn_1_1Game.html">00032</a>     <span class="keyword">class </span><a class="code" href="classpgn_1_1Game.html">Game</a> 
-<a name="l00033"></a>00033     {
-<a name="l00034"></a>00034         <span class="keyword">public</span>:
-<a name="l00035"></a>00035         
-<a name="l00036"></a>00036             <a class="code" href="classpgn_1_1Game.html">Game</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1TagList.html">TagList</a> &amp;tl, <span class="keyword">const</span> <a class="code" href="classpgn_1_1MoveList.html">MoveList</a> &amp;ml, <span class="keyword">const</span> <a class="code" href="classpgn_1_1GameResult.html">GameResult</a> &amp;gr);
-<a name="l00037"></a>00037             <a class="code" href="classpgn_1_1Game.html">Game</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html">Game</a>&amp; src);
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039             <span class="keyword">virtual</span> ~<a class="code" href="classpgn_1_1Game.html">Game</a>();
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041             <a class="code" href="classpgn_1_1Game.html">Game</a>&amp; operator = (<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html">Game</a>&amp; src);
-<a name="l00042"></a>00042             <span class="keywordtype">bool</span> operator == (<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html">Game</a>&amp; src) <span class="keyword">const</span>;
-<a name="l00043"></a>00043             <span class="keywordtype">bool</span> operator != (<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html">Game</a>&amp; src) <span class="keyword">const</span>;
-<a name="l00044"></a>00044         
-<a name="l00045"></a>00045             <a class="code" href="classpgn_1_1TagList.html">TagList</a>&amp; tags() <span class="keyword">const</span>;
-<a name="l00046"></a>00046             <a class="code" href="classpgn_1_1MoveList.html">MoveList</a>&amp; moves() <span class="keyword">const</span>;
-<a name="l00047"></a>00047             std::string date() <span class="keyword">const</span>;
-<a name="l00048"></a>00048             std::string white() <span class="keyword">const</span>;
-<a name="l00049"></a>00049             std::string black() <span class="keyword">const</span>;
-<a name="l00050"></a>00050             <a class="code" href="classpgn_1_1GameResult.html">GameResult</a> result() <span class="keyword">const</span>;
-<a name="l00051"></a>00051             <span class="keywordtype">void</span> bindBeforeGameComment(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a> &amp;ct);
-<a name="l00052"></a>00052             <span class="keywordtype">void</span> bindAfterGameComment(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a> &amp;ct);
-<a name="l00053"></a>00053         
-<a name="l00054"></a>00054             <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt; ( std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html">Game</a>&amp; src);
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="keyword">private</span>:
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058             <span class="keyword">struct </span>GameData *hdata;
-<a name="l00059"></a>00059     };
-<a name="l00060"></a>00060 };
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="preprocessor">#endif </span>
-<a name="l00063"></a>00063 <span class="preprocessor"></span>
+<a name="l00034"></a>00034 <span class="keyword">namespace </span>pgn
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036 
+<a name="l00041"></a><a class="code" href="classpgn_1_1Game.html">00041</a>     <span class="keyword">class </span><a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a> 
+<a name="l00042"></a>00042     {
+<a name="l00043"></a>00043         <span class="keyword">public</span>:
+<a name="l00044"></a>00044             
+<a name="l00051"></a>00051             <a class="code" href="classpgn_1_1Game.html#af70cf1dfd509c2e8ec14905222ad02c4" title="Constructs game with given tags, moves and result.">Game</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1TagList.html">TagList</a> &amp;tl, <span class="keyword">const</span> <a class="code" href="classpgn_1_1MoveList.html">MoveList</a> &amp;ml, <span class="keyword">const</span> <a class="code" href="classpgn_1_1GameResult.html">GameResult</a> &amp;gr);
+<a name="l00052"></a>00052 
+<a name="l00057"></a>00057             <a class="code" href="classpgn_1_1Game.html#af70cf1dfd509c2e8ec14905222ad02c4" title="Constructs game with given tags, moves and result.">Game</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a>&amp; src);
+<a name="l00058"></a>00058 
+<a name="l00062"></a>00062             <span class="keyword">virtual</span> <a class="code" href="classpgn_1_1Game.html#a06895c2c9d8aceb6112dbaf08e9d52c5" title="Destructor.">~Game</a>();
+<a name="l00063"></a>00063 
+<a name="l00069"></a>00069             <a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a>&amp; <a class="code" href="classpgn_1_1Game.html#a0269e03dd3ec64fc52422e37a3eb5fc8" title="Copy given game to current.">operator = </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a>&amp; src);
+<a name="l00070"></a>00070 
+<a name="l00077"></a>00077             <span class="keywordtype">bool</span> <a class="code" href="classpgn_1_1Game.html#a77fc6ee1f9df2cfe681cd3f5349ea406" title="Compares 2 games.">operator == </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a>&amp; src) <span class="keyword">const</span>;
+<a name="l00078"></a>00078 
+<a name="l00082"></a>00082             <span class="keywordtype">bool</span> <a class="code" href="classpgn_1_1Game.html#aa37c1fd209b5c52c715b9b741eb008bf" title="Negotive version of operator==().">operator != </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a>&amp; src) <span class="keyword">const</span>;
+<a name="l00083"></a>00083         
+<a name="l00089"></a>00089             <a class="code" href="classpgn_1_1TagList.html">TagList</a>&amp; <a class="code" href="classpgn_1_1Game.html#a2f6db558f0ad800a8550dc140d9b593b" title="Returns tags and values.">tags</a>() <span class="keyword">const</span>;
+<a name="l00090"></a>00090 
+<a name="l00095"></a>00095             <a class="code" href="classpgn_1_1MoveList.html">MoveList</a>&amp; <a class="code" href="classpgn_1_1Game.html#a0a5ba73b2f7a9b02fbc43369942ea26f" title="Returns game&amp;#39;s move list.">moves</a>() <span class="keyword">const</span>;
+<a name="l00096"></a>00096 
+<a name="l00102"></a>00102             std::string <a class="code" href="classpgn_1_1Game.html#ad1da6be6fcaa426c8e2232680b4c0a97" title="Get time when game was/is finished/going.">date</a>() <span class="keyword">const</span>;
+<a name="l00103"></a>00103 
+<a name="l00108"></a>00108             std::string <a class="code" href="classpgn_1_1Game.html#a20dd691b942f9d6869c7d538936475e2" title="Get white player&amp;#39;s name.">white</a>() <span class="keyword">const</span>;
+<a name="l00109"></a>00109             
+<a name="l00114"></a>00114             std::string <a class="code" href="classpgn_1_1Game.html#a06e6c7feadcac154ee59bcde7deb01f8" title="Get black player&amp;#39;s name.">black</a>() <span class="keyword">const</span>;
+<a name="l00115"></a>00115             
+<a name="l00120"></a>00120             <a class="code" href="classpgn_1_1GameResult.html">GameResult</a> <a class="code" href="classpgn_1_1Game.html#ad46a700f9803ed86e10f29d5e910301d" title="Get game&amp;#39;s result.">result</a>() <span class="keyword">const</span>;
+<a name="l00121"></a>00121 
+<a name="l00126"></a>00126             <span class="keywordtype">void</span> <a class="code" href="classpgn_1_1Game.html#a8da886b2b21bc51540a1205a311e04a8" title="Sets pre-game comment.">bindBeforeGameComment</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a> &amp;ct);
+<a name="l00127"></a>00127 
+<a name="l00132"></a>00132             <span class="keywordtype">void</span> <a class="code" href="classpgn_1_1Game.html#a9251eab770f481daa1fcfc7c5cf35a6c" title="Sets post-game comment.">bindAfterGameComment</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a> &amp;ct);
+<a name="l00133"></a>00133 
+<a name="l00142"></a>00142             <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classpgn_1_1Game.html#af78a70a5edc650cf984497f54bc63590" title="Prints game to stream.">operator &lt;&lt; </a>( std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classpgn_1_1Game.html" title="Represents information about game.">Game</a>&amp; src);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         <span class="keyword">private</span>:
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146             <span class="keyword">struct </span>GameData *hdata;
+<a name="l00147"></a>00147     };
+<a name="l00148"></a>00148 };
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 <span class="preprocessor">#endif </span>
+<a name="l00151"></a>00151 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -140,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue May 31 2011 02:45:38 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jun 1 2011 19:39:46 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
