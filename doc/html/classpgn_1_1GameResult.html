@@ -75,33 +75,237 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="pgn::GameResult" -->
+<p>Stores information about game result.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="PGNGameResult_8h_source.html">PGNGameResult.h</a>&gt;</code></p>
+
 <p><a href="classpgn_1_1GameResult-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d0cb12a719e7d7c493c9c0e33bbcec4"></a><!-- doxytag: member="pgn::GameResult::GameResult" ref="a4d0cb12a719e7d7c493c9c0e33bbcec4" args="(std::string s)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameResult</b> (std::string s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8074fdea435bd38c5f972d4b8db2828f"></a><!-- doxytag: member="pgn::GameResult::GameResult" ref="a8074fdea435bd38c5f972d4b8db2828f" args="()" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a8074fdea435bd38c5f972d4b8db2828f">GameResult</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a4d0cb12a719e7d7c493c9c0e33bbcec4">GameResult</a> (std::string s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts result information from given string, and constructs object by extracted information.  <a href="#a4d0cb12a719e7d7c493c9c0e33bbcec4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54ad0cf0520a188b2e50585684090cf3"></a><!-- doxytag: member="pgn::GameResult::GameResult" ref="a54ad0cf0520a188b2e50585684090cf3" args="(const GameResult &amp;src)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameResult</b> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec873f6850ce41749fa843663be9a621"></a><!-- doxytag: member="pgn::GameResult::operator=" ref="aec873f6850ce41749fa843663be9a621" args="(const GameResult &amp;src)" -->
-<a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16b63d46d350921fd82b347fd672cf2d"></a><!-- doxytag: member="pgn::GameResult::operator==" ref="a16b63d46d350921fd82b347fd672cf2d" args="(const GameResult &amp;src) const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src) const </td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a54ad0cf0520a188b2e50585684090cf3">GameResult</a> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-constructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#aec873f6850ce41749fa843663be9a621">operator=</a> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies information from other object.  <a href="#aec873f6850ce41749fa843663be9a621"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a16b63d46d350921fd82b347fd672cf2d">operator==</a> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares 2 game results.  <a href="#a16b63d46d350921fd82b347fd672cf2d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59726e2f76eb4f2dac8689c9a8e755dd"></a><!-- doxytag: member="pgn::GameResult::operator!=" ref="a59726e2f76eb4f2dac8689c9a8e755dd" args="(const GameResult &amp;src) const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f31f5bbb4edb633f5ffed005ac4da40"></a><!-- doxytag: member="pgn::GameResult::isWhiteWin" ref="a9f31f5bbb4edb633f5ffed005ac4da40" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isWhiteWin</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fa942ec8c3161a6f1ec7dd2640dcd91"></a><!-- doxytag: member="pgn::GameResult::isBlackWin" ref="a3fa942ec8c3161a6f1ec7dd2640dcd91" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isBlackWin</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61e5ec5c487399e405a6b1e0cfcf7fef"></a><!-- doxytag: member="pgn::GameResult::isDrawn" ref="a61e5ec5c487399e405a6b1e0cfcf7fef" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDrawn</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8677f97201226a09cca6c0bedf7f8777"></a><!-- doxytag: member="pgn::GameResult::isUnknown" ref="a8677f97201226a09cca6c0bedf7f8777" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isUnknown</b> () const </td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a59726e2f76eb4f2dac8689c9a8e755dd">operator!=</a> (const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative verion of <a class="el" href="classpgn_1_1GameResult.html#a16b63d46d350921fd82b347fd672cf2d" title="Compares 2 game results.">GameResult::operator==()</a>. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a9f31f5bbb4edb633f5ffed005ac4da40">isWhiteWin</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is result "1-0".  <a href="#a9f31f5bbb4edb633f5ffed005ac4da40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a3fa942ec8c3161a6f1ec7dd2640dcd91">isBlackWin</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is result "0-1".  <a href="#a3fa942ec8c3161a6f1ec7dd2640dcd91"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a61e5ec5c487399e405a6b1e0cfcf7fef">isDrawn</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is result "1/2-1/2".  <a href="#a61e5ec5c487399e405a6b1e0cfcf7fef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a8677f97201226a09cca6c0bedf7f8777">isUnknown</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is game's result not "1-0", "0-1" or "1/2-1/2".  <a href="#a8677f97201226a09cca6c0bedf7f8777"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27d55f60e270a7372206724456570c00"></a><!-- doxytag: member="pgn::GameResult::operator&lt;&lt;" ref="a27d55f60e270a7372206724456570c00" args="(std::ostream &amp;os, const GameResult &amp;src)" -->
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1GameResult.html#a27d55f60e270a7372206724456570c00">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints result to given stream.  <a href="#a27d55f60e270a7372206724456570c00"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Stores information about game result. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4d0cb12a719e7d7c493c9c0e33bbcec4"></a><!-- doxytag: member="pgn::GameResult::GameResult" ref="a4d0cb12a719e7d7c493c9c0e33bbcec4" args="(std::string s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::GameResult::GameResult </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Extracts result information from given string, and constructs object by extracted information. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Source string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a3fa942ec8c3161a6f1ec7dd2640dcd91"></a><!-- doxytag: member="pgn::GameResult::isBlackWin" ref="a3fa942ec8c3161a6f1ec7dd2640dcd91" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::GameResult::isBlackWin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is result "0-1". </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if black player wins. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a61e5ec5c487399e405a6b1e0cfcf7fef"></a><!-- doxytag: member="pgn::GameResult::isDrawn" ref="a61e5ec5c487399e405a6b1e0cfcf7fef" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::GameResult::isDrawn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is result "1/2-1/2". </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if game finished as draw. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8677f97201226a09cca6c0bedf7f8777"></a><!-- doxytag: member="pgn::GameResult::isUnknown" ref="a8677f97201226a09cca6c0bedf7f8777" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::GameResult::isUnknown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is game's result not "1-0", "0-1" or "1/2-1/2". </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true If there is no result specified in game, or result is "*". </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9f31f5bbb4edb633f5ffed005ac4da40"></a><!-- doxytag: member="pgn::GameResult::isWhiteWin" ref="a9f31f5bbb4edb633f5ffed005ac4da40" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::GameResult::isWhiteWin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is result "1-0". </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if white player wins. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aec873f6850ce41749fa843663be9a621"></a><!-- doxytag: member="pgn::GameResult::operator=" ref="aec873f6850ce41749fa843663be9a621" args="(const GameResult &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1GameResult.html">GameResult</a>&amp; pgn::GameResult::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies information from other object. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source result. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a16b63d46d350921fd82b347fd672cf2d"></a><!-- doxytag: member="pgn::GameResult::operator==" ref="a16b63d46d350921fd82b347fd672cf2d" args="(const GameResult &amp;src) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::GameResult::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compares 2 game results. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source result. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if results are equal(same). </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a27d55f60e270a7372206724456570c00"></a><!-- doxytag: member="pgn::GameResult::operator&lt;&lt;" ref="a27d55f60e270a7372206724456570c00" args="(std::ostream &amp;os, const GameResult &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1GameResult.html">GameResult</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints result to given stream. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Strem to print. </td></tr>
+    <tr><td class="paramname">src</td><td>Result to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Result will be printed as "1-0" or "0-1" or "1/2-1/2". </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/libpgnm/src/<a class="el" href="PGNGameResult_8h_source.html">PGNGameResult.h</a></li>
 </ul>
@@ -120,7 +324,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Jun 1 2011 19:39:52 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 5 2011 18:28:21 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

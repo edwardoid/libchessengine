@@ -75,49 +75,440 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="pgn::Ply" -->
+<p>Represents simple half-move.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="PGNPly_8h_source.html">PGNPly.h</a>&gt;</code></p>
+
 <p><a href="classpgn_1_1Ply-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed26da0eafcb47e74ec80413bfe812d2"></a><!-- doxytag: member="pgn::Ply::Ply" ref="aed26da0eafcb47e74ec80413bfe812d2" args="(const Ply &amp;src)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ply</b> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9105fdc769d5e28e78b6713b591a26f"></a><!-- doxytag: member="pgn::Ply::Ply" ref="af9105fdc769d5e28e78b6713b591a26f" args="(const std::string &amp;ply_text)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ply</b> (const std::string &amp;ply_text)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bd416f02a015a5c4a30e3992a1e8dc9"></a><!-- doxytag: member="pgn::Ply::operator=" ref="a2bd416f02a015a5c4a30e3992a1e8dc9" args="(const Ply &amp;src)" -->
-<a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a995c0362b3de149a285585eccd7b6893"></a><!-- doxytag: member="pgn::Ply::operator==" ref="a995c0362b3de149a285585eccd7b6893" args="(const Ply &amp;src) const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57bbef4d69303dbed338d6b3465ded21"></a><!-- doxytag: member="pgn::Ply::operator!=" ref="a57bbef4d69303dbed338d6b3465ded21" args="(const Ply &amp;src) const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a510f52389e06454f6187ce3dbd4415ea"></a><!-- doxytag: member="pgn::Ply::isLongCastle" ref="a510f52389e06454f6187ce3dbd4415ea" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isLongCastle</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a990edff208883efc0347664530e1a590"></a><!-- doxytag: member="pgn::Ply::isShortCastle" ref="a990edff208883efc0347664530e1a590" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isShortCastle</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e5adc12ff755af200466885a5158154"></a><!-- doxytag: member="pgn::Ply::isCapture" ref="a0e5adc12ff755af200466885a5158154" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCapture</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaef23816e7ae0bd8483e244d74a831a3"></a><!-- doxytag: member="pgn::Ply::isCheck" ref="aaef23816e7ae0bd8483e244d74a831a3" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCheck</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fc793753433373ca1efc864c18a8ad3"></a><!-- doxytag: member="pgn::Ply::isCheckMate" ref="a3fc793753433373ca1efc864c18a8ad3" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCheckMate</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83d8ab3e980deb619f063432dfed59b5"></a><!-- doxytag: member="pgn::Ply::bindComment" ref="a83d8ab3e980deb619f063432dfed59b5" args="(const CommentText &amp;comment)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>bindComment</b> (const <a class="el" href="classpgn_1_1CommentText.html">CommentText</a> &amp;comment)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#aed26da0eafcb47e74ec80413bfe812d2">Ply</a> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#af9105fdc769d5e28e78b6713b591a26f">Ply</a> (const std::string &amp;ply_text)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs ply by extracting information from given string.  <a href="#af9105fdc769d5e28e78b6713b591a26f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76a66aea2977eaa2a746564429c70025"></a><!-- doxytag: member="pgn::Ply::~Ply" ref="a76a66aea2977eaa2a746564429c70025" args="()" -->
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a76a66aea2977eaa2a746564429c70025">~Ply</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a2bd416f02a015a5c4a30e3992a1e8dc9">operator=</a> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies given ply to current.  <a href="#a2bd416f02a015a5c4a30e3992a1e8dc9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a995c0362b3de149a285585eccd7b6893">operator==</a> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is given ply and current ply equal.  <a href="#a995c0362b3de149a285585eccd7b6893"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a57bbef4d69303dbed338d6b3465ded21">operator!=</a> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;src) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative veriosn of <a class="el" href="classpgn_1_1Ply.html#a995c0362b3de149a285585eccd7b6893" title="Check is given ply and current ply equal.">Ply::operator==()</a>.  <a href="#a57bbef4d69303dbed338d6b3465ded21"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a510f52389e06454f6187ce3dbd4415ea">isLongCastle</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is ply long castle( e.g. does ply contain O-O-O character ).  <a href="#a510f52389e06454f6187ce3dbd4415ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a990edff208883efc0347664530e1a590">isShortCastle</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is ply short castle( e.g. does ply contain O-O character ).  <a href="#a990edff208883efc0347664530e1a590"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a0e5adc12ff755af200466885a5158154">isCapture</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is ply capture( e.g. does ply contain x character ).  <a href="#a0e5adc12ff755af200466885a5158154"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#aaef23816e7ae0bd8483e244d74a831a3">isCheck</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is ply check( e.g. does ply contain + character ).  <a href="#aaef23816e7ae0bd8483e244d74a831a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a3fc793753433373ca1efc864c18a8ad3">isCheckMate</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is ply checkmate( e.g. does ply contain # character ).  <a href="#a3fc793753433373ca1efc864c18a8ad3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a83d8ab3e980deb619f063432dfed59b5">bindComment</a> (const <a class="el" href="classpgn_1_1CommentText.html">CommentText</a> &amp;comment)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind comment to the ply.  <a href="#a83d8ab3e980deb619f063432dfed59b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9858d87d0e386888115639eebd595f8a"></a><!-- doxytag: member="pgn::Ply::unbindComment" ref="a9858d87d0e386888115639eebd595f8a" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>unbindComment</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ffe8bb29a5ac3d0c2ab0d3004aaddd3"></a><!-- doxytag: member="pgn::Ply::fromSquare" ref="a1ffe8bb29a5ac3d0c2ab0d3004aaddd3" args="() const " -->
-char&#160;</td><td class="memItemRight" valign="bottom"><b>fromSquare</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab345f182919aed0853073f1e7b6e88a6"></a><!-- doxytag: member="pgn::Ply::toSquare" ref="ab345f182919aed0853073f1e7b6e88a6" args="() const " -->
-<a class="el" href="classpgn_1_1Square.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><b>toSquare</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adaea7928bf1655338ca0fd33c7c2000d"></a><!-- doxytag: member="pgn::Ply::piece" ref="adaea7928bf1655338ca0fd33c7c2000d" args="() const " -->
-<a class="el" href="classpgn_1_1Piece.html">Piece</a>&#160;</td><td class="memItemRight" valign="bottom"><b>piece</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1417080779131decd88bbafe412e5e89"></a><!-- doxytag: member="pgn::Ply::promoted" ref="a1417080779131decd88bbafe412e5e89" args="() const " -->
-<a class="el" href="classpgn_1_1Piece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>promoted</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2985fc89a6f181995a93a142d85ed342"></a><!-- doxytag: member="pgn::Ply::toStdString" ref="a2985fc89a6f181995a93a142d85ed342" args="() const " -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toStdString</b> () const </td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a9858d87d0e386888115639eebd595f8a">unbindComment</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove bound comment. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a1ffe8bb29a5ac3d0c2ab0d3004aaddd3">fromSquare</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about square from where ply has been done.  <a href="#a1ffe8bb29a5ac3d0c2ab0d3004aaddd3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Square.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#ab345f182919aed0853073f1e7b6e88a6">toSquare</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about destination square.  <a href="#ab345f182919aed0853073f1e7b6e88a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Piece.html">Piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#adaea7928bf1655338ca0fd33c7c2000d">piece</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about piece which makes ply.  <a href="#adaea7928bf1655338ca0fd33c7c2000d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Piece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a1417080779131decd88bbafe412e5e89">promoted</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a2985fc89a6f181995a93a142d85ed342">toStdString</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts ply to string.  <a href="#a2985fc89a6f181995a93a142d85ed342"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06d0e8fc52490f084fd1ab25a443790a"></a><!-- doxytag: member="pgn::Ply::operator&lt;&lt;" ref="a06d0e8fc52490f084fd1ab25a443790a" args="(std::ostream &amp;os, const pgn::Ply &amp;src)" -->
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classpgn_1_1Ply.html">pgn::Ply</a> &amp;src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Ply.html#a06d0e8fc52490f084fd1ab25a443790a">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classpgn_1_1Ply.html">pgn::Ply</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints ply to given stream.  <a href="#a06d0e8fc52490f084fd1ab25a443790a"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Represents simple half-move. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aed26da0eafcb47e74ec80413bfe812d2"></a><!-- doxytag: member="pgn::Ply::Ply" ref="aed26da0eafcb47e74ec80413bfe812d2" args="(const Ply &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::Ply::Ply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Copy-constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source ply. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af9105fdc769d5e28e78b6713b591a26f"></a><!-- doxytag: member="pgn::Ply::Ply" ref="af9105fdc769d5e28e78b6713b591a26f" args="(const std::string &amp;ply_text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::Ply::Ply </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ply_text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructs ply by extracting information from given string. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ply_text</td><td>Text to parse. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a83d8ab3e980deb619f063432dfed59b5"></a><!-- doxytag: member="pgn::Ply::bindComment" ref="a83d8ab3e980deb619f063432dfed59b5" args="(const CommentText &amp;comment)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pgn::Ply::bindComment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1CommentText.html">CommentText</a> &amp;&#160;</td>
+          <td class="paramname"><em>comment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Bind comment to the ply. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comment</td><td>Comment to bind. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ffe8bb29a5ac3d0c2ab0d3004aaddd3"></a><!-- doxytag: member="pgn::Ply::fromSquare" ref="a1ffe8bb29a5ac3d0c2ab0d3004aaddd3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char pgn::Ply::fromSquare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get information about square from where ply has been done. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Row or square from where move has been done. If there is nno square provided with ply '-' will be returned. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a href="http://http://en.wikipedia.org/wiki/Portable_Game_Notation">http://http://en.wikipedia.org/wiki/Portable_Game_Notation</a> for more information about PGN notation. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Situation when row and column is provided with ply is ignored because it's happend very rarely. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e5adc12ff755af200466885a5158154"></a><!-- doxytag: member="pgn::Ply::isCapture" ref="a0e5adc12ff755af200466885a5158154" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::isCapture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is ply capture( e.g. does ply contain x character ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is ply is capture. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaef23816e7ae0bd8483e244d74a831a3"></a><!-- doxytag: member="pgn::Ply::isCheck" ref="aaef23816e7ae0bd8483e244d74a831a3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::isCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is ply check( e.g. does ply contain + character ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is ply is check. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3fc793753433373ca1efc864c18a8ad3"></a><!-- doxytag: member="pgn::Ply::isCheckMate" ref="a3fc793753433373ca1efc864c18a8ad3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::isCheckMate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is ply checkmate( e.g. does ply contain # character ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is ply is checkmate. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a510f52389e06454f6187ce3dbd4415ea"></a><!-- doxytag: member="pgn::Ply::isLongCastle" ref="a510f52389e06454f6187ce3dbd4415ea" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::isLongCastle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is ply long castle( e.g. does ply contain O-O-O character ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is ply is long castle. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a990edff208883efc0347664530e1a590"></a><!-- doxytag: member="pgn::Ply::isShortCastle" ref="a990edff208883efc0347664530e1a590" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::isShortCastle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is ply short castle( e.g. does ply contain O-O character ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is ply is short castle. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a57bbef4d69303dbed338d6b3465ded21"></a><!-- doxytag: member="pgn::Ply::operator!=" ref="a57bbef4d69303dbed338d6b3465ded21" args="(const Ply &amp;src) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Negative veriosn of <a class="el" href="classpgn_1_1Ply.html#a995c0362b3de149a285585eccd7b6893" title="Check is given ply and current ply equal.">Ply::operator==()</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source ply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if plyes are not equal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2bd416f02a015a5c4a30e3992a1e8dc9"></a><!-- doxytag: member="pgn::Ply::operator=" ref="a2bd416f02a015a5c4a30e3992a1e8dc9" args="(const Ply &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Ply.html">Ply</a>&amp; pgn::Ply::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies given ply to current. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Source</td><td>ply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Reference to current ply. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a995c0362b3de149a285585eccd7b6893"></a><!-- doxytag: member="pgn::Ply::operator==" ref="a995c0362b3de149a285585eccd7b6893" args="(const Ply &amp;src) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Ply::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">Ply</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check is given ply and current ply equal. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source ply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if plyes are equal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adaea7928bf1655338ca0fd33c7c2000d"></a><!-- doxytag: member="pgn::Ply::piece" ref="adaea7928bf1655338ca0fd33c7c2000d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Piece.html">Piece</a> pgn::Ply::piece </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get information about piece which makes ply. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classpgn_1_1Piece.html">Piece</a> which makes ply. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1417080779131decd88bbafe412e5e89"></a><!-- doxytag: member="pgn::Ply::promoted" ref="a1417080779131decd88bbafe412e5e89" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Piece.html">Piece</a>* pgn::Ply::promoted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>information about promoted to ply piece. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Provided piece. If there is no provided piece 0 will be returned. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab345f182919aed0853073f1e7b6e88a6"></a><!-- doxytag: member="pgn::Ply::toSquare" ref="ab345f182919aed0853073f1e7b6e88a6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Square.html">Square</a> pgn::Ply::toSquare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get information about destination square. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Destination square. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2985fc89a6f181995a93a142d85ed342"></a><!-- doxytag: member="pgn::Ply::toStdString" ref="a2985fc89a6f181995a93a142d85ed342" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string pgn::Ply::toStdString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts ply to string. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Converted verision. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a06d0e8fc52490f084fd1ab25a443790a"></a><!-- doxytag: member="pgn::Ply::operator&lt;&lt;" ref="a06d0e8fc52490f084fd1ab25a443790a" args="(std::ostream &amp;os, const pgn::Ply &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">pgn::Ply</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints ply to given stream. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Stream to print. </td></tr>
+    <tr><td class="paramname">src</td><td>Printing ply. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/libpgnm/src/<a class="el" href="PGNPly_8h_source.html">PGNPly.h</a></li>
 </ul>
@@ -136,7 +527,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Jun 1 2011 19:39:52 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 5 2011 18:28:21 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,41 +1,59 @@
-.TH "pgn::Move" 3 "Wed Jun 1 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "pgn::Move" 3 "Sun Jun 5 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 pgn::Move \- 
+.PP
+Represents simple move.  
+
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <PGNMove.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBMove\fP (const \fBMove\fP &src)"
 .br
+.RI "\fICopy-constructor. \fP"
 .ti -1c
-.RI "\fBMove\fP (const \fBPly\fP *white, const \fBPly\fP *black, int number)"
+.RI "\fBMove\fP (const \fBPly\fP *white, const \fBPly\fP *black, int number=1)"
 .br
+.RI "\fIconstructs move by given white and black players plyes. \fP"
+.ti -1c
+.RI "virtual \fB~Move\fP ()"
+.br
+.RI "\fIDestructor. \fP"
 .ti -1c
 .RI "\fBMove\fP & \fBoperator=\fP (const \fBMove\fP &src)"
 .br
+.RI "\fICopies given move to current. \fP"
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBMove\fP &src) const "
 .br
+.RI "\fICheck is given move and current move equal. \fP"
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBMove\fP &src) const "
 .br
+.RI "\fINegative veriosn of \fBMove::operator==()\fP. \fP"
 .ti -1c
 .RI "bool \fBisCheckMate\fP () const "
 .br
+.RI "\fIChecks is move checkmate( e.g. does move contain # character ). \fP"
 .ti -1c
 .RI "\fBPly\fP * \fBwhite\fP () const "
 .br
+.RI "\fIGet white player's ply. \fP"
 .ti -1c
 .RI "\fBPly\fP * \fBblack\fP () const "
 .br
+.RI "\fIGet black player's ply. \fP"
 .ti -1c
 .RI "std::string \fBtoStdString\fP ()"
 .br
+.RI "\fIConvert move to string using \fBshort\fP PGN notation. \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -43,6 +61,7 @@ pgn::Move \-
 .ti -1c
 .RI "static std::string \fBitoa\fP (int n)"
 .br
+.RI "\fIConverts given number to string. \fP"
 .in -1c
 .SS "Friends"
 
@@ -50,7 +69,131 @@ pgn::Move \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBMove\fP &src)"
 .br
+.RI "\fIPrints move to given stream. \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+Represents simple move. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::Move::Move (const \fBMove\fP &src)"
+.PP
+Copy-constructor. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source move. 
+.RE
+.PP
+
+.SS "pgn::Move::Move (const \fBPly\fP *white, const \fBPly\fP *black, intnumber = \fC1\fP)"
+.PP
+constructs move by given white and black players plyes. \fBParameters:\fP
+.RS 4
+\fIwhite\fP White players ply. 
+.br
+\fIblack\fP Black players ply. 
+.br
+\fIint\fP \fBMove\fP number. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPly\fP* pgn::Move::black () const"
+.PP
+Get black player's ply. \fBReturns:\fP
+.RS 4
+Pointer to ply, or if there is no ply, returns 0. 
+.RE
+.PP
+
+.SS "bool pgn::Move::isCheckMate () const"
+.PP
+Checks is move checkmate( e.g. does move contain # character ). \fBReturns:\fP
+.RS 4
+true is move is checkmate. 
+.RE
+.PP
+
+.SS "static std::string pgn::Move::itoa (intn)\fC [static]\fP"
+.PP
+Converts given number to string. \fBNote:\fP
+.RS 4
+Function use converts from/to decimal number. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+converted result. 
+.RE
+.PP
+
+.SS "bool pgn::Move::operator!= (const \fBMove\fP &src) const"
+.PP
+Negative veriosn of \fBMove::operator==()\fP. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source move. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if moves are not equal. 
+.RE
+.PP
+
+.SS "\fBMove\fP& pgn::Move::operator= (const \fBMove\fP &src)"
+.PP
+Copies given move to current. \fBParameters:\fP
+.RS 4
+\fISource\fP move. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to current move. 
+.RE
+.PP
+
+.SS "bool pgn::Move::operator== (const \fBMove\fP &src) const"
+.PP
+Check is given move and current move equal. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source move. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if moves are equal. 
+.RE
+.PP
+
+.SS "std::string pgn::Move::toStdString ()"
+.PP
+Convert move to string using \fBshort\fP PGN notation. \fBReturns:\fP
+.RS 4
+Converted move. 
+.RE
+.PP
+
+.SS "\fBPly\fP* pgn::Move::white () const"
+.PP
+Get white player's ply. \fBReturns:\fP
+.RS 4
+Pointer to ply, or if there is no ply, returns 0. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBMove\fP &src)\fC [friend]\fP"
+.PP
+Prints move to given stream. \fBParameters:\fP
+.RS 4
+\fIos\fP Stream to print. 
+.br
+\fIsrc\fP \fBMove\fP to print. 
+.RE
+.PP
+
 
 .SH "Author"
 .PP 

@@ -25,6 +25,8 @@
 #include <fstream>
 #include <string>
 
+/// @file PGNCommentText.h
+
 /**
  * @brief global namespace for libpgnm
  * @namespace pgn

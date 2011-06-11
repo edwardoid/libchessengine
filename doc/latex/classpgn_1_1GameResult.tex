@@ -2,63 +2,207 @@
 \section{pgn::GameResult Class Reference}
 \label{classpgn_1_1GameResult}\index{pgn::GameResult@{pgn::GameResult}}
 }
+
+
+Stores information about game result.  
+
+
+
+
+{\ttfamily \#include $<$PGNGameResult.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classpgn_1_1GameResult_a4d0cb12a719e7d7c493c9c0e33bbcec4}{
-{\bfseries GameResult} (std::string s)}
-\label{classpgn_1_1GameResult_a4d0cb12a719e7d7c493c9c0e33bbcec4}
+\hypertarget{classpgn_1_1GameResult_a8074fdea435bd38c5f972d4b8db2828f}{
+\hyperlink{classpgn_1_1GameResult_a8074fdea435bd38c5f972d4b8db2828f}{GameResult} ()}
+\label{classpgn_1_1GameResult_a8074fdea435bd38c5f972d4b8db2828f}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameResult_a4d0cb12a719e7d7c493c9c0e33bbcec4}{GameResult} (std::string s)
+\begin{DoxyCompactList}\small\item\em Extracts result information from given string, and constructs object by extracted information. \item\end{DoxyCompactList}\item 
 \hypertarget{classpgn_1_1GameResult_a54ad0cf0520a188b2e50585684090cf3}{
-{\bfseries GameResult} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src)}
+\hyperlink{classpgn_1_1GameResult_a54ad0cf0520a188b2e50585684090cf3}{GameResult} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src)}
 \label{classpgn_1_1GameResult_a54ad0cf0520a188b2e50585684090cf3}
 
-\item 
-\hypertarget{classpgn_1_1GameResult_aec873f6850ce41749fa843663be9a621}{
-\hyperlink{classpgn_1_1GameResult}{GameResult} \& {\bfseries operator=} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src)}
-\label{classpgn_1_1GameResult_aec873f6850ce41749fa843663be9a621}
-
-\item 
-\hypertarget{classpgn_1_1GameResult_a16b63d46d350921fd82b347fd672cf2d}{
-bool {\bfseries operator==} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src) const }
-\label{classpgn_1_1GameResult_a16b63d46d350921fd82b347fd672cf2d}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Copy-\/constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1GameResult}{GameResult} \& \hyperlink{classpgn_1_1GameResult_aec873f6850ce41749fa843663be9a621}{operator=} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src)
+\begin{DoxyCompactList}\small\item\em Copies information from other object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameResult_a16b63d46d350921fd82b347fd672cf2d}{operator==} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src) const 
+\begin{DoxyCompactList}\small\item\em Compares 2 game results. \item\end{DoxyCompactList}\item 
 \hypertarget{classpgn_1_1GameResult_a59726e2f76eb4f2dac8689c9a8e755dd}{
-bool {\bfseries operator!=} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src) const }
+bool \hyperlink{classpgn_1_1GameResult_a59726e2f76eb4f2dac8689c9a8e755dd}{operator!=} (const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src) const }
 \label{classpgn_1_1GameResult_a59726e2f76eb4f2dac8689c9a8e755dd}
 
-\item 
-\hypertarget{classpgn_1_1GameResult_a9f31f5bbb4edb633f5ffed005ac4da40}{
-bool {\bfseries isWhiteWin} () const }
-\label{classpgn_1_1GameResult_a9f31f5bbb4edb633f5ffed005ac4da40}
-
-\item 
-\hypertarget{classpgn_1_1GameResult_a3fa942ec8c3161a6f1ec7dd2640dcd91}{
-bool {\bfseries isBlackWin} () const }
-\label{classpgn_1_1GameResult_a3fa942ec8c3161a6f1ec7dd2640dcd91}
-
-\item 
-\hypertarget{classpgn_1_1GameResult_a61e5ec5c487399e405a6b1e0cfcf7fef}{
-bool {\bfseries isDrawn} () const }
-\label{classpgn_1_1GameResult_a61e5ec5c487399e405a6b1e0cfcf7fef}
-
-\item 
-\hypertarget{classpgn_1_1GameResult_a8677f97201226a09cca6c0bedf7f8777}{
-bool {\bfseries isUnknown} () const }
-\label{classpgn_1_1GameResult_a8677f97201226a09cca6c0bedf7f8777}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Negative verion of \hyperlink{classpgn_1_1GameResult_a16b63d46d350921fd82b347fd672cf2d}{GameResult::operator==()}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameResult_a9f31f5bbb4edb633f5ffed005ac4da40}{isWhiteWin} () const 
+\begin{DoxyCompactList}\small\item\em Checks is result \char`\"{}1-\/0\char`\"{}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameResult_a3fa942ec8c3161a6f1ec7dd2640dcd91}{isBlackWin} () const 
+\begin{DoxyCompactList}\small\item\em Checks is result \char`\"{}0-\/1\char`\"{}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameResult_a61e5ec5c487399e405a6b1e0cfcf7fef}{isDrawn} () const 
+\begin{DoxyCompactList}\small\item\em Checks is result \char`\"{}1/2-\/1/2\char`\"{}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1GameResult_a8677f97201226a09cca6c0bedf7f8777}{isUnknown} () const 
+\begin{DoxyCompactList}\small\item\em Checks is game's result not \char`\"{}1-\/0\char`\"{}, \char`\"{}0-\/1\char`\"{} or \char`\"{}1/2-\/1/2\char`\"{}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
+std::ostream \& \hyperlink{classpgn_1_1GameResult_a27d55f60e270a7372206724456570c00}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src)
+\begin{DoxyCompactList}\small\item\em Prints result to given stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores information about game result. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1GameResult_a4d0cb12a719e7d7c493c9c0e33bbcec4}{
+\index{pgn::GameResult@{pgn::GameResult}!GameResult@{GameResult}}
+\index{GameResult@{GameResult}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{GameResult}]{\setlength{\rightskip}{0pt plus 5cm}pgn::GameResult::GameResult (
+\begin{DoxyParamCaption}
+\item[{std::string}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameResult_a4d0cb12a719e7d7c493c9c0e33bbcec4}
+
+
+Extracts result information from given string, and constructs object by extracted information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Source string. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1GameResult_a3fa942ec8c3161a6f1ec7dd2640dcd91}{
+\index{pgn::GameResult@{pgn::GameResult}!isBlackWin@{isBlackWin}}
+\index{isBlackWin@{isBlackWin}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{isBlackWin}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameResult::isBlackWin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameResult_a3fa942ec8c3161a6f1ec7dd2640dcd91}
+
+
+Checks is result \char`\"{}0-\/1\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+true if black player wins. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameResult_a61e5ec5c487399e405a6b1e0cfcf7fef}{
+\index{pgn::GameResult@{pgn::GameResult}!isDrawn@{isDrawn}}
+\index{isDrawn@{isDrawn}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{isDrawn}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameResult::isDrawn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameResult_a61e5ec5c487399e405a6b1e0cfcf7fef}
+
+
+Checks is result \char`\"{}1/2-\/1/2\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+true if game finished as draw. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameResult_a8677f97201226a09cca6c0bedf7f8777}{
+\index{pgn::GameResult@{pgn::GameResult}!isUnknown@{isUnknown}}
+\index{isUnknown@{isUnknown}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{isUnknown}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameResult::isUnknown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameResult_a8677f97201226a09cca6c0bedf7f8777}
+
+
+Checks is game's result not \char`\"{}1-\/0\char`\"{}, \char`\"{}0-\/1\char`\"{} or \char`\"{}1/2-\/1/2\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+true If there is no result specified in game, or result is \char`\"{}$\ast$\char`\"{}. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameResult_a9f31f5bbb4edb633f5ffed005ac4da40}{
+\index{pgn::GameResult@{pgn::GameResult}!isWhiteWin@{isWhiteWin}}
+\index{isWhiteWin@{isWhiteWin}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{isWhiteWin}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameResult::isWhiteWin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameResult_a9f31f5bbb4edb633f5ffed005ac4da40}
+
+
+Checks is result \char`\"{}1-\/0\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+true if white player wins. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1GameResult_aec873f6850ce41749fa843663be9a621}{
+\index{pgn::GameResult@{pgn::GameResult}!operator=@{operator=}}
+\index{operator=@{operator=}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GameResult}\& pgn::GameResult::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameResult} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1GameResult_aec873f6850ce41749fa843663be9a621}
+
+
+Copies information from other object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1GameResult_a16b63d46d350921fd82b347fd672cf2d}{
+\index{pgn::GameResult@{pgn::GameResult}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::GameResult::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf GameResult} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1GameResult_a16b63d46d350921fd82b347fd672cf2d}
+
+
+Compares 2 game results. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if results are equal(same). 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
 \hypertarget{classpgn_1_1GameResult_a27d55f60e270a7372206724456570c00}{
-std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1GameResult}{GameResult} \&src)}
+\index{pgn::GameResult@{pgn::GameResult}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pgn::GameResult@{pgn::GameResult}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{os, }
+\item[{const {\bf GameResult} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{classpgn_1_1GameResult_a27d55f60e270a7372206724456570c00}
 
-\end{DoxyCompactItemize}
 
+Prints result to given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Strem to print. \\
+\hline
+{\em src} & Result to print.\\
+\hline
+\end{DoxyParams}
+Result will be printed as \char`\"{}1-\/0\char`\"{} or \char`\"{}0-\/1\char`\"{} or \char`\"{}1/2-\/1/2\char`\"{}. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

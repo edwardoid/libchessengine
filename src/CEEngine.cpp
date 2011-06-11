@@ -171,12 +171,12 @@ void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 			Piece *tmp = m_table.pieceAtC ( newPos.col() - 1, newPos.row() - coef );
 			
 			if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
-				movedPiece == tmp;
+				movedPiece = tmp;
 			else
 			{
 				tmp = m_table.pieceAtC ( newPos.col() + 1, newPos.row() - coef );
 				if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
-					movedPiece == tmp;
+					movedPiece = tmp;
 			}
 		}
 

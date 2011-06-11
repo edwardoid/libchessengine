@@ -25,25 +25,88 @@
 #include <fstream>
 #include <string>
 
+
+/**
+ * @brief global namespace for libpgnm
+ * @namespace pgn
+ */
 namespace pgn
 {
+	/**
+	 * @class GameResult
+	 * @brief Stores information about game result.
+	 */
 	class GameResult 
 	{
 		public:
-		
+	
+			/**
+			 * @brief Default constructor
+			 */
 			GameResult();
+
+			/**
+			 * @brief Extracts result information from given string, and
+			 * constructs object by extracted information.
+			 * @param s Source string.
+			 */
 			GameResult(std::string s);
+
+			/**
+			 * @brief Copy-constructor.
+			 */
 			GameResult(const GameResult& src);
 
+			/**
+			 * @brief Copies information from other object.
+			 * @param src Source result.
+			 */
 			GameResult& operator = (const GameResult& src);
+
+			/**
+			 * @brief Compares 2 game results.
+			 * @param src Source result.
+			 * @return true if results are equal(same).
+			 */
 			bool operator == (const GameResult& src) const;
+
+			/**
+			 * @brief Negative verion of GameResult::operator==().
+			 */
 			bool operator != (const GameResult& src) const;
 
+			/**
+			 * @brief Checks is result "1-0".
+			 * @return true if white player wins.
+			 */
 			bool isWhiteWin() const;
+
+			/**
+			 * @brief Checks is result "0-1".
+			 * @return true if black player wins.
+			 */
 			bool isBlackWin() const;
+
+			/**
+			 * @brief Checks is result "1/2-1/2"
+			 * @return true if game finished as draw.
+			 */
 			bool isDrawn() const;
+
+			/**
+			 * @brief Checks is game's result not "1-0", "0-1" or "1/2-1/2".
+			 * @return true If there is no result specified in game, or result
+			 * is "*".
+			 */
 			bool isUnknown() const;
 
+			/**
+			 * @brief Prints result to given stream.
+			 * @param os Strem to print.
+			 * @param src Result to print.
+			 * 
+			 * Result will be printed as "1-0" or "0-1" or "1/2-1/2".
+			 */
 			friend std::ostream& operator << ( std::ostream& os, const GameResult& src);
 
 		private:

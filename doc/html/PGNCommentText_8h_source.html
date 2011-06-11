@@ -61,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>src/libpgnm/src/PGNCommentText.h</h1>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a href="PGNCommentText_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">// Copyright (C) 2002 Andrea Vinzoni &lt;vinzoni@users.sourceforge.net&gt;</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">//     This file is part of pgnlib.</span>
@@ -88,39 +88,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 <span class="preprocessor">#include &lt;fstream&gt;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00027"></a>00027 
-<a name="l00032"></a>00032 <span class="keyword">namespace </span>pgn
-<a name="l00033"></a>00033 {
-<a name="l00038"></a><a class="code" href="classpgn_1_1CommentText.html">00038</a>     <span class="keyword">class </span><a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a> 
-<a name="l00039"></a>00039     {
-<a name="l00040"></a>00040         <span class="keyword">public</span>:
-<a name="l00041"></a>00041         
-<a name="l00045"></a>00045             <a class="code" href="classpgn_1_1CommentText.html#a8f1a46577b31547ef030208fd2c84be4" title="Default constructor.">CommentText</a>();
-<a name="l00046"></a>00046 
-<a name="l00051"></a>00051             <a class="code" href="classpgn_1_1CommentText.html#a8f1a46577b31547ef030208fd2c84be4" title="Default constructor.">CommentText</a>(<span class="keyword">const</span> std::string &amp;s);
-<a name="l00052"></a>00052 
-<a name="l00057"></a>00057             <a class="code" href="classpgn_1_1CommentText.html#a8f1a46577b31547ef030208fd2c84be4" title="Default constructor.">CommentText</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src);
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059             <span class="keyword">virtual</span> ~<a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>();
+<a name="l00029"></a>00029 
+<a name="l00034"></a>00034 <span class="keyword">namespace </span>pgn
+<a name="l00035"></a>00035 {
+<a name="l00040"></a><a class="code" href="classpgn_1_1CommentText.html">00040</a>     <span class="keyword">class </span><a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a> 
+<a name="l00041"></a>00041     {
+<a name="l00042"></a>00042         <span class="keyword">public</span>:
+<a name="l00043"></a>00043         
+<a name="l00047"></a>00047             <a class="code" href="classpgn_1_1CommentText.html#a8f1a46577b31547ef030208fd2c84be4" title="Default constructor.">CommentText</a>();
+<a name="l00048"></a>00048 
+<a name="l00053"></a>00053             <a class="code" href="classpgn_1_1CommentText.html#a8f1a46577b31547ef030208fd2c84be4" title="Default constructor.">CommentText</a>(<span class="keyword">const</span> std::string &amp;s);
+<a name="l00054"></a>00054 
+<a name="l00059"></a>00059             <a class="code" href="classpgn_1_1CommentText.html#a8f1a46577b31547ef030208fd2c84be4" title="Default constructor.">CommentText</a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src);
 <a name="l00060"></a>00060 
-<a name="l00065"></a>00065             <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; <a class="code" href="classpgn_1_1CommentText.html#ae6958b17db6837b177d32df85d6b0544">operator = </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src);
-<a name="l00066"></a>00066 
-<a name="l00072"></a>00072             <span class="keywordtype">bool</span> <a class="code" href="classpgn_1_1CommentText.html#abb2ec8a7df892d89b673411b70950eb4" title="Checks are comments equal.">operator == </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src) <span class="keyword">const</span>;
-<a name="l00073"></a>00073 
-<a name="l00078"></a>00078             <span class="keywordtype">bool</span> <a class="code" href="classpgn_1_1CommentText.html#a8095c335ece11aa0cb4aadd3e7028f6e" title="Negative variant of pgn::CommentText::operator=(const CommentText).">operator != </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src) <span class="keyword">const</span>;
-<a name="l00079"></a>00079         
-<a name="l00083"></a>00083             std::string <a class="code" href="classpgn_1_1CommentText.html#a4d1123548178a5aee589d31d3ee4a567" title="Represents comment as std::string.">toStdString</a>();
-<a name="l00084"></a>00084 
-<a name="l00090"></a>00090             <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classpgn_1_1CommentText.html#a193d5d2f19f524d71ec71f1efa286440" title="Prints comment to stream.">operator &lt;&lt; </a>( std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src);
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092         <span class="keyword">private</span>:
+<a name="l00061"></a>00061             <span class="keyword">virtual</span> ~<a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>();
+<a name="l00062"></a>00062 
+<a name="l00067"></a>00067             <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; <a class="code" href="classpgn_1_1CommentText.html#ae6958b17db6837b177d32df85d6b0544">operator = </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src);
+<a name="l00068"></a>00068 
+<a name="l00074"></a>00074             <span class="keywordtype">bool</span> <a class="code" href="classpgn_1_1CommentText.html#abb2ec8a7df892d89b673411b70950eb4" title="Checks are comments equal.">operator == </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src) <span class="keyword">const</span>;
+<a name="l00075"></a>00075 
+<a name="l00080"></a>00080             <span class="keywordtype">bool</span> <a class="code" href="classpgn_1_1CommentText.html#a8095c335ece11aa0cb4aadd3e7028f6e" title="Negative variant of pgn::CommentText::operator=(const CommentText).">operator != </a>(<span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src) <span class="keyword">const</span>;
+<a name="l00081"></a>00081         
+<a name="l00085"></a>00085             std::string <a class="code" href="classpgn_1_1CommentText.html#a4d1123548178a5aee589d31d3ee4a567" title="Represents comment as std::string.">toStdString</a>();
+<a name="l00086"></a>00086 
+<a name="l00092"></a>00092             <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classpgn_1_1CommentText.html#a193d5d2f19f524d71ec71f1efa286440" title="Prints comment to stream.">operator &lt;&lt; </a>( std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classpgn_1_1CommentText.html" title="Provides comment to move.">CommentText</a>&amp; src);
 <a name="l00093"></a>00093 
-<a name="l00094"></a>00094             <span class="keyword">struct </span>CommentTextData *hdata;
+<a name="l00094"></a>00094         <span class="keyword">private</span>:
 <a name="l00095"></a>00095 
-<a name="l00096"></a>00096     };
-<a name="l00097"></a>00097 };
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099 <span class="preprocessor">#endif </span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>
+<a name="l00096"></a>00096             <span class="keyword">struct </span>CommentTextData *hdata;
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     };
+<a name="l00099"></a>00099 };
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="preprocessor">#endif </span>
+<a name="l00102"></a>00102 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -137,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Jun 1 2011 19:39:46 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 5 2011 18:28:15 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

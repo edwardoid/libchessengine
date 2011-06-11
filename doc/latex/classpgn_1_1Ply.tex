@@ -2,102 +2,373 @@
 \section{pgn::Ply Class Reference}
 \label{classpgn_1_1Ply}\index{pgn::Ply@{pgn::Ply}}
 }
+
+
+Represents simple half-\/move.  
+
+
+
+
+{\ttfamily \#include $<$PGNPly.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classpgn_1_1Ply_aed26da0eafcb47e74ec80413bfe812d2}{
-{\bfseries Ply} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src)}
-\label{classpgn_1_1Ply_aed26da0eafcb47e74ec80413bfe812d2}
-
+\hyperlink{classpgn_1_1Ply_aed26da0eafcb47e74ec80413bfe812d2}{Ply} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src)
 \item 
-\hypertarget{classpgn_1_1Ply_af9105fdc769d5e28e78b6713b591a26f}{
-{\bfseries Ply} (const std::string \&ply\_\-text)}
-\label{classpgn_1_1Ply_af9105fdc769d5e28e78b6713b591a26f}
+\hyperlink{classpgn_1_1Ply_af9105fdc769d5e28e78b6713b591a26f}{Ply} (const std::string \&ply\_\-text)
+\begin{DoxyCompactList}\small\item\em Constructs ply by extracting information from given string. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1Ply_a76a66aea2977eaa2a746564429c70025}{
+virtual \hyperlink{classpgn_1_1Ply_a76a66aea2977eaa2a746564429c70025}{$\sim$Ply} ()}
+\label{classpgn_1_1Ply_a76a66aea2977eaa2a746564429c70025}
 
-\item 
-\hypertarget{classpgn_1_1Ply_a2bd416f02a015a5c4a30e3992a1e8dc9}{
-\hyperlink{classpgn_1_1Ply}{Ply} \& {\bfseries operator=} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src)}
-\label{classpgn_1_1Ply_a2bd416f02a015a5c4a30e3992a1e8dc9}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}{
-bool {\bfseries operator==} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src) const }
-\label{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a57bbef4d69303dbed338d6b3465ded21}{
-bool {\bfseries operator!=} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src) const }
-\label{classpgn_1_1Ply_a57bbef4d69303dbed338d6b3465ded21}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a510f52389e06454f6187ce3dbd4415ea}{
-bool {\bfseries isLongCastle} () const }
-\label{classpgn_1_1Ply_a510f52389e06454f6187ce3dbd4415ea}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a990edff208883efc0347664530e1a590}{
-bool {\bfseries isShortCastle} () const }
-\label{classpgn_1_1Ply_a990edff208883efc0347664530e1a590}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a0e5adc12ff755af200466885a5158154}{
-bool {\bfseries isCapture} () const }
-\label{classpgn_1_1Ply_a0e5adc12ff755af200466885a5158154}
-
-\item 
-\hypertarget{classpgn_1_1Ply_aaef23816e7ae0bd8483e244d74a831a3}{
-bool {\bfseries isCheck} () const }
-\label{classpgn_1_1Ply_aaef23816e7ae0bd8483e244d74a831a3}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a3fc793753433373ca1efc864c18a8ad3}{
-bool {\bfseries isCheckMate} () const }
-\label{classpgn_1_1Ply_a3fc793753433373ca1efc864c18a8ad3}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a83d8ab3e980deb619f063432dfed59b5}{
-void {\bfseries bindComment} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&comment)}
-\label{classpgn_1_1Ply_a83d8ab3e980deb619f063432dfed59b5}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Ply}{Ply} \& \hyperlink{classpgn_1_1Ply_a2bd416f02a015a5c4a30e3992a1e8dc9}{operator=} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src)
+\begin{DoxyCompactList}\small\item\em Copies given ply to current. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}{operator==} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src) const 
+\begin{DoxyCompactList}\small\item\em Check is given ply and current ply equal. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_a57bbef4d69303dbed338d6b3465ded21}{operator!=} (const \hyperlink{classpgn_1_1Ply}{Ply} \&src) const 
+\begin{DoxyCompactList}\small\item\em Negative veriosn of \hyperlink{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}{Ply::operator==()}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_a510f52389e06454f6187ce3dbd4415ea}{isLongCastle} () const 
+\begin{DoxyCompactList}\small\item\em Checks is ply long castle( e.g. does ply contain O-\/O-\/O character ). \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_a990edff208883efc0347664530e1a590}{isShortCastle} () const 
+\begin{DoxyCompactList}\small\item\em Checks is ply short castle( e.g. does ply contain O-\/O character ). \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_a0e5adc12ff755af200466885a5158154}{isCapture} () const 
+\begin{DoxyCompactList}\small\item\em Checks is ply capture( e.g. does ply contain x character ). \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_aaef23816e7ae0bd8483e244d74a831a3}{isCheck} () const 
+\begin{DoxyCompactList}\small\item\em Checks is ply check( e.g. does ply contain + character ). \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Ply_a3fc793753433373ca1efc864c18a8ad3}{isCheckMate} () const 
+\begin{DoxyCompactList}\small\item\em Checks is ply checkmate( e.g. does ply contain \# character ). \item\end{DoxyCompactList}\item 
+void \hyperlink{classpgn_1_1Ply_a83d8ab3e980deb619f063432dfed59b5}{bindComment} (const \hyperlink{classpgn_1_1CommentText}{CommentText} \&comment)
+\begin{DoxyCompactList}\small\item\em Bind comment to the ply. \item\end{DoxyCompactList}\item 
 \hypertarget{classpgn_1_1Ply_a9858d87d0e386888115639eebd595f8a}{
-void {\bfseries unbindComment} ()}
+void \hyperlink{classpgn_1_1Ply_a9858d87d0e386888115639eebd595f8a}{unbindComment} ()}
 \label{classpgn_1_1Ply_a9858d87d0e386888115639eebd595f8a}
 
+\begin{DoxyCompactList}\small\item\em Remove bound comment. \item\end{DoxyCompactList}\item 
+char \hyperlink{classpgn_1_1Ply_a1ffe8bb29a5ac3d0c2ab0d3004aaddd3}{fromSquare} () const 
+\begin{DoxyCompactList}\small\item\em Get information about square from where ply has been done. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Square}{Square} \hyperlink{classpgn_1_1Ply_ab345f182919aed0853073f1e7b6e88a6}{toSquare} () const 
+\begin{DoxyCompactList}\small\item\em Get information about destination square. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Piece}{Piece} \hyperlink{classpgn_1_1Ply_adaea7928bf1655338ca0fd33c7c2000d}{piece} () const 
+\begin{DoxyCompactList}\small\item\em Get information about piece which makes ply. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Piece}{Piece} $\ast$ \hyperlink{classpgn_1_1Ply_a1417080779131decd88bbafe412e5e89}{promoted} () const 
 \item 
-\hypertarget{classpgn_1_1Ply_a1ffe8bb29a5ac3d0c2ab0d3004aaddd3}{
-char {\bfseries fromSquare} () const }
-\label{classpgn_1_1Ply_a1ffe8bb29a5ac3d0c2ab0d3004aaddd3}
-
-\item 
-\hypertarget{classpgn_1_1Ply_ab345f182919aed0853073f1e7b6e88a6}{
-\hyperlink{classpgn_1_1Square}{Square} {\bfseries toSquare} () const }
-\label{classpgn_1_1Ply_ab345f182919aed0853073f1e7b6e88a6}
-
-\item 
-\hypertarget{classpgn_1_1Ply_adaea7928bf1655338ca0fd33c7c2000d}{
-\hyperlink{classpgn_1_1Piece}{Piece} {\bfseries piece} () const }
-\label{classpgn_1_1Ply_adaea7928bf1655338ca0fd33c7c2000d}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a1417080779131decd88bbafe412e5e89}{
-\hyperlink{classpgn_1_1Piece}{Piece} $\ast$ {\bfseries promoted} () const }
-\label{classpgn_1_1Ply_a1417080779131decd88bbafe412e5e89}
-
-\item 
-\hypertarget{classpgn_1_1Ply_a2985fc89a6f181995a93a142d85ed342}{
-std::string {\bfseries toStdString} () const }
-\label{classpgn_1_1Ply_a2985fc89a6f181995a93a142d85ed342}
-
-\end{DoxyCompactItemize}
+std::string \hyperlink{classpgn_1_1Ply_a2985fc89a6f181995a93a142d85ed342}{toStdString} () const 
+\begin{DoxyCompactList}\small\item\em Converts ply to string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
+std::ostream \& \hyperlink{classpgn_1_1Ply_a06d0e8fc52490f084fd1ab25a443790a}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1Ply}{pgn::Ply} \&src)
+\begin{DoxyCompactList}\small\item\em Prints ply to given stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents simple half-\/move. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1Ply_aed26da0eafcb47e74ec80413bfe812d2}{
+\index{pgn::Ply@{pgn::Ply}!Ply@{Ply}}
+\index{Ply@{Ply}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{Ply}]{\setlength{\rightskip}{0pt plus 5cm}pgn::Ply::Ply (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ply} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Ply_aed26da0eafcb47e74ec80413bfe812d2}
+Copy-\/constructor. 
+\begin{DoxyParams}{Parameters}
+{\em src} & Source ply. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1Ply_af9105fdc769d5e28e78b6713b591a26f}{
+\index{pgn::Ply@{pgn::Ply}!Ply@{Ply}}
+\index{Ply@{Ply}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{Ply}]{\setlength{\rightskip}{0pt plus 5cm}pgn::Ply::Ply (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{ply\_\-text}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Ply_af9105fdc769d5e28e78b6713b591a26f}
+
+
+Constructs ply by extracting information from given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ply\_\-text} & Text to parse. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1Ply_a83d8ab3e980deb619f063432dfed59b5}{
+\index{pgn::Ply@{pgn::Ply}!bindComment@{bindComment}}
+\index{bindComment@{bindComment}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{bindComment}]{\setlength{\rightskip}{0pt plus 5cm}void pgn::Ply::bindComment (
+\begin{DoxyParamCaption}
+\item[{const {\bf CommentText} \&}]{comment}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Ply_a83d8ab3e980deb619f063432dfed59b5}
+
+
+Bind comment to the ply. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment} & Comment to bind. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1Ply_a1ffe8bb29a5ac3d0c2ab0d3004aaddd3}{
+\index{pgn::Ply@{pgn::Ply}!fromSquare@{fromSquare}}
+\index{fromSquare@{fromSquare}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{fromSquare}]{\setlength{\rightskip}{0pt plus 5cm}char pgn::Ply::fromSquare (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a1ffe8bb29a5ac3d0c2ab0d3004aaddd3}
+
+
+Get information about square from where ply has been done. 
+
+\begin{DoxyReturn}{Returns}
+Row or square from where move has been done. If there is nno square provided with ply '-\/' will be returned. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{http://http://en.wikipedia.org/wiki/Portable_Game_Notation}{\tt http://http://en.wikipedia.org/wiki/Portable\_\-Game\_\-Notation} for more information about PGN notation. 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Situation when row and column is provided with ply is ignored because it's happend very rarely. 
+\end{DoxyNote}
+\hypertarget{classpgn_1_1Ply_a0e5adc12ff755af200466885a5158154}{
+\index{pgn::Ply@{pgn::Ply}!isCapture@{isCapture}}
+\index{isCapture@{isCapture}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{isCapture}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::isCapture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a0e5adc12ff755af200466885a5158154}
+
+
+Checks is ply capture( e.g. does ply contain x character ). 
+
+\begin{DoxyReturn}{Returns}
+true is ply is capture. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_aaef23816e7ae0bd8483e244d74a831a3}{
+\index{pgn::Ply@{pgn::Ply}!isCheck@{isCheck}}
+\index{isCheck@{isCheck}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{isCheck}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::isCheck (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_aaef23816e7ae0bd8483e244d74a831a3}
+
+
+Checks is ply check( e.g. does ply contain + character ). 
+
+\begin{DoxyReturn}{Returns}
+true is ply is check. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a3fc793753433373ca1efc864c18a8ad3}{
+\index{pgn::Ply@{pgn::Ply}!isCheckMate@{isCheckMate}}
+\index{isCheckMate@{isCheckMate}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{isCheckMate}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::isCheckMate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a3fc793753433373ca1efc864c18a8ad3}
+
+
+Checks is ply checkmate( e.g. does ply contain \# character ). 
+
+\begin{DoxyReturn}{Returns}
+true is ply is checkmate. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a510f52389e06454f6187ce3dbd4415ea}{
+\index{pgn::Ply@{pgn::Ply}!isLongCastle@{isLongCastle}}
+\index{isLongCastle@{isLongCastle}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{isLongCastle}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::isLongCastle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a510f52389e06454f6187ce3dbd4415ea}
+
+
+Checks is ply long castle( e.g. does ply contain O-\/O-\/O character ). 
+
+\begin{DoxyReturn}{Returns}
+true is ply is long castle. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a990edff208883efc0347664530e1a590}{
+\index{pgn::Ply@{pgn::Ply}!isShortCastle@{isShortCastle}}
+\index{isShortCastle@{isShortCastle}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{isShortCastle}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::isShortCastle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a990edff208883efc0347664530e1a590}
+
+
+Checks is ply short castle( e.g. does ply contain O-\/O character ). 
+
+\begin{DoxyReturn}{Returns}
+true is ply is short castle. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a57bbef4d69303dbed338d6b3465ded21}{
+\index{pgn::Ply@{pgn::Ply}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ply} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a57bbef4d69303dbed338d6b3465ded21}
+
+
+Negative veriosn of \hyperlink{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}{Ply::operator==()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source ply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if plyes are not equal. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a2bd416f02a015a5c4a30e3992a1e8dc9}{
+\index{pgn::Ply@{pgn::Ply}!operator=@{operator=}}
+\index{operator=@{operator=}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ply}\& pgn::Ply::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ply} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Ply_a2bd416f02a015a5c4a30e3992a1e8dc9}
+
+
+Copies given ply to current. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Source} & ply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to current ply. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}{
+\index{pgn::Ply@{pgn::Ply}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Ply::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ply} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a995c0362b3de149a285585eccd7b6893}
+
+
+Check is given ply and current ply equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source ply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if plyes are equal. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_adaea7928bf1655338ca0fd33c7c2000d}{
+\index{pgn::Ply@{pgn::Ply}!piece@{piece}}
+\index{piece@{piece}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{piece}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece} pgn::Ply::piece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_adaea7928bf1655338ca0fd33c7c2000d}
+
+
+Get information about piece which makes ply. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classpgn_1_1Piece}{Piece} which makes ply. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a1417080779131decd88bbafe412e5e89}{
+\index{pgn::Ply@{pgn::Ply}!promoted@{promoted}}
+\index{promoted@{promoted}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{promoted}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece}$\ast$ pgn::Ply::promoted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a1417080779131decd88bbafe412e5e89}
+information about promoted to ply piece. \begin{DoxyReturn}{Returns}
+Provided piece. If there is no provided piece 0 will be returned. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_ab345f182919aed0853073f1e7b6e88a6}{
+\index{pgn::Ply@{pgn::Ply}!toSquare@{toSquare}}
+\index{toSquare@{toSquare}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{toSquare}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square} pgn::Ply::toSquare (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_ab345f182919aed0853073f1e7b6e88a6}
+
+
+Get information about destination square. 
+
+\begin{DoxyReturn}{Returns}
+Destination square. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Ply_a2985fc89a6f181995a93a142d85ed342}{
+\index{pgn::Ply@{pgn::Ply}!toStdString@{toStdString}}
+\index{toStdString@{toStdString}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{toStdString}]{\setlength{\rightskip}{0pt plus 5cm}std::string pgn::Ply::toStdString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Ply_a2985fc89a6f181995a93a142d85ed342}
+
+
+Converts ply to string. 
+
+\begin{DoxyReturn}{Returns}
+Converted verision. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
 \hypertarget{classpgn_1_1Ply_a06d0e8fc52490f084fd1ab25a443790a}{
-std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1Ply}{pgn::Ply} \&src)}
+\index{pgn::Ply@{pgn::Ply}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pgn::Ply@{pgn::Ply}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{os, }
+\item[{const {\bf pgn::Ply} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{classpgn_1_1Ply_a06d0e8fc52490f084fd1ab25a443790a}
 
-\end{DoxyCompactItemize}
+
+Prints ply to given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to print. \\
+\hline
+{\em src} & Printing ply. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

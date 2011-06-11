@@ -1,41 +1,59 @@
-.TH "pgn::GameResult" 3 "Wed Jun 1 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "pgn::GameResult" 3 "Sun Jun 5 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 pgn::GameResult \- 
+.PP
+Stores information about game result.  
+
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <PGNGameResult.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
+.RI "\fBGameResult\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
 .RI "\fBGameResult\fP (std::string s)"
 .br
+.RI "\fIExtracts result information from given string, and constructs object by extracted information. \fP"
 .ti -1c
 .RI "\fBGameResult\fP (const \fBGameResult\fP &src)"
 .br
+.RI "\fICopy-constructor. \fP"
 .ti -1c
 .RI "\fBGameResult\fP & \fBoperator=\fP (const \fBGameResult\fP &src)"
 .br
+.RI "\fICopies information from other object. \fP"
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBGameResult\fP &src) const "
 .br
+.RI "\fICompares 2 game results. \fP"
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBGameResult\fP &src) const "
 .br
+.RI "\fINegative verion of \fBGameResult::operator==()\fP. \fP"
 .ti -1c
 .RI "bool \fBisWhiteWin\fP () const "
 .br
+.RI "\fIChecks is result '1-0'. \fP"
 .ti -1c
 .RI "bool \fBisBlackWin\fP () const "
 .br
+.RI "\fIChecks is result '0-1'. \fP"
 .ti -1c
 .RI "bool \fBisDrawn\fP () const "
 .br
+.RI "\fIChecks is result '1/2-1/2'. \fP"
 .ti -1c
 .RI "bool \fBisUnknown\fP () const "
 .br
+.RI "\fIChecks is game's result not '1-0', '0-1' or '1/2-1/2'. \fP"
 .in -1c
 .SS "Friends"
 
@@ -43,7 +61,88 @@ pgn::GameResult \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBGameResult\fP &src)"
 .br
+.RI "\fIPrints result to given stream. \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+Stores information about game result. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::GameResult::GameResult (std::strings)"
+.PP
+Extracts result information from given string, and constructs object by extracted information. \fBParameters:\fP
+.RS 4
+\fIs\fP Source string. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool pgn::GameResult::isBlackWin () const"
+.PP
+Checks is result '0-1'. \fBReturns:\fP
+.RS 4
+true if black player wins. 
+.RE
+.PP
+
+.SS "bool pgn::GameResult::isDrawn () const"
+.PP
+Checks is result '1/2-1/2'. \fBReturns:\fP
+.RS 4
+true if game finished as draw. 
+.RE
+.PP
+
+.SS "bool pgn::GameResult::isUnknown () const"
+.PP
+Checks is game's result not '1-0', '0-1' or '1/2-1/2'. \fBReturns:\fP
+.RS 4
+true If there is no result specified in game, or result is '*'. 
+.RE
+.PP
+
+.SS "bool pgn::GameResult::isWhiteWin () const"
+.PP
+Checks is result '1-0'. \fBReturns:\fP
+.RS 4
+true if white player wins. 
+.RE
+.PP
+
+.SS "\fBGameResult\fP& pgn::GameResult::operator= (const \fBGameResult\fP &src)"
+.PP
+Copies information from other object. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source result. 
+.RE
+.PP
+
+.SS "bool pgn::GameResult::operator== (const \fBGameResult\fP &src) const"
+.PP
+Compares 2 game results. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source result. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if results are equal(same). 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBGameResult\fP &src)\fC [friend]\fP"
+.PP
+Prints result to given stream. \fBParameters:\fP
+.RS 4
+\fIos\fP Strem to print. 
+.br
+\fIsrc\fP Result to print.
+.RE
+.PP
+Result will be printed as '1-0' or '0-1' or '1/2-1/2'. 
 
 .SH "Author"
 .PP 

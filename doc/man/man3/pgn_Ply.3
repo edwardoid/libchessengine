@@ -1,11 +1,16 @@
-.TH "pgn::Ply" 3 "Wed Jun 1 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "pgn::Ply" 3 "Sun Jun 5 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 pgn::Ply \- 
+.PP
+Represents simple half-move.  
+
 .SH SYNOPSIS
 .br
 .PP
+.PP
+\fC#include <PGNPly.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
@@ -15,51 +20,70 @@ pgn::Ply \-
 .ti -1c
 .RI "\fBPly\fP (const std::string &ply_text)"
 .br
+.RI "\fIConstructs ply by extracting information from given string. \fP"
+.ti -1c
+.RI "virtual \fB~Ply\fP ()"
+.br
+.RI "\fIDestructor. \fP"
 .ti -1c
 .RI "\fBPly\fP & \fBoperator=\fP (const \fBPly\fP &src)"
 .br
+.RI "\fICopies given ply to current. \fP"
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBPly\fP &src) const "
 .br
+.RI "\fICheck is given ply and current ply equal. \fP"
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBPly\fP &src) const "
 .br
+.RI "\fINegative veriosn of \fBPly::operator==()\fP. \fP"
 .ti -1c
 .RI "bool \fBisLongCastle\fP () const "
 .br
+.RI "\fIChecks is ply long castle( e.g. does ply contain O-O-O character ). \fP"
 .ti -1c
 .RI "bool \fBisShortCastle\fP () const "
 .br
+.RI "\fIChecks is ply short castle( e.g. does ply contain O-O character ). \fP"
 .ti -1c
 .RI "bool \fBisCapture\fP () const "
 .br
+.RI "\fIChecks is ply capture( e.g. does ply contain x character ). \fP"
 .ti -1c
 .RI "bool \fBisCheck\fP () const "
 .br
+.RI "\fIChecks is ply check( e.g. does ply contain + character ). \fP"
 .ti -1c
 .RI "bool \fBisCheckMate\fP () const "
 .br
+.RI "\fIChecks is ply checkmate( e.g. does ply contain # character ). \fP"
 .ti -1c
 .RI "void \fBbindComment\fP (const \fBCommentText\fP &comment)"
 .br
+.RI "\fIBind comment to the ply. \fP"
 .ti -1c
 .RI "void \fBunbindComment\fP ()"
 .br
+.RI "\fIRemove bound comment. \fP"
 .ti -1c
 .RI "char \fBfromSquare\fP () const "
 .br
+.RI "\fIGet information about square from where ply has been done. \fP"
 .ti -1c
 .RI "\fBSquare\fP \fBtoSquare\fP () const "
 .br
+.RI "\fIGet information about destination square. \fP"
 .ti -1c
 .RI "\fBPiece\fP \fBpiece\fP () const "
 .br
+.RI "\fIGet information about piece which makes ply. \fP"
 .ti -1c
 .RI "\fBPiece\fP * \fBpromoted\fP () const "
 .br
 .ti -1c
 .RI "std::string \fBtoStdString\fP () const "
 .br
+.RI "\fIConverts ply to string. \fP"
 .in -1c
 .SS "Friends"
 
@@ -67,7 +91,180 @@ pgn::Ply \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBpgn::Ply\fP &src)"
 .br
+.RI "\fIPrints ply to given stream. \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+Represents simple half-move. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pgn::Ply::Ply (const \fBPly\fP &src)"Copy-constructor. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrc\fP Source ply. 
+.RE
+.PP
+
+.SS "pgn::Ply::Ply (const std::string &ply_text)"
+.PP
+Constructs ply by extracting information from given string. \fBParameters:\fP
+.RS 4
+\fIply_text\fP Text to parse. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void pgn::Ply::bindComment (const \fBCommentText\fP &comment)"
+.PP
+Bind comment to the ply. \fBParameters:\fP
+.RS 4
+\fIcomment\fP Comment to bind. 
+.RE
+.PP
+
+.SS "char pgn::Ply::fromSquare () const"
+.PP
+Get information about square from where ply has been done. \fBReturns:\fP
+.RS 4
+Row or square from where move has been done. If there is nno square provided with ply '-' will be returned. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+http://http://en.wikipedia.org/wiki/Portable_Game_Notation for more information about PGN notation. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Situation when row and column is provided with ply is ignored because it's happend very rarely. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::isCapture () const"
+.PP
+Checks is ply capture( e.g. does ply contain x character ). \fBReturns:\fP
+.RS 4
+true is ply is capture. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::isCheck () const"
+.PP
+Checks is ply check( e.g. does ply contain + character ). \fBReturns:\fP
+.RS 4
+true is ply is check. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::isCheckMate () const"
+.PP
+Checks is ply checkmate( e.g. does ply contain # character ). \fBReturns:\fP
+.RS 4
+true is ply is checkmate. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::isLongCastle () const"
+.PP
+Checks is ply long castle( e.g. does ply contain O-O-O character ). \fBReturns:\fP
+.RS 4
+true is ply is long castle. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::isShortCastle () const"
+.PP
+Checks is ply short castle( e.g. does ply contain O-O character ). \fBReturns:\fP
+.RS 4
+true is ply is short castle. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::operator!= (const \fBPly\fP &src) const"
+.PP
+Negative veriosn of \fBPly::operator==()\fP. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source ply. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if plyes are not equal. 
+.RE
+.PP
+
+.SS "\fBPly\fP& pgn::Ply::operator= (const \fBPly\fP &src)"
+.PP
+Copies given ply to current. \fBParameters:\fP
+.RS 4
+\fISource\fP ply. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to current ply. 
+.RE
+.PP
+
+.SS "bool pgn::Ply::operator== (const \fBPly\fP &src) const"
+.PP
+Check is given ply and current ply equal. \fBParameters:\fP
+.RS 4
+\fIsrc\fP Source ply. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if plyes are equal. 
+.RE
+.PP
+
+.SS "\fBPiece\fP pgn::Ply::piece () const"
+.PP
+Get information about piece which makes ply. \fBReturns:\fP
+.RS 4
+\fBPiece\fP which makes ply. 
+.RE
+.PP
+
+.SS "\fBPiece\fP* pgn::Ply::promoted () const"information about promoted to ply piece. 
+.PP
+\fBReturns:\fP
+.RS 4
+Provided piece. If there is no provided piece 0 will be returned. 
+.RE
+.PP
+
+.SS "\fBSquare\fP pgn::Ply::toSquare () const"
+.PP
+Get information about destination square. \fBReturns:\fP
+.RS 4
+Destination square. 
+.RE
+.PP
+
+.SS "std::string pgn::Ply::toStdString () const"
+.PP
+Converts ply to string. \fBReturns:\fP
+.RS 4
+Converted verision. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBpgn::Ply\fP &src)\fC [friend]\fP"
+.PP
+Prints ply to given stream. \fBParameters:\fP
+.RS 4
+\fIos\fP Stream to print. 
+.br
+\fIsrc\fP Printing ply. 
+.RE
+.PP
+
 
 .SH "Author"
 .PP 

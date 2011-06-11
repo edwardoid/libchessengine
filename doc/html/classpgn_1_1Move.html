@@ -76,37 +76,329 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="pgn::Move" -->
+<p>Represents simple move.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="PGNMove_8h_source.html">PGNMove.h</a>&gt;</code></p>
+
 <p><a href="classpgn_1_1Move-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28247b92783975d25036b9d5194114b4"></a><!-- doxytag: member="pgn::Move::Move" ref="a28247b92783975d25036b9d5194114b4" args="(const Move &amp;src)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Move</b> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25045059decc1f06eb0088f52c277ea3"></a><!-- doxytag: member="pgn::Move::Move" ref="a25045059decc1f06eb0088f52c277ea3" args="(const Ply *white, const Ply *black, int number)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Move</b> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> *white, const <a class="el" href="classpgn_1_1Ply.html">Ply</a> *black, int number)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13eaa8cab0874d6f5c30017c179ca608"></a><!-- doxytag: member="pgn::Move::operator=" ref="a13eaa8cab0874d6f5c30017c179ca608" args="(const Move &amp;src)" -->
-<a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab29d7ad0a246c58f53840c30163ff932"></a><!-- doxytag: member="pgn::Move::operator==" ref="ab29d7ad0a246c58f53840c30163ff932" args="(const Move &amp;src) const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59795e9c42731f979271d86546c254aa"></a><!-- doxytag: member="pgn::Move::operator!=" ref="a59795e9c42731f979271d86546c254aa" args="(const Move &amp;src) const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad15aa895b133bf43304b147bc3db9e5d"></a><!-- doxytag: member="pgn::Move::isCheckMate" ref="ad15aa895b133bf43304b147bc3db9e5d" args="() const " -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCheckMate</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0321dd73f271684cf7040bb61c1934e3"></a><!-- doxytag: member="pgn::Move::white" ref="a0321dd73f271684cf7040bb61c1934e3" args="() const " -->
-<a class="el" href="classpgn_1_1Ply.html">Ply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>white</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a112464932b1bf070ef1c465fadb9c4b1"></a><!-- doxytag: member="pgn::Move::black" ref="a112464932b1bf070ef1c465fadb9c4b1" args="() const " -->
-<a class="el" href="classpgn_1_1Ply.html">Ply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>black</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f09e103caca4e9484779d67e4ff2e54"></a><!-- doxytag: member="pgn::Move::toStdString" ref="a0f09e103caca4e9484779d67e4ff2e54" args="()" -->
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toStdString</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a28247b92783975d25036b9d5194114b4">Move</a> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-constructor.  <a href="#a28247b92783975d25036b9d5194114b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#ab33e0b091e41d8539bbec7a69ce06ec5">Move</a> (const <a class="el" href="classpgn_1_1Ply.html">Ply</a> *white, const <a class="el" href="classpgn_1_1Ply.html">Ply</a> *black, int number=1)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">constructs move by given white and black players plyes.  <a href="#ab33e0b091e41d8539bbec7a69ce06ec5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6c3be4f553b0757a896a44776634bd9"></a><!-- doxytag: member="pgn::Move::~Move" ref="ad6c3be4f553b0757a896a44776634bd9" args="()" -->
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#ad6c3be4f553b0757a896a44776634bd9">~Move</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a13eaa8cab0874d6f5c30017c179ca608">operator=</a> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies given move to current.  <a href="#a13eaa8cab0874d6f5c30017c179ca608"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#ab29d7ad0a246c58f53840c30163ff932">operator==</a> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is given move and current move equal.  <a href="#ab29d7ad0a246c58f53840c30163ff932"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a59795e9c42731f979271d86546c254aa">operator!=</a> (const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative veriosn of <a class="el" href="classpgn_1_1Move.html#ab29d7ad0a246c58f53840c30163ff932" title="Check is given move and current move equal.">Move::operator==()</a>.  <a href="#a59795e9c42731f979271d86546c254aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#ad15aa895b133bf43304b147bc3db9e5d">isCheckMate</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is move checkmate( e.g. does move contain # character ).  <a href="#ad15aa895b133bf43304b147bc3db9e5d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Ply.html">Ply</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a0321dd73f271684cf7040bb61c1934e3">white</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get white player's ply.  <a href="#a0321dd73f271684cf7040bb61c1934e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpgn_1_1Ply.html">Ply</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a112464932b1bf070ef1c465fadb9c4b1">black</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get black player's ply.  <a href="#a112464932b1bf070ef1c465fadb9c4b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a0f09e103caca4e9484779d67e4ff2e54">toStdString</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert move to string using <b>short</b> PGN notation.  <a href="#a0f09e103caca4e9484779d67e4ff2e54"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab69fb9cbd8ad8107e6d6264a66cf74af"></a><!-- doxytag: member="pgn::Move::itoa" ref="ab69fb9cbd8ad8107e6d6264a66cf74af" args="(int n)" -->
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>itoa</b> (int n)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#ab69fb9cbd8ad8107e6d6264a66cf74af">itoa</a> (int n)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts given number to string.  <a href="#ab69fb9cbd8ad8107e6d6264a66cf74af"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59221be82ec792c0a15addf8746a667c"></a><!-- doxytag: member="pgn::Move::operator&lt;&lt;" ref="a59221be82ec792c0a15addf8746a667c" args="(std::ostream &amp;os, const Move &amp;src)" -->
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpgn_1_1Move.html#a59221be82ec792c0a15addf8746a667c">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints move to given stream.  <a href="#a59221be82ec792c0a15addf8746a667c"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Represents simple move. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a28247b92783975d25036b9d5194114b4"></a><!-- doxytag: member="pgn::Move::Move" ref="a28247b92783975d25036b9d5194114b4" args="(const Move &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::Move::Move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copy-constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source move. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab33e0b091e41d8539bbec7a69ce06ec5"></a><!-- doxytag: member="pgn::Move::Move" ref="ab33e0b091e41d8539bbec7a69ce06ec5" args="(const Ply *white, const Ply *black, int number=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pgn::Move::Move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">Ply</a> *&#160;</td>
+          <td class="paramname"><em>white</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Ply.html">Ply</a> *&#160;</td>
+          <td class="paramname"><em>black</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>constructs move by given white and black players plyes. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">white</td><td>White players ply. </td></tr>
+    <tr><td class="paramname">black</td><td>Black players ply. </td></tr>
+    <tr><td class="paramname">int</td><td><a class="el" href="classpgn_1_1Move.html" title="Represents simple move.">Move</a> number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a112464932b1bf070ef1c465fadb9c4b1"></a><!-- doxytag: member="pgn::Move::black" ref="a112464932b1bf070ef1c465fadb9c4b1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Ply.html">Ply</a>* pgn::Move::black </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get black player's ply. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to ply, or if there is no ply, returns 0. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad15aa895b133bf43304b147bc3db9e5d"></a><!-- doxytag: member="pgn::Move::isCheckMate" ref="ad15aa895b133bf43304b147bc3db9e5d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Move::isCheckMate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks is move checkmate( e.g. does move contain # character ). </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true is move is checkmate. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab69fb9cbd8ad8107e6d6264a66cf74af"></a><!-- doxytag: member="pgn::Move::itoa" ref="ab69fb9cbd8ad8107e6d6264a66cf74af" args="(int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string pgn::Move::itoa </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts given number to string. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Function use converts from/to decimal number. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>converted result. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a59795e9c42731f979271d86546c254aa"></a><!-- doxytag: member="pgn::Move::operator!=" ref="a59795e9c42731f979271d86546c254aa" args="(const Move &amp;src) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Move::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Negative veriosn of <a class="el" href="classpgn_1_1Move.html#ab29d7ad0a246c58f53840c30163ff932" title="Check is given move and current move equal.">Move::operator==()</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source move. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if moves are not equal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a13eaa8cab0874d6f5c30017c179ca608"></a><!-- doxytag: member="pgn::Move::operator=" ref="a13eaa8cab0874d6f5c30017c179ca608" args="(const Move &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Move.html">Move</a>&amp; pgn::Move::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies given move to current. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Source</td><td>move. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Reference to current move. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab29d7ad0a246c58f53840c30163ff932"></a><!-- doxytag: member="pgn::Move::operator==" ref="ab29d7ad0a246c58f53840c30163ff932" args="(const Move &amp;src) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pgn::Move::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check is given move and current move equal. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source move. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if moves are equal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f09e103caca4e9484779d67e4ff2e54"></a><!-- doxytag: member="pgn::Move::toStdString" ref="a0f09e103caca4e9484779d67e4ff2e54" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string pgn::Move::toStdString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Convert move to string using <b>short</b> PGN notation. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Converted move. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0321dd73f271684cf7040bb61c1934e3"></a><!-- doxytag: member="pgn::Move::white" ref="a0321dd73f271684cf7040bb61c1934e3" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpgn_1_1Ply.html">Ply</a>* pgn::Move::white </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get white player's ply. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to ply, or if there is no ply, returns 0. </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a59221be82ec792c0a15addf8746a667c"></a><!-- doxytag: member="pgn::Move::operator&lt;&lt;" ref="a59221be82ec792c0a15addf8746a667c" args="(std::ostream &amp;os, const Move &amp;src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpgn_1_1Move.html">Move</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prints move to given stream. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Stream to print. </td></tr>
+    <tr><td class="paramname">src</td><td><a class="el" href="classpgn_1_1Move.html" title="Represents simple move.">Move</a> to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/libpgnm/src/<a class="el" href="PGNMove_8h_source.html">PGNMove.h</a></li>
 </ul>
@@ -125,7 +417,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Jun 1 2011 19:39:52 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 5 2011 18:28:21 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

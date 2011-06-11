@@ -8,7 +8,7 @@ DOC_DIR := ./doc/
 TST_DIR := ./tests/
 CC:= g++
 MAKE:= make
-DEB_FLAGS:= -g3 -gdwarf-2
+DEB_FLAGS:= -g3 -ansi
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
@@ -18,21 +18,23 @@ TST_OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OB
 TST_DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
 
 .PHONY: all
-all: check library
+all: pgnm check library
 
 .PHONY: library
 library: static shared
 
 .PHONY: static
-static: check $(OBJ_FILES)
+static: pgnm check $(OBJ_FILES)
 	ar -r $(LIB_DIR)lib$(LIBRARY_TARGET).a $(OBJ_FILES)
 
 .PHONY: shared
-shared: check $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) -shared -o $(LIB_DIR)lib$(LIBRARY_TARGET).so
+shared: pgnm check $(OBJ_FILES)
+	$(CC) $(DEB_FLAGS)  $(OBJ_FILES) -shared -o $(LIB_DIR)lib$(LIBRARY_TARGET).so
+
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	$(CC) -c $< -I$(INC_DIR) -o $@
-$(DEP_DIR)%.dep: $(SRC_DIR)%.cpp
+	$(CC) $(DEB_FLAGS) -c $< -I$(INC_DIR) -o $@
+
+$(DEP_DIR)%.dep: pgnm $(SRC_DIR)%.cpp
 	$(CC) -MM $< -MT "$@ $(patsubst $(DEP_DIR)%.dep,$(OBJ_DIR)%o,$@)" -I$(INC_DIR) -o $@
 
 -include $(DEP_FILES)
@@ -60,14 +62,20 @@ clean: check
 test: all
 	$(MAKE) --directory=$(TST_DIR) run
 
+.PHONY: pgnm
+pgnm:
+	$(MAKE) --directory=$(SRC_DIR)/libpgnm/  all
+
+
+
 .PHONY: install
-install: static shared doc
+install: pgnm static shared doc
 	cp $(LIB_DIR)* /usr/local/lib
 	cp $(SRC_DIR)*.h /usr/local/include
 	cp -rf $(DOC_DIR)man/man3 /usr/local/man
 	rm -rf /usr/local/man/man3/README*
 	rm -rf /usr/local/man/man3/.svn
-
+	$(MAKE) --directory=$(SRC_DIR)/libpgnm/  install
 .PHONY: check
 check:
 	@echo "Checking for $(MAKE)"

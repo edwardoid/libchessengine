@@ -2,72 +2,274 @@
 \section{pgn::Move Class Reference}
 \label{classpgn_1_1Move}\index{pgn::Move@{pgn::Move}}
 }
+
+
+Represents simple move.  
+
+
+
+
+{\ttfamily \#include $<$PGNMove.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classpgn_1_1Move_a28247b92783975d25036b9d5194114b4}{
-{\bfseries Move} (const \hyperlink{classpgn_1_1Move}{Move} \&src)}
-\label{classpgn_1_1Move_a28247b92783975d25036b9d5194114b4}
+\hyperlink{classpgn_1_1Move_a28247b92783975d25036b9d5194114b4}{Move} (const \hyperlink{classpgn_1_1Move}{Move} \&src)
+\begin{DoxyCompactList}\small\item\em Copy-\/constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Move_ab33e0b091e41d8539bbec7a69ce06ec5}{Move} (const \hyperlink{classpgn_1_1Ply}{Ply} $\ast$white, const \hyperlink{classpgn_1_1Ply}{Ply} $\ast$black, int number=1)
+\begin{DoxyCompactList}\small\item\em constructs move by given white and black players plyes. \item\end{DoxyCompactList}\item 
+\hypertarget{classpgn_1_1Move_ad6c3be4f553b0757a896a44776634bd9}{
+virtual \hyperlink{classpgn_1_1Move_ad6c3be4f553b0757a896a44776634bd9}{$\sim$Move} ()}
+\label{classpgn_1_1Move_ad6c3be4f553b0757a896a44776634bd9}
 
-\item 
-\hypertarget{classpgn_1_1Move_a25045059decc1f06eb0088f52c277ea3}{
-{\bfseries Move} (const \hyperlink{classpgn_1_1Ply}{Ply} $\ast$white, const \hyperlink{classpgn_1_1Ply}{Ply} $\ast$black, int number)}
-\label{classpgn_1_1Move_a25045059decc1f06eb0088f52c277ea3}
-
-\item 
-\hypertarget{classpgn_1_1Move_a13eaa8cab0874d6f5c30017c179ca608}{
-\hyperlink{classpgn_1_1Move}{Move} \& {\bfseries operator=} (const \hyperlink{classpgn_1_1Move}{Move} \&src)}
-\label{classpgn_1_1Move_a13eaa8cab0874d6f5c30017c179ca608}
-
-\item 
-\hypertarget{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}{
-bool {\bfseries operator==} (const \hyperlink{classpgn_1_1Move}{Move} \&src) const }
-\label{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}
-
-\item 
-\hypertarget{classpgn_1_1Move_a59795e9c42731f979271d86546c254aa}{
-bool {\bfseries operator!=} (const \hyperlink{classpgn_1_1Move}{Move} \&src) const }
-\label{classpgn_1_1Move_a59795e9c42731f979271d86546c254aa}
-
-\item 
-\hypertarget{classpgn_1_1Move_ad15aa895b133bf43304b147bc3db9e5d}{
-bool {\bfseries isCheckMate} () const }
-\label{classpgn_1_1Move_ad15aa895b133bf43304b147bc3db9e5d}
-
-\item 
-\hypertarget{classpgn_1_1Move_a0321dd73f271684cf7040bb61c1934e3}{
-\hyperlink{classpgn_1_1Ply}{Ply} $\ast$ {\bfseries white} () const }
-\label{classpgn_1_1Move_a0321dd73f271684cf7040bb61c1934e3}
-
-\item 
-\hypertarget{classpgn_1_1Move_a112464932b1bf070ef1c465fadb9c4b1}{
-\hyperlink{classpgn_1_1Ply}{Ply} $\ast$ {\bfseries black} () const }
-\label{classpgn_1_1Move_a112464932b1bf070ef1c465fadb9c4b1}
-
-\item 
-\hypertarget{classpgn_1_1Move_a0f09e103caca4e9484779d67e4ff2e54}{
-std::string {\bfseries toStdString} ()}
-\label{classpgn_1_1Move_a0f09e103caca4e9484779d67e4ff2e54}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Move}{Move} \& \hyperlink{classpgn_1_1Move_a13eaa8cab0874d6f5c30017c179ca608}{operator=} (const \hyperlink{classpgn_1_1Move}{Move} \&src)
+\begin{DoxyCompactList}\small\item\em Copies given move to current. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}{operator==} (const \hyperlink{classpgn_1_1Move}{Move} \&src) const 
+\begin{DoxyCompactList}\small\item\em Check is given move and current move equal. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Move_a59795e9c42731f979271d86546c254aa}{operator!=} (const \hyperlink{classpgn_1_1Move}{Move} \&src) const 
+\begin{DoxyCompactList}\small\item\em Negative veriosn of \hyperlink{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}{Move::operator==()}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classpgn_1_1Move_ad15aa895b133bf43304b147bc3db9e5d}{isCheckMate} () const 
+\begin{DoxyCompactList}\small\item\em Checks is move checkmate( e.g. does move contain \# character ). \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Ply}{Ply} $\ast$ \hyperlink{classpgn_1_1Move_a0321dd73f271684cf7040bb61c1934e3}{white} () const 
+\begin{DoxyCompactList}\small\item\em Get white player's ply. \item\end{DoxyCompactList}\item 
+\hyperlink{classpgn_1_1Ply}{Ply} $\ast$ \hyperlink{classpgn_1_1Move_a112464932b1bf070ef1c465fadb9c4b1}{black} () const 
+\begin{DoxyCompactList}\small\item\em Get black player's ply. \item\end{DoxyCompactList}\item 
+std::string \hyperlink{classpgn_1_1Move_a0f09e103caca4e9484779d67e4ff2e54}{toStdString} ()
+\begin{DoxyCompactList}\small\item\em Convert move to string using {\bfseries short} PGN notation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classpgn_1_1Move_ab69fb9cbd8ad8107e6d6264a66cf74af}{
-static std::string {\bfseries itoa} (int n)}
-\label{classpgn_1_1Move_ab69fb9cbd8ad8107e6d6264a66cf74af}
-
-\end{DoxyCompactItemize}
+static std::string \hyperlink{classpgn_1_1Move_ab69fb9cbd8ad8107e6d6264a66cf74af}{itoa} (int n)
+\begin{DoxyCompactList}\small\item\em Converts given number to string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
+std::ostream \& \hyperlink{classpgn_1_1Move_a59221be82ec792c0a15addf8746a667c}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1Move}{Move} \&src)
+\begin{DoxyCompactList}\small\item\em Prints move to given stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents simple move. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgn_1_1Move_a28247b92783975d25036b9d5194114b4}{
+\index{pgn::Move@{pgn::Move}!Move@{Move}}
+\index{Move@{Move}!pgn::Move@{pgn::Move}}
+\subsubsection[{Move}]{\setlength{\rightskip}{0pt plus 5cm}pgn::Move::Move (
+\begin{DoxyParamCaption}
+\item[{const {\bf Move} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Move_a28247b92783975d25036b9d5194114b4}
+
+
+Copy-\/constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source move. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgn_1_1Move_ab33e0b091e41d8539bbec7a69ce06ec5}{
+\index{pgn::Move@{pgn::Move}!Move@{Move}}
+\index{Move@{Move}!pgn::Move@{pgn::Move}}
+\subsubsection[{Move}]{\setlength{\rightskip}{0pt plus 5cm}pgn::Move::Move (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ply} $\ast$}]{white, }
+\item[{const {\bf Ply} $\ast$}]{black, }
+\item[{int}]{number = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Move_ab33e0b091e41d8539bbec7a69ce06ec5}
+
+
+constructs move by given white and black players plyes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em white} & White players ply. \\
+\hline
+{\em black} & Black players ply. \\
+\hline
+{\em int} & \hyperlink{classpgn_1_1Move}{Move} number. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgn_1_1Move_a112464932b1bf070ef1c465fadb9c4b1}{
+\index{pgn::Move@{pgn::Move}!black@{black}}
+\index{black@{black}!pgn::Move@{pgn::Move}}
+\subsubsection[{black}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ply}$\ast$ pgn::Move::black (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Move_a112464932b1bf070ef1c465fadb9c4b1}
+
+
+Get black player's ply. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to ply, or if there is no ply, returns 0. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_ad15aa895b133bf43304b147bc3db9e5d}{
+\index{pgn::Move@{pgn::Move}!isCheckMate@{isCheckMate}}
+\index{isCheckMate@{isCheckMate}!pgn::Move@{pgn::Move}}
+\subsubsection[{isCheckMate}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Move::isCheckMate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Move_ad15aa895b133bf43304b147bc3db9e5d}
+
+
+Checks is move checkmate( e.g. does move contain \# character ). 
+
+\begin{DoxyReturn}{Returns}
+true is move is checkmate. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_ab69fb9cbd8ad8107e6d6264a66cf74af}{
+\index{pgn::Move@{pgn::Move}!itoa@{itoa}}
+\index{itoa@{itoa}!pgn::Move@{pgn::Move}}
+\subsubsection[{itoa}]{\setlength{\rightskip}{0pt plus 5cm}static std::string pgn::Move::itoa (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classpgn_1_1Move_ab69fb9cbd8ad8107e6d6264a66cf74af}
+
+
+Converts given number to string. 
+
+\begin{DoxyNote}{Note}
+Function use converts from/to decimal number. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+converted result. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_a59795e9c42731f979271d86546c254aa}{
+\index{pgn::Move@{pgn::Move}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!pgn::Move@{pgn::Move}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Move::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Move} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Move_a59795e9c42731f979271d86546c254aa}
+
+
+Negative veriosn of \hyperlink{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}{Move::operator==()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if moves are not equal. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_a13eaa8cab0874d6f5c30017c179ca608}{
+\index{pgn::Move@{pgn::Move}!operator=@{operator=}}
+\index{operator=@{operator=}!pgn::Move@{pgn::Move}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Move}\& pgn::Move::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Move} \&}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Move_a13eaa8cab0874d6f5c30017c179ca608}
+
+
+Copies given move to current. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Source} & move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to current move. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}{
+\index{pgn::Move@{pgn::Move}!operator==@{operator==}}
+\index{operator==@{operator==}!pgn::Move@{pgn::Move}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool pgn::Move::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Move} \&}]{src}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Move_ab29d7ad0a246c58f53840c30163ff932}
+
+
+Check is given move and current move equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if moves are equal. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_a0f09e103caca4e9484779d67e4ff2e54}{
+\index{pgn::Move@{pgn::Move}!toStdString@{toStdString}}
+\index{toStdString@{toStdString}!pgn::Move@{pgn::Move}}
+\subsubsection[{toStdString}]{\setlength{\rightskip}{0pt plus 5cm}std::string pgn::Move::toStdString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classpgn_1_1Move_a0f09e103caca4e9484779d67e4ff2e54}
+
+
+Convert move to string using {\bfseries short} PGN notation. 
+
+\begin{DoxyReturn}{Returns}
+Converted move. 
+\end{DoxyReturn}
+\hypertarget{classpgn_1_1Move_a0321dd73f271684cf7040bb61c1934e3}{
+\index{pgn::Move@{pgn::Move}!white@{white}}
+\index{white@{white}!pgn::Move@{pgn::Move}}
+\subsubsection[{white}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ply}$\ast$ pgn::Move::white (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classpgn_1_1Move_a0321dd73f271684cf7040bb61c1934e3}
+
+
+Get white player's ply. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to ply, or if there is no ply, returns 0. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
 \hypertarget{classpgn_1_1Move_a59221be82ec792c0a15addf8746a667c}{
-std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, const \hyperlink{classpgn_1_1Move}{Move} \&src)}
+\index{pgn::Move@{pgn::Move}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pgn::Move@{pgn::Move}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std::ostream \&}]{os, }
+\item[{const {\bf Move} \&}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
 \label{classpgn_1_1Move_a59221be82ec792c0a15addf8746a667c}
 
-\end{DoxyCompactItemize}
+
+Prints move to given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to print. \\
+\hline
+{\em src} & \hyperlink{classpgn_1_1Move}{Move} to print. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-src/libpgnm/src/PGNMove.h\end{DoxyCompactItemize}
+src/libpgnm/src/\hyperlink{PGNMove_8h}{PGNMove.h}\end{DoxyCompactItemize}

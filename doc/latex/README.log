@@ -1,0 +1,191 @@
+This is TeX, Version 3.1415926 (TeX Live 2009/Debian) (format=tex 2011.4.12)  3 JUN 2011 01:09
+**README.tex
+(./README.tex
+! Undefined control sequence.
+l.1 \hypertarget
+                {README_About}{}\section{About}\label{README_About}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.1 \hypertarget{README_
+                        About}{}\section{About}\label{README_About}
+? 
+! Extra }, or forgotten $.
+l.1 \hypertarget{README_About}
+                              {}\section{About}\label{README_About}
+? 
+! Undefined control sequence.
+l.1 \hypertarget{README_About}{}\section
+                                        {About}\label{README_About}
+? 
+! Undefined control sequence.
+l.1 ...target{README_About}{}\section{About}\label
+                                                  {README_About}
+? 
+! Undefined control sequence.
+l.2 ...fied pgnlib for parse PGN files\hypertarget
+                                                  {README__pgnmlib_}{}\secti...
+
+? 
+! Missing { inserted.
+<to be read again> 
+                   _
+l.2 ...ib for parse PGN files\hypertarget{README__
+                                                  pgnmlib_}{}\section{Librar...
+
+? 
+! Missing { inserted.
+<to be read again> 
+                   }
+l.2 ...rse PGN files\hypertarget{README__pgnmlib_}
+                                                  {}\section{Library}\label{...
+
+? 
+! Undefined control sequence.
+l.2 ...les\hypertarget{README__pgnmlib_}{}\section
+                                                  {Library}\label{README__pg...
+
+? 
+! Undefined control sequence.
+l.2 ...{README__pgnmlib_}{}\section{Library}\label
+                                                  {README__pgnmlib_}
+? 
+! Missing { inserted.
+<to be read again> 
+                   _
+l.2 ...pgnmlib_}{}\section{Library}\label{README__
+                                                  pgnmlib_}
+? 
+! Missing { inserted.
+<to be read again> 
+                   }
+l.2 ...{}\section{Library}\label{README__pgnmlib_}
+                                                  
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+l.3 Compile, decompile chess games from/to $
+                                            \ast$.pgn files. \begin{DoxySeeA...
+
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+l.3 Compile, decompile chess games from/to $
+                                            \ast$.pgn files. \begin{DoxySeeA...
+
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+l.3 Compile, decompile chess games from/to $
+                                            \ast$.pgn files. \begin{DoxySeeA...
+
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+<to be read again> 
+                   $
+l.3 Compile, decompile chess games from/to $
+                                            \ast$.pgn files. \begin{DoxySeeA...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \ast 
+l.3 Compile, decompile chess games from/to $\ast
+                                                $.pgn files. \begin{DoxySeeA...
+
+? 
+! Undefined control sequence.
+l.3 ...hess games from/to $\ast$.pgn files. \begin
+                                                  {DoxySeeAlso}{See also}
+? 
+! Undefined control sequence.
+l.4 \href
+         {http://en.wikipedia.com/PGN_Notation}{\tt http://en.wikipedia.com/...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.4 \href{http://en.wikipedia.com/PGN_
+                                      Notation}{\tt http://en.wikipedia.com/...
+
+? 
+! Extra }, or forgotten $.
+l.4 \href{http://en.wikipedia.com/PGN_Notation}
+                                               {\tt http://en.wikipedia.com/...
+
+? 
+! Undefined control sequence.
+l.4 ...ses GNU GPL library. Original source: \href
+                                                  {http://sourceforge.net/pr...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \end 
+l.5 \end
+        {DoxySeeAlso}
+? 
+
+Overfull \hbox (243.19797pt too wide) in paragraph at lines 1--5
+[]\tenrm README$[]\teni bout[][][]libchessengine \tensy ^^@ \teni ParsePGNfiles
+; makemovesfromangameininputPGNfile; printgame; move; tabletostreamlikestd \ten
+rm ::|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm R
+.\tenrm E
+.\tenrm A
+.\tenrm D
+.etc.
+
+
+Overfull \hbox (174.14658pt too wide) in paragraph at lines 1--5
+\teni ostream\tenrm (\teni forexamplestd \tenrm :: \teni cout\tenrm )\teni Uses
+modifiedpgnlibforparsePGNfiles[]$$\tensy ^^C$\tenrm .pgn|
+
+\hbox(7.5+4.81108)x469.75499
+.\teni o
+.\teni s
+.\teni t
+.\teni r
+.\kern0.27779
+.etc.
+
+
+Overfull \hbox (180.63164pt too wide) in paragraph at lines 1--5
+\tenrm files. Doxy-SeeAl-soSee also http://en.wikipedia.com/PGN$[]\teni otation
+[]UsesGNUGPLlibrary:Originalsource \tenrm :|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm ^^L (ligature fi)
+.\tenrm l
+.\tenrm e
+.\tenrm s
+.\tenrm .
+.etc.
+
+[1] )
+(\end occurred inside a group at level 2)
+Output written on README.dvi (1 page, 1376 bytes).
