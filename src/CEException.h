@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2002 Edward Sarkisyan <edward.sarkisyan@gmail.com>
+// Copyright (C) 2011 Edward Sarkisyan <edward.sarkisyan@gmail.com>
 //
 //     This file is part of libchessengine.
 //
@@ -26,8 +26,8 @@
 #include <exception>
 #include <PGNPly.h>
 /**
- * @file CEException.h
- * @brief Here are defined ChEngn::Exception class.
+ * @file CEBadMove.h
+ * @brief Here are defined ChEngn::BadMove class.
  */
 
 
@@ -98,6 +98,27 @@ namespace ChEngn
 			 * @brief Get binded information
 			 */
 			std::string comment() throw() { return m_comm; };
+
+			
+			/**
+			 * @brief Appends txt to error message.
+			 */
+			BadMove& operator<<( const char* txt ) throw();
+
+			/**
+			 * @brief Appends txt to error message.
+			 */
+			BadMove& operator<<( const std::string& txt ) throw();
+
+			/**
+			 * @brief Appends "true" if val is true, else appends "false" to error message.
+			 */
+			BadMove& operator<<( const bool val ) throw();
+
+			/**
+			 * @brief Appends val as string to error message.
+			 */
+			BadMove& operator<<( const int val ) throw();
 
 			/**
 			 * @brief Basic information about given exception

@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2002 Edward Sarkisyan <edward.sarkisyan@gmail.com>
+// Copyright (C) 2011 Edward Sarkisyan <edward.sarkisyan@gmail.com>
 //
 //     This file is part of libchessengine.
 //

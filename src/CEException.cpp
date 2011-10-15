@@ -11,3 +11,28 @@ const char* ChEngn::BadMove::what() throw()
 	return mess.c_str();
 }
 
+
+ChEngn::BadMove& ChEngn::BadMove::operator << (const char* txt) throw()
+{
+	return *this << (std::string(txt));
+}
+
+ChEngn::BadMove& ChEngn::BadMove::operator << (const std::string& txt) throw()
+{
+	m_comm += txt;
+	return *this;
+}
+
+ChEngn::BadMove& ChEngn::BadMove::operator << ( bool val) throw()
+{
+	if(val)
+		m_comm += "true";
+	else
+		m_comm += "false";
+	return *this;
+}
+
+ChEngn::BadMove& ChEngn::BadMove::operator << ( int val) throw()
+{
+	return *this << itoa(val);
+}
