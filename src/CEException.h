@@ -61,6 +61,9 @@ namespace ChEngn
 	static const char* UNKNOWN_CAPTURE = "Cat't capture \"unknown\" piece";
 
 
+	static const char* CAN_T_FIND_MOVED_PIECE = "Can't find moved piece";
+
+
 	/**
 	 * @brief Implements all exception which will be generated ty ChEngn::Engine
 	 * while trying to make move which i sincorrect.

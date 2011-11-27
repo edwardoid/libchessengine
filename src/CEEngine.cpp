@@ -21,6 +21,7 @@
 
 #include "CEEngine.h"
 #include "CEException.h"
+#include "CEPawnMove.h"
 #include <PGNPly.h>
 #include <stdlib.h>
 #include <iostream>
@@ -120,25 +121,25 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 	if ( pl->isShortCastle() )
 		makeShortCastling(isWhite);
 	
-	if ( pl->isLongCastle() )
+	else if ( pl->isLongCastle() )
 		makeLongCastling(isWhite);
 
-	if ( (pl->piece()) == pgn::Piece::Pawn() )
+	else if ( (pl->piece()) == pgn::Piece::Pawn() )
 		makePawnPly(pl, isWhite);
 
-	if ( (pl->piece()) == pgn::Piece::Knight() )
+	else if ( (pl->piece()) == pgn::Piece::Knight() )
 		makeKnightPly(pl, isWhite);
 
-	if ( (pl->piece()) == pgn::Piece::Bishop() )
+	else if ( (pl->piece()) == pgn::Piece::Bishop() )
 		makeBishopPly(pl, isWhite);
 
-	if ( (pl->piece()) == pgn::Piece::Rook() )
+	else if ( (pl->piece()) == pgn::Piece::Rook() )
 		makeRookPly(pl, isWhite);
 
-	if ( (pl->piece()) == pgn::Piece::Queen() )
+	else if ( (pl->piece()) == pgn::Piece::Queen() )
 		makeQueenPly(pl, isWhite);
 
-	if ( (pl->piece()) == pgn::Piece::King() )
+	else if ( (pl->piece()) == pgn::Piece::King() )
 		makeKingPly(pl, isWhite);
 
 	return true;
@@ -146,104 +147,10 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 
 void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 {
-	short coef = (isWhite? 1 : -1);
-	pgn::Square newPos = ply->toSquare();
-	if(ply->isCapture())
+	PawnMove pM(ply, isWhite);
+	if(!pM.make(&m_table))
 	{
-		Piece *movedPiece = 0;
-		Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
-
-		if ( ( dest == 0 ) )
-			throw BadMove( *ply, DEST_OUT_OF_RANGE );
-
-		char specifiedCol = ply->fromSquare();
-		if ( specifiedCol != '-')
-		{
-			pgn::Square oldPos(specifiedCol, newPos.row() - coef);
-			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
-			if ( movedPiece->type() != pawn )
-				throw BadMove( *ply, "Specified piece is not pawn");
-			if ( movedPiece->isWhite() != isWhite )
-				throw BadMove( *ply, "Specified piece's color and movind piece's color are not same");
-		}
-		else
-		{
-			Piece *tmp = m_table.pieceAtC ( newPos.col() - 1, newPos.row() - coef );
-			
-			if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
-				movedPiece = tmp;
-			else
-			{
-				tmp = m_table.pieceAtC ( newPos.col() + 1, newPos.row() - coef );
-				if ( ( tmp != 0 ) && (tmp->type() == pawn) && (tmp->isWhite() == isWhite) )
-					movedPiece = tmp;
-			}
-		}
-
-		if ( movedPiece != 0 )
-		{
-			if ( dest->type() == unknown )
-			{
-				Piece *longDest = m_table.pieceAtC(newPos.col(), newPos.row() - coef);
-				if ( ( longDest != 0 ) &&
-					 ( longDest->isWhite() != isWhite) &&
-					 ( longDest->type() == pawn ) )
-					 longDest->setType( unknown );
-			}
-			(*dest) = (*movedPiece);
-			movedPiece->setType(unknown);
-			if( 0 != ply->promoted() )
-			{
-				piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
-				if ( ( tmpType != pawn ) && ( tmpType != king ) )
-					dest->setType( tmpType );				
-			}
-			return;
-		}
-	}
-	else 
-	{
-		pgn::Square oldPos(newPos.col(), newPos.row() - coef);
-		Piece* movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
-		if( (movedPiece == 0) || 
-		    (movedPiece->type() != pawn) || 
-		    (movedPiece->isWhite() != isWhite) )
-		{
-			oldPos = pgn::Square(newPos.col(), newPos.row() - 2 * coef);
-			movedPiece = m_table.pieceAtC(oldPos.col(), oldPos.row());
-		}
-		if( movedPiece != 0 )
-		{
-			if( (movedPiece->type() == pawn ) && 
-				(movedPiece->isWhite() == isWhite) )
-			{
-				Piece *dest = m_table.pieceAtC(newPos.col(), newPos.row() );
-				if( dest != 0 )
-					if( dest->type() == unknown )
-					{
-						dest->setType( pawn );
-						if( isWhite )
-							dest->setWhite();
-						else
-							dest->setBlack();
-						movedPiece->setType ( unknown );
-						if( 0 != ply->promoted() )
-						{
-							piece_type tmpType = guessTypeByChar( ply->promoted()->id() ); 
-							if ( ( tmpType != pawn ) && ( tmpType != king ) )
-								dest->setType( tmpType );
-						}
-						return;
-					}
-					else
-						throw BadMove( *ply, DEST_OUT_OF_RANGE );
-				else
-					throw BadMove( *ply, DEST_OUT_OF_RANGE );
-
-			}
-			else
-				throw BadMove( *ply, NO_SUITABLE_PIECE );
-		}
+		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
 	}
 }
 
