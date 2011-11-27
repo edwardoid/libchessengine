@@ -2,6 +2,7 @@
 #define CHESS_ENGINE_PAWN_MOVE
 
 #include "CEMove.h"
+#include <PGNSquare.h>
 
 namespace pgn
 {
@@ -15,11 +16,15 @@ namespace ChEngn
 	class PawnMove: public Move
 	{
 	public:
-		PawnMove( const pgn::Ply* ply);
+		PawnMove( const pgn::Ply* ply, const bool isWhite);
 		~PawnMove();
 		virtual bool make( const Table* table) const;
 	private:
-		pgn::Ply* m_ply;	
+		bool makeCaptureMove(const Table* table) const;
+		bool makeSimpleMove(const Table* table) const;
+	private:
+		pgn::Ply* m_ply;
+		pgn::Square m_newPos;
 	};
 };
 
