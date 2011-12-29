@@ -6,6 +6,7 @@ LIB_DIR := ./lib/
 INC_DIR := ./src/ -I./src/libpgnm/src
 DOC_DIR := ./doc/
 TST_DIR := ./tests/
+DBG_DIR := ./debug/
 CC:= g++
 MAKE:= make
 DEB_FLAGS:= -g3
@@ -61,6 +62,10 @@ clean: check
 .PHONY: test
 test: all
 	$(MAKE) --directory=$(TST_DIR) run
+
+.PHONY: debug
+debug: all
+	$(MAKE) --directory=$(DBG_DIR) clean all debug
 
 .PHONY: pgnm
 pgnm:

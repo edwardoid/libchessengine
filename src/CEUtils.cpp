@@ -1,7 +1,9 @@
 #include "CEUtils.h"
+#include <stdio.h>
 
 std::string ChEngn::itostr( int num )
 {
+	return std::string(itoa(num));
 	if( num == 0 )
 		return std::string("0");
 
@@ -17,5 +19,10 @@ std::string ChEngn::itostr( int num )
 
 const char* ChEngn::itoa( int num )
 {
-	return itostr( num ).c_str();
+	char* numStr = new char[10];
+	sprintf(numStr, "%d", num);
+	return numStr;
 }
+
+
+

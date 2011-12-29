@@ -22,6 +22,7 @@
 #include "CEEngine.h"
 #include "CEException.h"
 #include "CEPawnMove.h"
+#include "CEKnightMove.h"
 #include <PGNPly.h>
 #include <stdlib.h>
 #include <iostream>
@@ -156,174 +157,11 @@ void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
 
 void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 {
-	
-	pgn::Square newPos = ply->toSquare();
-	char row = 0;
-	char column = 0;
-
-	if ( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') )
-		column = ply->fromSquare();
-	else if ( (ply->fromSquare() >= '1') && (ply->fromSquare() <= '8') )
-		row = ply->fromSquare();
-
-
-
-	Piece* movedPiece = 0;
-	Piece* tmp = 0;
-
-	pgn::Square oldPos;
-	
-	oldPos = pgn::Square(newPos.col() - 1, newPos.row() - 2);
-
-	tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-	if ( ( 0 != tmp ) &&
-		 ( tmp->isWhite() == isWhite ) &&
-		 ( knight == tmp->type() ) && 
-		 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-		 {
-		 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-		 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-		 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-		 		 	movedPiece = tmp;
-		 }
-		 
-	if ( movedPiece == 0 )
+	KnightMove kM(ply, isWhite);	
+	if(!kM.make(&m_table))
 	{
-		oldPos = pgn::Square(newPos.col() - 1, newPos.row() + 2);
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-		 	 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
+		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
 	}
-
-		 
-	if ( movedPiece == 0 )
-	{
-		oldPos = pgn::Square(newPos.col() + 1, newPos.row() - 2 );
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-			 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
-	}
-
-	if ( movedPiece == 0 )
-	{
-		oldPos = pgn::Square(newPos.col() + 1, newPos.row() + 2 );
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-		 	 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
-	}
-
-
-	if ( movedPiece == 0 )
-	{
-		oldPos = pgn::Square(newPos.col() + 2, newPos.row() - 1 );
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-			 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
-	}
-
-	if ( movedPiece == 0 )
-	{
-		oldPos = pgn::Square(newPos.col() + 2, newPos.row() + 1 );
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-			 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
-	}
-
-	if ( movedPiece == 0 )
-	{
-		oldPos = pgn::Square(newPos.col() - 2, newPos.row() - 1 );
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-			 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
-	}
-
-	if ( movedPiece == 0 )
-	{
-		oldPos = pgn::Square(newPos.col() - 2, newPos.row() + 1 );
-    
-		tmp = m_table.pieceAtC( oldPos.col()  , oldPos.row());
-		if ( ( 0 != tmp ) &&
-			 ( tmp->isWhite() == isWhite ) &&
-			 ( knight == tmp->type() ) &&
-			 ( !moveAndCheckForCheck( oldPos, newPos, isWhite ) ) )
-			 {
-			 	if ( ( ( 0 == column ) && ( 0 == row ) ) ^
-			 		 ( ( 0 == column ) && ( oldPos.row() == row ) ) ^
-			 		 ( ( 0 == row    ) && ( oldPos.col() == column ) ) )
-			 		 	movedPiece = tmp;
-			 }
-	}
-
-	Piece *dest = m_table.pieceAtC( newPos.col(), newPos.row() );
-
-	if ( ( movedPiece != 0) && ( dest != 0 ) )
-	{
-		if( ply->isCapture() )
-			if ( ( dest->isWhite() != isWhite ) ^
-				 ( dest->type() != unknown ) )
-				 	throw BadMove( *ply, "MakeKnightPly: Captured piece must be other color AND not unknown type!");
-		( *dest ) = ( *movedPiece );
-		movedPiece->setType( unknown );
-		return;
-
-	}
-	else
-		throw BadMove( *ply, NO_SUITABLE_PIECE );
-	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
 void ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)

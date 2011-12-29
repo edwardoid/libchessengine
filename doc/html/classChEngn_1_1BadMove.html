@@ -95,6 +95,18 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89df0bcb37e85792fd07e253503b4038"></a><!-- doxytag: member="ChEngn::BadMove::comment" ref="a89df0bcb37e85792fd07e253503b4038" args="()" -->
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a89df0bcb37e85792fd07e253503b4038">comment</a> ()  throw ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get binded information. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d8bfdb14505483b67969196c24763f3"></a><!-- doxytag: member="ChEngn::BadMove::operator&lt;&lt;" ref="a3d8bfdb14505483b67969196c24763f3" args="(const char *txt)" -->
+<a class="el" href="classChEngn_1_1BadMove.html">BadMove</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a3d8bfdb14505483b67969196c24763f3">operator&lt;&lt;</a> (const char *txt)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends txt to error message. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94429266082389a3505348e4a27e33e3"></a><!-- doxytag: member="ChEngn::BadMove::operator&lt;&lt;" ref="a94429266082389a3505348e4a27e33e3" args="(const std::string &amp;txt)" -->
+<a class="el" href="classChEngn_1_1BadMove.html">BadMove</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a94429266082389a3505348e4a27e33e3">operator&lt;&lt;</a> (const std::string &amp;txt)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends txt to error message. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c08b2baacc694ca64f48dc5d493bfc8"></a><!-- doxytag: member="ChEngn::BadMove::operator&lt;&lt;" ref="a1c08b2baacc694ca64f48dc5d493bfc8" args="(const bool val)" -->
+<a class="el" href="classChEngn_1_1BadMove.html">BadMove</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a1c08b2baacc694ca64f48dc5d493bfc8">operator&lt;&lt;</a> (const bool val)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends "true" if val is true, else appends "false" to error message. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a314454e1ea29439f4db4bd12d8699a3d"></a><!-- doxytag: member="ChEngn::BadMove::operator&lt;&lt;" ref="a314454e1ea29439f4db4bd12d8699a3d" args="(const int val)" -->
+<a class="el" href="classChEngn_1_1BadMove.html">BadMove</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#a314454e1ea29439f4db4bd12d8699a3d">operator&lt;&lt;</a> (const int val)  throw ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends val as string to error message. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7c3114036a9917a5aef4458a8f567d3"></a><!-- doxytag: member="ChEngn::BadMove::what" ref="ae7c3114036a9917a5aef4458a8f567d3" args="()" -->
 virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChEngn_1_1BadMove.html#ae7c3114036a9917a5aef4458a8f567d3">what</a> ()  throw ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic information about given exception. <br/></td></tr>
@@ -141,7 +153,7 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class
   <table class="params">
     <tr><td class="paramname">p</td><td><a class="el" href="classpgn_1_1Ply.html" title="Represents simple half-move.">pgn::Ply</a> which can be done a.t.m. </td></tr>
     <tr><td class="paramname">comm</td><td>Addiotional comment </td></tr>
-    <tr><td class="paramname">moveNum</td><td>Move number which can't be completly done </td></tr>
+    <tr><td class="paramname">moveNum</td><td><a class="el" href="classChEngn_1_1Move.html">Move</a> number which can't be completly done </td></tr>
   </table>
   </dd>
 </dl>
@@ -192,7 +204,7 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <p>Bind move number to exception. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">num</td><td>Move number </td></tr>
+    <tr><td class="paramname">num</td><td><a class="el" href="classChEngn_1_1Move.html">Move</a> number </td></tr>
   </table>
   </dd>
 </dl>
@@ -217,7 +229,7 @@ virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 5 2011 18:28:15 for libchessengine by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Dec 29 2011 23:41:21 for libchessengine by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

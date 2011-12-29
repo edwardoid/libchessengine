@@ -1,4 +1,4 @@
-.TH "ChEngn::BadMove" 3 "Sun Jun 5 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.TH "ChEngn::BadMove" 3 "Thu Dec 29 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,6 +35,22 @@ Implements all exception which will be generated ty \fBChEngn::Engine\fP while t
 .br
 .RI "\fIGet binded information. \fP"
 .ti -1c
+.RI "\fBBadMove\fP & \fBoperator<<\fP (const char *txt)  throw ()"
+.br
+.RI "\fIAppends txt to error message. \fP"
+.ti -1c
+.RI "\fBBadMove\fP & \fBoperator<<\fP (const std::string &txt)  throw ()"
+.br
+.RI "\fIAppends txt to error message. \fP"
+.ti -1c
+.RI "\fBBadMove\fP & \fBoperator<<\fP (const bool val)  throw ()"
+.br
+.RI "\fIAppends 'true' if val is true, else appends 'false' to error message. \fP"
+.ti -1c
+.RI "\fBBadMove\fP & \fBoperator<<\fP (const int val)  throw ()"
+.br
+.RI "\fIAppends val as string to error message. \fP"
+.ti -1c
 .RI "virtual const char * \fBwhat\fP ()  throw ()"
 .br
 .RI "\fIBasic information about given exception. \fP"
@@ -57,7 +73,7 @@ constructor \fBParameters:\fP
 .br
 \fIcomm\fP Addiotional comment 
 .br
-\fImoveNum\fP Move number which can't be completly done 
+\fImoveNum\fP \fBMove\fP number which can't be completly done 
 .RE
 .PP
 
@@ -75,7 +91,7 @@ Bind addiotional information to exception;. \fBParameters:\fP
 .PP
 Bind move number to exception. \fBParameters:\fP
 .RS 4
-\fInum\fP Move number 
+\fInum\fP \fBMove\fP number 
 .RE
 .PP
 

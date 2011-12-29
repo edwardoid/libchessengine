@@ -1,0 +1,114 @@
+\hypertarget{classChEngn_1_1Move}{
+\section{ChEngn::Move Class Reference}
+\label{classChEngn_1_1Move}\index{ChEngn::Move@{ChEngn::Move}}
+}
+Inheritance diagram for ChEngn::Move:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classChEngn_1_1Move}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classChEngn_1_1Move_a64fb193e2a023b7ac8f635c28aa732d1}{
+{\bfseries Move} (const \hyperlink{classpgn_1_1Ply}{pgn::Ply} $\ast$, const bool)}
+\label{classChEngn_1_1Move_a64fb193e2a023b7ac8f635c28aa732d1}
+
+\item 
+\hypertarget{classChEngn_1_1Move_a9996c7a9c1af882bb6d1f03b3e6cd6a1}{
+virtual bool {\bfseries make} (const \hyperlink{classChEngn_1_1Table}{Table} $\ast$table) const =0}
+\label{classChEngn_1_1Move_a9996c7a9c1af882bb6d1f03b3e6cd6a1}
+
+\item 
+bool \hyperlink{classChEngn_1_1Move_a942b9c4b2660db1055de6df7b6f5d2e3}{moveAndCheckForCheck} (const \hyperlink{classChEngn_1_1Table}{Table} $\ast$table, const \hyperlink{classpgn_1_1Square}{pgn::Square} oldPos, const \hyperlink{classpgn_1_1Square}{pgn::Square} newPos, const bool isWhite) const 
+\begin{DoxyCompactList}\small\item\em Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{ChEngn::king} and checks is new position check position for given player. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classChEngn_1_1Move_a8c5b8516c1043705ab0d382420973bdc}{
+static \hyperlink{namespaceChEngn_a2a35c185f259757a78e937575b8ed483}{piece\_\-type} {\bfseries guessTypeByChar} (const char character)}
+\label{classChEngn_1_1Move_a8c5b8516c1043705ab0d382420973bdc}
+
+\item 
+static bool \hyperlink{classChEngn_1_1Move_ae6623ccd38b7e0bb27e0ac993af7b795}{isCheck} (const \hyperlink{classChEngn_1_1Table}{Table} \&tbl, bool isWhite)
+\begin{DoxyCompactList}\small\item\em Checks for check on table. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classChEngn_1_1Move_aa125cc28066cc4659bc5f2319101ffde}{
+bool {\bfseries m\_\-isWhite}}
+\label{classChEngn_1_1Move_aa125cc28066cc4659bc5f2319101ffde}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classChEngn_1_1Move_acc0d3e212bbbb343193fc4d76340947c}{
+class {\bfseries PawnMove}}
+\label{classChEngn_1_1Move_acc0d3e212bbbb343193fc4d76340947c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChEngn_1_1Move_ae6623ccd38b7e0bb27e0ac993af7b795}{
+\index{ChEngn::Move@{ChEngn::Move}!isCheck@{isCheck}}
+\index{isCheck@{isCheck}!ChEngn::Move@{ChEngn::Move}}
+\subsubsection[{isCheck}]{\setlength{\rightskip}{0pt plus 5cm}static bool ChEngn::Move::isCheck (
+\begin{DoxyParamCaption}
+\item[{const {\bf Table} \&}]{tbl, }
+\item[{bool}]{isWhite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classChEngn_1_1Move_ae6623ccd38b7e0bb27e0ac993af7b795}
+
+
+Checks for check on table. 
+
+Tryes to found check in given table for given color's player. 
+\begin{DoxyParams}{Parameters}
+{\em tbl} & -\/ Source table \\
+\hline
+{\em isWhite} & -\/ Player color. True if player's colro white, false in other case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if check position found. 
+\end{DoxyReturn}
+\hypertarget{classChEngn_1_1Move_a942b9c4b2660db1055de6df7b6f5d2e3}{
+\index{ChEngn::Move@{ChEngn::Move}!moveAndCheckForCheck@{moveAndCheckForCheck}}
+\index{moveAndCheckForCheck@{moveAndCheckForCheck}!ChEngn::Move@{ChEngn::Move}}
+\subsubsection[{moveAndCheckForCheck}]{\setlength{\rightskip}{0pt plus 5cm}bool ChEngn::Move::moveAndCheckForCheck (
+\begin{DoxyParamCaption}
+\item[{const {\bf Table} $\ast$}]{table, }
+\item[{const {\bf pgn::Square}}]{oldPos, }
+\item[{const {\bf pgn::Square}}]{newPos, }
+\item[{const bool}]{isWhite}
+\end{DoxyParamCaption}
+) const}}
+\label{classChEngn_1_1Move_a942b9c4b2660db1055de6df7b6f5d2e3}
+
+
+Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \hyperlink{namespaceChEngn_a40c2dbaf0963b46704f08ffb28364cea}{ChEngn::king} and checks is new position check position for given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldPos} & -\/ Position from piece will be moved \\
+\hline
+{\em newPos} & -\/ Position where piece will be moved \\
+\hline
+{\em isWhite} & -\/ Player color. True if player's color is white, false in other case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if new check found 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+only \hyperlink{namespaceChEngn_a97924767720e8ba4e595ad9f161d73e8}{ChEngn::queen}, \hyperlink{namespaceChEngn_a485787ab76caf7a61a77118fcdfd113d}{ChEngn::rook} and \hyperlink{namespaceChEngn_ad9410a19494f941d06ea404edf4900b0}{ChEngn::bishop} will be checked! 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CEMove.h\end{DoxyCompactItemize}

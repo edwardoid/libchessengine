@@ -131,6 +131,13 @@ namespace ChEngn
 
 			Piece **m_table;
 	};
+
+       /**
+	* Every library user will use "Virtual tables". E.g. you get current table
+	* state, and then you can make changes, but all your changes will not
+	* change real table.
+	*/
+	typedef ChEngn::Table VirtualTable;
 };
 
 #endif

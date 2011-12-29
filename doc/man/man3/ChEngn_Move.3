@@ -1,0 +1,94 @@
+.TH "ChEngn::Move" 3 "Thu Dec 29 2011" "Version 0.2.1" "libchessengine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChEngn::Move \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBChEngn::KnightMove\fP\fC [private]\fP, and \fBChEngn::PawnMove\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMove\fP (const \fBpgn::Ply\fP *, const bool)"
+.br
+.ti -1c
+.RI "virtual bool \fBmake\fP (const \fBTable\fP *table) const =0"
+.br
+.ti -1c
+.RI "bool \fBmoveAndCheckForCheck\fP (const \fBTable\fP *table, const \fBpgn::Square\fP oldPos, const \fBpgn::Square\fP newPos, const bool isWhite) const "
+.br
+.RI "\fIMoves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \fBChEngn::king\fP and checks is new position check position for given player. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBpiece_type\fP \fBguessTypeByChar\fP (const char character)"
+.br
+.ti -1c
+.RI "static bool \fBisCheck\fP (const \fBTable\fP &tbl, bool isWhite)"
+.br
+.RI "\fIChecks for check on table. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_isWhite\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPawnMove\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "static bool ChEngn::Move::isCheck (const \fBTable\fP &tbl, boolisWhite)\fC [static]\fP"
+.PP
+Checks for check on table. Tryes to found check in given table for given color's player. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItbl\fP - Source table 
+.br
+\fIisWhite\fP - Player color. True if player's colro white, false in other case. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if check position found. 
+.RE
+.PP
+
+.SS "bool ChEngn::Move::moveAndCheckForCheck (const \fBTable\fP *table, const \fBpgn::Square\fPoldPos, const \fBpgn::Square\fPnewPos, const boolisWhite) const"
+.PP
+Moves piece for current table, and check for check. Tyres to move piece form current table, is piece on given square is no \fBChEngn::king\fP and checks is new position check position for given player. \fBParameters:\fP
+.RS 4
+\fIoldPos\fP - Position from piece will be moved 
+.br
+\fInewPos\fP - Position where piece will be moved 
+.br
+\fIisWhite\fP - Player color. True if player's color is white, false in other case. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if new check found 
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+only \fBChEngn::queen\fP, \fBChEngn::rook\fP and \fBChEngn::bishop\fP will be checked! 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libchessengine from the source code.
