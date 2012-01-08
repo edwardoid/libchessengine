@@ -8,6 +8,7 @@ DOC_DIR := ./doc/
 TST_DIR := ./tests/
 DBG_DIR := ./debug/
 CC:= g++
+X64_FLAGS := -fPIC
 MAKE:= make
 DEB_FLAGS:= -g3
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
@@ -33,7 +34,7 @@ shared: pgnm check $(OBJ_FILES)
 	$(CC) $(DEB_FLAGS)  $(OBJ_FILES) -shared -o $(LIB_DIR)lib$(LIBRARY_TARGET).so
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
-	$(CC) $(DEB_FLAGS) -c $< -I$(INC_DIR) -o $@
+	$(CC) $(X64_FLAGS) $(DEB_FLAGS) -c $< -I$(INC_DIR) -o $@
 
 $(DEP_DIR)%.dep: pgnm $(SRC_DIR)%.cpp
 	$(CC) -MM $< -MT "$@ $(patsubst $(DEP_DIR)%.dep,$(OBJ_DIR)%o,$@)" -I$(INC_DIR) -o $@

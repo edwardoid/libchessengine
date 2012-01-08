@@ -24,6 +24,7 @@
 
 #include <string>
 
+/**
 class pgn::CommentText;
 class pgn::Game;
 class pgn::GameCollection;
@@ -35,6 +36,8 @@ class pgn::Ply;
 class pgn::Square;
 class pgn::Tag;
 class pgn::TagList;
+
+*/
 
 namespace pgn
 {
