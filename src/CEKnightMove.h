@@ -153,7 +153,7 @@ namespace ChEngn
 		mutable Piece *m_movedPiece;
 		mutable char m_row;
 		mutable char m_column;
-		pgn::Ply *m_ply;
+		//pgn::Ply *m_ply;
 	};
 }
 

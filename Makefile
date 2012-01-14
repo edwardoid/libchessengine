@@ -3,10 +3,11 @@ OBJ_DIR := ./obj/
 BIN_DIR := ./bin/
 DEP_DIR := ./dep/
 LIB_DIR := ./lib/
-INC_DIR := ./src/ -I./src/libpgnm/src
+INC_DIR := $(SRC_DIR) -I$(TPD_DIR)/libpgnm
 DOC_DIR := ./doc/
 TST_DIR := ./tests/
 DBG_DIR := ./debug/
+TPD_DIR := ./3rdparty
 CC:= g++
 X64_FLAGS := -fPIC
 MAKE:= make
@@ -59,7 +60,7 @@ clean: check
 	rm -rf $(OBJ_DIR)*
 	rm -rf $(DEP_DIR)*
 	$(MAKE) --directory=$(TST_DIR) clean
-	$(MAKE) --directory=$(SRC_DIR)libpgnm clean
+	$(MAKE) --directory=$(TPD_DIR)/libpgnm clean
 .PHONY: test
 test: all
 	$(MAKE) --directory=$(TST_DIR) run
@@ -70,7 +71,7 @@ debug: all
 
 .PHONY: pgnm
 pgnm:
-	$(MAKE) --directory=$(SRC_DIR)/libpgnm/  all
+	$(MAKE) --directory=$(TPD_DIR)/libpgnm/  all
 
 
 
@@ -81,7 +82,7 @@ install: pgnm static shared doc
 	cp -rf $(DOC_DIR)man/man3 /usr/local/man
 	rm -rf /usr/local/man/man3/README*
 	rm -rf /usr/local/man/man3/.svn
-	$(MAKE) --directory=$(SRC_DIR)/libpgnm/  install
+	$(MAKE) --directory=$(TPD_DIR)/libpgnm/  install
 .PHONY: check
 check:
 	@echo "Checking for $(MAKE)"

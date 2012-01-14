@@ -23,6 +23,7 @@
 #include "CEException.h"
 #include "CEPawnMove.h"
 #include "CEKnightMove.h"
+#include "CEBishopMove.h"
 #include <PGNPly.h>
 #include <stdlib.h>
 #include <iostream>
@@ -166,54 +167,12 @@ void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
 
 void ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 {
-	pgn::Square newPos = ply->toSquare();
-	Piece *movedPiece = 0;
-	for( char  i = 'a'; i <= 'h'; i++ )
-		for ( char j = '1'; j <= '8'; j++)
-		{
-			Piece *tmp = m_table.pieceAtC(i, j);
-			if( ( tmp != 0 ) && ( tmp->type() == bishop) &&
-				( tmp->isWhite() == isWhite) &&
-				( abs( i - newPos.col()) == abs( j - newPos.row() ) ) )
-				  if( ply->fromSquare() == '-' )
-				  {
-				  		movedPiece = tmp;
-				  }
-				  else
-				  {
-				  	if( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') && ( i == ply->fromSquare() ) )
-				  		movedPiece = tmp;
-				  	if( (ply->fromSquare() >= '1') && (ply->fromSquare() <= '8') && ( i == ply->fromSquare() ) )
-				  		movedPiece = tmp;
-				  }
-		}
-
-		
-	Piece* tmp = m_table.pieceAtC( newPos.col() , newPos.row() );
-
-	if ( ply->isCapture() )
-	{
-		if ( tmp == 0 ) 
-			throw BadMove( *ply, DEST_OUT_OF_RANGE );
-
-		if ( tmp->isWhite() == isWhite )
-			throw BadMove( *ply, SAME_COLOR );
-
-		if ( tmp->type() == unknown )
-			throw BadMove( *ply, UNKNOWN_CAPTURE );
-	}
-
-	if ( ( movedPiece != 0 ) && (tmp != 0 ) )
-	{
-		tmp->setType ( bishop );
-		if( isWhite )
-			tmp->setWhite();
-		else
-			tmp->setBlack();
-		movedPiece->setType( unknown );
-		return;
-	}
-	throw BadMove( *ply, UNKNOWN_ERROR );
+    BishopMove bM(ply, isWhite);
+    if(!bM.make(&m_table))
+    {
+		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
+    }
+    return;
 }
 
 

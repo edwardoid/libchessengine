@@ -93,8 +93,11 @@ namespace ChEngn
 		static bool isCheck( const Table& tbl, bool isWhite );
 
 		friend class PawnMove;
+		friend class KnightMove;
+		friend class BishopMove;
 	protected:
 		bool m_isWhite;
+		pgn::Ply *m_ply;
 	};
 }
 
