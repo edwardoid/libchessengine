@@ -32,7 +32,7 @@ namespace ChEngn
     /**
     * @brief 
     */
-	class BishopMove: Move
+	class BishopMove: public Move
 	{
 	public:
 

@@ -150,76 +150,10 @@ namespace ChEngn
 			 */
 			friend std::ostream& operator << (std::ostream &out, const Engine& engn );
 
-		    protected: //protected functions
-
-			/** Tryes to make pawn's move)
-			 * @brief Makes pawn's move
-			 * @param ply - Ply to do
-			 * @param isWhite - True if ply's owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */
-			void makePawnPly( const pgn::Ply* ply, bool isWhite);
-	
-			/** Tryes to make knight's move)
-			 * @brief Makes knight's move
-			 * @param ply - Ply to do
-			 * @param isWhite - True if ply's owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeKnightPly( const pgn::Ply* ply, bool isWhite);
-
-			/** Tryes to make bishop's move)
-			 * @brief Makes bishop's move
-			 * @param ply - Ply to do
-			 * @param isWhite - True if ply's owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeBishopPly( const pgn::Ply* ply, bool isWhite);
-
-			/** Tryes to make bishop's move)
-			 * @brief Makes bishop's move
-			 * @param ply - Ply to do
-			 * @param isWhite - True if ply's owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeRookPly( const pgn::Ply* ply, bool isWhite);
-
-			/** Tryes to make queen's move)
-			 * @brief Makes queen's move
-			 * @param ply - Ply to do
-			 * @param isWhite - True if ply's owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeQueenPly( const pgn::Ply* ply, bool isWhite);
-		
-			/** Tryes to make king's move)
-			 * @brief Makes kings's move
-			 * @param ply - Ply to do
-			 * @param isWhite - True if ply's owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeKingPly( const pgn::Ply* ply, bool isWhite);
-
-			/** Tryes to make short castling
-			 * @brief Makes short castling move
-			 * @param isWhite - True if castling  owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeShortCastling( bool isWhite);
-
-
-			/** Tryes to make long castling
-			 * @brief Makes long castling move
-			 * @param isWhite - True if castling  owner is white player.
-			 * @warning throws ChEngn::BadMove if something went wrong, or move can't be done
-			 */	
-			void makeLongCastling( bool isWhite);
-
-		private: // functions
 		private: // variables
 			bool m_halfMove;
-			VirtualTable m_table;
-			pgn::MoveList::iterator m_currentMoveIt;
+			Table m_table;
+    		pgn::MoveList::iterator m_currentMoveIt;
 			pgn::MoveList m_moves;
 	};
 };

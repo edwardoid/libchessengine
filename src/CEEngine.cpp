@@ -124,115 +124,45 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 				  << ( isWhite? "white" : "black" ) << std::endl;
 		return false;
 	}
+
+    Move* m = NULL;
 	
 	if ( pl->isShortCastle() )
-		makeShortCastling(isWhite);
+        m = new ShortCastleMove(isWhite);
 	
 	else if ( pl->isLongCastle() )
-		makeLongCastling(isWhite);
+        m = new LongCastleMove(isWhite);
 
 	else if ( (pl->piece()) == pgn::Piece::Pawn() )
-		makePawnPly(pl, isWhite);
+        m = new PawnMove(pl, isWhite);
 
 	else if ( (pl->piece()) == pgn::Piece::Knight() )
-		makeKnightPly(pl, isWhite);
+		m = new KnightMove(pl, isWhite);
 
 	else if ( (pl->piece()) == pgn::Piece::Bishop() )
-		makeBishopPly(pl, isWhite);
+		m = new BishopMove(pl, isWhite);
 
 	else if ( (pl->piece()) == pgn::Piece::Rook() )
-		makeRookPly(pl, isWhite);
+		m = new RookMove(pl, isWhite);
 
 	else if ( (pl->piece()) == pgn::Piece::Queen() )
-		makeQueenPly(pl, isWhite);
+		m = new QueenMove(pl, isWhite);
 
 	else if ( (pl->piece()) == pgn::Piece::King() )
-		makeKingPly(pl, isWhite);
+		m = new KingMove(pl, isWhite);
 
+    if( NULL == m )
+    {
+        throw BadMove(*pl, NO_SUITABLE_PIECE);
+    }
+
+    if(!m->make(&m_table))
+    {
+        delete m;
+		throw BadMove(*pl, CAN_T_FIND_MOVED_PIECE);
+    }
+    delete m;
 	return true;
-}
-
-void ChEngn::Engine::makePawnPly( const  pgn::Ply* ply, bool isWhite)
-{
-	PawnMove pM(ply, isWhite);
-	if(!pM.make(&m_table))
-	{
-		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
-	}
-}
-
-void ChEngn::Engine::makeKnightPly( const pgn::Ply* ply, bool isWhite)
-{
-	KnightMove kM(ply, isWhite);	
-	if(!kM.make(&m_table))
-	{
-		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
-	}
-}
-
-void ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
-{
-    BishopMove bM(ply, isWhite);
-    if(!bM.make(&m_table))
-    {
-		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
-    }
-    return;
-}
-
-
-void ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
-{
-	RookMove rM(ply, isWhite);
-    if(!rM.make(&m_table))
-    {
-		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
-    }
-    return;
-}
-
-void ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
-{
-    QueenMove qM(ply, isWhite);
-    if(!qM.make(&m_table))
-    {
-		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
-    }
-    return;
-}
-
-void ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
-{
-    KingMove kM(ply, isWhite);
-    if(!kM.make(&m_table))
-    {
-		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
-    }
-    return;
-
-}
-
-void ChEngn::Engine::makeShortCastling( bool isWhite)
-{
-	ShortCastleMove scM(isWhite);
-    if(!scM.make(&m_table))
-    {
-		throw BadMove( pgn::Ply("O-O"), CAN_T_FIND_MOVED_PIECE);
-    }
-    return;
-
-
-	throw BadMove( pgn::Ply("O-O"), UNKNOWN_ERROR );
-}
-
-void ChEngn::Engine::makeLongCastling( bool isWhite)
-{
-    LongCastleMove lcM(isWhite);
-    if(!lcM.make(&m_table))
-    {
-		throw BadMove( pgn::Ply("O-O-O"), CAN_T_FIND_MOVED_PIECE);
-    }
-    return;
 }
 
 namespace ChEngn

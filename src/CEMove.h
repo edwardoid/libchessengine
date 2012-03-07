@@ -21,6 +21,7 @@
 
 #include "CEPiece.h"
 #include <PGNSquare.h>
+#include <deque>
 
 namespace pgn
 {
@@ -100,6 +101,8 @@ namespace ChEngn
 		bool m_isWhite;
 		const pgn::Ply *m_ply;
 	};
+
+    typedef std::deque<Move*> MovesDeque;
 }
 
 #endif // CHESS_ENGINE_MOVE 

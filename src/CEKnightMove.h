@@ -30,7 +30,7 @@ namespace pgn
 
 namespace ChEngn
 {
-	class KnightMove: Move
+	class KnightMove: public Move
 	{
 	public:
 
