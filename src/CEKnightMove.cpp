@@ -11,7 +11,6 @@ ChEngn::KnightMove::KnightMove(const pgn::Ply* ply, const bool isWhite)
 {
 	m_column = 0;
 	m_row = 0;
-	m_ply = new pgn::Ply(*ply);
 	if ( (ply->fromSquare() >= 'a') && (ply->fromSquare() <= 'h') )
 		m_column = ply->fromSquare();
 	else if ( (ply->fromSquare() >= '1') && (ply->fromSquare() <= '8') )

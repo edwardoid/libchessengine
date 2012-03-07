@@ -4,14 +4,14 @@ BIN_DIR := bin/
 DEP_DIR := dep/
 LIB_DIR := lib/
 TPD_DIR := ./../3rdparty
-INC_DIR := ./src -I../src -I$(TPD_DIR)/lipgnm/src -I$(TPD_DIR)/cppunit-1.12.1
+INC_DIR := ./src -I./../src -I$(TPD_DIR)/libpgnm/src
 CC:= g++
 MAKE:= make
 DEB_FLAGS:= -g3 -gdwarf-2
 SRC_FILES:=$(wildcard $(SRC_DIR)*.cpp)
 OBJ_FILES:=$(patsubst $(SRC_DIR), $(OBJ_DIR),$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRC_FILES)))
 DEFILES:=$(patsubst $(SRC_DIR), $(DEP_DIR),$(patsubst $(SRC_DIR)%.cpp,$(DEP_DIR)%.o,$(SRC_FILES)))
-LINK_LIBS:= -static -lchessengine -lpgnm -lcppunit -L../lib/ -L../src/libpgnm/lib
+LINK_LIBS:= -static -lchessengine -lpgnm -lcppunit -L../lib/ -L$(TPD_DIR)/libpgnm/lib
 BINARY_TARGET := test
 .PHONY: all
 all: binary

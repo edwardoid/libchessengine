@@ -2,8 +2,8 @@ DIR := ./
 CC:= g++
 LINK_LIBS := -lpgnm -lchessengine
 BINARY_TARGET := debugExample
-INCLUDE_DIR := ./../src -I./../src/libpgnm/src
-LIBS_DIR := -L./../lib -L./../src/libpgnm/lib
+INCLUDE_DIR := ./../src -I./../3rdparty/libpgnm/src
+LIBS_DIR := -L./../lib -L./../3rdparty/libpgnm/lib
 .PHONY: all
 all: binary
 

@@ -1,1 +1,4 @@
 SEE README IN DOCUMENTATION ( make doc )
+
+REQUIEREMENTS:
+    1) libcppunit (for make test)

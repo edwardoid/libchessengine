@@ -17,48 +17,34 @@
 */
 
 
-#ifndef CHESS_ENGINE_PAWN_MOVE
-#define CHESS_ENGINE_PAWN_MOVE
+#ifndef CHESS_ENGINE_SHORT_CASTLE_MOVE_H
+#define CHESS_ENGINE_SHORT_CASTLE_MOVE_H
 
 #include "CEMove.h"
-#include <PGNSquare.h>
-
-namespace pgn
-{
-	class Ply;
-};
 
 namespace ChEngn
 {
-	class Table;
-
-	class PawnMove: public Move
-	{
-	public:
-		
+    
+    /**
+    * @class ShortCastleMove
+    * @brief 
+    */
+    class ShortCastleMove: public Move
+    {
+    public:
+        
         /**
         * @brief 
         *
-        * @param ply
         * @param isWhite
         */
-        PawnMove( const pgn::Ply* ply, const bool isWhite);
+        ShortCastleMove(bool isWhite);
 
         /**
         * @brief 
         */
-		~PawnMove();
-
-        /**
-        * @brief 
-        *
-        * @param table
-        *
-        * @return 
-        */
-		virtual bool make( const Table* table) const;
-	private:
-
+        virtual ~ShortCastleMove();
+        
         /**
         * @brief 
         *
@@ -66,19 +52,9 @@ namespace ChEngn
         *
         * @return 
         */
-		bool makeCaptureMove(const Table* table) const;
+        virtual bool make(const Table* table) const;
+    private:
+    };
+}
 
-        /**
-        * @brief 
-        *
-        * @param table
-        *
-        * @return 
-        */
-		bool makeSimpleMove(const Table* table) const;
-	private:
-		pgn::Square m_newPos;
-	};
-};
-
-#endif // CHESS_ENGINE_PAWN_MOVE
+#endif // CHESS_ENGINE_SHORT_CASTLE_MOVE_H

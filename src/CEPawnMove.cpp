@@ -6,8 +6,7 @@
 ChEngn::PawnMove::PawnMove(const pgn::Ply* ply, const bool isWhite)
 	: ChEngn::Move(ply, isWhite)
 {
-	m_ply = new pgn::Ply(*ply);
-	m_newPos = m_ply->toSquare();
+	m_newPos = ply->toSquare();
 }
 
 ChEngn::PawnMove::~PawnMove()

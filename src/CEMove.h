@@ -95,9 +95,10 @@ namespace ChEngn
 		friend class PawnMove;
 		friend class KnightMove;
 		friend class BishopMove;
+		friend class RookMove;
 	protected:
 		bool m_isWhite;
-		pgn::Ply *m_ply;
+		const pgn::Ply *m_ply;
 	};
 }
 

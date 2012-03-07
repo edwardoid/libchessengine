@@ -150,75 +150,7 @@ namespace ChEngn
 			 */
 			friend std::ostream& operator << (std::ostream &out, const Engine& engn );
 
-			/**
-			 * Checks for emptyness given horisontal. (from .... to)
-			 * @brief Check horisontal for emptyness
-			 * @param from - source column
-			 * @param to - destination column
-			 * @param row - checking row
-			 * @param table - table to searching
-			 * @return true if line is empty, false if there're some figure or
-			 * table is invalid
-			 */
-			static bool checkForEmptynessH(char from, char to, char row, VirtualTable* table);
-
-			/**
-			 * Checks for emptyness given vertical. (from .... to)
-			 * @brief Check horisontal for emptyness
-			 * @param from - source row
-			 * @param to - destination row
-			 * @param column - checking column
-			 * @param table - table to searching
-			 * @return true if vertical is empty, false if there're some figure or
-			 * table is invalid
-			 */
-			static bool checkForEmptynessV(char from, char to, char column, VirtualTable* table);
-
-			/**
-			 * Checks for emptyness given diagonal. (from .... to)
-			 * @brief Check horisontal for emptyness
-			 * @param fromC - source column
-			 * @param fromR - source row
-			 * @param toC - destination column
-			 * @param toR - destination row
-			 * @param table - table to searching
-			 * @return true if diagonal is empty, false if there're some figure or
-			 * table is invalid
-			 */
-			static bool checkForEmptynessDiagonal(char fromC, char fromR, char toC, char toR, VirtualTable* table);
-
-			
-			/**
-			 * Tryes to guess piece's type by given character
-			 * @param character character to process
-			 * @return type != ChEngn::unknown, ChEngn::unknown other way
-			 */
-			static piece_type guessTypeByChar( const char character );
-
-			/** @brief Moves piece for current table, and check for check.
-			 * Tyres to move piece form current table, is piece on given
-			 * square is no ChEngn::king and checks is new position check
-			 * position for given player
-			 * @param oldPos - Position from piece will be moved
-			 * @param newPos - Position where piece will be moved
-			 * @param isWhite - Player color. True if player's color is white,
-			 * false in other case.
-			 * @return true if new check found
-			 * @warning only ChEngn::queen, ChEngn::rook and ChEngn::bishop will
-			 * be checked!
-			 */
-			bool moveAndCheckForCheck( const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite ) const;
-
-			/** Tryes to found check in given table for given color's player.
-			 * @brief Checks for check on table.
-			 * @param tbl - Source table
-			 * @param isWhite - Player color. True if player's colro white,
-			 * false in other case.
-			 * @return true if check position found.
-			 */
-			static bool isCheck( VirtualTable tbl, bool isWhite );
-
-		protected: //protected functions
+		    protected: //protected functions
 
 			/** Tryes to make pawn's move)
 			 * @brief Makes pawn's move

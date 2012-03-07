@@ -24,6 +24,11 @@
 #include "CEPawnMove.h"
 #include "CEKnightMove.h"
 #include "CEBishopMove.h"
+#include "CERookMove.h"
+#include "CEQueenMove.h"
+#include "CEKingMove.h"
+#include "CEShortCastleMove.h"
+#include "CELongCastleMove.h"
 #include <PGNPly.h>
 #include <stdlib.h>
 #include <iostream>
@@ -178,200 +183,56 @@ void ChEngn::Engine::makeBishopPly( const pgn::Ply *ply, bool isWhite)
 
 void ChEngn::Engine::makeRookPly( const pgn::Ply* ply, bool isWhite)
 {
-	pgn::Square newPos = ply->toSquare();
-	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
-	Piece *movedPiece = 0;
-
-	char specCol = newPos.col();
-	char specRow = newPos.row();
-	
-	bool isFromColSpecified = false;
-	bool isFromRowSpecified = false;
-	
-	if( ( 'a' <= ply->fromSquare() ) && ( 'h' >= ply->fromSquare() ) )
-	{
-		specCol = ply->fromSquare();
-		isFromColSpecified = true;
-	}
-	if( ( '1' <= ply->fromSquare() ) && ( '8' >= ply->fromSquare() ) )
-	{
-		specRow = ply->fromSquare();
-		isFromRowSpecified = true;
-	}
-
-
-
-	for( char row = '1'; ( ( row <= '8') && ( !isFromRowSpecified ) ); row++ )
-	{
-//		std::cout<<"Looking in: " << specCol << " " << row << std::endl;
-		Piece* tmp = m_table.pieceAtC( specCol, row );
-        if ( ( tmp != 0 ) &&
-                ( tmp->type() == rook ) &&
-                ( tmp->isWhite() == isWhite ) &&
-                ( movedPiece == 0 ) &&
-                checkForEmptynessV( row,
-                                    newPos.row() ,
-                                    specCol ,
-                                    &m_table) &&
-                ( !moveAndCheckForCheck( pgn::Square( specCol, row ), newPos,  isWhite ) ) )
-		{
-//			std::cout << "Founf on " << specCol << row << std::endl;
-            movedPiece = tmp;
-        }
-	}
-
-	if ( 0 == movedPiece )
-		for( char col = 'a'; ( ( col <= 'h' ) && ( !isFromColSpecified ) ) ; col++ )
-		{
-//			std::cout<<"Looking in: " << col << " " << specRow << std::endl;
-			Piece* tmp = m_table.pieceAtC( col, specRow );
-            if ( ( tmp != 0 ) &&
-                    ( tmp->type() == rook ) &&
-                    ( tmp->isWhite() == isWhite )  &&
-                    checkForEmptynessH( col,
-                                        newPos.col(),
-                                        specRow ,
-                                        &m_table) &&
-                   ( !moveAndCheckForCheck( pgn::Square( col, specRow ), newPos,  isWhite ) ) )
-            {
-                movedPiece = tmp;
-            }	
-		}
-
-	if ( ( movedPiece != 0 ) && (dest != 0 ) )
-	{
-		if ( ply->isCapture() && ( dest->type() == unknown ) )
-			throw BadMove( *ply, UNKNOWN_CAPTURE );
-		(*dest) = (*movedPiece);
-		dest->setMoved();
-		movedPiece->setType(unknown);
-		return;
-		
-	}
-	throw BadMove( *ply, UNKNOWN_ERROR );
+	RookMove rM(ply, isWhite);
+    if(!rM.make(&m_table))
+    {
+		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
+    }
+    return;
 }
 
 void ChEngn::Engine::makeQueenPly( const pgn::Ply* ply, bool isWhite)
 {
-	pgn::Square newPos = ply->toSquare();
-
-	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
-
-	if(dest == 0 )
-		throw BadMove( *ply, DEST_OUT_OF_RANGE );
-
-	if ( ply->isCapture())
-		if ( dest->type() == unknown)
-			throw BadMove( *ply, UNKNOWN_CAPTURE );
-	Piece *movedPiece = 0;
-
-
-	for ( char c = 'a'; c <= 'h'; c++ )
-		for ( char r = '1'; r<= '8'; r++)
-		{
-			Piece *tmp = m_table.pieceAtC( c, r );
-			if ( (movedPiece == 0) &&
-				 ( tmp != 0 ) &&
-				 (tmp->type() == queen )
-				 &&
-				 (tmp->isWhite() == isWhite) ) 
-			{
-				movedPiece = tmp;
-				break;
-			}
-		}
-
-	if ( movedPiece != 0 )
-	{
-		(*dest) = (*movedPiece);
-		movedPiece->setType( unknown );
-		return;
-	}
-	
-	throw BadMove( *ply, UNKNOWN_ERROR );
-}
-
-void ChEngn::Engine::makeLongCastling( bool isWhite)
-{
-	char kingCol = 'e';
-	char row = (isWhite? '1': '8');
-	char rookCol = 'a';
-
-	Piece *kingPiece = m_table.pieceAtC( kingCol, row);
-	Piece *rookPiece = m_table.pieceAtC( rookCol, row);
-	
-	Piece *newKingPiece = m_table.pieceAtC('c', row);
-	Piece *newRookPiece = m_table.pieceAtC('d', row);
-
-	if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
-	{
-		(*newKingPiece) = (*kingPiece);
-		(*newRookPiece) = (*rookPiece);
-		newKingPiece->setMoved();
-		newRookPiece->setMoved();
-		kingPiece->setType( unknown );
-		rookPiece->setType( unknown );
-		return;
-	}
-	throw BadMove( pgn::Ply("O-O-O") , UNKNOWN_ERROR );
-		 
+    QueenMove qM(ply, isWhite);
+    if(!qM.make(&m_table))
+    {
+		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
+    }
+    return;
 }
 
 void ChEngn::Engine::makeKingPly( const pgn::Ply* ply, bool isWhite)
 {
-	pgn::Square newPos = ply->toSquare();
-	char beginR = newPos.row() - 1;
-	char beginC = newPos.col() - 1;
-	char endR   = newPos.row() + 1;
-	char endC   = newPos.col() + 1;
+    KingMove kM(ply, isWhite);
+    if(!kM.make(&m_table))
+    {
+		throw BadMove( *ply, CAN_T_FIND_MOVED_PIECE);
+    }
+    return;
 
-	Piece *dest = m_table.pieceAtC( newPos.col() , newPos.row() );
-	
-	if ( dest == 0 )
-		throw BadMove( *ply, DEST_OUT_OF_RANGE );
-	if ( dest->type() == king )
-		throw BadMove( *ply, "King can't make move to other king" );
-		
-
-	for ( char c = beginC; c <= endC; c++) 
-		for ( char r = beginR; r<= endR; r++ )
-		{
-			Piece *movedPiece = m_table.pieceAtC( c, r );
-			if ( ( movedPiece != 0 ) &&
-				 ( movedPiece->type() == king ) &&
-				 ( movedPiece->isWhite() == isWhite )
-				 )
-			{
-				( *dest ) = ( *movedPiece );
-				movedPiece->setType( unknown );
-				return;
-			}
-		}
-	throw BadMove( *ply, UNKNOWN_ERROR );
 }
 
 void ChEngn::Engine::makeShortCastling( bool isWhite)
 {
-	char kingCol = 'e';
-	char row = (isWhite? '1': '8');
-	char rookCol = 'h';
+	ShortCastleMove scM(isWhite);
+    if(!scM.make(&m_table))
+    {
+		throw BadMove( pgn::Ply("O-O"), CAN_T_FIND_MOVED_PIECE);
+    }
+    return;
 
-	Piece *kingPiece = m_table.pieceAtC( kingCol, row);
-	Piece *rookPiece = m_table.pieceAtC( rookCol, row);
-	Piece *newKingPiece = m_table.pieceAtC('g', row);
-	Piece *newRookPiece = m_table.pieceAtC('f', row);
 
-	if ( ( newRookPiece != 0 ) && ( newKingPiece != 0 ) )
-	{
-		(*newKingPiece) = (*kingPiece);
-		(*newRookPiece) = (*rookPiece);
-		newKingPiece->setMoved();
-		newRookPiece->setMoved();
-		kingPiece->setType( unknown );
-		rookPiece->setType( unknown );
-		return;
-	}
 	throw BadMove( pgn::Ply("O-O"), UNKNOWN_ERROR );
+}
+
+void ChEngn::Engine::makeLongCastling( bool isWhite)
+{
+    LongCastleMove lcM(isWhite);
+    if(!lcM.make(&m_table))
+    {
+		throw BadMove( pgn::Ply("O-O-O"), CAN_T_FIND_MOVED_PIECE);
+    }
+    return;
 }
 
 namespace ChEngn
@@ -381,281 +242,3 @@ namespace ChEngn
 		return out<<engn.getVirtualTable();
 	}
 };
-
-
-bool ChEngn::Engine::checkForEmptynessH(char from, char to, char row, VirtualTable *table)
-{
-	if ( table == 0 )
-		return false;
-	if ( from > to)
-	{
-		char tmp = from;
-		from = to;
-		to = tmp;
-	}
-	if ( ( from < ( default_table_width - 'a') ) && 
-		 ( to < ( default_table_width - 'a') ) && 
-		 ( row < ( default_table_height - '1' ) ) &&
-		 ( from > 0) &&
-		 ( to > 0 ))
-	{
-		for ( char i = from + 1; i < to; i++)
-		{
-			if ( table->pieceAtC(i, row)->type() != unknown)
-				return false;
-		}
-	}
-	else
-		return false;
-	return true;
-}
-
-bool ChEngn::Engine::checkForEmptynessV(char from, char to, char column, VirtualTable *table)
-{
-	if ( table == 0 )
-		return false;
-	if ( from > to)
-	{
-		char tmp = from;
-		from = to;
-		to = tmp;
-	}
-	if ( ( from < ( default_table_width - '1') ) &&
-			( to < ( default_table_width - '1') ) &&
-			( column< ( default_table_height - 'a' ) ) &&
-			( to > 0) &&
-			(from > 0 ))
-	{
-		for ( char i = from + 1; i < to; i++)
-		{
-			if ( table->pieceAtC(column, i)->type() != unknown)
-				return false;
-		}
-	}
-	else
-		return false;
-	return true;
-}
-
-bool ChEngn::Engine::checkForEmptynessDiagonal(char fromC, char fromR, char toC, char toR, VirtualTable *table)
-{
-	char stepC = 1;
-	char stepR = 1;
-
-	if ( fromC > toC )
-		stepC = -1;
-
-	if ( fromR > toR )
-		stepR = -1;
-
-	char incC = 0;
-	char incR = 0;
-	for ( int r = fromR + stepR; r < toR; r+= stepR )
-	{
-		incR++;
-		for ( int c = fromC + stepC; c < toC; c+=stepC)
-		{
-			incC++;
-			if( incR == incC)
-			{
-				Piece* tmp = table->pieceAtC(c, r);
-				if ( (tmp == 0) || (tmp->type() != unknown) )
-					return false;
-			}
-		}
-	}
-
-	return true;
-}
-
-ChEngn::piece_type ChEngn::Engine::guessTypeByChar( const char character )
-{
-	if( ( character == 'P') || ( character == '-') || ( character == 'p' ) )
-		return pawn;
-
-	if ( ( character == 'N' ) || ( character == 'n' ) )
-		 return knight;
-
-	if ( ( character == 'B' ) || ( character == 'b' ) )
-		 return bishop;
-
-	if ( ( character == 'R' ) || ( character == 'r' ) )
-		 return rook;
-
-	if ( ( character == 'Q' ) || ( character == 'q' ) )
-		 return queen;
-
-	if ( ( character == 'k' ) || ( character == 'K' ) )
-		 return king;
-	
-	return unknown;
-}
-
-
-bool ChEngn::Engine::moveAndCheckForCheck( const pgn::Square oldPos, const pgn::Square newPos, const bool isWhite ) const
-{
-	VirtualTable tmp = getVirtualTable();
-	assert ( 0 != tmp.pieceAtC( oldPos.col(), oldPos.row() ) );
-	assert ( 0 != tmp.pieceAtC( newPos.col(), newPos.row() ) );
-	tmp.pieceAtC( newPos.col(), newPos.row() )->setType( tmp.pieceAtC( oldPos.col(), oldPos.row() )->type() );
-	if ( tmp.pieceAtC( oldPos.col(), oldPos.row() )->isWhite() ) 
-		tmp.pieceAtC( newPos.col(), newPos.row() )->setWhite();
-	else
-		tmp.pieceAtC( newPos.col(), newPos.row() )->setBlack();
-	tmp.pieceAtC( oldPos.col(), oldPos.row() )->setType( unknown );
-	return isCheck( tmp , isWhite );
-}
-
-bool ChEngn::Engine::isCheck( ChEngn::VirtualTable tbl, bool isWhite )
-{
-	char kingsColumn = 0;
-	char kingsRow = 0;
-	for( char c = 'a'; c <= 'h'; c++ )
-		for( char r = '1'; r <= '8'; r++ )
-		{
-			Piece* tmp =  tbl.pieceAtC( c, r );
-			if( ( 0 != tmp ) &&
-				( tmp->isWhite() == isWhite ) &&
-				( tmp->type() == king ) )
-				{
-					kingsColumn = c;
-					kingsRow = r;
-					break;
-				}
-		}
-
-	if ( ( 0 != kingsColumn ) && ( 0 != kingsRow ) )
-	{
-		for ( char c = kingsColumn+1; c <= 'h'; c++ )
-		{
-			Piece* tmp = tbl.pieceAtC( c, kingsRow );
-			if( ( 0 != tmp ) &&
-				( tmp->isWhite() != isWhite ) &&
-				( ( queen == tmp->type() ) || ( rook == tmp->type() ) ) )
-				{
-					std::cout << "HORISONTAL+: On " << c << kingsRow << " " << *tmp << std::endl;
-					return true;
-				}
-			else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-				break;
-		}
-		
-		for ( char c = kingsColumn - 1 ; c >= 'a'; c-- )
-		{
-			Piece* tmp = tbl.pieceAtC( c, kingsRow );
-			if( ( 0 != tmp ) &&
-				( tmp->isWhite() != isWhite ) &&
-				( ( queen == tmp->type() ) || ( rook == tmp->type() ) ) )
-				{
-					std::cout << "HORISONTAL-: On " << c  << kingsRow << " " << *tmp << std::endl;
-					return true;
-				}
-			else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-				break;
-		}
-		for ( char r = kingsRow -1 ; r >= '1'; r-- )
-		{
-			Piece* tmp = tbl.pieceAtC( kingsColumn , r );
-			if( ( 0 != tmp ) &&
-				( tmp->isWhite() != isWhite ) &&
-				( ( queen == tmp->type() ) || ( rook == tmp->type() ) ) )
-				{
-					std::cout << "VERTICAL1: On " << kingsColumn << r<< " " << *tmp << std::endl;
-					return true;
-				}
-			else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-				break;
-		}
-		
-		for ( char r = kingsRow + 1; r <= '8'; r++ )
-		{
-			Piece* tmp = tbl.pieceAtC( kingsColumn , r );
-			if( ( 0 != tmp ) &&
-				( tmp->isWhite() != isWhite ) &&
-				( ( queen == tmp->type() ) || ( rook == tmp->type() ) ) )
-				{
-					std::cout << "VERTICAL2: On " << kingsColumn << " " << r << *tmp << std::endl;
-					return true;
-				}
-			else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-				break;
-		}
-
-		for( char c = kingsColumn + 1, r = kingsRow + 1;
-			( ( c <= 'h' ) && ( r <= '8' ) ); c++, r++ )
-			{
-				Piece* tmp = tbl.pieceAtC( c , r );
-				if( ( 0 != tmp ) &&
-					( tmp->isWhite() != isWhite ) &&
-					( ( queen == tmp->type() ) || ( bishop == tmp->type() ) ) )
-					{
-						std::cout << "DIAGONAL /: On " << c << r << " " << *tmp << std::endl;
-						return true;
-					}
-				else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-					break;
-			}
-		
-		for( char c = kingsColumn + 1, r = kingsRow - 1;
-				( ( c <= 'h' ) && ( r >= '1' ) ); c++, r--)
-				{
-					Piece* tmp = tbl.pieceAtC( c , r );
-					if( ( 0 != tmp ) &&
-						( tmp->isWhite() != isWhite ) &&
-						( ( queen == tmp->type() ) || ( bishop == tmp->type() ) ) )
-						{
-							std::cout << "DIAGONAL \\: On " << c << r << " " << *tmp << std::endl;
-							return true;
-						}
-					else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-						break;
-				}
-    
-		for( char c = kingsColumn - 1, r = kingsRow - 1;
-			( ( c >= 'a' ) && ( r >= '1' ) ); c--, r--)
-			{
-				Piece* tmp = tbl.pieceAtC( c , r );
-				if( ( 0 != tmp ) &&
-					( tmp->isWhite() != isWhite ) &&
-					( ( queen == tmp->type() ) || ( bishop == tmp->type() ) ) )
-					{
-						std::cout << "VERTICAL: On " << c << r << " " << *tmp << std::endl;
-						return true;
-					}
-//				else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-					break;
-			}
-    
-		for( char c = kingsColumn - 1, r = kingsRow - 1;
-			( ( c >= 'a' ) && ( r >= '1' ) ); c--, r--)
-			{
-				Piece* tmp = tbl.pieceAtC( c , r );
-				if( ( 0 != tmp ) &&
-					( tmp->isWhite() != isWhite ) &&
-					( ( queen == tmp->type() ) || ( bishop == tmp->type() ) ) )
-					{
-						std::cout << "VERTICAL: On " << c << r << " " << *tmp << std::endl;
-						return true;
-					}
-				else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-					break;
-			}
-    
-    
-		for( char c = kingsColumn - 1, r = kingsRow + 1;
-			( ( c >= 'a' ) && ( r <= '8' ) ); c--, r++)
-			{
-				Piece* tmp = tbl.pieceAtC( c , r );
-				if( ( 0 != tmp ) &&
-					( tmp->isWhite() != isWhite ) &&
-					( ( queen == tmp->type() ) || ( bishop == tmp->type() ) ) )
-					{
-						std::cout << "VERTICAL: On " << c << r << " " << *tmp << std::endl;
-						return true;
-					}
-				else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
-					break;
-			}
-	}
-	return false;
-}

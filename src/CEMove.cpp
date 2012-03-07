@@ -2,8 +2,9 @@
 #include "CETable.h"
 #include <assert.h>
 
-ChEngn::Move::Move(const pgn::Ply*, const bool isWhite)
+ChEngn::Move::Move(const pgn::Ply* ply, const bool isWhite)
 	: m_isWhite(isWhite)
+    , m_ply(ply)
 {
 }
 

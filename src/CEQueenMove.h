@@ -16,49 +16,33 @@
 * 
 */
 
-
-#ifndef CHESS_ENGINE_PAWN_MOVE
-#define CHESS_ENGINE_PAWN_MOVE
+#ifndef CHESS_ENGINE_QUEEN_MOVE
+#define CHESS_ENGINE_QUEEN_MOVE
 
 #include "CEMove.h"
-#include <PGNSquare.h>
-
-namespace pgn
-{
-	class Ply;
-};
 
 namespace ChEngn
 {
-	class Table;
-
-	class PawnMove: public Move
-	{
-	public:
-		
+    /**
+    * @class QueenMove
+    * @brief 
+    */
+    class QueenMove: public Move
+    {
+    public:
         /**
         * @brief 
         *
         * @param ply
         * @param isWhite
         */
-        PawnMove( const pgn::Ply* ply, const bool isWhite);
-
+        QueenMove(const pgn::Ply* ply, bool isWhite);
+        
         /**
         * @brief 
         */
-		~PawnMove();
-
-        /**
-        * @brief 
-        *
-        * @param table
-        *
-        * @return 
-        */
-		virtual bool make( const Table* table) const;
-	private:
-
+        virtual ~QueenMove();
+        
         /**
         * @brief 
         *
@@ -66,19 +50,9 @@ namespace ChEngn
         *
         * @return 
         */
-		bool makeCaptureMove(const Table* table) const;
+        virtual bool make(const ChEngn::Table* table) const;
+    private:
+    };
+}
 
-        /**
-        * @brief 
-        *
-        * @param table
-        *
-        * @return 
-        */
-		bool makeSimpleMove(const Table* table) const;
-	private:
-		pgn::Square m_newPos;
-	};
-};
-
-#endif // CHESS_ENGINE_PAWN_MOVE
+#endif // CHESS_ENGINE_QUEEN_MOVE

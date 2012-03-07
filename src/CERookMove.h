@@ -16,49 +16,34 @@
 * 
 */
 
-
-#ifndef CHESS_ENGINE_PAWN_MOVE
-#define CHESS_ENGINE_PAWN_MOVE
+#ifndef CHESS_ENGINE_ROOK_MOVE
+#define CHESS_ENGINE_ROOK_MOVE
 
 #include "CEMove.h"
-#include <PGNSquare.h>
-
-namespace pgn
-{
-	class Ply;
-};
 
 namespace ChEngn
 {
-	class Table;
-
-	class PawnMove: public Move
-	{
-	public:
-		
+    /**
+    * @class RookMove
+    * @brief 
+    */
+    class RookMove: public Move
+    {
+    public:
+        
         /**
         * @brief 
         *
-        * @param ply
-        * @param isWhite
+        * @param pgn::Ply
+        * @param bool
         */
-        PawnMove( const pgn::Ply* ply, const bool isWhite);
+        RookMove(const pgn::Ply*, const bool);
 
         /**
         * @brief 
         */
-		~PawnMove();
-
-        /**
-        * @brief 
-        *
-        * @param table
-        *
-        * @return 
-        */
-		virtual bool make( const Table* table) const;
-	private:
-
+        virtual ~RookMove();
+        
         /**
         * @brief 
         *
@@ -66,19 +51,12 @@ namespace ChEngn
         *
         * @return 
         */
-		bool makeCaptureMove(const Table* table) const;
+        virtual bool make(const Table* table) const;
 
-        /**
-        * @brief 
-        *
-        * @param table
-        *
-        * @return 
-        */
-		bool makeSimpleMove(const Table* table) const;
-	private:
-		pgn::Square m_newPos;
-	};
-};
+    private:
+        bool checkForEmptynessV(char from, char to, char row, const Table *table) const ;
+        bool checkForEmptynessH(char from, char to, char row, const Table *table) const;
+    };
+}
 
-#endif // CHESS_ENGINE_PAWN_MOVE
+#endif

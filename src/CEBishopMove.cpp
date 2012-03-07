@@ -6,7 +6,6 @@
 ChEngn::BishopMove::BishopMove( const pgn::Ply* ply, const bool isWhite )
     : ChEngn::Move( ply, isWhite )
 {
-    m_ply = new pgn::Ply(*ply);
 }
 
 ChEngn::BishopMove::~BishopMove()
