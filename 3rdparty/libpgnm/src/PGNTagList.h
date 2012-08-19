@@ -24,16 +24,17 @@
 
 #include <fstream>
 #include <vector>
-#include <PGNTag.h>
+#include "PGNTag.h"
+#include "PGNM.h"
 
 namespace pgn
 {
-	class TagList 
+	class PGNM_EXPORT TagList 
 	{
 		public:
 		
-			class iterator;
-			friend class iterator;
+			class PGNM_EXPORT iterator;
+			friend class PGNM_EXPORT iterator;
 
 			TagList();
 			TagList(const TagList& src);
@@ -58,7 +59,7 @@ namespace pgn
 			struct TagListData *hdata;
 	};
 
-	class TagList::iterator
+	class PGNM_EXPORT TagList::iterator
 	{
 		public:
 

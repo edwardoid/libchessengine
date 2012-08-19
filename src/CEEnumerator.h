@@ -23,8 +23,8 @@
 #define CHESS_ENGINE_ENUMERATOR
 
 #include <iostream>
-#include <CETable.h>
-#include <CEPiece.h>
+#include "CETable.h"
+#include "CEPiece.h"
 
 
 /**

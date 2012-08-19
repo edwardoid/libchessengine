@@ -22,7 +22,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-#include <PGNMove.h>
+#include "PGNMove.h"
 #include <stdlib.h>
 
 namespace pgn

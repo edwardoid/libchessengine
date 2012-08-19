@@ -22,9 +22,9 @@
 #include <sstream>
 #include <iostream>
 #include <stdexcept>
-#include <PGNPly.h>
-#include <PGNCommentText.h>
-#include <PGNException.h>
+#include "PGNPly.h"
+#include "PGNCommentText.h"
+#include "PGNException.h"
 
 #include <iostream>
 

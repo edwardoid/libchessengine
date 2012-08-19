@@ -23,10 +23,11 @@
 #define PGNMove_h
 
 #include <fstream>
-#include <PGNPly.h>
+#include "PGNPly.h"
+#include "PGNM.h"
 
 /**
- * @file PGNMove.h Contains finramtion about storing simple move extracted fomr
+ * @file PGNMove.h Contains information about storing simple move extracted from
  * PGN file.
  */
 
@@ -39,9 +40,9 @@ namespace pgn
 {
 	/**
 	 * @brief Represents simple move.
-	 * @class Move
+	 * @class PGNM_EXPORT Move
 	 */
-	class Move 
+	class PGNM_EXPORT Move 
 	{
 		public:
 	

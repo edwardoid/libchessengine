@@ -25,9 +25,10 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "PGNM.h"
 #include "PGNPiece.h" 
-#include <PGNSquare.h> 
-#include <PGNCommentText.h>
+#include "PGNSquare.h" 
+#include "PGNCommentText.h"
 
 /**
  * @brief global namespace for libpgnm
@@ -36,10 +37,10 @@
 namespace pgn
 {
 	/**
-	 * @class Ply
+	 * @class PGNM_EXPORT Ply
 	 * @brief Represents simple half-move.
 	 */
-	class Ply 
+	class PGNM_EXPORT Ply 
 	{
 		public:
 			

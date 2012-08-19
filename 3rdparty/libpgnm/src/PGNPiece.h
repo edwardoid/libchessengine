@@ -22,10 +22,11 @@
 #ifndef PGNPiece_h
 #define PGNPiece_h
 #include <string>
+#include "PGNM.h"
 
 namespace pgn
 {
-	class Piece 
+	class PGNM_EXPORT Piece 
 	{
 		public:
 

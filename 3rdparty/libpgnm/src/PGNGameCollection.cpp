@@ -22,10 +22,10 @@
 #include <iostream>
 #include <sstream>
 #include <algorithm>
-#include <PGNGameCollection.h>
-#include <PGNTagList.h>
-#include <PGNTag.h>
-#include <PGNParser.h>
+#include "PGNGameCollection.h"
+#include "PGNTagList.h"
+#include "PGNTag.h"
+#include "PGNParser.h"
 
 namespace pgn
 {
@@ -160,6 +160,7 @@ std::istream& pgn::operator >> ( std::istream& is, pgn::GameCollection& src )
 	
 	pgn::Parser parser;
 	parser.getGameCollection(itr1, itr2, src);
+	return is;
 }
 
 int pgn::GameCollection::size() const

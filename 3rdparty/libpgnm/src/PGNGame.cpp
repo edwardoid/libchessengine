@@ -21,9 +21,9 @@
 
 #include <iostream>
 #include <sstream>
-#include <PGNGame.h>
-#include <PGNTagList.h>
-#include <PGNMoveList.h>
+#include "PGNGame.h"
+#include "PGNTagList.h"
+#include "PGNMoveList.h"
 
 namespace pgn
 {

@@ -22,12 +22,13 @@
 #ifndef PGNTag_h
 #define PGNTag_h
 
+#include "PGNM.h"
 #include <fstream>
 #include <string>
 
 namespace pgn
 {
-	class Tag 
+	class PGNM_EXPORT Tag 
 	{
 		public:
 		

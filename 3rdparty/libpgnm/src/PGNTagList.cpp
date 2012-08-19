@@ -22,7 +22,7 @@
 #include <sstream>
 #include <iostream>
 #include <stdexcept>
-#include <PGNTagList.h>
+#include "PGNTagList.h"
 
 namespace pgn 
 {

@@ -26,17 +26,18 @@
 #include <vector>
 #include <set>
 #include <string>
-#include <PGNMove.h>
-#include <PGNGameResult.h>
+#include "PGNMove.h"
+#include "PGNGameResult.h"
+#include "PGNM.h"
 
 namespace pgn
 {
-	class MoveList 
+	class PGNM_EXPORT MoveList 
 	{
 		public:
 
-			class iterator;
-			friend class iterator;
+			class PGNM_EXPORT iterator;
+			friend class PGNM_EXPORT iterator;
 		
 			MoveList();
 			MoveList(const MoveList& src);
@@ -64,7 +65,7 @@ namespace pgn
 	};
 
 
-	class MoveList::iterator
+	class PGNM_EXPORT MoveList::iterator
 	{
 		public:
 

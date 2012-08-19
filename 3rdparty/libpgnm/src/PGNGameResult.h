@@ -24,7 +24,7 @@
 
 #include <fstream>
 #include <string>
-
+#include "PGNM.h"
 
 /**
  * @brief global namespace for libpgnm
@@ -33,10 +33,10 @@
 namespace pgn
 {
 	/**
-	 * @class GameResult
+	 * @class PGNM_EXPORT GameResult
 	 * @brief Stores information about game result.
 	 */
-	class GameResult 
+	class PGNM_EXPORT GameResult 
 	{
 		public:
 	

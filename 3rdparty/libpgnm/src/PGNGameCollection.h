@@ -24,7 +24,8 @@
 
 #include <fstream>
 #include <vector>
-#include <PGNGame.h>
+#include "PGNGame.h"
+#include "PGNM.h"
 
 /**
  * @brief global namespace for libpgnm
@@ -33,10 +34,10 @@
 namespace pgn
 {
 	/**
-	 * @class GameCollection
+	 * @class PGNM_EXPORT GameCollection
 	 * @brief Stores a collection of pgn::Game.
 	 */
-	class GameCollection 
+	class PGNM_EXPORT GameCollection 
 	{
 		public:
 	
@@ -44,14 +45,14 @@ namespace pgn
 			 * @brief Simple iterator.
 			 * See more pgn::GameCollection::iterator.
 			 */
-			class iterator;
+			class PGNM_EXPORT iterator;
 
 			/**
 			 * @brief Simple iterator.
 			 * See more pgn::GameCollection::iterator.
 			 */
 
-			friend class iterator;
+			friend class PGNM_EXPORT iterator;
 
 			/**
 			 * @brief Costructs empty collection.
@@ -160,10 +161,10 @@ namespace pgn
 	};
 
 	/**
-	 * @class GameCollection::iterator
+	 * @class PGNM_EXPORT GameCollection::iterator
 	 * @brief Instrument for safe iteration in pgn::GameCollection
 	 */
-	class GameCollection::iterator
+	class PGNM_EXPORT GameCollection::iterator
 	{
 		public:
 			/**

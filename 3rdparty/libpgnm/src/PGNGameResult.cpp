@@ -23,7 +23,7 @@
 #include <sstream>
 #include <string>
 #include <stdexcept>
-#include <PGNGameResult.h>
+#include "PGNGameResult.h"
 
 pgn::GameResult::GameResult() 
 :result_('*')

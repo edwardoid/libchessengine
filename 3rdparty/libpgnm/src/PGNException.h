@@ -22,6 +22,7 @@
 #ifndef PGNException_h
 #define PGNException_h
 
+#include "PGNM.h"
 #include <exception>
 #include <string>
 
@@ -34,7 +35,7 @@ namespace pgn
 	/**
 	 * @brief Represents exceptions which must be throwed on parsing
 	 */
-	class parse_exception : public std::exception 
+	class PGNM_EXPORT parse_exception : public std::exception 
 	{
 		public:
    			
@@ -72,7 +73,7 @@ namespace pgn
 	/**
 	 * @brief Throws when castle in pgnfile is incorrect format.
 	 */
-	class invalid_castle_string : public parse_exception
+	class PGNM_EXPORT invalid_castle_string : public parse_exception
 	{
 		public:
     
@@ -83,7 +84,7 @@ namespace pgn
 	/**
 	 * @brief Throws when ply is in incorrect format.
 	 */
-	class invalid_ply_text : public parse_exception
+	class PGNM_EXPORT invalid_ply_text : public parse_exception
 	{
 		public:
     
@@ -94,7 +95,7 @@ namespace pgn
 	/**
 	 * @brief Throws when file contains tag with wrong format.
 	 */
-	class invalid_tag : public parse_exception
+	class PGNM_EXPORT invalid_tag : public parse_exception
 	{
 		public:
     
@@ -105,7 +106,7 @@ namespace pgn
 	/**
 	 * @brief Throws when file contains result string in incorrect format.
 	 */
-	class invalid_result : public parse_exception
+	class PGNM_EXPORT invalid_result : public parse_exception
 	{
 		public:
     
@@ -117,7 +118,7 @@ namespace pgn
 	 * @brief Throws when game/file does not contain information about game
 	 * result
 	 */
-	class missing_result : public parse_exception
+	class PGNM_EXPORT missing_result : public parse_exception
 	{
 		public:
     
@@ -126,7 +127,7 @@ namespace pgn
 	};
 
 	// TODO: da eliminare quando il parsing delle varianti sara` sviluppato
-	class unsupported_variations : public parse_exception
+	class PGNM_EXPORT unsupported_variations : public parse_exception
 	{
 		public:
     
@@ -135,7 +136,7 @@ namespace pgn
 	};
 
 	// TODO: da eliminare quando il supporto ai glyphs sara` sviluppato
-	class unsupported_glyphs : public parse_exception
+	class PGNM_EXPORT unsupported_glyphs : public parse_exception
 	{
 		public:
     
@@ -146,7 +147,7 @@ namespace pgn
 	/**
 	 * @brief Throws when file in incorrect/invalid
 	 */
-	class bad_pgn_file: public std::exception
+	class PGNM_EXPORT bad_pgn_file: public std::exception
 	{
 		public:
 			~bad_pgn_file() throw(){};

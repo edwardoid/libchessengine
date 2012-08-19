@@ -21,7 +21,7 @@
 
 #include <sstream>
 #include <iostream>
-#include <PGNSquare.h>
+#include "PGNSquare.h"
 
 pgn::Square::Square()
 {

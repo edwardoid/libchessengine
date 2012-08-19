@@ -22,26 +22,27 @@
 #ifndef PGNParser_h
 #define PGNParser_h
 
+#include "PGNM.h"
 #include <string>
 
 /**
-class pgn::CommentText;
-class pgn::Game;
-class pgn::GameCollection;
-class pgn::GameResult;
-class pgn::Move;
-class pgn::MoveList;
-class pgn::Piece;
-class pgn::Ply;
-class pgn::Square;
-class pgn::Tag;
-class pgn::TagList;
+class PGNM_EXPORT pgn::CommentText;
+class PGNM_EXPORT pgn::Game;
+class PGNM_EXPORT pgn::GameCollection;
+class PGNM_EXPORT pgn::GameResult;
+class PGNM_EXPORT pgn::Move;
+class PGNM_EXPORT pgn::MoveList;
+class PGNM_EXPORT pgn::Piece;
+class PGNM_EXPORT pgn::Ply;
+class PGNM_EXPORT pgn::Square;
+class PGNM_EXPORT pgn::Tag;
+class PGNM_EXPORT pgn::TagList;
 
 */
 
 namespace pgn
 {
-	class Parser
+	class PGNM_EXPORT Parser
 	{
 		public:
 

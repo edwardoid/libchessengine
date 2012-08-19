@@ -20,7 +20,7 @@
 // 
 
 #include <sstream>
-#include <PGNCommentText.h>
+#include "PGNCommentText.h"
 
 namespace pgn
 {

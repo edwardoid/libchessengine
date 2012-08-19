@@ -23,7 +23,7 @@
 #include <cassert>
 #include <sstream>
 #include <iostream>
-#include <PGNPiece.h>
+#include "PGNPiece.h"
 
 pgn::Piece::Piece()
 {

@@ -21,7 +21,7 @@
 
 #include <sstream>
 #include <iostream>
-#include <PGNTag.h>
+#include "PGNTag.h"
 
 namespace pgn
 {

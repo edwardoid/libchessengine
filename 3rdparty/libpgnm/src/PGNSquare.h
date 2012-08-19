@@ -22,11 +22,12 @@
 #ifndef PGNSquare_h
 #define PGNSquare_h
 
+#include "PGNM.h"
 #include <string>
 
 namespace pgn 
 {
-	class Square 
+	class PGNM_EXPORT Square 
 	{
 		public:
 		

@@ -2,7 +2,8 @@
 #define PGNFile_h
 
 #include <string>
-#include <PGNGameCollection.h>
+#include "PGNGameCollection.h"
+#include "PGNM.h"
 
 /**
  * @brief global namespace for libpgnm
@@ -11,11 +12,11 @@
 namespace pgn
 {
 	/**
-	 * @class File
+	 * @class PGNM_EXPORT File
 	 * @brief Opens and extract games from PGN file and/or compile
 	 * pgn::GameCollection fo file.
 	 */
-	class File
+	class PGNM_EXPORT File
 	{
 		public:
 			/**

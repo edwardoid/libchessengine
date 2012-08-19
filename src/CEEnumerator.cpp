@@ -1,4 +1,4 @@
-#include <CEEnumerator.h>
+#include "CEEnumerator.h"
 
 ChEngn::Enumerator::Enumerator()
 {
@@ -8,7 +8,7 @@ ChEngn::Enumerator::Enumerator( const ChEngn::Table &table, EnumerationSide enum
 {
 }
 
-void ChEngn::Enumerator::Enumerator::setDeep( unsigned short deep)
+void ChEngn::Enumerator::setDeep( unsigned short deep)
 {
 	m_deep = deep;
 }
@@ -27,12 +27,12 @@ unsigned short ChEngn::Enumerator::deepness() const
 	return m_deep;
 }
 
-ChEngn::Table* ChEngn::Enumerator::Enumerator::startPosition() const
+ChEngn::Table* ChEngn::Enumerator::startPosition() const
 {
 	return m_table;
 }
 
-ChEngn::EnumerationSide ChEngn::Enumerator::Enumerator::side() const
+ChEngn::EnumerationSide ChEngn::Enumerator::side() const
 {
 	return m_side;
 }

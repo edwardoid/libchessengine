@@ -21,7 +21,7 @@
 
 #include <sstream>
 #include <iostream>
-#include <PGNMoveList.h>
+#include "PGNMoveList.h"
 
 #include <iomanip>
 
@@ -94,7 +94,7 @@ bool pgn::MoveList::find(const pgn::Move& src) const
 // Author: Dietmar Kuehl (thank you!)
 //
 #include <streambuf>
-class formatbuf: public std::streambuf
+class PGNM_EXPORT formatbuf: public std::streambuf
 {
 	public:
 		formatbuf(int length, std::streambuf* sbuf);

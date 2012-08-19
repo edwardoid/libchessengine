@@ -23,9 +23,10 @@
 #define PGNGame_h
 
 #include <fstream>
-#include <PGNGameResult.h>
-#include <PGNTagList.h>
-#include <PGNMoveList.h>
+#include "PGNGameResult.h"
+#include "PGNTagList.h"
+#include "PGNMoveList.h"
+#include "PGNM.h"
 
 /**
  * @brief global namespace for libpgnm
@@ -35,10 +36,10 @@ namespace pgn
 {
 
 	/**
-	 * @class Game
+	 * @class PGNM_EXPORT Game
 	 * @brief Represents information about game.
 	 */
-	class Game 
+	class PGNM_EXPORT Game 
 	{
 		public:
 			

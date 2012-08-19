@@ -24,6 +24,7 @@
 
 #include <fstream>
 #include <string>
+#include "PGNM.h"
 
 /// @file PGNCommentText.h
 
@@ -34,10 +35,10 @@
 namespace pgn
 {
 	/**
-	 * @class CommentText
+	 * @class PGNM_EXPORT CommentText
 	 * @brief Provides comment to move.
 	 */
-	class CommentText 
+	class PGNM_EXPORT CommentText 
 	{
 		public:
 		
