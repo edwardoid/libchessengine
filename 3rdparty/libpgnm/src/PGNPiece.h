@@ -22,7 +22,7 @@
 #ifndef PGNPiece_h
 #define PGNPiece_h
 #include <string>
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 namespace pgn
 {

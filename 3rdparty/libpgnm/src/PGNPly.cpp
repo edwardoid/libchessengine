@@ -89,7 +89,7 @@ pgn::Ply::Ply(const std::string& ply_text)
 			case 'Q':
 			case 'B':
 			case 'N':
-				if (*(pitr-1) == '=')
+				if (pitr != ply_text.begin() && *(pitr-1) == '=')
 					promoted_piece = *pitr;
 				else
 					piece_char = *pitr;

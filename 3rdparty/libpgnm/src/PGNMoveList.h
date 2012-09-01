@@ -28,7 +28,7 @@
 #include <string>
 #include "PGNMove.h"
 #include "PGNGameResult.h"
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 namespace pgn
 {

@@ -21,6 +21,8 @@
 
 #ifndef CHESS_ENGINE_TABLE
 #define CHESS_ENGINE_TABLE
+
+#include "CEGlobal.h"
 #include "CEPiece.h"
 #include <iostream>
 /**
@@ -48,7 +50,7 @@ namespace ChEngn
 	 * @class ChEngn::Table
 	 * @brief Chess board
 	 */
-	class Table
+	class CE_EXPORT Table
 	{
 		public:
 		
@@ -132,12 +134,12 @@ namespace ChEngn
 			Piece **m_table;
 	};
 
-       /**
+   /**
 	* Every library user will use "Virtual tables". E.g. you get current table
 	* state, and then you can make changes, but all your changes will not
 	* change real table.
 	*/
-	typedef ChEngn::Table VirtualTable;
+	typedef Table VirtualTable;
 };
 
 #endif

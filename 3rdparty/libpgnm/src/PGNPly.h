@@ -25,7 +25,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 #include "PGNPiece.h" 
 #include "PGNSquare.h" 
 #include "PGNCommentText.h"

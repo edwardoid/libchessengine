@@ -24,7 +24,7 @@
 
 #include <fstream>
 #include "PGNPly.h"
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 /**
  * @file PGNMove.h Contains information about storing simple move extracted from

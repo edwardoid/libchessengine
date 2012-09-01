@@ -39,9 +39,10 @@
 #include "PGNParser.h"
 #include "PGNException.h"
 
-void pgn::Parser::skipBlanks(std::string::const_iterator &itr1)
+void pgn::Parser::skipBlanks(std::string::const_iterator &itr1,
+							 const std::string::const_iterator &itr2)
 {
-	while (isspace(*itr1)) itr1++;
+	while (itr1 < itr2 && isspace(*itr1)) itr1++;
 }
 
 bool pgn::Parser::getGameCollection(std::string::const_iterator &itr1, const std::string::const_iterator &itr2, pgn::GameCollection &out)
@@ -77,7 +78,9 @@ pgn::Game* pgn::Parser::getGame(std::string::const_iterator &itr1, const std::st
 
 		itr1 = local_itr;
 
-		skipBlanks(local_itr);	
+		skipBlanks(local_itr, itr2);
+		if (local_itr == itr2) throw pgn::parse_exception("Unexcepted end of file");
+
 		pgn::CommentText bgComment;
 		bool hasBgComment = false;
 		if (getComment(local_itr, itr2, bgComment))
@@ -86,7 +89,9 @@ pgn::Game* pgn::Parser::getGame(std::string::const_iterator &itr1, const std::st
 			itr1 = local_itr;
 		}
 	
-		skipBlanks(local_itr);	
+		skipBlanks(local_itr, itr2);
+		if (local_itr == itr2) throw pgn::parse_exception("Unexcepted end of file");
+
 		pgn::MoveList  movelist;
 		if (!getMoveList(local_itr, itr2, movelist))
 			throw std::runtime_error("Error parsing movelist"); 
@@ -101,7 +106,8 @@ pgn::Game* pgn::Parser::getGame(std::string::const_iterator &itr1, const std::st
 
 		pgn::Game *g = new pgn::Game(taglist, movelist, gameResult);
 
-		skipBlanks(local_itr);	
+		skipBlanks(local_itr, itr2);	
+		if (local_itr == itr2) return g;
 		pgn::CommentText agComment;
 		bool hasAgComment = false;
 		if (getComment(local_itr, itr2, agComment))
@@ -152,7 +158,9 @@ bool pgn::Parser::getTag(std::string::const_iterator &itr1, const std::string::c
 	std::string::const_iterator start_tag = itr1;
 
 	// cerco '['
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);
+	if (local_itr == itr2) return false;
+	
 	if (*local_itr != '[')
 	{
 		return false;
@@ -160,7 +168,8 @@ bool pgn::Parser::getTag(std::string::const_iterator &itr1, const std::string::c
 	local_itr++;
 
 	// cerco '<tagname>'
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);
+	if (local_itr == itr2) return false;
 	std::string tagname;
 
 	while ((local_itr != itr2) && (isalnum(*local_itr)))
@@ -170,7 +179,8 @@ bool pgn::Parser::getTag(std::string::const_iterator &itr1, const std::string::c
 	itr1 = local_itr;
 
 	// cerco '"<tagvalue>"'
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);
+	if (local_itr == itr2) return false;
 	std::string tagvalue;
 
 	if (*local_itr != '"')
@@ -196,7 +206,8 @@ bool pgn::Parser::getTag(std::string::const_iterator &itr1, const std::string::c
 	itr1 = local_itr;
 
 	// cerco ']'
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);
+	if (local_itr == itr2) return false;
 	if (*local_itr != ']')
 	{
 		pgn::invalid_tag e;
@@ -214,7 +225,7 @@ bool pgn::Parser::getMoveList(std::string::const_iterator &itr1, const std::stri
 	std::string::const_iterator local_itr = itr1;
 	pgn::MoveList ml;
 
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 	pgn::Move *move;
  	while (move = getMove(local_itr, itr2))
 	{
@@ -247,12 +258,12 @@ pgn::Move* pgn::Parser::getMove(std::string::const_iterator &itr1, const std::st
 	// <move_number><dots> <ply> <ply> <move_number>
  
 	// looking for first ply (mandatory)
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 	pgn::Ply *firstPly=0;
 	if ((firstPly = getPly(local_itr, itr2)) == 0)
 		throw std::runtime_error("Error parsing move"); 
 
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 
 	pgn::Ply *secondPly=0;
 	
@@ -265,7 +276,7 @@ pgn::Move* pgn::Parser::getMove(std::string::const_iterator &itr1, const std::st
 	{
 		// looking for second ply (optional)
 		secondPly = getPly(local_itr, itr2);
-		skipBlanks(local_itr);	
+		skipBlanks(local_itr, itr2);	
 	}
 	itr1 = local_itr;
 
@@ -317,7 +328,7 @@ bool pgn::Parser::getMoveNumber(std::string::const_iterator &itr1, const std::st
 	{
 		movenumber += *local_itr++;
 	}
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 
 	if (*local_itr != '.')
 	{
@@ -341,17 +352,17 @@ pgn::Ply* pgn::Parser::getPly(std::string::const_iterator &itr1, const std::stri
 {
 	std::string::const_iterator local_itr = itr1;
 
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 	while (!isspace(*local_itr)) local_itr++;
 	pgn::Ply *p = new pgn::Ply(std::string(itr1, local_itr));
 
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 	itr1 = local_itr;
 
 	pgn::CommentText comment;
 	if (getComment(local_itr, itr2, comment))
 	{
-		skipBlanks(local_itr);	
+		skipBlanks(local_itr, itr2);	
 		itr1 = local_itr;
 		p->bindComment(comment);
 	}
@@ -379,7 +390,7 @@ bool pgn::Parser::getComment(std::string::const_iterator &itr1, const std::strin
 		comment += *local_itr++;
 	}
 	local_itr++; // skipping '}'
-	skipBlanks(local_itr);	
+	skipBlanks(local_itr, itr2);	
 	itr1 = local_itr;
 	out = pgn::CommentText(comment);
 	return true;

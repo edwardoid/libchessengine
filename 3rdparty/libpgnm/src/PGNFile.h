@@ -3,7 +3,7 @@
 
 #include <string>
 #include "PGNGameCollection.h"
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 /**
  * @brief global namespace for libpgnm

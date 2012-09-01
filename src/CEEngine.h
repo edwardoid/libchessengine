@@ -22,6 +22,7 @@
 #ifndef CHESS_ENGINE_ENGINE
 #define CHESS_ENGINE_ENGINE
 
+#include "CEGlobal.h"
 #include "CETable.h"
 #include <PGNGame.h>
 #include <PGNMoveList.h>
@@ -57,7 +58,7 @@ namespace ChEngn
 	 * @brief Make moves.
 	 * @note This class <b>does not</b> manipulate pgn files.
 	 **/
-	class Engine
+	class CE_EXPORT Engine
 	{
 		public:
 			/**

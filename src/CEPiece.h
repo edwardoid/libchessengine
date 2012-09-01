@@ -22,6 +22,7 @@
 #ifndef CHESS_ENGINE_PIECE
 #define CHESS_ENGINE_PIECE
 
+#include "CEGlobal.h"
 #include <iostream>
 /**
  * @file CEPiece.h
@@ -79,7 +80,7 @@ namespace ChEngn
 	 * @class ChEngn::Piece
 	 * @brief Chess piece
 	 */
-	class Piece
+	class CE_EXPORT Piece
 	{
 		public:
 			/**

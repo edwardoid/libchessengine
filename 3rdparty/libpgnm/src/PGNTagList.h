@@ -25,7 +25,7 @@
 #include <fstream>
 #include <vector>
 #include "PGNTag.h"
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 namespace pgn
 {

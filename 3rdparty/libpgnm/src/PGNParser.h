@@ -22,7 +22,7 @@
 #ifndef PGNParser_h
 #define PGNParser_h
 
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 #include <string>
 
 /**
@@ -79,7 +79,8 @@ namespace pgn
 
 		private:
 
-			static void skipBlanks(std::string::const_iterator &itr1);
+			static void skipBlanks(std::string::const_iterator &itr1,
+								   const std::string::const_iterator &itr2);
 
 			unsigned long plyCount_;
 			unsigned long moveCount_;

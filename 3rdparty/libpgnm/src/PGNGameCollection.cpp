@@ -152,7 +152,7 @@ std::istream& pgn::operator >> ( std::istream& is, pgn::GameCollection& src )
 	while (getline(is, line))
 	{
 		pgndata += line;
-		pgndata += "\n";
+		pgndata += " ";
 	}
 		
 	std::string::const_iterator itr1 = pgndata.begin();
@@ -165,7 +165,7 @@ std::istream& pgn::operator >> ( std::istream& is, pgn::GameCollection& src )
 
 int pgn::GameCollection::size() const
 { 
-	return hdata->games.size(); 
+	return (int)hdata->games.size(); 
 }
 
 void pgn::GameCollection::clear() 

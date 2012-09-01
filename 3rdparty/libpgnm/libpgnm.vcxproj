@@ -164,7 +164,7 @@
     <ClInclude Include="src\PGNGame.h" />
     <ClInclude Include="src\PGNGameCollection.h" />
     <ClInclude Include="src\PGNGameResult.h" />
-    <ClInclude Include="src\PGNM.h" />
+    <ClInclude Include="src\PGNMGlobals.h" />
     <ClInclude Include="src\PGNMove.h" />
     <ClInclude Include="src\PGNMoveList.h" />
     <ClInclude Include="src\PGNParser.h" />

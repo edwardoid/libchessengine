@@ -24,7 +24,7 @@
 
 #include <fstream>
 #include <string>
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 /**
  * @brief global namespace for libpgnm

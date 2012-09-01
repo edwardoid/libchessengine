@@ -26,7 +26,7 @@
 #include "PGNGameResult.h"
 #include "PGNTagList.h"
 #include "PGNMoveList.h"
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 
 /**
  * @brief global namespace for libpgnm

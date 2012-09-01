@@ -22,7 +22,7 @@
 #ifndef PGNSquare_h
 #define PGNSquare_h
 
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 #include <string>
 
 namespace pgn 

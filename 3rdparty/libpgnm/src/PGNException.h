@@ -22,7 +22,7 @@
 #ifndef PGNException_h
 #define PGNException_h
 
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 #include <exception>
 #include <string>
 

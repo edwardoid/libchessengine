@@ -166,6 +166,7 @@
     <ClInclude Include="src\CEEngine.h" />
     <ClInclude Include="src\CEEnumerator.h" />
     <ClInclude Include="src\CEException.h" />
+    <ClInclude Include="src\CEGlobal.h" />
     <ClInclude Include="src\CEKingMove.h" />
     <ClInclude Include="src\CEKnightMove.h" />
     <ClInclude Include="src\CELongCastleMove.h" />
@@ -177,7 +178,6 @@
     <ClInclude Include="src\CEShortCastleMove.h" />
     <ClInclude Include="src\CETable.h" />
     <ClInclude Include="src\CEUtils.h" />
-    <ClInclude Include="src\ChessEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\README" />

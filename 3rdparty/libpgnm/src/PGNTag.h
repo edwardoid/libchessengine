@@ -22,7 +22,7 @@
 #ifndef PGNTag_h
 #define PGNTag_h
 
-#include "PGNM.h"
+#include "PGNMGlobals.h"
 #include <fstream>
 #include <string>
 
