@@ -73,15 +73,19 @@ pgn::MoveList::iterator ChEngn::Engine::nextMove()
 
 bool ChEngn::Engine::makeNextMove()
 {
+	if (!(m_currentMoveIt < m_moves.end())) return false;
+	
 	try
 	{
 		bool whitePlyRes = makeNextHalfMove();
+		if(!(m_currentMoveIt < m_moves.end()))
+			return true;
 		bool blackPlyRes = makeNextHalfMove();
 		return ( whitePlyRes && blackPlyRes );
 	}
 	catch( BadMove e )
 	{
-		if( ( m_currentMoveIt == m_moves.end() ) && m_halfMove )
+		if( !(m_currentMoveIt < m_moves.end()) && m_halfMove )
 			return false;
 		else
 			throw e;
@@ -92,7 +96,7 @@ bool ChEngn::Engine::makeNextMove()
 
 bool ChEngn::Engine::makeNextHalfMove()
 {
-	if ( m_currentMoveIt != m_moves.end() )
+	if ( m_currentMoveIt < m_moves.end())
 		if ( m_halfMove)
 		{
 			m_halfMove = false;

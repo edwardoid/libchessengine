@@ -81,7 +81,8 @@ namespace pgn
 			const Move& operator * () const;
 			bool operator == (const iterator&) const;
 			bool operator != (const iterator&) const;
-
+			bool operator < (const iterator&) const;
+			bool operator <= (const iterator&) const;
 		private:
 		
 			struct iteratorData *hdata;

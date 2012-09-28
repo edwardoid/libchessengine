@@ -328,3 +328,12 @@ bool pgn::MoveList::iterator::operator != (const pgn::MoveList::iterator& other)
 	return (!((*this) == other));
 }
 
+bool pgn::MoveList::iterator::operator < (const pgn::MoveList::iterator& other) const
+{
+	return (hdata->it < other.hdata->it);
+}
+
+bool pgn::MoveList::iterator::operator <= (const pgn::MoveList::iterator& other) const
+{
+	return (!((*this) < other)) || (!((*this) == other));
+}
