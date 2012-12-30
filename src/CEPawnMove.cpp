@@ -55,6 +55,7 @@ bool ChEngn::PawnMove::makeCaptureMove( const ChEngn::Table* table) const
 
 	if ( movedPiece != 0 )
 	{
+		m_movedPieceEx = table->detailed(movedPiece);
 		if ( dest->type() == unknown )
 		{
 			Piece *longDest = table->pieceAtC(m_newPos.col(), m_newPos.row() - coef);
@@ -92,6 +93,7 @@ bool ChEngn::PawnMove::makeSimpleMove( const ChEngn::Table* table) const
 	}
 	if( movedPiece != 0 )
 	{
+		m_movedPieceEx = table->detailed(movedPiece);
 		if( (movedPiece->type() == pawn ) && 
 			(movedPiece->isWhite() == m_isWhite) )
 		{

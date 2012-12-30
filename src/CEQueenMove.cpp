@@ -1,6 +1,8 @@
 #include "CEQueenMove.h"
 #include "CETable.h"
 #include "CEException.h"
+#include "CERookMove.h"
+#include "CEBishopMove.h"
 #include <PGNPly.h>
 
 
@@ -29,6 +31,7 @@ bool ChEngn::QueenMove::make(const ChEngn::Table* table) const
 
 
 	for ( char c = 'a'; c <= 'h'; c++ )
+	{
 		for ( char r = '1'; r<= '8'; r++)
 		{
 			Piece *tmp = table->pieceAtC( c, r );
@@ -36,15 +39,31 @@ bool ChEngn::QueenMove::make(const ChEngn::Table* table) const
 				 ( tmp != 0 ) &&
 				 (tmp->type() == queen )
 				 &&
-				 (tmp->isWhite() == m_isWhite) ) 
+				 (tmp->isWhite() == m_isWhite)) 
 			{
-				movedPiece = tmp;
-				break;
+				bool canMove = false;
+
+				if(c == newPos.col())
+					canMove = RookMove::checkForEmptynessRow(c, newPos.col(), newPos.row(), table);
+				else if(r == newPos.row())
+					canMove = RookMove::checkForEmptynessColumn(r, newPos.row(), newPos.col(), table);
+				else if(abs(newPos.row() - r) == abs(newPos.col() - c))
+					canMove = BishopMove::checkEmptynessDiagonal(c, r, newPos.col(), newPos.row(), table);
+				
+				if(canMove)
+				{
+					movedPiece = tmp;
+					break;
+				}
 			}
 		}
+		if(movedPiece != 0)
+			break;
+	}
 
 	if ( movedPiece != 0 )
 	{
+		m_movedPieceEx = table->detailed(movedPiece);
 		(*dest) = (*movedPiece);
 		movedPiece->setType( unknown );
 		return true;

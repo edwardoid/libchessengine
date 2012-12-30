@@ -20,6 +20,7 @@
 #ifndef CHESS_ENGINE_KNIGHT_MOVE
 #define CHESS_ENGINE_KNIGHT_MOVE
 
+#include "CEGlobal.h"
 #include "CEMove.h"
 #include <PGNSquare.h>
 
@@ -30,7 +31,7 @@ namespace pgn
 
 namespace ChEngn
 {
-	class KnightMove: public Move
+	class CE_EXPORT KnightMove: public Move
 	{
 	public:
 

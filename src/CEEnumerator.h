@@ -34,7 +34,7 @@
 
 
 /// @namespace ChEngn Contains all typedefs, constants, classes defined in
-//linchessengine
+//libchessengine
 namespace ChEngn
 {
 

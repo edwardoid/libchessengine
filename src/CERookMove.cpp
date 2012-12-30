@@ -37,20 +37,14 @@ bool ChEngn::RookMove::make(const Table* table) const
 		isFromRowSpecified = true;
 	}
 
-
-
 	for( char row = '1'; ( ( row <= '8') && ( !isFromRowSpecified ) ); row++ )
 	{
 		Piece* tmp = table->pieceAtC( specCol, row );
-        if ( ( tmp != 0 ) &&
-                ( tmp->type() == rook ) &&
-                ( tmp->isWhite() == m_isWhite ) &&
-                ( movedPiece == 0 ) &&
-                checkForEmptynessV( row,
-                                    newPos.row() ,
-                                    specCol ,
-                                    table) &&
-                ( !moveAndCheckForCheck(table, pgn::Square( specCol, row ), newPos,  m_isWhite ) ) )
+		if(tmp == 0 || tmp->type() != rook || (tmp->isWhite() != m_isWhite))
+			continue;
+        if ( ( movedPiece == 0 ) &&
+			 checkForEmptynessColumn( newPos.row(), row, newPos.col(), table) &&
+			 !moveAndCheckForCheck(table, pgn::Square( specCol, row ), newPos,  m_isWhite) )
 		{
             movedPiece = tmp;
         }
@@ -60,14 +54,10 @@ bool ChEngn::RookMove::make(const Table* table) const
 		for( char col = 'a'; ( ( col <= 'h' ) && ( !isFromColSpecified ) ) ; col++ )
 		{
 			Piece* tmp = table->pieceAtC( col, specRow );
-            if ( ( tmp != 0 ) &&
-                    ( tmp->type() == rook ) &&
-                    ( tmp->isWhite() == m_isWhite )  &&
-                    checkForEmptynessH( col,
-                                        newPos.col(),
-                                        specRow ,
-                                        table) &&
-                   ( !moveAndCheckForCheck(table, pgn::Square( col, specRow ), newPos,  m_isWhite ) ) )
+            if( tmp == 0 || tmp->type() != rook || (tmp->isWhite() != m_isWhite))
+				continue;
+			if ( checkForEmptynessRow(col, newPos.col(), specRow, table) &&
+                 !moveAndCheckForCheck(table, pgn::Square( col, specRow ), newPos,  m_isWhite) )
             {
                 movedPiece = tmp;
             }	
@@ -77,6 +67,7 @@ bool ChEngn::RookMove::make(const Table* table) const
 	{
 		if ( m_ply->isCapture() && ( dest->type() == unknown ) )
 			throw BadMove( *m_ply, UNKNOWN_CAPTURE );
+		m_movedPieceEx = table->detailed(movedPiece);
 		(*dest) = (*movedPiece);
 		dest->setMoved();
 		movedPiece->setType(unknown);
@@ -86,25 +77,26 @@ bool ChEngn::RookMove::make(const Table* table) const
 }
 
 
-bool ChEngn::RookMove::checkForEmptynessH(char from, char to, char row, const Table *table) const
+bool ChEngn::RookMove::checkForEmptynessRow(char fromColumn, char toColumn, char row, const Table *table)
 {
 	if ( table == 0 )
 		return false;
-	if ( from > to)
+	if ( fromColumn > toColumn)
 	{
-		char tmp = from;
-		from = to;
-		to = tmp;
+		char tmp	= fromColumn;
+		fromColumn	= toColumn;
+		toColumn	= tmp;
 	}
-	if ( ( from < ( default_table_width - 'a') ) && 
-		 ( to < ( default_table_width - 'a') ) && 
-		 ( row < ( default_table_height - '1' ) ) &&
-		 ( from > 0) &&
-		 ( to > 0 ))
+	if (( fromColumn	< 'i' )	&& 
+		( toColumn		< 'i' )		&& 
+		( row			< '9')			&&
+		( fromColumn	>= 'a')	&&
+		( toColumn		>= 'a' )	&&
+		( row			> '0'))
 	{
-		for ( char i = from + 1; i < to; i++)
+		for ( char column = fromColumn + 1; column < toColumn; column++)
 		{
-			if ( table->pieceAtC(i, row)->type() != unknown)
+			if ( table->pieceAtC(column, row)->type() != unknown)
 				return false;
 		}
 	}
@@ -113,25 +105,26 @@ bool ChEngn::RookMove::checkForEmptynessH(char from, char to, char row, const Ta
 	return true;
 }
 
-bool ChEngn::RookMove::checkForEmptynessV(char from, char to, char column, const Table *table) const
+bool ChEngn::RookMove::checkForEmptynessColumn(char fromRow, char toRow, char column, const Table *table)
 {
 	if ( table == 0 )
 		return false;
-	if ( from > to)
+	if ( fromRow > toRow)
 	{
-		char tmp = from;
-		from = to;
-		to = tmp;
+		char tmp = fromRow;
+		fromRow = toRow;
+		toRow = tmp;
 	}
-	if ( ( from < ( default_table_width - '1') ) &&
-			( to < ( default_table_width - '1') ) &&
-			( column< ( default_table_height - 'a' ) ) &&
-			( to > 0) &&
-			(from > 0 ))
+	if (( fromRow	< '9' ) &&
+		( toRow		< '9' ) &&
+		( column	< 'i' ) &&
+		( toRow		> '0' ) &&
+		( fromRow	> '0' ) &&
+		( column		>= 'a'))
 	{
-		for ( char i = from + 1; i < to; i++)
+		for ( char row = fromRow + 1; row < toRow; ++row)
 		{
-			if ( table->pieceAtC(column, i)->type() != unknown)
+			if ( table->pieceAtC(column, row)->type() != unknown)
 				return false;
 		}
 	}
@@ -139,5 +132,3 @@ bool ChEngn::RookMove::checkForEmptynessV(char from, char to, char column, const
 		return false;
 	return true;
 }
-
-

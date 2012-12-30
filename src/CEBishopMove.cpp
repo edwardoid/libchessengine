@@ -35,6 +35,7 @@ bool ChEngn::BishopMove::make( const ChEngn::Table* table ) const
 
 	if ( ( movedPiece != 0 ) && (tmp != 0 ) )
 	{
+		m_movedPieceEx = table->detailed(movedPiece);
 		tmp->setType ( bishop );
 		if( m_isWhite )
 			tmp->setWhite();
@@ -43,7 +44,7 @@ bool ChEngn::BishopMove::make( const ChEngn::Table* table ) const
 		movedPiece->setType( unknown );
 		return true;
 	}
-	throw BadMove( *m_ply, UNKNOWN_ERROR );
+	throw BadMove(*m_ply, CAN_T_FIND_MOVED_PIECE);
     return false;
 }
 
@@ -59,17 +60,59 @@ ChEngn::Piece* ChEngn::BishopMove::findMovedPiece( const pgn::Ply* ply, const Ch
 			if( ( tmp != 0 ) && ( tmp->type() == bishop) &&
 				( tmp->isWhite() == isWhite) &&
 				( abs( i - newPos.col()) == abs( j - newPos.row() ) ) )
-				  if( fromSquare == '-' )
-				  {
-				  		movedPiece = tmp;
-				  }
-				  else
-				  {
-				  	if( (fromSquare >= 'a') && (fromSquare <= 'h') && ( i == fromSquare ) )
-				  		movedPiece = tmp;
-				  	if( (fromSquare >= '1') && (fromSquare <= '8') && ( i == fromSquare ) )
-				  		movedPiece = tmp;
-				  }
+			{
+				if(!checkEmptynessDiagonal(i , j, ply->toSquare().col(), ply->toSquare().row(), table) && !ply->isCapture())
+					continue;
+				if( fromSquare == '-' )
+				{
+					movedPiece = tmp;
+				}
+				else
+				{
+					if( (fromSquare >= 'a') && (fromSquare <= 'h') && ( i == fromSquare ) )
+						movedPiece = tmp;
+					if( (fromSquare >= '1') && (fromSquare <= '8') && ( i == fromSquare ) )
+						movedPiece = tmp;
+				}
+			}
 		}
    return movedPiece;
+}
+
+bool ChEngn::BishopMove::checkEmptynessDiagonal( char fromColumn, char fromRow, char toColumn, char toRow, const Table* table)
+{
+	if(abs(fromColumn - toColumn) != abs(fromRow - toRow))
+		return false;
+	if(abs(fromColumn - toColumn) == 1)
+		return true;
+
+	if(fromColumn > toColumn)
+	{
+		char tmpColumn = toColumn;
+		char tmpRow	= toRow;
+		toColumn = fromColumn;
+		toRow = fromRow;
+		fromColumn = tmpColumn;
+		fromRow = tmpRow;
+	}
+
+	char coef = (fromRow < toRow ? 1 : -1);
+	char rowEnd = (fromRow < toRow ? toRow : fromRow);
+
+	for(char r = fromRow, c = fromColumn; c < toColumn && r != rowEnd; ++c, r += coef)
+	{
+		Piece* p = table->pieceAtC(c, r);
+		if(p == NULL)
+			continue;
+		ChEngn::piece_type t = p->type();
+		if(t != ChEngn::unknown)
+		{
+			if(((r == fromRow && c == fromColumn) ||
+				(r == rowEnd && c == toColumn))	&&
+				(t == ChEngn::bishop || t == ChEngn::queen))
+				continue;
+			return false;
+		}
+	}
+	return true;
 }

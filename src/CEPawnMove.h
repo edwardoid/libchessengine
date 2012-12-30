@@ -20,6 +20,7 @@
 #ifndef CHESS_ENGINE_PAWN_MOVE
 #define CHESS_ENGINE_PAWN_MOVE
 
+#include "CEGlobal.h"
 #include "CEMove.h"
 #include <PGNSquare.h>
 
@@ -32,7 +33,7 @@ namespace ChEngn
 {
 	class Table;
 
-	class PawnMove: public Move
+	class CE_EXPORT PawnMove: public Move
 	{
 	public:
 		

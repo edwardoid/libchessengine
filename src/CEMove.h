@@ -69,7 +69,7 @@ namespace ChEngn
 		
 		/**
 		 * @brief Moves piece for current table, and check for check.
-		 * Tyres to move piece form current table, is piece on given
+		 * Tries to move piece form current table, is piece on given
 		 * square is no ChEngn::king and checks is new position check
 		 * position for given player
 		 * @param oldPos - Position from piece will be moved
@@ -80,24 +80,26 @@ namespace ChEngn
 		 * @warning only ChEngn::queen, ChEngn::rook and ChEngn::bishop will
 		 * be checked!
 		 */
-		bool moveAndCheckForCheck( const Table* table,
-					   const pgn::Square oldPos,
-					   const pgn::Square newPos,
-					   const bool isWhite ) const;
-		/** Tryes to found check in given table for given color's player.
+		bool moveAndCheckForCheck(	const Table* table,
+									const pgn::Square oldPos,
+									const pgn::Square newPos,
+									const bool isWhite ) const;
+		/** Tries to found check in given table for given color's player.
 		 * @brief Checks for check on table.
 		 * @param tbl - Source table
-		 * @param isWhite - Player color. True if player's colro white,
+		 * @param isWhite - Player color. True if player's color white,
 		 * false in other case.
 		 * @return true if check position found.
 		 */
 		static bool isCheck( const Table& tbl, bool isWhite );
 
+		PieceEx movedPiece() const { return m_movedPieceEx; }
 		friend class PawnMove;
 		friend class KnightMove;
 		friend class BishopMove;
 		friend class RookMove;
 	protected:
+		mutable PieceEx m_movedPieceEx;
 		bool m_isWhite;
 		const pgn::Ply *m_ply;
 	};

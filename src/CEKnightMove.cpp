@@ -30,11 +30,11 @@ bool ChEngn::KnightMove::make(const ChEngn::Table* table) const
 	if(NULL == m_movedPiece)
 		try2Right1Top( table, newPos);
 	if(NULL == m_movedPiece)
-        	try2Right1Bottom( table, newPos);
+        try2Right1Bottom( table, newPos);
 	if(NULL == m_movedPiece)
-        	try2Bottom1Right( table, newPos);
+        try2Bottom1Right( table, newPos);
 	if(NULL == m_movedPiece)
-        	try2Bottom1Left( table, newPos);
+        try2Bottom1Left( table, newPos);
 	if(NULL == m_movedPiece)
 		try2Left1Bottom( table, newPos );
 	if(NULL == m_movedPiece)
@@ -54,13 +54,14 @@ bool ChEngn::KnightMove::make(const ChEngn::Table* table) const
 			|| 
 		 ( (dest->type() == unknown) && (! m_ply->isCapture() )  ) )
 		 {
-			dest->setType ( knight );
-			if( m_isWhite )
-				dest->setWhite();
+			 m_movedPieceEx = table->detailed(m_movedPiece);
+			 dest->setType ( knight );
+			 if( m_isWhite )
+				 dest->setWhite();
 			else
 				dest->setBlack();
-			m_movedPiece->setType( unknown );
-			return true;
+			 m_movedPiece->setType( unknown );
+			 return true;
 		}
 	}
 	return true;

@@ -37,15 +37,15 @@ bool ChEngn::Move::moveAndCheckForCheck(const ChEngn::Table* table,
 					const bool isWhite ) const
 {
 	VirtualTable tmp = *table;
-	assert ( 0 != tmp.pieceAtC( oldPos.col(), oldPos.row() ) );
-	assert ( 0 != tmp.pieceAtC( newPos.col(), newPos.row() ) );
+	assert ( 0 != tmp.pieceAt( oldPos.colIndex(), oldPos.rowIndex() ) );
+	assert ( 0 != tmp.pieceAt( newPos.colIndex(), newPos.rowIndex() ) );
 	tmp.pieceAtC( newPos.col(), newPos.row() )->setType( tmp.pieceAtC( oldPos.col(), oldPos.row() )->type() );
 	if ( tmp.pieceAtC( oldPos.col(), oldPos.row() )->isWhite() ) 
-		tmp.pieceAtC( newPos.col(), newPos.row() )->setWhite();
+		tmp.pieceAtC( newPos.col(), newPos.row() )->setType(unknown);
 	else
 		tmp.pieceAtC( newPos.col(), newPos.row() )->setBlack();
 	tmp.pieceAtC( oldPos.col(), oldPos.row() )->setType( unknown );
-	return isCheck( tmp , isWhite );
+	return isCheck( tmp , isWhite);
 }
 
 bool ChEngn::Move::isCheck( const ChEngn::Table& tbl, bool isWhite )
@@ -76,12 +76,11 @@ bool ChEngn::Move::isCheck( const ChEngn::Table& tbl, bool isWhite )
 				( ( queen == tmp->type() ) || ( rook == tmp->type() ) ) )
 				{
 					std::cout << "HORISONTAL+: On " << c << kingsRow << " " << *tmp << std::endl;
-					return true;
 				}
 			else if ( ( 0 != tmp ) && ( unknown != tmp->type() ) )
 				break;
 		}
-		
+			
 		for ( char c = kingsColumn - 1 ; c >= 'a'; c-- )
 		{
 			Piece* tmp = tbl.pieceAtC( c, kingsRow );

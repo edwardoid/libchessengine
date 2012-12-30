@@ -38,6 +38,7 @@ bool ChEngn::KingMove::make(const ChEngn::Table* table) const
 				 ( movedPiece->isWhite() == m_isWhite )
 				 )
 			{
+				m_movedPieceEx = table->detailed(movedPiece);
 				( *dest ) = ( *movedPiece );
 				movedPiece->setType( unknown );
 				return true;

@@ -19,6 +19,7 @@
 //     Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
+#include "CEGlobal.h"
 #include "CETable.h"
 #include <assert.h>
 
@@ -32,17 +33,7 @@ ChEngn::Table::Table()
 ChEngn::Table::Table(const Table &other)
 {
 	m_table = 0;
-	getMemoryForTable();
-	assert( 0 != m_table );
-	for (unsigned int i = 0; i < default_table_height; i++ )
-		for (unsigned int j = 0; j< default_table_width; j++)
-		{
-			Piece* tmp = other.pieceAt( i, j );
-			if ( 0 != tmp )
-				m_table[j][i] = *tmp;
-			else
-				std::cerr << "Got invalid pointer to piece in copy-constructor" << std::endl;
-		}
+	*this = other;
 }
 
 ChEngn::Table::~Table()
@@ -142,10 +133,32 @@ void ChEngn::Table::operator = (const ChEngn::Table &other)
 {
 //	cleanMemory();
 	getMemoryForTable();
-	for ( unsigned int i = 0; i < default_table_height; i++ )
-		for (unsigned int j = 0; j < default_table_width; j++)
-			m_table[i][j] = *other.pieceAt(i, j);
+	for (unsigned int i = 0; i < default_table_height; i++ )
+		for (unsigned int j = 0; j< default_table_width; j++)
+		{
+			Piece* tmp = other.pieceAt( i, j );
+			if ( 0 != tmp )
+				m_table[j][i] = *tmp;
+			else
+				std::cerr << "Got invalid pointer to piece in copy-constructor" << std::endl;
+		};
 }
+
+ChEngn::PieceEx ChEngn::Table::detailed( Piece* piece ) const
+{
+	for(int r = 0; r < default_table_height; ++r)
+	{
+		for(int c = 0; c < default_table_height; ++c)
+		{
+			if(piece == pieceAt(c, r))
+				return PieceEx(	*piece,
+								r, 
+								c); 
+		}
+	}
+	return ChEngn::PieceEx(*piece, -1, -1);
+}
+
 
 namespace ChEngn
 {
@@ -155,7 +168,7 @@ namespace ChEngn
 		{
 			out<<std::endl<< i + 1<< " ";
 			for (unsigned int  j = 0; j < default_table_width; j++ )
-				out<< *tbl.pieceAt(j,i);
+				out<< *tbl.pieceAt(i,j);
 		}
 		out<<std::endl<<"  ";
 		for ( unsigned int i = 0; i < default_table_width; i++)

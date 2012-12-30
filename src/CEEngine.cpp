@@ -173,6 +173,6 @@ namespace ChEngn
 {
 	std::ostream& operator << ( std::ostream& out, const Engine& engn)
 	{
-		return out<<engn.getVirtualTable();
+		return out << engn.getVirtualTable();
 	}
 };
