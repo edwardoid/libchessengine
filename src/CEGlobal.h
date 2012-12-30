@@ -22,10 +22,10 @@
 #ifndef CEGLOBALS_H
 #define CEGLOBALS_H
 
-#ifdef _MSC_VER
+#ifdef LIB_CHESSENGINE
 	#define CE_EXPORT __declspec(dllexport)
 #else
-	#define CE_EXPORT
+	#define CE_EXPORT __declspec(dllimport)
 #endif
 
 #endif // CEGLOBALS_H

@@ -19,6 +19,7 @@
 #ifndef CHESS_ENGINE_BISHOP_MOVE
 #define CHESS_ENGINE_BISHOP_MOVE
 
+#include "CEGlobal.h"
 #include "CEMove.h"
 #include <PGNSquare.h>
 
@@ -32,7 +33,7 @@ namespace ChEngn
     /**
     * @brief 
     */
-	class BishopMove: public Move
+	class CE_EXPORT BishopMove: public Move
 	{
 	public:
 
@@ -57,6 +58,8 @@ namespace ChEngn
         * @return 
         */
         bool  make( const Table* table ) const;
+
+		static bool checkEmptynessDiagonal(char fromColumn, char fromRow, char toColumn, char toRow, const Table* table);
 	private:
         
         /**

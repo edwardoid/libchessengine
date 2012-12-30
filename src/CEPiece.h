@@ -24,6 +24,7 @@
 
 #include "CEGlobal.h"
 #include <iostream>
+#include <vector>
 /**
  * @file CEPiece.h
  * @brief Here are defined ChEngn::Piece class. Most of constants and structs:
@@ -32,7 +33,7 @@
 
 
 /// @namespace ChEngn Contains all typedefs, constants, classes defined in
-//linchessengine
+//	libchessengine
 namespace ChEngn
 {
 
@@ -220,7 +221,38 @@ namespace ChEngn
 		private:
 			unsigned char m_piece;
 	};
-};
 
+	class CE_EXPORT PieceEx: public Piece
+	{
+	public:
+		inline PieceEx() { setRow(-1); setColumn(-1); }
+		inline PieceEx(const Piece& p, short row, short column)
+			: Piece(p)
+		{
+			setRow(row);
+			setColumn(column);
+		}
+		
+		PieceEx(const PieceEx& other) {
+			*this = other;
+		}
+		inline void setRow(const short row) { m_row = row; }
+		inline short row() const { return m_row; }
+		inline void setColumn(const short column) { m_column = column; }
+		inline short column() const { return m_column; }
+		inline PieceEx& operator = (const PieceEx & other)
+		{
+			Piece::operator=(other);
+			m_row = other.row();
+			m_column = other.column();
+			return *this;
+		}
+	private:
+		short m_row;
+		short m_column;
+	};
+
+	typedef std::vector<PieceEx> ListOfPieces;
+};
 
 #endif

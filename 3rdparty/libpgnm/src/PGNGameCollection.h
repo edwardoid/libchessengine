@@ -145,7 +145,7 @@ namespace pgn
 			 * @param os Stream-printer.
 			 * @param src Games list to print.
 			 */
-			friend std::ostream& operator << ( std::ostream& os, const GameCollection& src);
+			PGNM_EXPORT friend std::ostream& operator << ( std::ostream& os, const GameCollection& src);
 
 			/**
 			 * @brief Read text from given stream and tryes to parse and extract
@@ -153,7 +153,7 @@ namespace pgn
 			 * @param is Input stream.
 			 * @param src Games Container.
 			 */
-			friend std::istream& operator >> ( std::istream& is, GameCollection& src);
+			PGNM_EXPORT friend std::istream& operator >> ( std::istream& is, GameCollection& src);
 
 		private:
 	

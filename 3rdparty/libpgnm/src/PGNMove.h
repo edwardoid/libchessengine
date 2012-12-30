@@ -117,7 +117,7 @@ namespace pgn
 			 * @param os Stream to print.
 			 * @param src Move to print.
 			 */
-			friend std::ostream& operator << ( std::ostream& os, const Move& src);
+			PGNM_EXPORT friend std::ostream& operator << ( std::ostream& os, const Move& src);
 			
 			/**
 			 * @brief Converts given number to string.

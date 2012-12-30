@@ -19,6 +19,7 @@
 #ifndef CHESS_ENGINE_ROOK_MOVE
 #define CHESS_ENGINE_ROOK_MOVE
 
+#include "CEGlobal.h"
 #include "CEMove.h"
 
 namespace ChEngn
@@ -27,7 +28,7 @@ namespace ChEngn
     * @class RookMove
     * @brief 
     */
-    class RookMove: public Move
+    class CE_EXPORT RookMove: public Move
     {
     public:
         
@@ -53,9 +54,8 @@ namespace ChEngn
         */
         virtual bool make(const Table* table) const;
 
-    private:
-        bool checkForEmptynessV(char from, char to, char row, const Table *table) const ;
-        bool checkForEmptynessH(char from, char to, char row, const Table *table) const;
+	    static bool checkForEmptynessColumn(char fromRow, char toRow, char onColumn, const Table *table);
+        static bool checkForEmptynessRow(char fromColumn, char toColumn, char onRow, const Table *table);
     };
 }
 

@@ -19,6 +19,7 @@
 #ifndef CHESS_ENGINE_QUEEN_MOVE
 #define CHESS_ENGINE_QUEEN_MOVE
 
+#include "CEGlobal.h"
 #include "CEMove.h"
 
 namespace ChEngn
@@ -27,7 +28,7 @@ namespace ChEngn
     * @class QueenMove
     * @brief 
     */
-    class QueenMove: public Move
+    class CE_EXPORT QueenMove: public Move
     {
     public:
         /**
@@ -51,7 +52,6 @@ namespace ChEngn
         * @return 
         */
         virtual bool make(const ChEngn::Table* table) const;
-    private:
     };
 }
 

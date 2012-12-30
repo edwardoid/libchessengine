@@ -142,7 +142,9 @@ std::ostream& pgn::operator << ( std::ostream& os, const pgn::GameCollection& sr
 	return os;
 }
 
-std::istream& pgn::operator >> ( std::istream& is, pgn::GameCollection& src ) 
+namespace pgn {
+
+std::istream& operator >> ( std::istream& is, pgn::GameCollection& src ) 
 {
 	std::string pgndata;
 	std::string line;
@@ -161,6 +163,8 @@ std::istream& pgn::operator >> ( std::istream& is, pgn::GameCollection& src )
 	pgn::Parser parser;
 	parser.getGameCollection(itr1, itr2, src);
 	return is;
+}
+
 }
 
 int pgn::GameCollection::size() const

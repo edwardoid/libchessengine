@@ -19,6 +19,7 @@
 #ifndef CHESS_ENGINE_KING_MOVE_H
 #define CHESS_ENGINE_KING_MOVE_H
 
+#include "CEGlobal.h"
 #include "CEMove.h"
 
 namespace ChEngn
@@ -27,7 +28,7 @@ namespace ChEngn
     * @class KingMove
     * @brief 
     */
-    class KingMove: public Move
+    class CE_EXPORT KingMove: public Move
     {
     public:
         /**

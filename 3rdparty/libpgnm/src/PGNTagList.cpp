@@ -97,7 +97,7 @@ void pgn::TagList::erase(const pgn::Tag& src)
 
 int pgn::TagList::size() const
 {
-	return hdata->tags.size();
+	return (int)hdata->tags.size();
 }
 
 bool pgn::TagList::operator == (const pgn::TagList& src) const

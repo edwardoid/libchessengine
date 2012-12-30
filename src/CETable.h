@@ -122,7 +122,10 @@ namespace ChEngn
 			 * @param out - Stream for printing
 			 * @param tbl - table to print
 			 */
-			friend std::ostream& operator << (std::ostream &out, const Table& tbl);
+			CE_EXPORT friend std::ostream& operator << (std::ostream &out, const Table& tbl);
+
+
+			PieceEx detailed(Piece* piece) const;
 		private: //methods
 
 			void getMemoryForTable();
