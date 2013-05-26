@@ -22,9 +22,9 @@
 #ifndef PGNCommentText_h
 #define PGNCommentText_h
 
+#include "PGNMGlobals.h"
 #include <fstream>
 #include <string>
-#include "PGNMGlobals.h"
 
 /// @file PGNCommentText.h
 

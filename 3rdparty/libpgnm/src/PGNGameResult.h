@@ -22,9 +22,9 @@
 #ifndef PGNGameResult_h
 #define PGNGameResult_h
 
+#include "PGNMGlobals.h"
 #include <fstream>
 #include <string>
-#include "PGNMGlobals.h"
 
 /**
  * @brief global namespace for libpgnm

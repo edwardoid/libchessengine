@@ -40,7 +40,8 @@ namespace pgn
 			Square& operator = (const Square& src);
 			bool operator == (const Square& src) const;
 			bool operator != (const Square& src) const;
-	
+			operator bool () const;
+			static bool isValid(const Square& sq);
 			char col() const;
 			char row() const;
 			int colIndex() const;

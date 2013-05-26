@@ -23,10 +23,10 @@
 #define PGNGame_h
 
 #include <fstream>
+#include "PGNMGlobals.h"
 #include "PGNGameResult.h"
 #include "PGNTagList.h"
 #include "PGNMoveList.h"
-#include "PGNMGlobals.h"
 
 /**
  * @brief global namespace for libpgnm

@@ -26,18 +26,21 @@ bool ChEngn::PawnMove::makeCaptureMove( const ChEngn::Table* table) const
 	Piece *movedPiece = 0;
 	Piece *dest = table->pieceAtC( m_newPos.col() , m_newPos.row() );
 
-	if ( ( dest == 0 ) )
+	if ( dest == 0 )
 		throw BadMove( *m_ply, DEST_OUT_OF_RANGE );
 
 	char specifiedCol = m_ply->fromSquare();
 	if ( specifiedCol != '-')
 	{
 		pgn::Square oldPos(specifiedCol, m_newPos.row() - coef);
-		movedPiece = table->pieceAtC(oldPos.col(), oldPos.row());
-		if ( movedPiece->type() != pawn )
-			throw BadMove( *m_ply, "Specified piece is not pawn");
-		if ( movedPiece->isWhite() != m_isWhite )
-			throw BadMove( *m_ply, "Specified piece's color and movind piece's color are not same");
+		if(oldPos)
+		{
+			movedPiece = table->pieceAtC(oldPos.col(), oldPos.row());
+			if ( movedPiece->type() != pawn )
+				throw BadMove( *m_ply, "Specified piece is not pawn");
+			if ( movedPiece->isWhite() != m_isWhite )
+				throw BadMove( *m_ply, "Specified piece's color and moving piece's color are not same");
+		}
 	}
 	else
 	{
@@ -53,7 +56,7 @@ bool ChEngn::PawnMove::makeCaptureMove( const ChEngn::Table* table) const
 		}
 	}
 
-	if ( movedPiece != 0 )
+	if ( movedPiece != 0 && dest != NULL)
 	{
 		m_movedPieceEx = table->detailed(movedPiece);
 		if ( dest->type() == unknown )

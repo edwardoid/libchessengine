@@ -101,3 +101,12 @@ int pgn::Square::rowIndex() const
 	return (row_ - '1');
 }
 
+pgn::Square::operator bool () const
+{
+	return isValid(*this);
+}
+
+bool pgn::Square::isValid(const pgn::Square& sq)
+{
+	return sq.colIndex() > -1 && sq.colIndex() < 8 && sq.rowIndex() > -1 && sq.rowIndex() < 8;
+}
