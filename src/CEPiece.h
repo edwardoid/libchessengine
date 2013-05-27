@@ -24,7 +24,9 @@
 
 #include "CEGlobal.h"
 #include <iostream>
-#include <vector>
+#include <list>
+#include <PGNSquare.h>
+
 /**
  * @file CEPiece.h
  * @brief Here are defined ChEngn::Piece class. Most of constants and structs:
@@ -34,7 +36,7 @@
 
 /// @namespace ChEngn Contains all typedefs, constants, classes defined in
 //	libchessengine
-namespace ChEngn
+namespace CE
 {
 
 	/// Piece type is just a unsigned char
@@ -247,12 +249,14 @@ namespace ChEngn
 			m_column = other.column();
 			return *this;
 		}
+		inline pgn::Square square() const { return pgn::Square(m_column + 'a', m_row + '1'); }
 	private:
 		short m_row;
 		short m_column;
 	};
 
-	typedef std::vector<PieceEx> ListOfPieces;
+	typedef std::list<PieceEx>			ListOfPieces;
+	typedef std::pair<PieceEx, PieceEx> PairOfPieces;
 };
 
 #endif

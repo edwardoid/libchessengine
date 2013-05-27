@@ -22,7 +22,7 @@
 #include "CEGlobal.h"
 #include "CEMove.h"
 
-namespace ChEngn
+namespace CE
 {
     /**
     * @class RookMove

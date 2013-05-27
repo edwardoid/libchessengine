@@ -29,7 +29,7 @@ namespace pgn
 	class Ply;
 };
 
-namespace ChEngn
+namespace CE
 {
 	class CE_EXPORT KnightMove: public Move
 	{
@@ -56,6 +56,8 @@ namespace ChEngn
         * @return 
         */
         bool  make( const Table* table ) const;
+
+		static pgn::ListOfSquares knightPositions(const pgn::Square& sqRelative);
 	private:
 		
         /**

@@ -28,7 +28,7 @@ namespace pgn
 	class Ply;
 };
 
-namespace ChEngn
+namespace CE
 {
     /**
     * @brief 
@@ -71,7 +71,7 @@ namespace ChEngn
         *
         * @return 
         */
-        static ChEngn::Piece* findMovedPiece( const pgn::Ply* ply, const Table* table, const bool isWhite);
+        static CE::Piece* findMovedPiece( const pgn::Ply* ply, const Table* table, const bool isWhite);
 	};
 }
 #endif // CHESS_ENGINE_BISHOP_MOVE

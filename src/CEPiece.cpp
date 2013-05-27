@@ -23,89 +23,89 @@
 
 
 
-ChEngn::Piece::Piece(piece_type tpe, piece_color col)
+CE::Piece::Piece(piece_type tpe, piece_color col)
 {
 	m_piece = tpe | col;
 }
 
-ChEngn::Piece::Piece(const Piece &other)
+CE::Piece::Piece(const Piece &other)
 {
 	m_piece = other.color() | other.type() | other.moveFlag();
 }
 
-ChEngn::Piece::~Piece()
+CE::Piece::~Piece()
 {
 }
 
 
-ChEngn::piece_type ChEngn::Piece::type() const
+CE::piece_type CE::Piece::type() const
 {
 	return ( m_piece & unknown );
 }
 
-ChEngn::piece_color ChEngn::Piece::color() const
+CE::piece_color CE::Piece::color() const
 {
 	return ( m_piece & white );
 }
 
-bool ChEngn::Piece::isWhite() const
+bool CE::Piece::isWhite() const
 {
 	return ( color() == white );
 }
 
-bool ChEngn::Piece::isBlack() const
+bool CE::Piece::isBlack() const
 {
 	return ( color() == black );
 }
 
-bool ChEngn::Piece::isUnknown() const
+bool CE::Piece::isUnknown() const
 {
 	return ( type() == unknown );
 }
 
-ChEngn::piece_movement_flag ChEngn::Piece::moveFlag() const
+CE::piece_movement_flag CE::Piece::moveFlag() const
 {
 	return ( m_piece & moved );
 }
 
-void ChEngn::Piece::setType(ChEngn::piece_type tpe)
+void CE::Piece::setType(CE::piece_type tpe)
 {
 	m_piece = color() | moveFlag() | tpe;
 }
 
-void ChEngn::Piece::setWhite()
+void CE::Piece::setWhite()
 {
 	m_piece = m_piece | white;
 }
 
-void ChEngn::Piece::setBlack()
+void CE::Piece::setBlack()
 {
 	m_piece = type() | moveFlag();
 }
 
-void ChEngn::Piece::setMoved()
+void CE::Piece::setMoved()
 {
 	m_piece = m_piece | moved;
 }
 
-void ChEngn::Piece::operator = ( const ChEngn::Piece& other )
+void CE::Piece::operator = ( const CE::Piece& other )
 {
 	m_piece = other.type() | other.color() | other.moveFlag();
 }
 
-bool ChEngn::Piece::operator == ( const ChEngn::Piece& other ) const
+bool CE::Piece::operator == ( const CE::Piece& other ) const
 {
-	if( m_piece == ( other.type() | other.color() | other.moveFlag() ) )
+	if( m_piece == other.m_piece )
 		return true;
 	return false;
 }
 
-bool ChEngn::Piece::operator != ( const ChEngn::Piece& other ) const
+bool CE::Piece::operator != ( const CE::Piece& other ) const
 {
 	return !(operator==(other));
 }
 
-namespace ChEngn
+namespace CE
 {
 	std::ostream & operator << (std::ostream &out, const Piece &pce)
 	{

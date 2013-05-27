@@ -34,44 +34,44 @@
 #include <iostream>
 #include <assert.h>
 
-ChEngn::Engine::Engine()
+CE::Engine::Engine()
 {
 	m_currentMoveIt = m_moves.begin();
 }
 
-ChEngn::Engine::Engine(const ChEngn::Engine &other)
+CE::Engine::Engine(const CE::Engine &other)
 {
 	m_halfMove = false;
 	m_currentMoveIt = m_moves.begin();
 }
 
-ChEngn::Engine::Engine(const pgn::Game &gm)
+CE::Engine::Engine(const pgn::Game &gm)
 {
 	m_moves = gm.moves();
 	m_currentMoveIt = m_moves.begin();
 	m_halfMove = false;
 }
 
-ChEngn::Engine::~Engine()
+CE::Engine::~Engine()
 {
 }
 
-pgn::MoveList* ChEngn::Engine::moves()
+pgn::MoveList* CE::Engine::moves()
 {
 	return &m_moves;
 }
 
-ChEngn::VirtualTable ChEngn::Engine::getVirtualTable() const
+CE::VirtualTable CE::Engine::getVirtualTable() const
 {
 	return m_table;
 }
 
-pgn::MoveList::iterator ChEngn::Engine::nextMove()
+pgn::MoveList::iterator CE::Engine::nextMove()
 {
 	return m_currentMoveIt;
 }
 
-bool ChEngn::Engine::makeNextMove()
+bool CE::Engine::makeNextMove()
 {
 	if (!(m_currentMoveIt < m_moves.end())) return false;
 	
@@ -94,7 +94,7 @@ bool ChEngn::Engine::makeNextMove()
 	return false;
 }
 
-bool ChEngn::Engine::makeNextHalfMove()
+bool CE::Engine::makeNextHalfMove()
 {
 	if ( m_currentMoveIt < m_moves.end())
 		if ( m_halfMove)
@@ -114,12 +114,12 @@ bool ChEngn::Engine::makeNextHalfMove()
 	return false;
 }
 
-bool ChEngn::Engine::makeMove( pgn::Move& move)
+bool CE::Engine::makeMove( pgn::Move& move)
 {
 	return ( makePly( move.white(), true ) && makePly( move.black(), false ) );
 }
 
-bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
+bool CE::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 {
 
 	if ( pl == 0 )
@@ -169,7 +169,7 @@ bool ChEngn::Engine::makePly( const pgn::Ply* pl, bool isWhite )
 	return true;
 }
 
-namespace ChEngn
+namespace CE
 {
 	std::ostream& operator << ( std::ostream& out, const Engine& engn)
 	{

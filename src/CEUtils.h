@@ -32,7 +32,7 @@
 
 /// @namespace ChEngn Contains all typedefs, constants, classes defined in
 //libchessengine
-namespace ChEngn
+namespace CE
 {
 	/**
 	 * @brief Converts given number to std::string

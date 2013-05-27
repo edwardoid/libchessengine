@@ -24,6 +24,7 @@
 
 #include "PGNMGlobals.h"
 #include <string>
+#include <list>
 
 namespace pgn 
 {
@@ -53,6 +54,8 @@ namespace pgn
 			char row_;
 
 	};
+
+	typedef std::list<Square> ListOfSquares;
 };
 
 #endif 

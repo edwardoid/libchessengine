@@ -22,7 +22,7 @@
 
 #include "CEMove.h"
 
-namespace ChEngn
+namespace CE
 {
     
     /**

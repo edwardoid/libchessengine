@@ -1,38 +1,38 @@
 #include "CEEnumerator.h"
 
-ChEngn::Enumerator::Enumerator()
+CE::Enumerator::Enumerator()
 {
 }
 
-ChEngn::Enumerator::Enumerator( const ChEngn::Table &table, EnumerationSide enumSide, unsigned short deep )
+CE::Enumerator::Enumerator( const CE::Table &table, EnumerationSide enumSide, unsigned short deep )
 {
 }
 
-void ChEngn::Enumerator::setDeep( unsigned short deep)
+void CE::Enumerator::setDeep( unsigned short deep)
 {
 	m_deep = deep;
 }
 
-void ChEngn::Enumerator::setTable( const ChEngn::Table &table)
+void CE::Enumerator::setTable( const CE::Table &table)
 {
 }
 
-void ChEngn::Enumerator::setSide( EnumerationSide enumSide)
+void CE::Enumerator::setSide( EnumerationSide enumSide)
 {
 	m_side = enumSide;
 }
 
-unsigned short ChEngn::Enumerator::deepness() const
+unsigned short CE::Enumerator::deepness() const
 {
 	return m_deep;
 }
 
-ChEngn::Table* ChEngn::Enumerator::startPosition() const
+CE::Table* CE::Enumerator::startPosition() const
 {
 	return m_table;
 }
 
-ChEngn::EnumerationSide ChEngn::Enumerator::side() const
+CE::EnumerationSide CE::Enumerator::side() const
 {
 	return m_side;
 }

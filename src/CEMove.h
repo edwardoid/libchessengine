@@ -19,6 +19,7 @@
 #ifndef CHESS_ENGINE_MOVE
 #define CHESS_ENGINE_MOVE
 
+#include "CEGlobal.h"
 #include "CEPiece.h"
 #include <PGNSquare.h>
 #include <deque>
@@ -28,11 +29,11 @@ namespace pgn
 	class Ply;
 };
 
-namespace ChEngn
+namespace CE
 {
 	class Table;
 
-	class Move
+	class CE_EXPORT Move
 	{
 	public:
 

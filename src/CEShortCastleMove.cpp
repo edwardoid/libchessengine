@@ -4,16 +4,16 @@
 #include <PGNPly.h>
 
 
-ChEngn::ShortCastleMove::ShortCastleMove(bool isWhite)
+CE::ShortCastleMove::ShortCastleMove(bool isWhite)
     : Move(NULL, isWhite)
 {
 }
 
-ChEngn::ShortCastleMove::~ShortCastleMove()
+CE::ShortCastleMove::~ShortCastleMove()
 {
 }
 
-bool ChEngn::ShortCastleMove::make(const Table* table) const
+bool CE::ShortCastleMove::make(const Table* table) const
 {
     char kingCol = 'e';
 	char row = (m_isWhite? '1': '8');

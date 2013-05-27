@@ -3,16 +3,16 @@
 #include "CETable.h"
 #include <stdlib.h>
 
-ChEngn::BishopMove::BishopMove( const pgn::Ply* ply, const bool isWhite )
-    : ChEngn::Move( ply, isWhite )
+CE::BishopMove::BishopMove( const pgn::Ply* ply, const bool isWhite )
+    : CE::Move( ply, isWhite )
 {
 }
 
-ChEngn::BishopMove::~BishopMove()
+CE::BishopMove::~BishopMove()
 {
 }
 
-bool ChEngn::BishopMove::make( const ChEngn::Table* table ) const
+bool CE::BishopMove::make( const CE::Table* table ) const
 {
    	pgn::Square newPos = m_ply->toSquare();
     
@@ -48,7 +48,7 @@ bool ChEngn::BishopMove::make( const ChEngn::Table* table ) const
     return false;
 }
 
-ChEngn::Piece* ChEngn::BishopMove::findMovedPiece( const pgn::Ply* ply, const ChEngn::Table* table, bool isWhite )
+CE::Piece* CE::BishopMove::findMovedPiece( const pgn::Ply* ply, const CE::Table* table, bool isWhite )
 {
     Piece *movedPiece = 0;
    	pgn::Square newPos = ply->toSquare();
@@ -79,7 +79,7 @@ ChEngn::Piece* ChEngn::BishopMove::findMovedPiece( const pgn::Ply* ply, const Ch
    return movedPiece;
 }
 
-bool ChEngn::BishopMove::checkEmptynessDiagonal( char fromColumn, char fromRow, char toColumn, char toRow, const Table* table)
+bool CE::BishopMove::checkEmptynessDiagonal( char fromColumn, char fromRow, char toColumn, char toRow, const Table* table)
 {
 	if(abs(fromColumn - toColumn) != abs(fromRow - toRow))
 		return false;
@@ -104,12 +104,12 @@ bool ChEngn::BishopMove::checkEmptynessDiagonal( char fromColumn, char fromRow, 
 		Piece* p = table->pieceAtC(c, r);
 		if(p == NULL)
 			continue;
-		ChEngn::piece_type t = p->type();
-		if(t != ChEngn::unknown)
+		CE::piece_type t = p->type();
+		if(t != CE::unknown)
 		{
 			if(((r == fromRow && c == fromColumn) ||
 				(r == rowEnd && c == toColumn))	&&
-				(t == ChEngn::bishop || t == ChEngn::queen))
+				(t == CE::bishop || t == CE::queen))
 				continue;
 			return false;
 		}

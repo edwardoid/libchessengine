@@ -40,7 +40,7 @@
 /** @namespace ChEngn contains all classes, structs, constants to work whis
  * library.
  */
-namespace ChEngn
+namespace CE
 {
 
 	 /**
@@ -48,7 +48,7 @@ namespace ChEngn
 	  * state, and then you can make changes, but all your changes will not
 	  * change real table.
 	  */
-	typedef ChEngn::Table VirtualTable;
+	typedef CE::Table VirtualTable;
 
 
 	/**

@@ -3,17 +3,17 @@
 #include "CEException.h"
 
 
-ChEngn::KingMove::KingMove(const pgn::Ply* ply, bool isWhite)
+CE::KingMove::KingMove(const pgn::Ply* ply, bool isWhite)
     : Move(ply, isWhite)
 {
 }
 
-ChEngn::KingMove::~KingMove()
+CE::KingMove::~KingMove()
 {
 }
 
 
-bool ChEngn::KingMove::make(const ChEngn::Table* table) const
+bool CE::KingMove::make(const CE::Table* table) const
 {
  	pgn::Square newPos = m_ply->toSquare();
 	char beginR = newPos.row() - 1;
@@ -45,4 +45,28 @@ bool ChEngn::KingMove::make(const ChEngn::Table* table) const
 			}
 		}
     return false;
+}
+
+pgn::ListOfSquares CE::KingMove::kingPositions( const pgn::Square& sqRelative )
+{
+	pgn::ListOfSquares res;
+	pgn::Square sq1(sqRelative.col() + 1, sqRelative.row());
+	pgn::Square sq2(sqRelative.col() - 1, sqRelative.row());
+	pgn::Square sq3(sqRelative.col(), sqRelative.row() - 1);
+	pgn::Square sq4(sqRelative.col(), sqRelative.row() + 1);
+	pgn::Square sq5(sqRelative.col() + 1, sqRelative.row() + 1);
+	pgn::Square sq6(sqRelative.col() + 1, sqRelative.row() - 1);
+	pgn::Square sq7(sqRelative.col() - 1, sqRelative.row() + 1);
+	pgn::Square sq8(sqRelative.col() - 1, sqRelative.row() - 1);
+
+	if(sq1) res.push_front(sq1);
+	if(sq2) res.push_front(sq2);
+	if(sq3) res.push_front(sq3);
+	if(sq4) res.push_front(sq4);
+	if(sq5) res.push_front(sq5);
+	if(sq6) res.push_front(sq6);
+	if(sq7) res.push_front(sq7);
+	if(sq8) res.push_front(sq8);
+
+	return res;
 }

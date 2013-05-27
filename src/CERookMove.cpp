@@ -5,16 +5,16 @@
 
 
 
-ChEngn::RookMove::RookMove(const pgn::Ply* ply, bool isWhite)
+CE::RookMove::RookMove(const pgn::Ply* ply, bool isWhite)
     : Move(ply, isWhite)
 {
 }
 
-ChEngn::RookMove::~RookMove()
+CE::RookMove::~RookMove()
 {
 }
 
-bool ChEngn::RookMove::make(const Table* table) const
+bool CE::RookMove::make(const Table* table) const
 {
     pgn::Square newPos = m_ply->toSquare();
 	Piece *dest = table->pieceAtC( newPos.col() , newPos.row() );
@@ -77,7 +77,7 @@ bool ChEngn::RookMove::make(const Table* table) const
 }
 
 
-bool ChEngn::RookMove::checkForEmptynessRow(char fromColumn, char toColumn, char row, const Table *table)
+bool CE::RookMove::checkForEmptynessRow(char fromColumn, char toColumn, char row, const Table *table)
 {
 	if ( table == 0 )
 		return false;
@@ -105,7 +105,7 @@ bool ChEngn::RookMove::checkForEmptynessRow(char fromColumn, char toColumn, char
 	return true;
 }
 
-bool ChEngn::RookMove::checkForEmptynessColumn(char fromRow, char toRow, char column, const Table *table)
+bool CE::RookMove::checkForEmptynessColumn(char fromRow, char toRow, char column, const Table *table)
 {
 	if ( table == 0 )
 		return false;

@@ -22,7 +22,7 @@
 #include "CEGlobal.h"
 #include "CEMove.h"
 
-namespace ChEngn
+namespace CE
 {
     /**
     * @class QueenMove
@@ -51,7 +51,7 @@ namespace ChEngn
         *
         * @return 
         */
-        virtual bool make(const ChEngn::Table* table) const;
+        virtual bool make(const CE::Table* table) const;
     };
 }
 

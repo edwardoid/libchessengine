@@ -5,8 +5,8 @@
 #include <PGNPly.h>
 #include <assert.h>
 
-ChEngn::KnightMove::KnightMove(const pgn::Ply* ply, const bool isWhite)
-	: ChEngn::Move(ply,isWhite),
+CE::KnightMove::KnightMove(const pgn::Ply* ply, const bool isWhite)
+	: CE::Move(ply,isWhite),
 	  m_movedPiece(NULL)
 {
 	m_column = 0;
@@ -17,11 +17,11 @@ ChEngn::KnightMove::KnightMove(const pgn::Ply* ply, const bool isWhite)
 		m_row = ply->fromSquare();
 }
 
-ChEngn::KnightMove::~KnightMove()
+CE::KnightMove::~KnightMove()
 {
 }
 
-bool ChEngn::KnightMove::make(const ChEngn::Table* table) const
+bool CE::KnightMove::make(const CE::Table* table) const
 {
 	m_movedPiece = NULL;
 	pgn::Square newPos = m_ply->toSquare();
@@ -67,55 +67,55 @@ bool ChEngn::KnightMove::make(const ChEngn::Table* table) const
 	return true;
 }
 
-pgn::Square ChEngn::KnightMove::try2Top1Right( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Top1Right( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() + 1, newPos.row() + 2);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }    
-pgn::Square ChEngn::KnightMove::try2Right1Bottom( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Right1Bottom( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() + 2, newPos.row() - 1);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }
 
-pgn::Square ChEngn::KnightMove::try2Right1Top( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Right1Top( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() + 2, newPos.row() + 1);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }
 
-pgn::Square ChEngn::KnightMove::try2Bottom1Right( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Bottom1Right( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() + 1, newPos.row() - 2);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }
 
-pgn::Square ChEngn::KnightMove::try2Bottom1Left( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Bottom1Left( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() - 1, newPos.row() - 2);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }
 
-pgn::Square ChEngn::KnightMove::try2Left1Bottom( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Left1Bottom( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() - 2, newPos.row() - 1);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }
 
-pgn::Square ChEngn::KnightMove::try2Left1Top( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Left1Top( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() - 2, newPos.row() + 1);
 	tryToFindKnight(table, oldPos, newPos );
 	return newPos;
 }
 
-pgn::Square ChEngn::KnightMove::try2Top1Left( const Table* table, const pgn::Square& newPos ) const
+pgn::Square CE::KnightMove::try2Top1Left( const Table* table, const pgn::Square& newPos ) const
 {
 	pgn::Square oldPos = pgn::Square(newPos.col() - 1, newPos.row() + 2);
 	tryToFindKnight(table, oldPos, newPos );
@@ -123,7 +123,7 @@ pgn::Square ChEngn::KnightMove::try2Top1Left( const Table* table, const pgn::Squ
 }
 
 
-bool ChEngn::KnightMove::tryToFindKnight(  const Table* table, const pgn::Square& oldPos, const pgn::Square& newPos ) const
+bool CE::KnightMove::tryToFindKnight(  const Table* table, const pgn::Square& oldPos, const pgn::Square& newPos ) const
 {
 	Piece* tmp = table->pieceAtC( oldPos.col()  , oldPos.row());
 	if ( ( 0 != tmp ) &&
@@ -142,6 +142,81 @@ bool ChEngn::KnightMove::tryToFindKnight(  const Table* table, const pgn::Square
 	}
 	return false;
 }
+
+pgn::ListOfSquares CE::KnightMove::knightPositions( const pgn::Square& sqRelative )
+{
+	pgn::ListOfSquares res;
+
+	/*
+		x x 
+		x
+		O
+	*/
+	pgn::Square sq1(sqRelative.col() + 1, sqRelative.row() + 2);
+	
+	/*
+		x x 
+		  x
+		  O
+	*/
+	pgn::Square sq2(sqRelative.col() - 1, sqRelative.row() + 2);
+
+
+	/*
+		O x x
+		    x
+	*/
+	pgn::Square sq3(sqRelative.col() + 2, sqRelative.row() - 1);
+	
+	
+	/*
+		    x
+		O x x
+	*/
+	pgn::Square sq4(sqRelative.col() + 2, sqRelative.row() + 1);
+	
+	
+	/*
+		O
+		x
+		x x
+	*/
+	pgn::Square sq5(sqRelative.col()  + 1, sqRelative.row() - 2);
+
+
+	/*
+		  O
+		  x
+		x x
+	*/
+	pgn::Square sq6(sqRelative.col() - 1, sqRelative.row() - 2);
+
+
+	/*
+		x x O
+		x
+	*/
+	pgn::Square sq7(sqRelative.col() - 2, sqRelative.row() - 1);
+
+
+	/*
+		x
+		x x O
+	*/
+	pgn::Square sq8(sqRelative.col() - 2, sqRelative.row() + 1);
+
+	if(sq1) res.push_front(sq1);
+	if(sq2) res.push_front(sq2);
+	if(sq3) res.push_front(sq3);
+	if(sq4) res.push_front(sq4);
+	if(sq5) res.push_front(sq5);
+	if(sq6) res.push_front(sq6);
+	if(sq7) res.push_front(sq7);
+	if(sq8) res.push_front(sq8);
+	
+	return res;
+}
+
 
 
 

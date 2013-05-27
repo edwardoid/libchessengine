@@ -2,7 +2,7 @@
 #include "CEUtils.h"
 #include <string>
 
-const char* ChEngn::BadMove::what() throw()
+const char* CE::BadMove::what() throw()
 {
 	std::string mess = "Cant make move: ";
 	mess +=  itostr( m_num );
@@ -12,18 +12,18 @@ const char* ChEngn::BadMove::what() throw()
 }
 
 
-ChEngn::BadMove& ChEngn::BadMove::operator << (const char* txt) throw()
+CE::BadMove& CE::BadMove::operator << (const char* txt) throw()
 {
 	return *this << (std::string(txt));
 }
 
-ChEngn::BadMove& ChEngn::BadMove::operator << (const std::string& txt) throw()
+CE::BadMove& CE::BadMove::operator << (const std::string& txt) throw()
 {
 	m_comm += txt;
 	return *this;
 }
 
-ChEngn::BadMove& ChEngn::BadMove::operator << ( bool val) throw()
+CE::BadMove& CE::BadMove::operator << ( bool val) throw()
 {
 	if(val)
 		m_comm += "true";
@@ -32,7 +32,7 @@ ChEngn::BadMove& ChEngn::BadMove::operator << ( bool val) throw()
 	return *this;
 }
 
-ChEngn::BadMove& ChEngn::BadMove::operator << ( int val) throw()
+CE::BadMove& CE::BadMove::operator << ( int val) throw()
 {
 	return *this << itoa(val);
 }

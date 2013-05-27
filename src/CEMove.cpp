@@ -2,13 +2,13 @@
 #include "CETable.h"
 #include <assert.h>
 
-ChEngn::Move::Move(const pgn::Ply* ply, const bool isWhite)
+CE::Move::Move(const pgn::Ply* ply, const bool isWhite)
 	: m_isWhite(isWhite)
     , m_ply(ply)
 {
 }
 
-ChEngn::piece_type ChEngn::Move::guessTypeByChar( const char character )
+CE::piece_type CE::Move::guessTypeByChar( const char character )
 {
 	if( ( character == 'P') || ( character == '-') || ( character == 'p' ) )
 		return pawn;
@@ -31,7 +31,7 @@ ChEngn::piece_type ChEngn::Move::guessTypeByChar( const char character )
 	return unknown;
 }
 
-bool ChEngn::Move::moveAndCheckForCheck(const ChEngn::Table* table,
+bool CE::Move::moveAndCheckForCheck(const CE::Table* table,
 					const pgn::Square oldPos,
 					const pgn::Square newPos,
 					const bool isWhite ) const
@@ -48,7 +48,7 @@ bool ChEngn::Move::moveAndCheckForCheck(const ChEngn::Table* table,
 	return isCheck( tmp , isWhite);
 }
 
-bool ChEngn::Move::isCheck( const ChEngn::Table& tbl, bool isWhite )
+bool CE::Move::isCheck( const CE::Table& tbl, bool isWhite )
 {
 	char kingsColumn = 0;
 	char kingsRow = 0;

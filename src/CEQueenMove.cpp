@@ -6,16 +6,16 @@
 #include <PGNPly.h>
 
 
-ChEngn::QueenMove::QueenMove(const pgn::Ply* ply, bool isWhite)
+CE::QueenMove::QueenMove(const pgn::Ply* ply, bool isWhite)
     : Move(ply, isWhite)
 {
 }
 
-ChEngn::QueenMove::~QueenMove()
+CE::QueenMove::~QueenMove()
 {
 }
 
-bool ChEngn::QueenMove::make(const ChEngn::Table* table) const
+bool CE::QueenMove::make(const CE::Table* table) const
 {
  	pgn::Square newPos = m_ply->toSquare();
 

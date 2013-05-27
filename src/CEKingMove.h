@@ -22,7 +22,7 @@
 #include "CEGlobal.h"
 #include "CEMove.h"
 
-namespace ChEngn
+namespace CE
 {
     /**
     * @class KingMove
@@ -52,6 +52,8 @@ namespace ChEngn
         * @return 
         */
         virtual bool make(const Table* table) const;
+
+		static pgn::ListOfSquares kingPositions(const pgn::Square& sqRelative);
     };
 }
 

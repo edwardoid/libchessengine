@@ -29,7 +29,7 @@ namespace pgn
 	class Ply;
 };
 
-namespace ChEngn
+namespace CE
 {
 	class Table;
 

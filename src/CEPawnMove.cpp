@@ -3,24 +3,24 @@
 #include "CEException.h"
 #include <PGNPly.h>
 
-ChEngn::PawnMove::PawnMove(const pgn::Ply* ply, const bool isWhite)
-	: ChEngn::Move(ply, isWhite)
+CE::PawnMove::PawnMove(const pgn::Ply* ply, const bool isWhite)
+	: CE::Move(ply, isWhite)
 {
 	m_newPos = ply->toSquare();
 }
 
-ChEngn::PawnMove::~PawnMove()
+CE::PawnMove::~PawnMove()
 {
 }
 
-bool ChEngn::PawnMove::make( const ChEngn::Table* table) const
+bool CE::PawnMove::make( const CE::Table* table) const
 {
 	if(m_ply->isCapture())
 		return makeCaptureMove(table);
 	return makeSimpleMove(table);
 }
 
-bool ChEngn::PawnMove::makeCaptureMove( const ChEngn::Table* table) const
+bool CE::PawnMove::makeCaptureMove( const CE::Table* table) const
 {
 	short coef = (m_isWhite? 1 : -1);
 	Piece *movedPiece = 0;
@@ -82,7 +82,7 @@ bool ChEngn::PawnMove::makeCaptureMove( const ChEngn::Table* table) const
 
 
 
-bool ChEngn::PawnMove::makeSimpleMove( const ChEngn::Table* table) const
+bool CE::PawnMove::makeSimpleMove( const CE::Table* table) const
 {
 	short coef = (m_isWhite? 1 : -1);
 	pgn::Square oldPos(m_newPos.col(), m_newPos.row() - coef);

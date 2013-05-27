@@ -23,30 +23,30 @@
 #include "CETable.h"
 #include <assert.h>
 
-ChEngn::Table::Table()
+CE::Table::Table()
 {
 	m_table = 0;
 	getMemoryForTable();
 	resetComplect();
 }
 
-ChEngn::Table::Table(const Table &other)
+CE::Table::Table(const Table &other)
 {
 	m_table = 0;
 	*this = other;
 }
 
-ChEngn::Table::~Table()
+CE::Table::~Table()
 {
 	cleanMemory();
 }
 
-ChEngn::Piece** ChEngn::Table::table()
+CE::Piece** CE::Table::table()
 {
 	return m_table;
 }
 
-void ChEngn::Table::cleanTable()
+void CE::Table::cleanTable()
 {
 	if( 0 == m_table )
 		getMemoryForTable();
@@ -57,7 +57,7 @@ void ChEngn::Table::cleanTable()
 			m_table[i][j].setType( unknown );
 }
 
-ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int column, unsigned int row) const
+CE::Piece* CE::Table::pieceAt(unsigned int column, unsigned int row) const
 {
 	assert( 0 != m_table );
 	if( (row < default_table_height) && (column < default_table_width) )
@@ -65,11 +65,11 @@ ChEngn::Piece* ChEngn::Table::pieceAt(unsigned int column, unsigned int row) con
 	return 0;
 }
 
-ChEngn::Piece* ChEngn::Table::pieceAtC(char column, char row) const
+CE::Piece* CE::Table::pieceAtC(char column, char row) const
 {
 	return pieceAt( column -'a', row - '1');
 }
-void ChEngn::Table::getMemoryForTable()
+void CE::Table::getMemoryForTable()
 {
 	if( 0 != m_table )
 		return;
@@ -78,7 +78,7 @@ void ChEngn::Table::getMemoryForTable()
 		m_table[i] = new Piece[default_table_width];
 }
 
-void ChEngn::Table::fillDefault()
+void CE::Table::fillDefault()
 {
 	assert( 0 != m_table );
 	for ( unsigned int i = 0; i < default_table_height; i++ )
@@ -88,7 +88,7 @@ void ChEngn::Table::fillDefault()
 	}
 }
 
-void ChEngn::Table::cleanMemory()
+void CE::Table::cleanMemory()
 {
 	if ( 0 == m_table )
 		return;
@@ -98,7 +98,7 @@ void ChEngn::Table::cleanMemory()
 	m_table = 0;
 }
 
-void ChEngn::Table::resetComplect()
+void CE::Table::resetComplect()
 {
 	if ( m_table == 0 )
 		getMemoryForTable();
@@ -129,7 +129,7 @@ void ChEngn::Table::resetComplect()
 	m_table[7][4] = Piece ( king, black );
 }
 
-void ChEngn::Table::operator = (const ChEngn::Table &other)
+void CE::Table::operator = (const CE::Table &other)
 {
 //	cleanMemory();
 	getMemoryForTable();
@@ -144,7 +144,7 @@ void ChEngn::Table::operator = (const ChEngn::Table &other)
 		};
 }
 
-ChEngn::PieceEx ChEngn::Table::detailed( Piece* piece ) const
+CE::PieceEx CE::Table::detailed( Piece* piece ) const
 {
 	for(int r = 0; r < default_table_height; ++r)
 	{
@@ -156,11 +156,11 @@ ChEngn::PieceEx ChEngn::Table::detailed( Piece* piece ) const
 								c); 
 		}
 	}
-	return ChEngn::PieceEx(*piece, -1, -1);
+	return CE::PieceEx(*piece, -1, -1);
 }
 
 
-namespace ChEngn
+namespace CE
 {
 	std::ostream& operator << (std::ostream &out, const Table& tbl)
 	{

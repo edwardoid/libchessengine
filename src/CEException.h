@@ -34,7 +34,7 @@
 
 /// @namespace ChEngn Contains all typedefs, constants, classes defined in
 //libchessengine
-namespace ChEngn
+namespace CE
 {
 
 	/// Represents unknown exception's additional information

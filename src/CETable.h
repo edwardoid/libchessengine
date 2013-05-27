@@ -35,7 +35,7 @@
  * @namespace ChEngn Contains all typedefs, constans, classes defined in
  * libchessengine
  */
-namespace ChEngn
+namespace CE
 {
 
 	/// Standart table height
@@ -77,7 +77,6 @@ namespace ChEngn
 			 */
 			Piece** table();
 
-			
 			/**
 			 * 	Get piece from table.
 			 * 	@brief Return piece at given numeric position.
@@ -97,6 +96,8 @@ namespace ChEngn
 			 * 	0 will be returned.
 			 */
 			Piece* pieceAtC(char column, char row) const;
+
+			inline Piece* pieceAt(const pgn::Square& sq) const { return pieceAt(sq.colIndex(), sq.rowIndex()); }
 
 			/**
 			 * @brief Set table for beginig gaming
@@ -143,6 +144,8 @@ namespace ChEngn
 	* change real table.
 	*/
 	typedef Table VirtualTable;
+
+	typedef std::pair<VirtualTable, VirtualTable> PairOfTables;
 };
 
 #endif
